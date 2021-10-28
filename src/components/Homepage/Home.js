@@ -26,6 +26,7 @@ export default function Home() {
   const closeButtonOffset = useRef(new Animated.Value(0)).current;
 
   return (
+
     <SafeAreaView style={styles.container}>
       <View style={{ justifyContent: "flex-start", padding: 15 }}>
         <Text
