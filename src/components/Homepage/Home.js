@@ -26,7 +26,6 @@ export default function Home() {
   const closeButtonOffset = useRef(new Animated.Value(0)).current;
 
   return (
-
     <SafeAreaView style={styles.container}>
       <View style={{ justifyContent: "flex-start", padding: 15 }}>
         <Text
@@ -34,7 +33,9 @@ export default function Home() {
             fontSize: 20,
             fontWeight: "bold",
             color: "#2F3945",
+
             marginTop: 50,
+
           }}
         >
           By-cycle chariketna
