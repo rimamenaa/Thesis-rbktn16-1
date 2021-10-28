@@ -1,11 +1,8 @@
-import React from 'react'
+import React from "react";
+import { View, Text, Button } from "react-native";
 
 function Login() {
-    return (
-        <view>
-          login component  
-        </view>
-    )
+  return <View>hehi login hedhi</View>;
 }
 
-export default Login
+export default Login;
