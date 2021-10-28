@@ -31,7 +31,9 @@ export default function Home() {
             fontSize: 20,
             fontWeight: "bold",
             color: "#2F3945",
-            marginTop: 51,
+
+            marginTop: 50,
+
           }}
         >
           By-cycle chariketna
