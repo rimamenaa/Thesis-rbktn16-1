@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-
+import Login from "../login/Login";
 import home from "../../../assets/home.png";
 import search from "../../../assets/search.png";
 import notifications from "../../../assets/bell.png";
@@ -32,16 +32,16 @@ export default function Home() {
           style={{
             fontSize: 20,
             fontWeight: "bold",
-            color: "white",
-            marginTop: 20,
+            color: "#2F3945",
+            marginTop: 50,
           }}
         >
-          By-cycle
+          By-cycle chariketna
         </Text>
 
         <View style={{ flexGrow: 1, marginTop: 50 }}>
           {TabButton(currentTab, setCurrentTab, "Home", home)}
-          {TabButton(currentTab, setCurrentTab, "Search", search)}
+          {TabButton(currentTab, setCurrentTab, Login, Login)}
           {TabButton(currentTab, setCurrentTab, "Notifications", notifications)}
           {TabButton(currentTab, setCurrentTab, "Settings", settings)}
         </View>
@@ -50,7 +50,7 @@ export default function Home() {
       <Animated.View
         style={{
           flexGrow: 1,
-          backgroundColor: "white",
+          backgroundColor: "#FFFFFF",
           position: "absolute",
           top: 0,
           bottom: 0,
@@ -98,7 +98,7 @@ export default function Home() {
               style={{
                 width: 20,
                 height: 20,
-                tintColor: "#2F3945",
+                tintColor: "#000000",
                 marginTop: 40,
               }}
             ></Image>
@@ -115,20 +115,7 @@ export default function Home() {
             {currentTab}
           </Text>
 
-          <Text
-            style={{
-              fontSize: 20,
-              fontWeight: "bold",
-              paddingTop: 15,
-              paddingBottom: 5,
-            }}
-          >
-            By-cycle
-          </Text>
-
-          <Text style={{}}>
-            Techie, YouTuber, PS Lover, Apple Sheep's Sister
-          </Text>
+          {/* here whatever i will put in the home page */}
         </Animated.View>
       </Animated.View>
     </SafeAreaView>
@@ -139,7 +126,7 @@ const TabButton = (currentTab, setCurrentTab, title, image) => {
   return (
     <TouchableOpacity
       onPress={() => {
-        if (title == "Home") {
+        if (title == "logout") {
         } else {
           setCurrentTab(title);
         }
@@ -162,7 +149,7 @@ const TabButton = (currentTab, setCurrentTab, title, image) => {
           style={{
             width: 25,
             height: 25,
-            tintColor: currentTab == title ? "#2F3945 " : "white",
+            tintColor: currentTab == title ? "#2F3945 " : "#FFFFFF",
           }}
         ></Image>
 
@@ -171,7 +158,7 @@ const TabButton = (currentTab, setCurrentTab, title, image) => {
             fontSize: 15,
             fontWeight: "bold",
             paddingLeft: 15,
-            color: currentTab == title ? "#2F3945 " : "white",
+            color: currentTab == title ? "#2F3945 " : "#FFFFFF",
           }}
         >
           {title}

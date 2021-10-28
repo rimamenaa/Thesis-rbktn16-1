@@ -7,7 +7,10 @@ export default function App() {
   return (
     <NativeRouter>
       <View style={styles.container}>
-        <Home />
+        <Text>
+          {" "}
+          <Home />
+        </Text>
       </View>
     </NativeRouter>
   );
@@ -16,8 +19,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "#2F3945 ",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
   },
 });
