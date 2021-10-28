@@ -5,7 +5,7 @@ import tw from "tailwind-react-native-classnames";
 function Home() {
   return (
     <View style={tw`bg-blue-100`}>
-      <Text>Hello</Text>
+      <Text>Hellojjjjjjjjjjjjjjjjjjjj</Text>
     </View>
   );
 }
