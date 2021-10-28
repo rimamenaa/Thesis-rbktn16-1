@@ -3,12 +3,14 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Home from "./src/components/Homepage/Home";
 import { NativeRouter, Switch, Route } from "react-router-native";
-import Login from "./src/components/login/Login";
 export default function App() {
   return (
     <NativeRouter>
       <View style={styles.container}>
-        <Home />
+        <Text>
+          {" "}
+          <Home />
+        </Text>
       </View>
     </NativeRouter>
   );
@@ -17,8 +19,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "#2F3945 ",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
   },
 });

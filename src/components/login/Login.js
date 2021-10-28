@@ -1,8 +1,12 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 function Login() {
-  return <View>hehi login hedhi</View>;
+  return (
+    <View>
+      <Text>login component is here</Text>
+    </View>
+  );
 }
 
 export default Login;
