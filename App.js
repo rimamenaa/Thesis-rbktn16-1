@@ -9,6 +9,10 @@ export default function App() {
     <NativeRouter>
       <View style={styles.container}>
         <Home />
+        <View>
+          {" "}
+          <Text>Another hello </Text>
+        </View>
       </View>
     </NativeRouter>
   );
