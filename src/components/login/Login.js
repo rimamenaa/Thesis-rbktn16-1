@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Login() {
-    return (
-        <view>
-          login component  
-        </view>
-    )
+  return <view>hehi login hedhi</view>;
 }
 
-export default Login
+export default Login;
