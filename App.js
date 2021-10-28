@@ -8,10 +8,7 @@ export default function App() {
   return (
     <NativeRouter>
       <View style={styles.container}>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/" component={Login} />
-        </Switch>
+        <Home />
       </View>
     </NativeRouter>
   );
