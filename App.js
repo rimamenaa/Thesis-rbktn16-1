@@ -5,8 +5,8 @@ import Home from "./src/components/Homepage/Home";
 import { NativeRouter, Switch, Route } from "react-router-native";
 export default function App() {
   return (
-    <NativeRouter>
-      <View style={styles.container}>
+    <NativeRouter style={styles.container}>
+      <View>
         <Text>
           {" "}
           <Home />
