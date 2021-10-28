@@ -3,16 +3,11 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Home from "./src/components/Homepage/Home";
 import { NativeRouter, Switch, Route } from "react-router-native";
-import Login from "./src/components/login/Login";
 export default function App() {
   return (
     <NativeRouter>
       <View style={styles.container}>
         <Home />
-        <View>
-          {" "}
-          <Text>Another hello </Text>
-        </View>
       </View>
     </NativeRouter>
   );
