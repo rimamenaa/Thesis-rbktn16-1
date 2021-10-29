@@ -17,7 +17,7 @@ export default function Login() {
             />
             <TextInput
               style={tw`mt-4 rounded h-10 bg-white `}
-              type="password"
+              secureTextEntry={true}
               placeholder="password"
             />
           </View>
@@ -29,7 +29,7 @@ export default function Login() {
             />
           </View>
           <View style={tw` items-center pt-6 `}>
-            <Text style={tw`  text-gray-500 font-bold text-xs`} >Or sign In with credentials </Text>
+            <Text style={tw`  text-gray-500 font-bold text-xs`} >Or Sign In with credentials </Text>
           </View>
           <View style={tw`border border-white items-center bg-white mt-8 rounded w-4/5 ml-8 h-8`}>
             <View style={tw`flex flex-row`} >
@@ -39,7 +39,7 @@ export default function Login() {
           </View>
           <View style={tw `flex flex-row`}>
  {/* <CheckBox style={tw `mt-6 ml-8`}/> */}
- <Text style={tw `pl-2 pt-6 text-black`}>I Agree With The <Text style={tw `text-yellow-300`}>Privacy Policy</Text></Text>
+ <Text style={tw `pl-8 pt-6 text-black`}>I Agree With The <Text style={tw `text-yellow-300`}>Privacy Policy</Text></Text>
  </View>
         </View>
       </ImageBackground>
