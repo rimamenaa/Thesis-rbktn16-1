@@ -14,6 +14,8 @@ import home from "../../../assets/home.png";
 import rent from "../../../assets/rent.png";
 import menu from "../../../assets/menu.png";
 import close from "../../../assets/close.png";
+import Login from "../login/Login";
+
 export default function Home() {
   const [currentTab, setCurrentTab] = useState("Home");
   const [showMenu, setShowMenu] = useState(false);

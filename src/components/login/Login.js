@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
-import {  ImageBackground,Image,StyleSheet,View,CheckBox, Text, TextInput,Button } from "react-native";
-
+import {  ImageBackground,Image,StyleSheet,View, Text, TextInput,Button } from "react-native";
+import CheckBox from '@react-native-community/checkbox';
 import chevronLeft from '../../../assets/chevronLeft.png';
 import ggl from '../../../assets/ggl.png';
 import tailwind from "tailwind-rn";
@@ -36,11 +36,11 @@ function Login() {
    placeholder="password"
  />
  <View style={tailwind('flex flex-row')}>
- {/* <CheckBox
+ <CheckBox
   style={tailwind('mt-6 ml-6 w-5 h-5')}
    value={isSelected}
    onValueChange={setSelection}  
- /> */}
+ />
  <Text style={tailwind('pl-2 pt-6')}>I Agree With The <Text style={tailwind('text-yellow-300')}>Privacy Policy</Text></Text>
  </View>
   
