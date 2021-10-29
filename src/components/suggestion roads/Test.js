@@ -11,7 +11,7 @@ export default function Navbar({ navigation }) {
         </View>
         <View
           style={tailwind(
-            " min-w-full  bg-blue-300 items-center  rounded-1xl flex "
+            " min-w-full  bg-blue-300 items-center  rounded-2xl flex "
           )}
         >
           <Text
@@ -22,37 +22,22 @@ export default function Navbar({ navigation }) {
           >
             Home page
           </Text>
+
           <Text
             style={tailwind("text-3xl font-semibold py-8 ")}
             onPress={() => {
-              alert("Mazelet ma 7adhretch wallahi la te7chemha");
+              navigation.navigate("Signup");
             }}
           >
-            Rent
+            Signup
           </Text>
           <Text
             style={tailwind("text-3xl font-semibold py-8 ")}
             onPress={() => {
-              alert("ma3neha ma fhemtech rou7ek ? be9i tenzel");
+              navigation.navigate("ContactUs");
             }}
           >
-            Rules
-          </Text>
-          <Text
-            style={tailwind("text-3xl font-semibold py-8 ")}
-            onPress={() => {
-              alert("arrahhhhhh ");
-            }}
-          >
-            Meet the Bikes
-          </Text>
-          <Text
-            style={tailwind("text-3xl font-semibold py-8 ")}
-            onPress={() => {
-              alert("You tapped the Contact Us!");
-            }}
-          >
-            Contact us
+            ContactUs
           </Text>
         </View>
       </View>

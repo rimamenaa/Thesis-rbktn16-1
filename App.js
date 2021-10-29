@@ -3,6 +3,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Commercial from "./src/components/commercial/Commercial";
 import Test from "./src/components/suggestion roads/Test";
+import Signup from "./src/components/signup/Signup";
+import ContactUs from "./src/components/ContactUs/ContactUs";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -11,6 +13,8 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Ye Heni w5aya rani faddit" component={Test} />
         <Stack.Screen name="Commercial" component={Commercial} />
+        <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen name="Contact Us" component={ContactUs} />
       </Stack.Navigator>
     </NavigationContainer>
   );
