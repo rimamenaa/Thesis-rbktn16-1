@@ -9,7 +9,7 @@ export default function App() {
   return (
     <NativeRouter>
       <View>
-        <ContactUs />
+        <Signup />
       </View>
       </NativeRouter>
 
