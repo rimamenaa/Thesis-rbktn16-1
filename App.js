@@ -1,23 +1,26 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import Login from "./src/components/login/Login";
-
+import Home from "./src/components/Homepage/Home";
+import { NativeRouter, Switch, Route } from "react-router-native";
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Let's do it guys ! Yes we Can</Text>
-      <Login />
-      <StatusBar style="auto" />
-    </View>
+    <NativeRouter style={styles.container}>
+      <View>
+        <Text>
+          {" "}
+          <Home />
+        </Text>
+      </View>
+    </NativeRouter>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "#2F3945 ",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
   },
 });
