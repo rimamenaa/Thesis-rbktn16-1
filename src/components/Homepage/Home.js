@@ -9,14 +9,11 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import Login from "../login/Login";
+import Commercial from "../../components/commercial/Commercial";
 import home from "../../../assets/home.png";
-import search from "../../../assets/search.png";
-import notifications from "../../../assets/bell.png";
-import settings from "../../../assets/settings.png";
+import rent from "../../../assets/rent.png";
 import menu from "../../../assets/menu.png";
 import close from "../../../assets/close.png";
-
 export default function Home() {
   const [currentTab, setCurrentTab] = useState("Home");
   const [showMenu, setShowMenu] = useState(false);
@@ -43,9 +40,10 @@ export default function Home() {
 
         <View style={{ flexGrow: 1, marginTop: 50 }}>
           {TabButton(currentTab, setCurrentTab, "Home", home)}
-          {TabButton(currentTab, setCurrentTab, Login, Login)}
-          {TabButton(currentTab, setCurrentTab, "Notifications", notifications)}
-          {TabButton(currentTab, setCurrentTab, "Settings", settings)}
+          {TabButton(currentTab, setCurrentTab, Commercial)}
+          {TabButton(currentTab, setCurrentTab, "rent", rent)}
+          {TabButton(currentTab, setCurrentTab, "Rules")}
+          {TabButton(currentTab, setCurrentTab, "Contact us")}
         </View>
       </View>
 
