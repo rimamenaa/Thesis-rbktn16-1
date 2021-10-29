@@ -35,7 +35,6 @@ export default function Home() {
             color: "#2F3945",
 
             marginTop: 50,
-
           }}
         >
           By-cycle chariketna
@@ -52,7 +51,7 @@ export default function Home() {
       <Animated.View
         style={{
           flexGrow: 1,
-          backgroundColor: "#FFFFFF",
+          // backgroundColor: "#FFFFFF",
           position: "absolute",
           top: 0,
           bottom: 0,
@@ -139,7 +138,7 @@ const TabButton = (currentTab, setCurrentTab, title, image) => {
           flexDirection: "row",
           alignItems: "center",
           paddingVertical: 8,
-          backgroundColor: currentTab == title ? "#FFD600" : "#2F3945",
+          // backgroundColor: currentTab == title ? "#FFD600" : "#2F3945",
           paddingLeft: 13,
           paddingRight: 35,
           borderRadius: 8,
@@ -173,7 +172,7 @@ const TabButton = (currentTab, setCurrentTab, title, image) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#2F3945 ",
+    // backgroundColor: "#2F3945 ",
     alignItems: "flex-start",
     justifyContent: "flex-start",
   },

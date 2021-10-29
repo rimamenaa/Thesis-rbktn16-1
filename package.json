@@ -1,18 +1,27 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "startExpo": "expo start"
   },
   "dependencies": {
-    "expo": "^1.0.0",
+    "expo": "^43.0.0",
+    "expo-cli": "^4.12.10",
+    "expo-location": "~13.0.4",
+    "expo-splash-screen": "~0.13.3",
     "expo-status-bar": "~1.1.0",
+    "expo-updates": "~0.10.5",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-native": "^0.66.1",
+    "react-native": "0.64.2",
+    "react-native-gesture-handler": "~1.10.2",
+    "react-native-maps": "^0.29.3",
+    "react-native-reanimated": "~2.2.0",
+    "react-native-safe-area-context": "3.3.2",
+    "react-native-screens": "~3.8.0",
     "react-native-tailwindcss": "^1.1.11",
     "react-native-web": "0.17.1",
     "react-router-native": "^5.2.1",
@@ -20,8 +29,10 @@
     "tailwindcss": "^2.2.17"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "babel-plugin-module-resolver": "^4.1.0"
   },
   "private": true,
-  "version": "0.0.0"
+  "version": "0.0.0",
+  "name": "Thesis-rbktn16"
 }
