@@ -9,14 +9,13 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import Login from "../login/Login";
+import Commercial from "../../components/commercial/Commercial";
 import home from "../../../assets/home.png";
-import search from "../../../assets/search.png";
-import notifications from "../../../assets/bell.png";
-import settings from "../../../assets/settings.png";
+import rent from "../../../assets/rent.png";
 import menu from "../../../assets/menu.png";
 import close from "../../../assets/close.png";
-
+import Login from "../../components/login/Login";
+import tailwind from "tailwind-rn";
 export default function Home() {
   const [currentTab, setCurrentTab] = useState("Home");
   const [showMenu, setShowMenu] = useState(false);
@@ -26,14 +25,14 @@ export default function Home() {
   const closeButtonOffset = useRef(new Animated.Value(0)).current;
 
   return (
-
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView>
       <View style={{ justifyContent: "flex-start", padding: 15 }}>
         <Text
           style={{
             fontSize: 20,
             fontWeight: "bold",
             color: "#2F3945",
+
             marginTop: 50,
           }}
         >
@@ -42,9 +41,10 @@ export default function Home() {
 
         <View style={{ flexGrow: 1, marginTop: 50 }}>
           {TabButton(currentTab, setCurrentTab, "Home", home)}
-          {TabButton(currentTab, setCurrentTab, Login, Login)}
-          {TabButton(currentTab, setCurrentTab, "Notifications", notifications)}
-          {TabButton(currentTab, setCurrentTab, "Settings", settings)}
+          {TabButton(currentTab, setCurrentTab, Commercial)}
+          {TabButton(currentTab, setCurrentTab, Login)}
+          {TabButton(currentTab, setCurrentTab, "Rules")}
+          {TabButton(currentTab, setCurrentTab, "Contact us")}
         </View>
       </View>
 
@@ -168,12 +168,3 @@ const TabButton = (currentTab, setCurrentTab, title, image) => {
     </TouchableOpacity>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#2F3945 ",
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
-  },
-});
