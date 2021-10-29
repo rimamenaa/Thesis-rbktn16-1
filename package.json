@@ -5,7 +5,6 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "eject": "expo eject"
-    
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.6",
