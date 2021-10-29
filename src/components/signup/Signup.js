@@ -8,25 +8,11 @@ function Signup() {
 
   return (
     <View style={tailwind("flex md:flex-row items-center max-h-screen")}>
+
+      
      <ImageBackground >
 
-       {/* <Text style={tailwind('mt-12 ml-12 font-bold text-white text-base')}>Create An Account</Text>
-       <View style={{flex:1}}>
-           <View style={styles.cardWhite}>
-             <Text style={tw`flex justify-center mt-8 text-gray-400`}>Sign up with</Text>
-
-             <View style={tailwind("flex flex-row")}><Image source={ggl} style={{height:18,width:18,marginTop:30}}></Image><Text style={tailwind("mt-8 pl-2 font-bold")}>GOOGLE</Text></View>
-         
-           <View style={styles.cardGrey}>
-           <Text style={tw`flex justify-center mt-8 text-gray-400`}>Or sign up with credentials</Text>
-
-           <TextInput style={styles.input} type="text" placeholder="Name" keyboardType="numeric" className="mt-12 ml-8"/>
-           </View>
-
-
-           </View>
-           </View> */}
-               
+     
 <View >
 <Text style={tailwind('mt-12 ml-12 font-bold text-gray-600 text-base')}>Create An Account</Text>
 </View> 
