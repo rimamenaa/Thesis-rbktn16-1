@@ -92,12 +92,14 @@ import {
   Center,
   ScrollView,
 } from "native-base";
-import { TextInput } from "react-native";
+
 import { EvilIcons } from "@expo/vector-icons";
 import { Icon, useBreakpointValue, Text, VStack, Heading } from "native-base";
 import { FontAwesome, Foundation, Feather, mail } from "@expo/vector-icons";
 import { View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
+import Loading from "../Loading/Loading";
+
 export const ContactUs = () => {
   const flexDir = useBreakpointValue({
     base: "column",
@@ -107,16 +109,7 @@ export const ContactUs = () => {
     <ScrollView showsVerticalScrollIndicator={false}>
       <VStack py="8" space={8} alignItems="center" justifyContent="center">
         <Heading>Contact us</Heading>
-        {/* <Svg height="50%" width="50%" viewBox="0 0 100 100">
-          <Circle
-            cx="50"
-            cy="50"
-            r="50"
-            stroke="purple"
-            strokeWidth=".5"
-            fill="violet"
-          />
-        </Svg> */}
+
         <View style={{ flexDirection: flexDir }}>
           <VStack
             m="3"
@@ -190,11 +183,14 @@ export const ContactUs = () => {
               textAlign="center"
               _dark={{ color: "coolGray.800" }}
             >
-              Closest Station
+              Our Office
             </Text>
           </VStack>
         </View>
       </VStack>
+      {/* <View>
+        <Loading></Loading>
+      </View> */}
     </ScrollView>
   );
 };
