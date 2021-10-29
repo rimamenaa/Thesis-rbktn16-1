@@ -9,16 +9,22 @@ function Signup() {
   return (
      <ImageBackground source={bgImage} resizeMode="cover" style={styles.image}>
        <Text style={tw`mt-16 text-white ml-12 text-base font-bold`}>Create An Account</Text>
+       <View style={{flex:1}}>
            <View style={styles.cardWhite}>
              <Text style={tw`flex justify-center mt-8 text-gray-400`}>Sign up with</Text>
+
              <View  style={tw``}> 
              <Image source={ggl} style={styles.ggl}></Image>
-               <Text style={tw`flex justify-center text-gray-700 text-xm font-bold`}>GOOGLE</Text>
+               <Text style={tw`flex justify-center text-gray-700 font-bold`}>GOOGLE</Text>
              </View>
-            
-  
+         
            <View style={styles.cardGrey}>
+           <Text style={tw`flex justify-center mt-8 text-gray-400`}>Or sign up with credentials</Text>
+
            <TextInput style={styles.input} type="text" placeholder="Name" keyboardType="numeric" className="mt-12 ml-8"/>
+           </View>
+
+
            </View>
            </View>
      </ImageBackground>
@@ -40,7 +46,7 @@ const styles = StyleSheet.create({
     width: 308,
     height: 46,
     left: 17,
-    top: 237,
+    top: 90,
     borderRadius: 5,
     backgroundColor: "white",
   },
