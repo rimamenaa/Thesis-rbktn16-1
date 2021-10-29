@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Dimensions, Platform, StyleSheet, Text, View } from "react-native";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import * as Location from "expo-location";
-export default class Map extends React.Component {
+export default class Station extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
