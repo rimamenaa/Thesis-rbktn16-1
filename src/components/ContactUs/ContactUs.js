@@ -18,6 +18,24 @@ function ContactUs() {
         <View style={tailwind("flex flex-row")}>
           <Text style={tailwind("font-bold")}>Contact Us</Text>
         </View>
+        <View style={tailwind("flex flex-row")}>
+          <Text style={tailwind("font-bold")}>Feel free to contact us</Text>
+        </View>
+        <View style={tailwind("flex flex-row")}>
+          <Text style={tailwind("font-bold")}>Mail ICON</Text>
+        </View>
+        <View style={tailwind("flex flex-row")}>
+          <Text style={tailwind("font-bold")}>Mail us</Text>
+        </View>
+        <View style={tailwind("flex flex-row")}>
+          <Text style={tailwind("font-bold")}>PHONE ICON</Text>
+        </View>
+        <View style={tailwind("flex flex-row")}>
+          <Text style={tailwind("font-bold")}>Call us</Text>
+        </View>
+        <View style={tailwind("flex flex-row")}>
+          <Text style={tailwind("font-bold")}>+216 11 222 333 </Text>
+        </View>
 
         <View style={("greycard", tailwind("bg-#2F3945 h-96 "))}>
           <TextInput
@@ -40,7 +58,7 @@ function ContactUs() {
           />
           <View style={tailwind("flex flex-row")}>
             <Text style={tailwind("pl-2 pt-6")}>
-              I Agree With The{" "}
+              I Agree With The
               <Text style={tailwind("text-yellow-300")}>Privacy Policy</Text>
             </Text>
           </View>
