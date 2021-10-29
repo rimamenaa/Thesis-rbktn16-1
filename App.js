@@ -9,12 +9,7 @@ export default function App() {
   return (
     <NativeRouter>
       <View>
-        <Text>
-          <Home />
-        </Text>
-        <View>
-          <ContactUs />
-        </View>
+        <ContactUs />
       </View>
     </NativeRouter>
   );
