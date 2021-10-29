@@ -3,7 +3,7 @@ import {  Image,StyleSheet,View,Text,CheckBox, TextInput,Button } from "react-na
 
 import ggl from '../../../assets/ggl.png';
 import tailwind from "tailwind-rn";
-function Signup() {
+function SignIn() {
   return (
     <View style={tailwind("flex md:flex-row items-center ")}>
   <View>
@@ -40,7 +40,7 @@ function Signup() {
      </View>
   )
 }
-export default Signup;
+export default SignIn;
 const styles = StyleSheet.create({
   ggl:{
     width: 14,
