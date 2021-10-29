@@ -51,7 +51,7 @@ export default function Home() {
       <Animated.View
         style={{
           flexGrow: 1,
-          backgroundColor: "#FFFFFF",
+          // backgroundColor: "#FFFFFF",
           position: "absolute",
           top: 0,
           bottom: 0,
@@ -138,7 +138,7 @@ const TabButton = (currentTab, setCurrentTab, title, image) => {
           flexDirection: "row",
           alignItems: "center",
           paddingVertical: 8,
-          backgroundColor: currentTab == title ? "#FFD600" : "#2F3945",
+          // backgroundColor: currentTab == title ? "#FFD600" : "#2F3945",
           paddingLeft: 13,
           paddingRight: 35,
           borderRadius: 8,
@@ -168,3 +168,15 @@ const TabButton = (currentTab, setCurrentTab, title, image) => {
     </TouchableOpacity>
   );
 };
+<<<<<<< HEAD
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    // backgroundColor: "#2F3945 ",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+  },
+});
+=======
+>>>>>>> 5651131f5f0d3baa79e31367d688d8ee9dc2301f

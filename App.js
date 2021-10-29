@@ -1,4 +1,28 @@
 import React from "react";
+<<<<<<< HEAD
+import { StyleSheet, Text, View } from "react-native";
+import Home from "./src/components/Homepage/Home";
+import { NativeRouter, Switch, Route } from "react-router-native";
+import Map from "./src/components/Map/Map";
+export default function App() {
+  return (
+    <NativeRouter>
+      <View style={styles.container}>
+        <Map></Map>
+      </View>
+    </NativeRouter>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    //  backgroundColor: "#484848	",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+  },
+});
+=======
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Commercial from "./src/components/commercial/Commercial";
@@ -19,3 +43,4 @@ export default function App() {
     </NavigationContainer>
   );
 }
+>>>>>>> 5651131f5f0d3baa79e31367d688d8ee9dc2301f
