@@ -16,7 +16,7 @@ import roadrule4 from "../../../assets/roadrule4.png";
 
 function Rules() {
   return (
-    <SafeAreaView style={tailwind("h-full")}>
+    <SafeAreaView style={tailwind("h-full flex-col")}>
       <View style={tailwind(" items-center ")}>
         <Image
           source={roadrule}
