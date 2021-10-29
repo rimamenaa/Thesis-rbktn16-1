@@ -14,8 +14,8 @@ import home from "../../../assets/home.png";
 import rent from "../../../assets/rent.png";
 import menu from "../../../assets/menu.png";
 import close from "../../../assets/close.png";
-import Login from "../login/Login";
-
+import Login from "../../components/login/Login";
+import tailwind from "tailwind-rn";
 export default function Home() {
   const [currentTab, setCurrentTab] = useState("Home");
   const [showMenu, setShowMenu] = useState(false);
@@ -25,7 +25,7 @@ export default function Home() {
   const closeButtonOffset = useRef(new Animated.Value(0)).current;
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView>
       <View style={{ justifyContent: "flex-start", padding: 15 }}>
         <Text
           style={{
@@ -34,7 +34,6 @@ export default function Home() {
             color: "#2F3945",
 
             marginTop: 50,
-
           }}
         >
           By-cycle chariketna
@@ -43,7 +42,7 @@ export default function Home() {
         <View style={{ flexGrow: 1, marginTop: 50 }}>
           {TabButton(currentTab, setCurrentTab, "Home", home)}
           {TabButton(currentTab, setCurrentTab, Commercial)}
-          {TabButton(currentTab, setCurrentTab, "rent", rent)}
+          {TabButton(currentTab, setCurrentTab, Login)}
           {TabButton(currentTab, setCurrentTab, "Rules")}
           {TabButton(currentTab, setCurrentTab, "Contact us")}
         </View>
@@ -52,7 +51,7 @@ export default function Home() {
       <Animated.View
         style={{
           flexGrow: 1,
-          backgroundColor: "#FFFFFF",
+          // backgroundColor: "#FFFFFF",
           position: "absolute",
           top: 0,
           bottom: 0,
@@ -139,7 +138,7 @@ const TabButton = (currentTab, setCurrentTab, title, image) => {
           flexDirection: "row",
           alignItems: "center",
           paddingVertical: 8,
-          backgroundColor: currentTab == title ? "#FFD600" : "#2F3945",
+          // backgroundColor: currentTab == title ? "#FFD600" : "#2F3945",
           paddingLeft: 13,
           paddingRight: 35,
           borderRadius: 8,
@@ -170,10 +169,11 @@ const TabButton = (currentTab, setCurrentTab, title, image) => {
   );
 };
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
+    // backgroundColor: "#2F3945 ",
     alignItems: "flex-start",
     justifyContent: "flex-start",
   },
