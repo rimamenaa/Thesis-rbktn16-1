@@ -7,6 +7,7 @@ import tailwind from "tailwind-rn";
 function Signup() {
 
   return (
+    
     <View style={tailwind("flex md:flex-row items-center max-h-screen")}>
 
       
@@ -16,7 +17,7 @@ function Signup() {
 <View >
 <Text style={tailwind('mt-12 ml-12 font-bold text-gray-600 text-base')}>Create An Account</Text>
 </View> 
-<View style={tailwind('bg-white mt-8 items-center w-80')}>
+<View style={tailwind('bg-white pl-12 mt-8 items-center w-80')}>
 
  <View style={tailwind("flex flex-row")}><Image source={ggl} style={{height:18,width:18,marginTop:30}}></Image><Text style={tailwind("mt-8 pl-2 font-bold")}>GOOGLE</Text></View>
  
