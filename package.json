@@ -9,12 +9,14 @@
   "dependencies": {
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
+    "antd": "^4.16.13",
     "expo": "^43.0.0",
     "expo-cli": "^4.12.10",
     "expo-location": "~13.0.4",
     "expo-splash-screen": "~0.13.3",
     "expo-status-bar": "~1.1.0",
     "expo-updates": "~0.10.5",
+    "native-base": "^3.2.1-rc.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "^0.66.1",
@@ -23,7 +25,11 @@
     "react-native-reanimated": "~2.2.0",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.8.0",
+    "react-native-svg": "^12.1.1",
+    "react-native-vector-icons": "^9.0.0",
     "react-native-web": "0.17.1",
+    "styled-components": "^5.3.3",
+    "styled-system": "^5.1.5",
     "tailwind-rn": "^3.0.1"
   },
   "devDependencies": {

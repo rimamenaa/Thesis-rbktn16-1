@@ -11,7 +11,7 @@ import {
 import ggl from "../../../assets/google.png";
 import tailwind from "tailwind-rn";
 
-function Signup() {
+const Signup = () => {
   return (
     <View style={tailwind("flex md:flex-row items-center max-h-screen")}>
       <View>
@@ -57,11 +57,6 @@ function Signup() {
             placeholder="password"
           />
           <View style={tailwind("flex flex-row")}>
-            {/* <CheckBox
-  style={tailwind('mt-6 ml-6 w-5 h-5')}
-   value={isSelected}
-   onValueChange={setSelection}
- /> */}
             <Text style={tailwind("pl-2 pt-6")}>
               I Agree With The{" "}
               <Text style={tailwind("text-yellow-300")}>Privacy Policy</Text>
@@ -82,5 +77,5 @@ function Signup() {
       </View>
     </View>
   );
-}
+};
 export default Signup;

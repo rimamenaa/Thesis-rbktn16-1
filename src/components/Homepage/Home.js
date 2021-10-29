@@ -16,7 +16,8 @@ import menu from "../../../assets/menu.png";
 import close from "../../../assets/close.png";
 import Login from "../../components/login/Login";
 import tailwind from "tailwind-rn";
-export default function Home() {
+
+const Home = () => {
   const [currentTab, setCurrentTab] = useState("Home");
   const [showMenu, setShowMenu] = useState(false);
 
@@ -121,7 +122,7 @@ export default function Home() {
       </Animated.View>
     </SafeAreaView>
   );
-}
+};
 
 const TabButton = (currentTab, setCurrentTab, title, image) => {
   return (
@@ -168,15 +169,5 @@ const TabButton = (currentTab, setCurrentTab, title, image) => {
     </TouchableOpacity>
   );
 };
-<<<<<<< HEAD
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    // backgroundColor: "#2F3945 ",
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
-  },
-});
-=======
->>>>>>> 5651131f5f0d3baa79e31367d688d8ee9dc2301f
+export default Home;

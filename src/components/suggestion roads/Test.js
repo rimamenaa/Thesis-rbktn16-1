@@ -2,7 +2,7 @@ import React from "react";
 import { SafeAreaView, Text, View } from "react-native";
 import tailwind from "tailwind-rn";
 
-export default function Navbar({ navigation }) {
+const Navbar = ({ navigation }) => {
   return (
     <SafeAreaView style={tailwind("h-full")}>
       <View style={tailwind(" pt-12 items-center ")}>
@@ -50,4 +50,5 @@ export default function Navbar({ navigation }) {
       </View>
     </SafeAreaView>
   );
-}
+};
+export default Navbar;

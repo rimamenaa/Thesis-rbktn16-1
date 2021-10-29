@@ -16,7 +16,7 @@ import tailwind from "tailwind-rn";
 // const image = {
 //   uri: "https://media.discordapp.net/attachments/902219842738856050/903297989571907585/1_8.png?width=308&height=669",
 // };
-function Login() {
+const Login = () => {
   return (
     <View style={tailwind("flex md:flex-row items-center max-h-screen")}>
       {/* style={styles.image, {width:375}} */}
@@ -26,7 +26,7 @@ function Login() {
             Sign In
           </Text>
         </View>
-        <View style={tailwind("bg-white mt-24 items-center w-80")}>
+        <View style={tailwind("bg-white mt-24 items-center w-10")}>
           <View style={tailwind("flex flex-row")}>
             <Image
               source={ggl}
@@ -68,7 +68,7 @@ function Login() {
       </ImageBackground>
     </View>
   );
-}
+};
 
 // const styles = StyleSheet.create({
 //   container: {
