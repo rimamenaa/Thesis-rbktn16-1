@@ -1,39 +1,57 @@
-import React from "react";
-import {  ImageBackground,Image,StyleSheet,View, Text, TextInput,Button } from "react-native";
+
+import React, { useState } from "react";
+import {  ImageBackground,Image,StyleSheet,View,CheckBox, Text, TextInput,Button } from "react-native";
 import chevronLeft from '../../../assets/chevronLeft.png';
 import ggl from '../../../assets/ggl.png';
+import tailwind from "tailwind-rn";
 
 const image = { uri: "https://media.discordapp.net/attachments/902219842738856050/903297989571907585/1_8.png?width=308&height=669" };
 function Login() {
+  const [isSelected, setSelection] = useState(false);
   return (
-    <View style={styles.container}>
-    <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-     <View>
-     <Text style={styles.signin}>Sign In</Text>
-    <Image source={chevronLeft}></Image></View> 
-    <View style={styles.card}>
-    
-      <View><Image source={ggl} style={styles.ggl}></Image><Text style={styles.gogl}>GOOGLE</Text></View>
-      <View style={styles.cardgrey}></View>
-    <TextInput
-        style={styles.input}
-        type="text"
-        placeholder="email"
-        keyboardType="numeric"
-        className="mt-12"
-      />
-      <TextInput
-        style={styles.input1}
-        type="password"
-        placeholder="password"
-      />
-      <Button
-        style={styles.btn}
-        title="Learn More"
-      />
-    </View>
+    <View style={tailwind("flex md:flex-row items-center")}>
+<ImageBackground source={image} resizeMode="cover" style={{height:812,flex:1}}></ImageBackground> 
+     
+<View >
+<Text style={tailwind('mt-12 ml-12 font-bold text-white text-base')}>Sign In</Text>
+</View> 
+<View style={tailwind('bg-white mt-24 items-center w-80')}>
 
-    </ImageBackground>
+ <View style={tailwind("flex flex-row")}><Image source={ggl} style={{height:18,width:18,marginTop:30}}></Image><Text style={tailwind("mt-8 pl-2 font-bold")}>GOOGLE</Text></View>
+ 
+ <View style={'greycard', tailwind("bg-gray-100 h-96 mt-24")}>
+<TextInput
+   style={tailwind("mt-24 h-10 w-80 ml-3 bg-white")}
+   type="text"
+   placeholder="email"
+   keyboardType="numeric"
+   className="mt-12"
+ />
+ <TextInput
+   style={tailwind('mt-6 h-10 w-80 ml-3 bg-white')}
+   type="password"
+   placeholder="password"
+ />
+ <View style={tailwind('flex flex-row')}>
+ <CheckBox
+  style={tailwind('mt-6 ml-6 w-5 h-5')}
+   value={isSelected}
+   onValueChange={setSelection}  
+ />
+ <Text style={tailwind('pl-2 pt-6')}>I Agree With The <Text style={tailwind('text-yellow-300')}>Privacy Policy</Text></Text>
+ </View>
+  
+ <View style={{width:167, marginTop:70, marginLeft:87}}>
+<Button 
+   title="Sign In"
+   color="#191b11" 
+ />
+ </View>
+</View>
+
+ </View>
+
+   
   </View>
   );
 }
@@ -83,10 +101,10 @@ const styles = StyleSheet.create({
     top: 299,
   },
   ggl:{
-    marginLeft:130,
+    marginLeft:120,
     marginTop: 32,
-    width: 20,
-    height: 20,
+    width: 18,
+    height: 18,
   },
   gogl:{
     marginLeft:160,
@@ -100,10 +118,8 @@ const styles = StyleSheet.create({
     left: 0,
     marginTop: 120, 
   },
-  btn:{
-    marginTop:400,
-  }
 
 });
 
 export default Login
+

@@ -143,6 +143,7 @@ module.exports = {
         ...theme('colors'),
         default: theme('colors.gray.300', 'currentColor'),
       }),
+      
       borderRadius: {
         none: '0',
         sm: '0.125rem',
