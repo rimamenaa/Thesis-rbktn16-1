@@ -14,7 +14,7 @@ export default function App() {
         <Stack.Screen name="Ye Heni w5aya rani faddit" component={Test} />
         <Stack.Screen name="Commercial" component={Commercial} />
         <Stack.Screen name="Signup" component={Signup} />
-        <Stack.Screen name="Contact Us" component={ContactUs} />
+        <Stack.Screen name="ContactUs" component={ContactUs} />
       </Stack.Navigator>
     </NavigationContainer>
   );
