@@ -173,7 +173,7 @@ const TabButton = (currentTab, setCurrentTab, title, image) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#2F3945 ",
+    backgroundColor: "white",
     alignItems: "flex-start",
     justifyContent: "flex-start",
   },
