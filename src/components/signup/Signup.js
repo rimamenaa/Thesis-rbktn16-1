@@ -8,7 +8,7 @@ function Signup() {
 
   return (
     
-    <View style={tailwind("flex md:flex-row items-center max-h-screen")}>
+    <View style={tailwind("flex md:flex-row items-center")}>
 
       
      <ImageBackground >
@@ -57,7 +57,7 @@ function Signup() {
  <Text style={tailwind('pl-2 pt-6')}>I Agree With The <Text style={tailwind('text-yellow-300')}>Privacy Policy</Text></Text>
  </View>
   
- <View style={{width:167, marginTop:70, marginBottom:50, marginLeft:87}}>
+ <View style={{width:167, marginTop:80, marginBottom:50, marginLeft:87}}>
 <Button 
    title="Sign Up"
    color="#191b11" 
