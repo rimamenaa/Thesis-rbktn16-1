@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
 import {  ImageBackground,Image,StyleSheet,View,CheckBox, Text, TextInput,Button } from "react-native";
+
 import chevronLeft from '../../../assets/chevronLeft.png';
 import ggl from '../../../assets/ggl.png';
 import tailwind from "tailwind-rn";
@@ -9,10 +10,10 @@ const image = { uri: "https://media.discordapp.net/attachments/90221984273885605
 function Login() {
   const [isSelected, setSelection] = useState(false);
   return (
-    <View style={tailwind("flex md:flex-row items-center")}>
+    <View style={tailwind("flex md:flex-row items-center max-h-screen")}>
       
       {/* style={styles.image, {width:375}} */}
-<ImageBackground source={image} resizeMode="cover" style={{height:812,flex:1,width:"auto"}} >
+<ImageBackground >
      
 <View >
 <Text style={tailwind('mt-12 ml-12 font-bold text-white text-base')}>Sign In</Text>
@@ -35,11 +36,11 @@ function Login() {
    placeholder="password"
  />
  <View style={tailwind('flex flex-row')}>
- <CheckBox
+ {/* <CheckBox
   style={tailwind('mt-6 ml-6 w-5 h-5')}
    value={isSelected}
    onValueChange={setSelection}  
- />
+ /> */}
  <Text style={tailwind('pl-2 pt-6')}>I Agree With The <Text style={tailwind('text-yellow-300')}>Privacy Policy</Text></Text>
  </View>
   

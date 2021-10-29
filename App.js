@@ -8,7 +8,7 @@ export default function App() {
   return (
     <NativeRouter>
       <View>
-       <Login/>
+       
       </View>
     </NativeRouter>
   );
