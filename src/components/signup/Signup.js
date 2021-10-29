@@ -7,6 +7,7 @@ import {
   StyleSheet,
   View,
   Text,
+  CheckBox
 } from "react-native";
 import ggl from "../../../assets/google.png";
 import tailwind from "tailwind-rn";
@@ -57,11 +58,7 @@ function Signup() {
             placeholder="password"
           />
           <View style={tailwind("flex flex-row")}>
-            {/* <CheckBox
-  style={tailwind('mt-6 ml-6 w-5 h-5')}
-   value={isSelected}
-   onValueChange={setSelection}
- /> */}
+          {/* <CheckBox style={tailwind ('mt-6 ml-2')}/> */}
             <Text style={tailwind("pl-2 pt-6")}>
               I Agree With The{" "}
               <Text style={tailwind("text-yellow-300")}>Privacy Policy</Text>
