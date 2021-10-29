@@ -29,7 +29,7 @@ function ContactUs() {
             </Text>
           </View>
           <View style={tailwind("flex flex-row")}>
-            <Text style={tailwind("font-bold text-white")}>Mail ICON</Text>
+            <Text style={tailwind("font-bold text-white")}>Mail icon</Text>
           </View>
           <View style={tailwind("flex flex-row")}>
             <Text style={tailwind("font-bold text-white")}>
