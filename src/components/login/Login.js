@@ -13,13 +13,9 @@ import {
 import ggl from "../../../assets/ggl.png";
 import tailwind from "tailwind-rn";
 
-// const image = {
-//   uri: "https://media.discordapp.net/attachments/902219842738856050/903297989571907585/1_8.png?width=308&height=669",
-// };
 function Login() {
   return (
     <View style={tailwind("flex md:flex-row items-center max-h-screen")}>
-      {/* style={styles.image, {width:375}} */}
       <ImageBackground>
         <View>
           <Text style={tailwind("mt-12 ml-12 font-bold text-white text-base")}>
@@ -49,11 +45,6 @@ function Login() {
               placeholder="password"
             />
             <View style={tailwind("flex flex-row")}>
-              {/* <CheckBox
-  style={tailwind('mt-6 ml-6 w-5 h-5')}
-   value={isSelected}
-   onValueChange={setSelection}  
- /> */}
               <Text style={tailwind("pl-2 pt-6")}>
                 I Agree With The{" "}
                 <Text style={tailwind("text-yellow-300")}>Privacy Policy</Text>
@@ -69,11 +60,5 @@ function Login() {
     </View>
   );
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//   },
-// });
 
 export default Login;
