@@ -10,7 +10,9 @@ function Login() {
   const [isSelected, setSelection] = useState(false);
   return (
     <View style={tailwind("flex md:flex-row items-center")}>
-<ImageBackground source={image} resizeMode="cover" style={{height:812,flex:1}}></ImageBackground> 
+      
+      {/* style={styles.image, {width:375}} */}
+<ImageBackground source={image} resizeMode="cover" style={{height:812,flex:1,width:"auto"}} >
      
 <View >
 <Text style={tailwind('mt-12 ml-12 font-bold text-white text-base')}>Sign In</Text>
@@ -51,7 +53,7 @@ function Login() {
 
  </View>
 
-   
+ </ImageBackground> 
   </View>
   );
 }
@@ -61,64 +63,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  image: {
-    flex: 1,
-    justifyContent: "center",
-    height: 812
-  },
-  card:{
-    backgroundColor:"white",
-    position: "absolute",
-    width: 342,
-    height: 513,
-    left: 0,
-    top: 35,
-    marginTop: 168,
-    marginLeft: 18
-  },
-  text: {
-    color: "white",
-    marginTop: 20,
-    fontSize: 42,
-    lineHeight: 84,
-
-    fontWeight: "bold",
-    textAlign: "center",
-    backgroundColor: "#FFFFFF"
-  },
-  input: {
-    position: "absolute",
-    width: 308,
-    height: 46,
-    left: 17,
-    top: 237,
-  },
-  input1: {
-    position: "absolute",
-    width: 308,
-    height: 46,
-    left: 17,
-    top: 299,
-  },
-  ggl:{
-    marginLeft:120,
-    marginTop: 32,
-    width: 18,
-    height: 18,
-  },
-  gogl:{
-    marginLeft:160,
-    fontWeight: "bold"
-  },
-  cardgrey:{
-    backgroundColor:"#F4F5F7",
-    position: "absolute",
-    width: 342,
-    height: 400,
-    left: 0,
-    marginTop: 120, 
-  },
-
 });
 
 export default Login
