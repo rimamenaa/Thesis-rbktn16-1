@@ -5,6 +5,7 @@ import Commercial from "./src/components/commercial/Commercial";
 import Test from "./src/components/suggestion roads/Test";
 import Signup from "./src/components/signup/Signup";
 import ContactUs from "./src/components/ContactUs/ContactUs";
+import Station from "./src/components/Map/Station";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
         <Stack.Screen name="Commercial" component={Commercial} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="ContactUs" component={ContactUs} />
+        <Stack.Screen name="Station" component={Station} />
       </Stack.Navigator>
     </NavigationContainer>
   );

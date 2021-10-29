@@ -22,7 +22,14 @@ export default function Navbar({ navigation }) {
           >
             Home page
           </Text>
-
+          <Text
+            style={tailwind("text-3xl font-semibold py-8 ")}
+            onPress={() => {
+              navigation.navigate("Station");
+            }}
+          >
+            Station
+          </Text>
           <Text
             style={tailwind("text-3xl font-semibold py-8 ")}
             onPress={() => {
