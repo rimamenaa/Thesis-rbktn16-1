@@ -16,7 +16,11 @@ export default function Login() {
         style={tw`w-full h-full`}
         source={require("../../../assets/back.png")}
       >
+<<<<<<< HEAD
         <View style={tw`h-3/5 mt-44 w-11/12 ml-4 bg-gray-100 rounded`}>
+=======
+        <View style={tw`h-96 mt-44 w-11/12 ml-4 bg-gray-100 rounded`}>
+>>>>>>> 99e1e351e312127ab168737763f6ca90514b54a0
           <View style={tw` mt-16 w-4/5 ml-8 flex `}>
             <TextInput
               style={tw` h-10 rounded bg-white`}
@@ -36,7 +40,11 @@ export default function Login() {
           </View>
           <View style={tw` items-center pt-6 `}>
             <Text style={tw`  text-gray-500 font-bold text-xs`}>
+<<<<<<< HEAD
               Or sign In with credentials{" "}
+=======
+              Or Sign In with credentials{" "}
+>>>>>>> 99e1e351e312127ab168737763f6ca90514b54a0
             </Text>
           </View>
           <View
@@ -52,7 +60,11 @@ export default function Login() {
           </View>
           <View style={tw`flex flex-row`}>
             {/* <CheckBox style={tw `mt-6 ml-8`}/> */}
+<<<<<<< HEAD
             <Text style={tw`pl-2 pt-6 text-black`}>
+=======
+            <Text style={tw`pl-8 pt-3 text-black`}>
+>>>>>>> 99e1e351e312127ab168737763f6ca90514b54a0
               I Agree With The{" "}
               <Text style={tw`text-yellow-300`}>Privacy Policy</Text>
             </Text>
