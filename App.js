@@ -1,25 +1,27 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native-tailwind";
-import Home from "./src/components/Homepage/Home";
-import { NativeRouter, Switch, Route } from "react-router-native";
-import Login from "./src/components/login/Login";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Commercial from "./src/components/commercial/Commercial";
+import HomePage from "./src/components/HomePage/HomePage";
+import Signup from "./src/components/signup/Signup";
 import ContactUs from "./src/components/ContactUs/ContactUs";
+import Station from "./src/components/Map/Station";
+import Login from "./src/components/login/Login";
+import Rules from "./src/components/rules/Rules";
+const Stack = createNativeStackNavigator();
+
 export default function App() {
   return (
-    <NativeRouter>
-      <View>
-        <ContactUs />
-      </View>
-    </NativeRouter>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomePage} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen name="Commercial" component={Commercial} />
+        <Stack.Screen name="Rules" component={Rules} />
+        <Stack.Screen name="Station" component={Station} />
+        <Stack.Screen name="ContactUs" component={ContactUs} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: "#2F3945 ",
-//     alignItems: "center",
-//     justifyContent: "center",
-//   },
-// });
