@@ -14,12 +14,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="App" component={HomePage} />
+        <Stack.Screen name="Home" component={HomePage} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Commercial" component={Commercial} />
         <Stack.Screen name="Rules" component={Rules} />
         <Stack.Screen name="Station" component={Station} />
-        <Stack.Screen name="Signup" component={Signup} />
-        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="ContactUs" component={ContactUs} />
       </Stack.Navigator>
     </NavigationContainer>
