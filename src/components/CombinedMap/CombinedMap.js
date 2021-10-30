@@ -8,14 +8,12 @@ import {
   SafeAreaView,
 } from "react-native";
 import Station from "../Map/Station";
-import Rating from "../Rating/Rating";
 import Search from "../Search/Search";
 function CombinedMap() {
   return (
     <React.Fragment>
       <Station />
       <Search />
-      <Rating />
     </React.Fragment>
   );
 }

@@ -27,16 +27,11 @@ function Rules() {
               height: 300,
             }}
           />
-<<<<<<< HEAD
-
-          <Text style={tailwind(" text-1xl  items-center font-semibold py-8 ")}>
-=======
           <Text style={tailwind(" text-yellow-500 text-2xl font-bold")}>
             {" "}
             Ride With Traffic
           </Text>
           <Text style={tailwind(" text-1xl font-semibold py-8 pl-8 pr-8 ")}>
->>>>>>> 99e1e351e312127ab168737763f6ca90514b54a0
             Don’t text and ride! Pull over if you have to send a message or talk
             on the phone. It's also not a good idea to weave in and out of cars.
             Being aware and predictable reduces the chance of a crash.
@@ -45,13 +40,6 @@ function Rules() {
           <Image
             source={roadrule2}
             style={{
-<<<<<<< HEAD
-              width: 220,
-              height: 300,
-            }}
-          />
-          <Text style={tailwind(" text-1xl  items-center font-semibold py-8 ")}>
-=======
               width: 290,
               height: 180,
             }}
@@ -61,7 +49,6 @@ function Rules() {
             Obey Traffic Signals
           </Text>
           <Text style={tailwind(" text-1xl font-semibold py-8 pl-8 pr-8 ")}>
->>>>>>> 99e1e351e312127ab168737763f6ca90514b54a0
             Bicyclists must yield the right of way to pedestrians at crosswalks
             and intersections. Use your bell to alert pedestrians of your
             presence when necessary.
@@ -70,13 +57,6 @@ function Rules() {
           <Image
             source={roadrule3}
             style={{
-<<<<<<< HEAD
-              width: 280,
-              height: 300,
-            }}
-          />
-          <Text style={tailwind(" text-1xl  items-center font-semibold py-8 ")}>
-=======
               width: 270,
               height: 220,
             }}
@@ -86,7 +66,6 @@ function Rules() {
             Yield To Pedestrians
           </Text>
           <Text style={tailwind(" text-1xl font-semibold py-8 pl-8 pr-8 ")}>
->>>>>>> 99e1e351e312127ab168737763f6ca90514b54a0
             Obey all traffic signals and signs, such as stopping at red lights
             and stop signs.
           </Text>
@@ -94,13 +73,6 @@ function Rules() {
           <Image
             source={roadrule4}
             style={{
-<<<<<<< HEAD
-              width: 280,
-              height: 300,
-            }}
-          />
-          <Text style={tailwind(" text-1xl  items-center font-semibold py-8 ")}>
-=======
               width: 260,
               height: 240,
             }}
@@ -110,7 +82,6 @@ function Rules() {
             Don't Ride Distracted
           </Text>
           <Text style={tailwind(" text-1xl font-semibold py-8 pl-8 pr-8 ")}>
->>>>>>> 99e1e351e312127ab168737763f6ca90514b54a0
             Bicyclists are required by law to ride in the same direction as
             motorists, except in signed and marked contraflow lanes. Be alert
             and look out for car doors opening – it's best to stay at least 3-4
