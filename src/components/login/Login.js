@@ -16,7 +16,14 @@ export default function Login() {
         style={tw`w-full h-full`}
         source={require("../../../assets/back.png")}
       >
-        <View style={tw`h-96 mt-44 w-11/12 ml-4 bg-gray-100 rounded`}>
+         <View>
+        <Text
+          style={tw `mt-12 items-center ml-28 font-bold text-white text-base`}
+        >
+          Sign In To Your Account
+        </Text>
+      </View>
+        <View style={tw`h-96 mt-24 w-11/12 ml-4 bg-gray-100 rounded`}>
           <View style={tw` mt-16 w-4/5 ml-8 flex `}>
             <TextInput
               style={tw` h-10 rounded bg-white`}
@@ -35,7 +42,9 @@ export default function Login() {
             <Button title="Sign In" color="#2F2C2C" />
           </View>
           <View style={tw` items-center pt-6 `}>
-            <Text style={tw`  text-gray-500 font-bold text-xs`} >Or Sign In with credentials </Text>
+            <Text style={tw`  text-gray-500 font-bold text-xs`}>
+              Or Sign In with credentials{" "}
+            </Text>
           </View>
           <View
             style={tw`border border-white items-center bg-white mt-8 rounded w-4/5 ml-8 h-8`}
@@ -48,10 +57,13 @@ export default function Login() {
               <Text style={tw`mt-1 pl-6 font-bold text-black`}>GOOGLE</Text>
             </View>
           </View>
-          <View style={tw `flex flex-row`}>
- {/* <CheckBox style={tw `mt-6 ml-8`}/> */}
- <Text style={tw `pl-8 pt-3 text-black`}>I Agree With The <Text style={tw `text-yellow-300`}>Privacy Policy</Text></Text>
- </View>
+          <View style={tw`flex flex-row`}>
+            {/* <CheckBox style={tw `mt-6 ml-8`}/> */}
+            <Text style={tw`pl-8 pt-3 text-black`}>
+              I Agree With The{" "}
+              <Text style={tw`text-yellow-300`}>Privacy Policy</Text>
+            </Text>
+          </View>
         </View>
       </ImageBackground>
     </View>

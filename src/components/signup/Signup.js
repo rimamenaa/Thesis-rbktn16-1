@@ -1,27 +1,23 @@
 import React from 'react';
 import { View, Image, Text, TextInput, Button, StyleSheet,CheckBox, ImageBackground } from 'react-native';
 import tw from 'tailwind-react-native-classnames';
-
-export default function Login() {
+export default function Signup() {
   return (
     <View style={tw`w-full h-full`}>
-       
       <ImageBackground style={tw`w-full h-full`} source={require("../../../assets/back.png")}>
       <View>
         <Text
-          style={tw `mt-12 items-center ml-28 font-bold text-gray-700 text-base`}
+          style={tw `mt-12 items-center ml-28 font-bold text-white text-base`}
         >
           Create An Account
         </Text>
       </View>
         <View style={tw`h-3/5 mt-24 w-11/12 ml-4 bg-gray-100 rounded`}>
-          
           <View style={tw` mt-4 w-4/5 ml-8 flex `}>
           <TextInput
               style={tw` h-10 rounded bg-white`}
               type="text"
               placeholder="name"
-              
             />
             <TextInput
               style={tw` h-10 mt-4 rounded bg-white`}
@@ -39,7 +35,6 @@ export default function Login() {
               placeholder="password"
             />
           </View>
-         
           <View style={tw`pt-4 w-4/5 ml-8`}>
             <Button
               title="Sign Up"
