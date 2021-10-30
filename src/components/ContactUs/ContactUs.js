@@ -91,6 +91,8 @@ import {
   NativeBaseProvider,
   Center,
   ScrollView,
+  TouchableOpacity,
+  TouchableHighlight,
 } from "native-base";
 
 import { EvilIcons } from "@expo/vector-icons";
@@ -105,6 +107,7 @@ export const ContactUs = () => {
     base: "column",
     lg: "row",
   });
+
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <VStack py="8" space={8} alignItems="center" justifyContent="center">
@@ -112,6 +115,9 @@ export const ContactUs = () => {
 
         <View style={{ flexDirection: flexDir }}>
           <VStack
+            onPress={() => {
+              alert("You tapped the button!");
+            }}
             m="3"
             w="140"
             borderRadius="xl"
@@ -127,11 +133,13 @@ export const ContactUs = () => {
               size="sm"
               textAlign="center"
               _dark={{ color: "coolGray.800" }}
+              onPress={() => alert("Call us on +216 22 111 333")}
             />
             <Text
               fontSize="lg"
               textAlign="center"
               _dark={{ color: "coolGray.800" }}
+              onPress={() => alert("Call us on +216 22 111 333")}
             >
               By Phone
             </Text>
@@ -152,11 +160,13 @@ export const ContactUs = () => {
               size="sm"
               textAlign="center"
               _dark={{ color: "coolGray.800" }}
+              onPress={() => alert("Send us a mail")}
             />
             <Text
               fontSize="lg"
               textAlign="center"
               _dark={{ color: "coolGray.800" }}
+              onPress={() => alert("Send us a mail")}
             >
               By Mail
             </Text>
@@ -170,8 +180,10 @@ export const ContactUs = () => {
             space={2}
             alignItems="center"
             justifyContent="center"
+            onPress={() => alert("Visit us ")}
           >
             <Icon
+              onPress={() => alert("Visit us ")}
               as={<EvilIcons name="location" size={24} color="black" />}
               name="clock"
               size="sm"
@@ -179,6 +191,7 @@ export const ContactUs = () => {
               _dark={{ color: "coolGray.800" }}
             />
             <Text
+              onPress={() => alert("heyyy")}
               fontSize="lg"
               textAlign="center"
               _dark={{ color: "coolGray.800" }}
