@@ -1,15 +1,6 @@
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import {
-  ImageBackground,
-  Image,
-  View,
-  Text,
-  TextInput,
-  Button,
-  StyleSheet,
-} from "react-native";
+
+import { View, Text, TextInput, Button } from "react-native";
 
 import tailwind from "tailwind-rn";
 
@@ -86,11 +77,4 @@ function ContactUs() {
     </>
   );
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//   },
-// });
-
 export default ContactUs;
