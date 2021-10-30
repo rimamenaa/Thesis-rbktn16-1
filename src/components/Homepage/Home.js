@@ -168,15 +168,3 @@ const TabButton = (currentTab, setCurrentTab, title, image) => {
     </TouchableOpacity>
   );
 };
-<<<<<<< HEAD
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    // backgroundColor: "#2F3945 ",
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
-  },
-});
-=======
->>>>>>> 5651131f5f0d3baa79e31367d688d8ee9dc2301f
