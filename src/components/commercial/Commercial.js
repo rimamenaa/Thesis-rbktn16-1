@@ -17,10 +17,9 @@ function Commercial() {
       <Image
         source={commercial}
         style={{
-          width: 170,
-          height: 240,
-          marginTop: 40,
-          marginLeft: 50,
+          width: 420,
+          height: 440,
+          marginTop: 50,
         }}
       ></Image>
     </View>

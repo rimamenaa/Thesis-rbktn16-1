@@ -1,26 +1,23 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native-tailwind";
-import Home from "./src/components/Homepage/Home";
-import { NativeRouter, Switch, Route } from "react-router-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Commercial from "./src/components/commercial/Commercial";
+import Test from "./src/components/suggestion roads/Test";
 import Signup from "./src/components/signup/Signup";
-import Login from "./src/components/login/Login";
 import ContactUs from "./src/components/ContactUs/ContactUs";
+import Station from "./src/components/Map/Station";
+const Stack = createNativeStackNavigator();
+
 export default function App() {
   return (
-    <NativeRouter>
-      <View>
-        <Signup />
-      </View>
-      </NativeRouter>
-
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Ye Heni w5aya rani faddit" component={Test} />
+        <Stack.Screen name="Commercial" component={Commercial} />
+        <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen name="ContactUs" component={ContactUs} />
+        <Stack.Screen name="Station" component={Station} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: "#2F3945 ",
-//     alignItems: "center",
-//     justifyContent: "center",
-//   },
-// });
