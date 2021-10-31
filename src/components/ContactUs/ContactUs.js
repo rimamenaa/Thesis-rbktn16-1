@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   Factory,
@@ -49,7 +48,7 @@ export const ContactUs = () => {
               textAlign="center"
               _dark={{ color: "coolGray.800" }}
             >
-              By Phone
+              Via Phone
             </Text>
           </VStack>
           <VStack
@@ -74,7 +73,7 @@ export const ContactUs = () => {
               textAlign="center"
               _dark={{ color: "coolGray.800" }}
             >
-              By Mail
+              Via Mail
             </Text>
           </VStack>
           <VStack
