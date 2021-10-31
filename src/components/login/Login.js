@@ -199,7 +199,18 @@ export function SignInForm({ props }) {
               </HStack>
             </VStack>
             
-            <Button style={{width:325,backgroundColor:"#1C1C1C"}}><Text style={{color:"white",fontWeight:"500"}}><Image style={{height:12,width:12}}
+            <Button  mt="5"
+                size="md"
+                borderRadius="4"
+                _text={{
+                  fontWeight: "medium",
+                }}
+                _light={{
+                  bg: "gray.200",
+                }}
+                _dark={{
+                  bg: "primary.700",
+                }}><Text style={{color:"black",fontWeight:"500"}}><Image style={{height:12,width:12}}
             source={require("../../../assets/ggl.png")}
             alt="image"
           />GOOGLE</Text></Button>
@@ -255,6 +266,7 @@ export function SignInForm({ props }) {
     </KeyboardAwareScrollView>
   );
 }
+
 export default function SignIn(props) {
   return (
     <>
@@ -274,14 +286,16 @@ export default function SignIn(props) {
       />
       <Center
         my="auto"
-        _dark={{
-          bg: "coolGray.900",
-        }}
-        _light={{
-          bg: "primary.900",
-        }}
         flex="1"
       >
+         {/* <Image
+         resizeMode={"contain"}
+      source={{
+        uri: "https://media.discordapp.net/attachments/902219842738856050/903297989571907585/1_8.png?width=308&height=669",
+      }}
+      alt="Alternate Text"
+      style={{width: 347, height: 812}}
+    /> */}
         <Stack
           flexDirection={{
             base: "column",
@@ -298,24 +312,7 @@ export default function SignIn(props) {
         >
           <Hidden from="md">
             <VStack px="4" mt="4" mb="5" space="9">
-              <HStack space="2" alignItems="center">
-                <IconButton
-                  variant="unstyled"
-                  pl="0"
-                  onPress={() => {}}
-                  icon={
-                    <Icon
-                      size="6"
-                      as={AntDesign}
-                      name="arrowleft"
-                      color="coolGray.50"
-                    />
-                  }
-                />
-                <Text color="coolGray.50" fontSize="lg">
-                  Sign In
-                </Text>
-              </HStack>
+             
               <VStack space="2">
                 <Text fontSize="3xl" fontWeight="bold" color="coolGray.50">
                   Welcome back,

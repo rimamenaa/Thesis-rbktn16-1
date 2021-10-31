@@ -78,14 +78,6 @@ export default function HomePage({ navigation }) {
             >
               TestBase
             </Text>
-            <Text
-              style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
-              onPress={() => {
-                navigation.navigate("Login");
-              }}
-            >
-              Login
-            </Text>
           </View>
         </View>
       </ScrollView>
