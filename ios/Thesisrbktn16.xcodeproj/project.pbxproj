@@ -15,6 +15,8 @@
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 		AE0712052E054F31AFABC64F /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BE9F1C89C34256AE8A9057 /* noop-file.swift */; };
+		5F32BD1C1AEC4FA8825BA6D6 /* antfill.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BAE0D06230141E4A58D3B4F /* antfill.ttf */; };
+		8BE16C56FEDC477DA2DA9E43 /* antoutline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3735CF28CA154342ACB24FBB /* antoutline.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-Thesisrbktn16/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		55BE9F1C89C34256AE8A9057 /* noop-file.swift */ = {isa = PBXFileReference; name = "noop-file.swift"; path = "Thesisrbktn16/noop-file.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
 		E1C37ACB1E0242A8AFB11D89 /* Thesisrbktn16-Bridging-Header.h */ = {isa = PBXFileReference; name = "Thesisrbktn16-Bridging-Header.h"; path = "Thesisrbktn16/Thesisrbktn16-Bridging-Header.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		5BAE0D06230141E4A58D3B4F /* antfill.ttf */ = {isa = PBXFileReference; name = "antfill.ttf"; path = "../node_modules/@ant-design/icons-react-native/fonts/antfill.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3735CF28CA154342ACB24FBB /* antoutline.ttf */ = {isa = PBXFileReference; name = "antoutline.ttf"; path = "../node_modules/@ant-design/icons-react-native/fonts/antoutline.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D65327D7A22EEC0BE12398D9 /* Pods */,
 				D7E4C46ADA2E9064B798F356 /* ExpoModulesProviders */,
+				419EABBBABC044ECAD8324F3 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -137,6 +142,16 @@
 			);
 			name = ExpoModulesProviders;
 			sourceTree = "<group>";
+		};
+		419EABBBABC044ECAD8324F3 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				5BAE0D06230141E4A58D3B4F /* antfill.ttf */,
+				3735CF28CA154342ACB24FBB /* antoutline.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -202,6 +217,8 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
 				0BDB4E660DCE4FAC8CA6ADEA /* Thesisrbktn16-Bridging-Header.h in Resources */,
+				5F32BD1C1AEC4FA8825BA6D6 /* antfill.ttf in Resources */,
+				8BE16C56FEDC477DA2DA9E43 /* antoutline.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
