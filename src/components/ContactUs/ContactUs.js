@@ -14,12 +14,18 @@ import { FontAwesome, Foundation, Feather, mail } from "@expo/vector-icons";
 import { View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import Loading from "../Loading/Loading";
+import call from "react-native-phone-call";
 
+const args = {
+  number: "+21622111222",
+  prompt: false,
+};
 export const ContactUs = () => {
   const flexDir = useBreakpointValue({
     base: "column",
     lg: "row",
   });
+
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <VStack py="8" space={8} alignItems="center" justifyContent="center">
@@ -47,6 +53,7 @@ export const ContactUs = () => {
               fontSize="lg"
               textAlign="center"
               _dark={{ color: "coolGray.800" }}
+              onPress={() => call(args).catch(console.error)}
             >
               Via Phone
             </Text>
