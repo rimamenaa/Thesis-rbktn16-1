@@ -2,7 +2,7 @@ import React from "react";
 import { SafeAreaView, Text, View, ScrollView } from "react-native";
 import tailwind from "tailwind-rn";
 
-export default function HomePage({ navigation }) {
+function HomePage({ navigation }) {
   return (
     <SafeAreaView style={tailwind("h-full")}>
       <ScrollView>
@@ -12,6 +12,14 @@ export default function HomePage({ navigation }) {
               " min-w-full bg-gray-600  items-center  rounded-2xl flex "
             )}
           >
+             <Text
+              style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
+              onPress={() => {
+                navigation.navigate("LandingPage");
+              }}
+            >
+              Landing Page
+            </Text>
             <Text
               style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
               onPress={() => {
@@ -84,3 +92,6 @@ export default function HomePage({ navigation }) {
     </SafeAreaView>
   );
 }
+
+
+export default HomePage
