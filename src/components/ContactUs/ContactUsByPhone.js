@@ -1,7 +1,13 @@
 import React from "react";
 import { NativeBaseProvider, Center } from "native-base";
 
-import { Icon, useBreakpointValue, Text, VStack, Pressable } from "native-base";
+import {
+  Icon,
+  useBreakpointValue,
+  Text,
+  Linking,
+  Pressable,
+} from "native-base";
 import { View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import call from "react-native-phone-call";
