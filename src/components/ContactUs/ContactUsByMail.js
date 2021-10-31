@@ -1,13 +1,7 @@
 import React from "react";
 import { NativeBaseProvider, Center, ScrollView } from "native-base";
 
-import {
-  Icon,
-  useBreakpointValue,
-  Text,
-  Pressable,
-  Heading,
-} from "native-base";
+import { Icon, useBreakpointValue, Text, Pressable } from "native-base";
 import { View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
