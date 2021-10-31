@@ -8,6 +8,8 @@ import ContactUs from "./src/components/ContactUs/ContactUs";
 import Station from "./src/components/Map/Station";
 import Login from "./src/components/login/Login";
 import Rules from "./src/components/rules/Rules";
+import Test from "./src/components/test/Test";
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -21,6 +23,8 @@ export default function App() {
         <Stack.Screen name="Rules" component={Rules} />
         <Stack.Screen name="Station" component={Station} />
         <Stack.Screen name="ContactUs" component={ContactUs} />
+        <Stack.Screen name="Test" component={Test} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

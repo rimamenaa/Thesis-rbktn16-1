@@ -63,6 +63,14 @@ export default function HomePage({ navigation }) {
             >
               ContactUs
             </Text>
+            <Text
+              style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
+              onPress={() => {
+                navigation.navigate("Test");
+              }}
+            >
+              test
+            </Text>
           </View>
         </View>
       </ScrollView>
