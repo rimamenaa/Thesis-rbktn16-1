@@ -54,7 +54,14 @@ export default function HomePage({ navigation }) {
             >
               Station
             </Text>
-
+            <Text
+              style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
+              onPress={() => {
+                navigation.navigate("Reviews");
+              }}
+            >
+              Reviews
+            </Text>
             <Text
               style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
               onPress={() => {
@@ -62,6 +69,14 @@ export default function HomePage({ navigation }) {
               }}
             >
               ContactUs
+            </Text>
+            <Text
+              style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
+              onPress={() => {
+                navigation.navigate("TestBase");
+              }}
+            >
+              TestBase
             </Text>
           </View>
         </View>
