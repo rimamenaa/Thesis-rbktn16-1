@@ -1,8 +1,8 @@
 import React from "react";
-import { NativeBaseProvider, Center, ScrollView } from "native-base";
+import { NativeBaseProvider, Center } from "native-base";
 
 import { EvilIcons } from "@expo/vector-icons";
-import { Icon, useBreakpointValue, Text, VStack, Heading } from "native-base";
+import { Icon, useBreakpointValue, Text, VStack } from "native-base";
 import { View } from "react-native";
 
 export const FindUs = () => {

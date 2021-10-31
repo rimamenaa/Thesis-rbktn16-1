@@ -1,7 +1,13 @@
 import React from "react";
 import { NativeBaseProvider, Center, ScrollView } from "native-base";
 
-import { Icon, useBreakpointValue, Text, VStack, Heading } from "native-base";
+import {
+  Icon,
+  useBreakpointValue,
+  Text,
+  Pressable,
+  Heading,
+} from "native-base";
 import { View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
@@ -13,7 +19,7 @@ export const ByMail = () => {
 
   return (
     <View style={{ flexDirection: flexDir }}>
-      <VStack
+      <Pressable
         m="3"
         w="140"
         borderRadius="xl"
@@ -37,7 +43,7 @@ export const ByMail = () => {
         >
           Via Mail
         </Text>
-      </VStack>
+      </Pressable>
     </View>
   );
 };

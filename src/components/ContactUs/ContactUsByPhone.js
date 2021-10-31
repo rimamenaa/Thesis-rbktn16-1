@@ -1,7 +1,7 @@
 import React from "react";
-import { NativeBaseProvider, Center, ScrollView } from "native-base";
+import { NativeBaseProvider, Center } from "native-base";
 
-import { Icon, useBreakpointValue, Text, VStack } from "native-base";
+import { Icon, useBreakpointValue, Text, VStack, Pressable } from "native-base";
 import { View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import call from "react-native-phone-call";
@@ -18,7 +18,7 @@ export const ByPhone = () => {
 
   return (
     <View style={{ flexDirection: flexDir }}>
-      <VStack
+      <Pressable
         m="3"
         w="140"
         borderRadius="xl"
@@ -27,6 +27,7 @@ export const ByPhone = () => {
         space={2}
         alignItems="center"
         justifyContent="center"
+        onPress={() => call(args).catch(console.error)}
       >
         <Icon
           as={<AntDesign name="phone" size={24} color="black" />}
@@ -39,11 +40,10 @@ export const ByPhone = () => {
           fontSize="lg"
           textAlign="center"
           _dark={{ color: "coolGray.800" }}
-          onPress={() => call(args).catch(console.error)}
         >
           Via Phone
         </Text>
-      </VStack>
+      </Pressable>
     </View>
   );
 };
