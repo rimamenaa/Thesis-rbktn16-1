@@ -2274,10 +2274,10 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/segmented-control/-/segmented-control-2.2.2.tgz#4014256819ab8f40f6bc3a3929ff14a9d149cf04"
   integrity sha512-14+4HnGVrg3USqMzcHCPCqPmPmaEj0ogQH4pHRFXjoVvJokzidXBcYyXl5yrwFcKGW6zTXI6Fx9Qgt4ydtS6tw==
 
-"@react-native-community/slider@^4.1.10":
-  version "4.1.10"
-  resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-4.1.10.tgz#4f004376a70530e3f067a07f2af535fdd80e72fa"
-  integrity sha512-+LJ/NyYyZl0jNGltFJDOeyjqCtf8ylClF8HGHCzKa8K7+MPlAPW82Fp28spBNs4EXBuq5Qi1O20iGNoMF8ZfAw==
+"@react-native-community/slider@4.1.7":
+  version "4.1.7"
+  resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-4.1.7.tgz#b2c4e9547dcdcbcf3d0a0cda8545abcfdc089859"
+  integrity sha512-zVcxi3chX/Je/3lo8jI/83VpY6DL2h+JWNV8sg6rkxjRTau/8DfM/e98RymH0ujejBkuYX342IKNnxOHRK6KbQ==
   dependencies:
     flow-bin "0.113.0"
 
@@ -11280,10 +11280,10 @@ react-native-modal-popover@^2.0.1:
     lodash "^4.17.21"
     prop-types "^15.7.2"
 
-react-native-pager-view@^5.4.8:
-  version "5.4.8"
-  resolved "https://registry.yarnpkg.com/react-native-pager-view/-/react-native-pager-view-5.4.8.tgz#c0872989e3fa9ef05d5d8cf408e42fc1d3fbbd7c"
-  integrity sha512-Zfsdirwu4LIKtPMAFgt5ctE/Yg9QKG3k2pom0mDyLbUXQD/O0/yeK36JBJjsMEd/z0JJ4PsrHZ+BcGyzNVgUaQ==
+react-native-pager-view@5.4.6:
+  version "5.4.6"
+  resolved "https://registry.yarnpkg.com/react-native-pager-view/-/react-native-pager-view-5.4.6.tgz#21d16b67136301875da1355dc9d442a4aafab1c7"
+  integrity sha512-yZiG65xlOeC8LOCNF0N8Cdc+MDQGWJnOpsmlHAndWXQhuVPjj4/KnS556BeTddcQ2EqJu/DjL7o8j0hpB+nkVg==
 
 react-native-phone-call@^1.0.9:
   version "1.0.9"

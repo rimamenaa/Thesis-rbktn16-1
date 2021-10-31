@@ -2,7 +2,13 @@ import React from "react";
 import { NativeBaseProvider, Center } from "native-base";
 
 import { EvilIcons } from "@expo/vector-icons";
-import { Icon, useBreakpointValue, Text, VStack } from "native-base";
+import {
+  Icon,
+  useBreakpointValue,
+  Text,
+  Pressable,
+  Linking,
+} from "native-base";
 import { View } from "react-native";
 
 export const FindUs = () => {
@@ -13,7 +19,7 @@ export const FindUs = () => {
 
   return (
     <View style={{ flexDirection: flexDir }}>
-      <VStack
+      <Pressable
         m="3"
         w="140"
         borderRadius="xl"
@@ -37,7 +43,7 @@ export const FindUs = () => {
         >
           Our Office
         </Text>
-      </VStack>
+      </Pressable>
     </View>
   );
 };
