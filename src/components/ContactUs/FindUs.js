@@ -12,37 +12,33 @@ export const FindUs = () => {
   });
 
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-      <VStack py="8" space={8} alignItems="center" justifyContent="center">
-        <View style={{ flexDirection: flexDir }}>
-          <VStack
-            m="3"
-            w="140"
-            borderRadius="xl"
-            p="3"
-            bg="amber.400"
-            space={2}
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Icon
-              as={<EvilIcons name="location" size={24} color="black" />}
-              name="clock"
-              size="sm"
-              textAlign="center"
-              _dark={{ color: "coolGray.800" }}
-            />
-            <Text
-              fontSize="lg"
-              textAlign="center"
-              _dark={{ color: "coolGray.800" }}
-            >
-              Our Office
-            </Text>
-          </VStack>
-        </View>
+    <View style={{ flexDirection: flexDir }}>
+      <VStack
+        m="3"
+        w="140"
+        borderRadius="xl"
+        p="3"
+        bg="amber.400"
+        space={2}
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Icon
+          as={<EvilIcons name="location" size={24} color="black" />}
+          name="clock"
+          size="sm"
+          textAlign="center"
+          _dark={{ color: "coolGray.800" }}
+        />
+        <Text
+          fontSize="lg"
+          textAlign="center"
+          _dark={{ color: "coolGray.800" }}
+        >
+          Our Office
+        </Text>
       </VStack>
-    </ScrollView>
+    </View>
   );
 };
 
