@@ -78,6 +78,7 @@ export default function HomePage({ navigation }) {
             >
               TestBase
             </Text>
+            *{" "}
           </View>
         </View>
       </ScrollView>

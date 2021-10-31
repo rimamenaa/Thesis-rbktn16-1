@@ -9,7 +9,7 @@ import Station from "./src/components/Map/Station";
 import Login from "./src/components/login/Login";
 import Rules from "./src/components/rules/Rules";
 import TestBase from "./src/components/TestNativeBase/TestBase";
-
+import Test from "./src/components/suggestion roads/Test"
 import { NativeBaseProvider, extendTheme, theme as nbTheme } from "native-base";
 import Reviews from "./src/components/ReviewsUser/Reviews";
 
@@ -34,6 +34,7 @@ export default function App() {
           <Stack.Screen name="ContactUs" component={ContactUs} />
           <Stack.Screen name="TestBase" component={TestBase} />
           <Stack.Screen name="Reviews" component={Reviews} />
+
 
         </Stack.Navigator>
       </NavigationContainer>
