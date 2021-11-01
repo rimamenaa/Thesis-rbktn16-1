@@ -24,12 +24,12 @@ export const ContactUs = () => {
         <View style={{ flexDirection: flexDir }}>
           <ByPhone></ByPhone>
           <ByMail></ByMail>
+          <FindUs></FindUs>
         </View>
         {/* <TermsAndConditions></TermsAndConditions> */}
-        <FindUs></FindUs>
-        <MonthlySub></MonthlySub>
+        {/* <MonthlySub></MonthlySub>
         <AdventurePass></AdventurePass>
-        <SingleTrip></SingleTrip>
+        <SingleTrip></SingleTrip> */}
         <AdventurePassDetails></AdventurePassDetails>
       </VStack>
     </ScrollView>
