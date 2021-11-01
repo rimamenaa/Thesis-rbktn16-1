@@ -47,7 +47,7 @@ function AdventurePassDetails() {
         </AspectRatio>
       </Box>
       <Stack p="4" space={6}>
-        <Text fontWeight="500" fontWeight="400">
+        <Text fontWeight="500" fontWeight="400" marginTop="8">
           For just 25TD, you'll get 24 hours of access to By-Cycle and you can
           keep a bike out for up to 2 hours at a time. If you're enjoying a long
           ride and want to keep a bike out longer than 2 hours at a time, it's
@@ -61,13 +61,13 @@ function AdventurePassDetails() {
         <Stack space={2}>
           <Text
             fontSize="xs"
-            _light={{ color: "violet.500" }}
-            _dark={{ color: "violet.300" }}
+            _light={{ color: "amber.500" }}
+            _dark={{ color: "amber.300" }}
             fontWeight="500"
             ml="-0.5"
             mt="-1"
           >
-            Buy a pass
+            Get one
           </Text>
         </Stack>
       </Stack>
