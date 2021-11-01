@@ -7,6 +7,10 @@ import FindUs from "./FindUs";
 import { ByMail } from "./ContactUsByMail";
 import { ByPhone } from "./ContactUsByPhone";
 import { TermsAndConditions } from "../random/TermsAndConditions";
+import MonthlySub from "../Renting/MonthlySub/MonthlySub";
+import AdventurePass from "../Renting/AdventurePass/AdventurePass";
+import SingleTrip from "../Renting/SingleTrip/SingleTrip";
+import AdventurePassDetails from "../Renting/AdventurePass/AdventurePassDetails";
 
 export const ContactUs = () => {
   const flexDir = useBreakpointValue({
@@ -23,6 +27,10 @@ export const ContactUs = () => {
         </View>
         {/* <TermsAndConditions></TermsAndConditions> */}
         <FindUs></FindUs>
+        <MonthlySub></MonthlySub>
+        <AdventurePass></AdventurePass>
+        <SingleTrip></SingleTrip>
+        <AdventurePassDetails></AdventurePassDetails>
       </VStack>
     </ScrollView>
   );
