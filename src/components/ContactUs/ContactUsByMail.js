@@ -1,8 +1,14 @@
 import React from "react";
-import { NativeBaseProvider, Center, ScrollView } from "native-base";
-
-import { Icon, useBreakpointValue, Text, Pressable } from "native-base";
-import { View } from "react-native";
+import {
+  Icon,
+  useBreakpointValue,
+  Text,
+  Pressable,
+  NativeBaseProvider,
+  Center,
+  ScrollView,
+} from "native-base";
+import { View, Linking, Platform } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
 export const ByMail = () => {
@@ -22,6 +28,9 @@ export const ByMail = () => {
         space={2}
         alignItems="center"
         justifyContent="center"
+        onPress={() => {
+          Linking.openURL("mailto:bycycletn@gmail.com");
+        }}
       >
         <Icon
           as={<AntDesign name="mail" size={24} color="black" />}
