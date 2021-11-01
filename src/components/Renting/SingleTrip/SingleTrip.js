@@ -1,8 +1,6 @@
 import React from "react";
 import {
-  Box,
   Heading,
-  Icon,
   AspectRatio,
   Image,
   Text,
@@ -17,7 +15,6 @@ import { Button } from "react-native";
 function MonthlySub() {
   return (
     <Pressable
-      onPress={() => console.log("hey")}
       rounded="lg"
       overflow="hidden"
       width="72"
