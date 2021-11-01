@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView,View,Text, ScrollView } from "react-native";
+import { SafeAreaView, Text, View, ScrollView } from "react-native";
 import tailwind from "tailwind-rn";
 
 function HomePage({ navigation }) {
@@ -61,20 +61,9 @@ function HomePage({ navigation }) {
           >
             TestBase
           </Text>
-          <Text
-            style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
-            onPress={() => {
-              navigation.navigate("LandingPage");
-            }}
-          >
-            Logout
-          </Text>
         </View>
-
       </ScrollView>
-     
     </SafeAreaView>
-    
   );
 }
 

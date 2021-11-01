@@ -50,7 +50,7 @@ export default function Signup({ navigation }) {
           <View style={tw`pt-4 w-4/5 ml-8`}>
             <Button
               onPress={() => {
-                navigation.navigate("Home");
+                navigation.navigate("Login");
               }}
               title="Sign Up"
               color="#2F2C2C"

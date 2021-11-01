@@ -13,7 +13,6 @@ import { NativeBaseProvider, extendTheme, theme as nbTheme } from "native-base";
 import Reviews from "./src/components/ReviewsUser/Reviews";
 import LandingPage from "./src/components/LandingPage/LandingPage";
 
-
 const theme = extendTheme({
   colors: {
     primary: nbTheme.colors.gray,
@@ -42,4 +41,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
