@@ -68,7 +68,7 @@ function HomePage({ navigation }) {
               navigation.navigate("LandingPage");
             }}
           >
-            Disconnect
+            Logout
           </Text>
         </View>
       </ScrollView>
