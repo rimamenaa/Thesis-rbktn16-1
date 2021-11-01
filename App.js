@@ -26,8 +26,8 @@ function App() {
     <NativeBaseProvider theme={theme}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomePage} />
           <Stack.Screen name="LandingPage" component={LandingPage} />
+          <Stack.Screen name="Home" component={HomePage} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="Commercial" component={Commercial} />
@@ -36,8 +36,6 @@ function App() {
           <Stack.Screen name="ContactUs" component={ContactUs} />
           <Stack.Screen name="TestBase" component={TestBase} />
           <Stack.Screen name="Reviews" component={Reviews} />
-
-
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>

@@ -10,7 +10,7 @@ import {
   ImageBackground,
 } from "react-native";
 import tw from "tailwind-react-native-classnames";
-export default function Signup() {
+export default function Signup({ navigation }) {
   return (
     <View style={tw`w-full h-full`}>
       <ImageBackground
@@ -48,7 +48,13 @@ export default function Signup() {
             />
           </View>
           <View style={tw`pt-4 w-4/5 ml-8`}>
-            <Button title="Sign Up" color="#2F2C2C" />
+            <Button
+              onPress={() => {
+                navigation.navigate("Home");
+              }}
+              title="Sign Up"
+              color="#2F2C2C"
+            />
           </View>
           <View style={tw` items-center pt-6 `}>
             <Text style={tw`  text-gray-500 font-bold text-xs`}>
