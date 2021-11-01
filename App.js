@@ -33,8 +33,6 @@ export default function App() {
           <Stack.Screen name="ContactUs" component={ContactUs} />
           <Stack.Screen name="TestBase" component={TestBase} />
           <Stack.Screen name="Reviews" component={Reviews} />
-
-
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
