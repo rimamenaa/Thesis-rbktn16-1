@@ -31,7 +31,12 @@ export default function LandingPage({ navigation }) {
             />
           </View>
 
-          <Text style={tw`pl-28 pt-3 text-yellow-400 text-semibold`}>
+          <Text
+            style={tw`pl-28 pt-3 text-yellow-400 text-semibold`}
+            onPress={() => {
+              navigation.navigate("Login");
+            }}
+          >
             Already Have an Account?
           </Text>
 

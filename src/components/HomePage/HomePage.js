@@ -11,22 +11,6 @@ function HomePage({ navigation }) {
             " min-w-full bg-gray-600  items-center  rounded-2xl flex "
           )}
         >
-          {/* <Text
-            style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
-            onPress={() => {
-              navigation.navigate("Login");
-            }}
-          >
-            Login
-          </Text> */}
-          {/* <Text
-            style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
-            onPress={() => {
-              navigation.navigate("Signup");
-            }}
-          >
-            Signup
-          </Text> */}
           <Text
             style={tailwind(
               " text-4xl  text-yellow-400 items-center font-bold py-8 "
@@ -37,16 +21,7 @@ function HomePage({ navigation }) {
           >
             Home page
           </Text>
-          {/* <Text
-            style={tailwind(
-              " text-4xl  text-yellow-400 items-center font-bold py-8 "
-            )}
-            onPress={() => {
-              navigation.navigate("LandingPage");
-            }}
-          >
-            Landing Page
-          </Text> */}
+
           <Text
             style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
             onPress={() => {
@@ -86,6 +61,14 @@ function HomePage({ navigation }) {
             }}
           >
             TestBase
+          </Text>
+          <Text
+            style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
+            onPress={() => {
+              navigation.navigate("LandingPage");
+            }}
+          >
+            Disconnect
           </Text>
         </View>
       </ScrollView>
