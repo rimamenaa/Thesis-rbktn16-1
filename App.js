@@ -9,11 +9,10 @@ import Station from "./src/components/Map/Station";
 import Login from "./src/components/login/Login";
 import Rules from "./src/components/rules/Rules";
 import TestBase from "./src/components/TestNativeBase/TestBase";
-import LandingPage from "./src/components/LandingPage/LandingPage";
-
-
 import { NativeBaseProvider, extendTheme, theme as nbTheme } from "native-base";
 import Reviews from "./src/components/ReviewsUser/Reviews";
+import LandingPage from "./src/components/LandingPage/LandingPage";
+
 
 const theme = extendTheme({
   colors: {
@@ -28,7 +27,7 @@ function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomePage} />
-        <Stack.Screen name="LandingPage" component={LandingPage} />
+          <Stack.Screen name="LandingPage" component={LandingPage} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="Commercial" component={Commercial} />
@@ -37,7 +36,8 @@ function App() {
           <Stack.Screen name="ContactUs" component={ContactUs} />
           <Stack.Screen name="TestBase" component={TestBase} />
           <Stack.Screen name="Reviews" component={Reviews} />
-          
+
+
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
