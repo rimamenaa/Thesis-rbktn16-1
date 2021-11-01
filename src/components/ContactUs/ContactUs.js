@@ -6,6 +6,7 @@ import { View } from "react-native";
 import FindUs from "./FindUs";
 import { ByMail } from "./ContactUsByMail";
 import { ByPhone } from "./ContactUsByPhone";
+import { TermsAndConditions } from "../random/TermsAndConditions";
 
 export const ContactUs = () => {
   const flexDir = useBreakpointValue({
@@ -19,8 +20,9 @@ export const ContactUs = () => {
         <View style={{ flexDirection: flexDir }}>
           <ByPhone></ByPhone>
           <ByMail></ByMail>
-          <FindUs></FindUs>
         </View>
+        {/* <TermsAndConditions></TermsAndConditions> */}
+        <FindUs></FindUs>
       </VStack>
     </ScrollView>
   );
