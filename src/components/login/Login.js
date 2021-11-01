@@ -1,79 +1,64 @@
 import React from "react";
 import {
-  ImageBackground,
-  Image,
-  StyleSheet,
   View,
-  CheckBox,
+  Image,
   Text,
   TextInput,
   Button,
+  ImageBackground,
 } from "react-native";
+import tw from "tailwind-react-native-classnames";
 
-import ggl from "../../../assets/ggl.png";
-import tailwind from "tailwind-rn";
-
-// const image = {
-//   uri: "https://media.discordapp.net/attachments/902219842738856050/903297989571907585/1_8.png?width=308&height=669",
-// };
-function Login() {
+export default function Login() {
   return (
-    <View style={tailwind("flex md:flex-row items-center max-h-screen")}>
-      {/* style={styles.image, {width:375}} */}
-      <ImageBackground>
-        <View>
-          <Text style={tailwind("mt-12 ml-12 font-bold text-white text-base")}>
-            Sign In
-          </Text>
-        </View>
-        <View style={tailwind("bg-white mt-24 items-center w-80")}>
-          <View style={tailwind("flex flex-row")}>
-            <Image
-              source={ggl}
-              style={{ height: 18, width: 18, marginTop: 30 }}
-            ></Image>
-            <Text style={tailwind("mt-8 pl-2 font-bold")}>GOOGLE</Text>
-          </View>
-
-          <View style={("greycard", tailwind("bg-gray-100 h-96 mt-24"))}>
+    <View style={tw`w-full h-full`}>
+      <ImageBackground
+        style={tw`w-full h-full`}
+        source={require("../../../assets/back.png")}
+      >
+        <View style={tw`h-96 mt-44 w-11/12 ml-4 bg-gray-100 rounded`}>
+          <View style={tw` mt-16 w-4/5 ml-8 flex `}>
             <TextInput
-              style={tailwind("mt-24 h-10 w-80 ml-3 bg-white")}
+              style={tw` h-10 rounded bg-white`}
               type="text"
-              placeholder="email"
+              placeholder="username"
               keyboardType="numeric"
-              className="mt-12"
             />
             <TextInput
-              style={tailwind("mt-6 h-10 w-80 ml-3 bg-white")}
+              style={tw`mt-4 rounded h-10 bg-white `}
               type="password"
               placeholder="password"
             />
-            <View style={tailwind("flex flex-row")}>
-              {/* <CheckBox
-  style={tailwind('mt-6 ml-6 w-5 h-5')}
-   value={isSelected}
-   onValueChange={setSelection}  
- /> */}
-              <Text style={tailwind("pl-2 pt-6")}>
-                I Agree With The{" "}
-                <Text style={tailwind("text-yellow-300")}>Privacy Policy</Text>
-              </Text>
-            </View>
+          </View>
 
-            <View style={{ width: 167, marginTop: 70, marginLeft: 87 }}>
-              <Button title="Sign In" color="#191b11" />
+          <View style={tw`pt-4 w-4/5 ml-8`}>
+            <Button title="Sign In" color="#2F2C2C" />
+          </View>
+          <View style={tw` items-center pt-6 `}>
+            <Text style={tw`  text-gray-500 font-bold text-xs`}>
+              Or Sign In with credentials{" "}
+            </Text>
+          </View>
+          <View
+            style={tw`border border-white items-center bg-white mt-8 rounded w-4/5 ml-8 h-8`}
+          >
+            <View style={tw`flex flex-row`}>
+              <Image
+                style={tw`mt-1.5 w-4 pl-2 h-4`}
+                source={require("../../../assets/ggl.png")}
+              />
+              <Text style={tw`mt-1 pl-6 font-bold text-black`}>GOOGLE</Text>
             </View>
+          </View>
+          <View style={tw`flex flex-row`}>
+            {/* <CheckBox style={tw `mt-6 ml-8`}/> */}
+            <Text style={tw`pl-8 pt-3 text-black`}>
+              I Agree With The{" "}
+              <Text style={tw`text-yellow-300`}>Privacy Policy</Text>
+            </Text>
           </View>
         </View>
       </ImageBackground>
     </View>
   );
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//   },
-// });
-
-export default Login;
