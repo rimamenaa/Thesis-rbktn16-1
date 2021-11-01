@@ -16,14 +16,11 @@ import {
   Box,
   FormControl,
   Input,
-  Image
- 
- 
+  Image,
 } from "native-base";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Entypo from "react-native-vector-icons/Entypo";
 import tw from "tailwind-react-native-classnames";
-
 
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
@@ -79,60 +76,65 @@ export function SignInForm({ props }) {
                   base: "7",
                   md: "4",
                 }}
-              >
-               
-              </VStack>
-             
+              ></VStack>
+
               {/* Opening Link Tag navigateTo:"OTP" (react/Router) */}
               <FormControl>
-            <FormControl.Label
-              _text={{
-                color: 'coolGray.800',
-                fontSize: 'xs',
-                fontWeight: 500,
-              }}>
-              Email ID
-            </FormControl.Label>
-            <Input />
-          </FormControl>
-          <FormControl>
-            <FormControl.Label
-              _text={{
-                color: 'coolGray.800',
-                fontSize: 'xs',
-                fontWeight: 500,
-              }}>
-              Password
-            </FormControl.Label>
-            <Input type="password" />
-            <Link
-              _text={{ fontSize: 'xs', fontWeight: '500', color: 'yellow.500' }}
-              alignSelf="flex-end"
-              mt="1">
-              Forget Password?
-            </Link>
-            <Checkbox
-                alignItems="flex-start"
-                mt="5"
-                isChecked
-                value="demo"
-                colorScheme="primary"
-                accessibilityLabel="Remember me"
-              >
-                <Text
-                  pl="3"
-                  fontWeight="normal"
-                  _light={{
+                <FormControl.Label
+                  _text={{
                     color: "coolGray.800",
-                  }}
-                  _dark={{
-                    color: "coolGray.400",
+                    fontSize: "xs",
+                    fontWeight: 500,
                   }}
                 >
-                  Remember me and keep me logged in
-                </Text>
-              </Checkbox>
-          </FormControl>
+                  Email ID
+                </FormControl.Label>
+                <Input />
+              </FormControl>
+              <FormControl>
+                <FormControl.Label
+                  _text={{
+                    color: "coolGray.800",
+                    fontSize: "xs",
+                    fontWeight: 500,
+                  }}
+                >
+                  Password
+                </FormControl.Label>
+                <Input type="password" />
+                <Link
+                  _text={{
+                    fontSize: "xs",
+                    fontWeight: "500",
+                    color: "yellow.500",
+                  }}
+                  alignSelf="flex-end"
+                  mt="1"
+                >
+                  Forget Password?
+                </Link>
+                <Checkbox
+                  alignItems="flex-start"
+                  mt="5"
+                  isChecked
+                  value="demo"
+                  colorScheme="primary"
+                  accessibilityLabel="Remember me"
+                >
+                  <Text
+                    pl="3"
+                    fontWeight="normal"
+                    _light={{
+                      color: "coolGray.800",
+                    }}
+                    _dark={{
+                      color: "coolGray.400",
+                    }}
+                  >
+                    Remember me and keep me logged in
+                  </Text>
+                </Checkbox>
+              </FormControl>
               <Button
                 mt="5"
                 size="md"
@@ -147,7 +149,7 @@ export function SignInForm({ props }) {
                   bg: "primary.700",
                 }}
                 onPress={() => {
-                  props.navigation.navigate("OTP");
+                  props.navigation.navigate("Home");
                 }}
               >
                 SIGN IN
@@ -184,8 +186,6 @@ export function SignInForm({ props }) {
                   or
                 </Text>
 
-              
-
                 <Divider
                   w="30%"
                   _light={{
@@ -195,26 +195,32 @@ export function SignInForm({ props }) {
                     bg: "coolGray.700",
                   }}
                 ></Divider>
-                
               </HStack>
             </VStack>
-            
-            <Button  mt="5"
-                size="md"
-                borderRadius="4"
-                _text={{
-                  fontWeight: "medium",
-                }}
-                _light={{
-                  bg: "gray.200",
-                }}
-                _dark={{
-                  bg: "primary.700",
-                }}><Text style={{color:"black",fontWeight:"500"}}><Image style={{height:12,width:12}}
-            source={require("../../../assets/ggl.png")}
-            alt="image"
-          />GOOGLE</Text></Button>
-    
+
+            <Button
+              mt="5"
+              size="md"
+              borderRadius="4"
+              _text={{
+                fontWeight: "medium",
+              }}
+              _light={{
+                bg: "gray.200",
+              }}
+              _dark={{
+                bg: "primary.700",
+              }}
+            >
+              <Text style={{ color: "black", fontWeight: "500" }}>
+                <Image
+                  style={{ height: 12, width: 12 }}
+                  source={require("../../../assets/ggl.png")}
+                  alt="image"
+                />
+                GOOGLE
+              </Text>
+            </Button>
           </VStack>
         </VStack>
         <HStack
@@ -255,10 +261,10 @@ export function SignInForm({ props }) {
               },
             }}
             onPress={() => {
-              props.navigation.navigate("SignUp");
+              props.navigation.navigate("Signup");
             }}
           >
-            Sign up
+            Sign Up
           </Link>
           {/* Closing Link Tag */}
         </HStack>
@@ -284,11 +290,8 @@ export default function SignIn(props) {
           bg: "coolGray.900",
         }}
       />
-      <Center
-        my="auto"
-        flex="1"
-      >
-         {/* <Image
+      <Center my="auto" flex="1">
+        {/* <Image
          resizeMode={"contain"}
       source={{
         uri: "https://media.discordapp.net/attachments/902219842738856050/903297989571907585/1_8.png?width=308&height=669",
@@ -312,7 +315,6 @@ export default function SignIn(props) {
         >
           <Hidden from="md">
             <VStack px="4" mt="4" mb="5" space="9">
-             
               <VStack space="2">
                 <Text fontSize="3xl" fontWeight="bold" color="coolGray.50">
                   Welcome back,
