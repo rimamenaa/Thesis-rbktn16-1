@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView,View,Text, ScrollView } from "react-native";
+import { SafeAreaView, Text, View, ScrollView } from "react-native";
 import tailwind from "tailwind-rn";
 
 function HomePage({ navigation }) {
@@ -62,11 +62,8 @@ function HomePage({ navigation }) {
             TestBase
           </Text>
         </View>
-
       </ScrollView>
-     
     </SafeAreaView>
-    
   );
 }
 
