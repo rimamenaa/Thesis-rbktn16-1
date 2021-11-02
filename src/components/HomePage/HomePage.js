@@ -26,9 +26,17 @@ function HomePage({ navigation }) {
             onPress={() => {
               navigation.navigate("Rules");
             }}
-          >
+          > 
             Rules
           </Text>
+          <Text
+            style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
+            onPress={() => {
+              navigation.navigate("SuggestionRoads");
+            }}
+          > 
+            SuggestionRoads
+          </Text> 
           <Text
             style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
             onPress={() => {
