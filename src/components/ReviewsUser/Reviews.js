@@ -639,7 +639,8 @@ export default function (props) {
                         }}
                       >
                         Here we should write some description for guidance !!
-                        Elyes work
+                        Elyes work Elyes work Elyes work Elyes work Elyes work
+                        Elyes work Elyes work
                       </Text>
                     ) : (
                       reviews.map((item, idx) => {

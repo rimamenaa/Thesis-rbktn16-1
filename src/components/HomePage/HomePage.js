@@ -68,7 +68,7 @@ function HomePage({ navigation }) {
               navigation.navigate("TestBase");
             }}
           >
-            TestBase
+            Test native base
           </Text>
           <Text
             style={tailwind("text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
@@ -80,9 +80,7 @@ function HomePage({ navigation }) {
             Logout
           </Text>
         </View>
-
       </ScrollView>
-     
     </SafeAreaView>
     </ImageBackground>
   );
