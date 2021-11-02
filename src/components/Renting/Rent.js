@@ -3,9 +3,8 @@ import {
   useBreakpointValue,
   Text,
   VStack,
-  NativeBaseProvider,
-  Center,
   ScrollView,
+  Card,
 } from "native-base";
 
 import { View } from "native-base";
@@ -19,20 +18,18 @@ function Rent() {
     lg: "row",
   });
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-      <VStack
-        py="8"
-        space={10}
-        alignItems="center"
-        justifyContent="space-between"
-      >
-        <View py="6">
+    <Card>
+      <VStack space={50}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Text fontSize="4xl" color="amber.500">
+            Choose your plan.
+          </Text>
           <SingleTrip></SingleTrip>
           <MonthlySub></MonthlySub>
           <AdventurePass></AdventurePass>
-        </View>
+        </ScrollView>
       </VStack>
-    </ScrollView>
+    </Card>
   );
 }
 export default Rent;
