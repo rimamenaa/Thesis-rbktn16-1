@@ -24,7 +24,7 @@ function SingleTripDetails() {
   return (
     <ScrollView>
       <Card>
-        <Text fontSize="2xl" marginBottom="10">
+        <Text fontSize="2xl" marginBottom="3">
           Single Trip
         </Text>
         <Text fontWeight="500">Great for spontaneous, one-way trips.</Text>
@@ -38,12 +38,13 @@ function SingleTripDetails() {
             alt={"Loading..."}
           />
         </AspectRatio>
-        <Stack p="4" space={6}>
+        <Stack p="4" space={4}>
           <Text fontWeight="500" fontWeight="400" marginTop="8">
-            The Single Trip pass includes 30 minutes of ride time to get you
-            anywhere you need to go. Ride to work, meet up with friends, or run
-            a quick errand. Need to ride longer? It's just $2.95 for the first
-            30 minutes and $2.50 for each additional 30 minutes.
+            The
+            <Text bold> Single Trip </Text>
+            pass includes 60 minutes of ride time to get you anywhere you need
+            to go. Ride to work, meet up with friends, or run a quick errand.
+            Need to ride longer? It's just 3TD for each additional 30 minutes.
           </Text>
           <Stack space={2}>
             <Text

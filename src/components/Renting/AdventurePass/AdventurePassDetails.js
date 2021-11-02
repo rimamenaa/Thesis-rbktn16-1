@@ -38,11 +38,11 @@ function AdventurePassDetails() {
             rounded="lg"
             height="100%"
             width="100%"
-            source={require("../../../../assets/haveFun.jpg")}
+            source={require("../../../../assets/cityBike2.jpg")}
             alt={"Loading..."}
           />
         </AspectRatio>
-        <Stack p="4" space={6}>
+        <Stack p="4" space={4}>
           <Text fontWeight="500" fontWeight="400" marginTop="8">
             For just 25TD, you'll get 24 hours of access to By-Cycle and you can
             keep a bike out for up to 2 hours at a time. If you're enjoying a
