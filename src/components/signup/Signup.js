@@ -7,7 +7,6 @@ import {
   Link,
   Checkbox,
   Divider,
- 
   Center,
   Hidden,
   StatusBar,
@@ -24,9 +23,8 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 
 export function SignUpForm({ props }) {
   // add next router here
-  
+
   return (
-    
     <KeyboardAwareScrollView
       contentContainerStyle={{
         flexGrow: 1,
@@ -89,7 +87,7 @@ export function SignUpForm({ props }) {
                 <Input />
               </FormControl>
 
-                <FormControl>
+              <FormControl>
                 <FormControl.Label
                   _text={{
                     color: "coolGray.800",
@@ -100,7 +98,7 @@ export function SignUpForm({ props }) {
                   Username
                 </FormControl.Label>
                 <Input />
-              </FormControl>   
+              </FormControl>
 
               <FormControl>
                 <FormControl.Label
@@ -126,59 +124,59 @@ export function SignUpForm({ props }) {
                 </FormControl.Label>
                 <Input type="password" />
                 <Checkbox
-                style={tw `mt-2`}
-                alignItems="flex-start"
-                defaultIsChecked
-                value="demo"
-                colorScheme="primary"
-                accessibilityLabel="Remember me"
-              >
-                <HStack alignItems="center" style={tw `mt-2`}>
-                  <Text fontSize="sm" color="coolGray.400" pl="2">
-                    I accept the{" "}
-                  </Text>
-                  <Link
-                    _text={{
-                      fontSize: "sm",
-                      fontWeight: "semibold",
-                      textDecoration: "none",
-                    }}
-                    _light={{
-                      _text: {
-                        color: "primary.900",
-                      },
-                    }}
-                    _dark={{
-                      _text: {
-                        color: "primary.500",
-                      },
-                    }}
-                  >
-                    Terms of Use
-                  </Link>
-                  <Text fontSize="sm"> & </Text>
+                  style={tw`mt-2`}
+                  alignItems="flex-start"
+                  defaultIsChecked
+                  value="demo"
+                  colorScheme="primary"
+                  accessibilityLabel="Remember me"
+                >
+                  <HStack alignItems="center" style={tw`mt-2`}>
+                    <Text fontSize="sm" color="coolGray.400" pl="2">
+                      I accept the{" "}
+                    </Text>
+                    <Link
+                      _text={{
+                        fontSize: "sm",
+                        fontWeight: "semibold",
+                        textDecoration: "none",
+                      }}
+                      _light={{
+                        _text: {
+                          color: "primary.900",
+                        },
+                      }}
+                      _dark={{
+                        _text: {
+                          color: "primary.500",
+                        },
+                      }}
+                    >
+                      Terms of Use
+                    </Link>
+                    <Text fontSize="sm"> & </Text>
 
-                  <Link
-                    _text={{
-                      fontSize: "sm",
-                      fontWeight: "semibold",
-                      textDecoration: "none",
-                    }}
-                    _light={{
-                      _text: {
-                        color: "primary.900",
-                      },
-                    }}
-                    _dark={{
-                      _text: {
-                        color: "primary.500",
-                      },
-                    }}
-                  >
-                    Privacy Policy
-                  </Link>
-                </HStack>
-              </Checkbox>
+                    <Link
+                      _text={{
+                        fontSize: "sm",
+                        fontWeight: "semibold",
+                        textDecoration: "none",
+                      }}
+                      _light={{
+                        _text: {
+                          color: "primary.900",
+                        },
+                      }}
+                      _dark={{
+                        _text: {
+                          color: "primary.500",
+                        },
+                      }}
+                    >
+                      Privacy Policy
+                    </Link>
+                  </HStack>
+                </Checkbox>
               </FormControl>
               <Button
                 mt="5"
@@ -194,7 +192,7 @@ export function SignUpForm({ props }) {
                   bg: "primary.700",
                 }}
                 onPress={() => {
-                  props.navigation.navigate("Home");
+                  props.navigation.navigate("Login");
                 }}
               >
                 SIGN UP
