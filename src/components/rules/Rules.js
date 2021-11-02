@@ -23,8 +23,8 @@ function Rules() {
           <Image
             source={roadrule}
             style={{
-              width: 220,
-              height: 300,
+              width: 250,
+              height: 190,
             }}
           />
           <Text style={tailwind(" text-yellow-500 text-2xl font-bold")}>
