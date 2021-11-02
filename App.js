@@ -12,6 +12,7 @@ import TestBase from "./src/components/TestNativeBase/TestBase";
 import { NativeBaseProvider, extendTheme, theme as nbTheme } from "native-base";
 import Reviews from "./src/components/ReviewsUser/Reviews";
 import LandingPage from "./src/components/LandingPage/LandingPage";
+import SuggestionRoads from "./src/components/suggestionroads/SuggestionRoads"
 
 const theme = extendTheme({
   colors: {
@@ -35,6 +36,8 @@ function App() {
           <Stack.Screen name="ContactUs" component={ContactUs} />
           <Stack.Screen name="TestBase" component={TestBase} />
           <Stack.Screen name="Reviews" component={Reviews} />
+          <Stack.Screen name="SuggestionRoads" component={SuggestionRoads} />
+          
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
