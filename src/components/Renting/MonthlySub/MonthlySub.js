@@ -14,10 +14,15 @@ import {
 } from "native-base";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import { Button } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+
 function MonthlySub() {
+  const navigation = useNavigation();
   return (
     <Pressable
-      onPress={() => console.log("hey")}
+      onPress={() => {
+        navigation.navigate("MonthlySubDetails");
+      }}
       rounded="lg"
       overflow="hidden"
       width="72"

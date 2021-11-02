@@ -12,12 +12,15 @@ import {
   NativeBaseProvider,
   Pressable,
 } from "native-base";
-import { MaterialIcons, Ionicons } from "@expo/vector-icons";
-import { Button } from "react-native";
-function MonthlySub() {
+import { useNavigation } from "@react-navigation/native";
+
+function AdventurePass() {
+  const navigation = useNavigation();
   return (
     <Pressable
-      onPress={() => console.log("hey")}
+      onPress={() => {
+        navigation.navigate("AdventurePassDetails");
+      }}
       rounded="lg"
       overflow="hidden"
       width="72"
@@ -51,7 +54,7 @@ export default function () {
   return (
     <NativeBaseProvider>
       <Center flex={1} px="3">
-        <MonthlySub />
+        <AdventurePass />
       </Center>
     </NativeBaseProvider>
   );

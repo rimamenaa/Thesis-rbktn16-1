@@ -13,6 +13,12 @@ import { NativeBaseProvider, extendTheme, theme as nbTheme } from "native-base";
 import Reviews from "./src/components/ReviewsUser/Reviews";
 import LandingPage from "./src/components/LandingPage/LandingPage";
 import Rent from "./src/components/Renting/Rent";
+import SingleTripDetails from "./src/components/Renting/SingleTrip/SingleTripDetails";
+import SingleTrip from "./src/components/Renting/SingleTrip/SingleTrip";
+import MonthlySub from "./src/components/Renting/MonthlySub/MonthlySub";
+import MonthlySubDetails from "./src/components/Renting/MonthlySub/MonthlySubDetails";
+import AdventurePass from "./src/components/Renting/AdventurePass/AdventurePass";
+import AdventurePassDetails from "./src/components/Renting/AdventurePass/AdventurePassDetails";
 
 const theme = extendTheme({
   colors: {
@@ -27,8 +33,8 @@ function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomePage} />
-          <Stack.Screen name="ContactUs" component={ContactUs} />
           <Stack.Screen name="LandingPage" component={LandingPage} />
+          <Stack.Screen name="ContactUs" component={ContactUs} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="Commercial" component={Commercial} />
@@ -37,6 +43,21 @@ function App() {
           <Stack.Screen name="TestBase" component={TestBase} />
           <Stack.Screen name="Reviews" component={Reviews} />
           <Stack.Screen name="Rent" component={Rent} />
+          <Stack.Screen name="SingleTrip" component={SingleTrip} />
+          <Stack.Screen
+            name="SingleTripDetails"
+            component={SingleTripDetails}
+          />
+          <Stack.Screen name="MonthlySub" component={MonthlySub} />
+          <Stack.Screen
+            name="MonthlySubDetails"
+            component={MonthlySubDetails}
+          />
+          <Stack.Screen name="AdventurePass" component={AdventurePass} />
+          <Stack.Screen
+            name="AdventurePassDetails"
+            component={AdventurePassDetails}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>

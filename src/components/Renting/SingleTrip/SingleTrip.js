@@ -9,10 +9,13 @@ import {
   Stack,
   NativeBaseProvider,
   Pressable,
+  Card,
 } from "native-base";
-import { MaterialIcons, Ionicons } from "@expo/vector-icons";
-import { Button } from "react-native";
-function MonthlySub() {
+
+import { useNavigation } from "@react-navigation/native";
+
+function SingleTrip() {
+  const navigation = useNavigation();
   return (
     <Pressable
       rounded="lg"
@@ -21,6 +24,9 @@ function MonthlySub() {
       shadow={1}
       _light={{ backgroundColor: "gray.200" }}
       _dark={{ backgroundColor: "gray.700" }}
+      onPress={() => {
+        navigation.navigate("SingleTripDetails");
+      }}
     >
       <Stack p="4" space={3}>
         <Stack space={2}>
@@ -48,7 +54,7 @@ export default function () {
   return (
     <NativeBaseProvider>
       <Center flex={1} px="3">
-        <MonthlySub />
+        <SingleTrip />
       </Center>
     </NativeBaseProvider>
   );

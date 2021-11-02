@@ -17,32 +17,31 @@ import {
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import Loading from "../../../../src/components/Loading/Loading";
 
-function AdventurePassDetails() {
+function SingleTripDetails() {
   return (
-    <Box
-      rounded="lg"
-      overflow="hidden"
-      width="40%"
-      shadow={1}
-      _light={{ backgroundColor: "gray.50" }}
-      _dark={{ backgroundColor: "gray.700" }}
-    >
-      <Box>
-        <Text fontSize="2xl" marginBottom="3">
-          Single Trip
-        </Text>
-        <Text fontWeight="500">Great for spontaneous, one-way trips.</Text>
-        <AspectRatio ratio={16 / 9}>
-          <Image
-            marginTop="5"
-            rounded="lg"
-            height="100%"
-            width="100%"
-            source={require("../../../../assets/haveFun.jpg")}
-            alt={"Loading..."}
-          />
-        </AspectRatio>
-      </Box>
+    // <Box
+    //   rounded="lg"
+    //   overflow="hidden"
+    //   width="30%"
+    //   shadow={1}
+    //   _light={{ backgroundColor: "gray.50" }}
+    //   _dark={{ backgroundColor: "gray.700" }}
+    // >
+    <Box>
+      <Text fontSize="2xl" marginBottom="3">
+        Single Trip
+      </Text>
+      <Text fontWeight="500">Great for spontaneous, one-way trips.</Text>
+      <AspectRatio ratio={16 / 9}>
+        <Image
+          marginTop="1"
+          rounded="lg"
+          height="100%"
+          width="100%"
+          source={require("../../../../assets/haveFun.jpg")}
+          alt={"Loading..."}
+        />
+      </AspectRatio>
       <Stack p="4" space={6}>
         <Text fontWeight="500" fontWeight="400" marginTop="8">
           The Single Trip pass includes 30 minutes of ride time to get you
@@ -71,7 +70,7 @@ export default function () {
   return (
     <NativeBaseProvider>
       <Center flex={1} px="3">
-        <AdventurePassDetails />
+        <SingleTripDetails />
       </Center>
     </NativeBaseProvider>
   );

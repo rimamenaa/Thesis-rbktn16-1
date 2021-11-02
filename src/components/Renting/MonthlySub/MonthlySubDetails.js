@@ -1,51 +1,35 @@
 import React from "react";
 import {
   Box,
-  Heading,
-  Icon,
   AspectRatio,
   Image,
   Center,
-  HStack,
   Stack,
   Text,
-  Link,
   NativeBaseProvider,
-  VStack,
-  View,
 } from "native-base";
-import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import Loading from "../../../../src/components/Loading/Loading";
 
-function AdventurePassDetails() {
+function MonthlySubDetails() {
   return (
-    <Box
-      rounded="lg"
-      overflow="hidden"
-      width="40%"
-      shadow={1}
-      _light={{ backgroundColor: "gray.50" }}
-      _dark={{ backgroundColor: "gray.700" }}
-    >
-      <Box>
-        <Text fontSize="2xl" marginBottom="3">
-          Monthly Membership
-        </Text>
-        <Text fontWeight="500">
-          The Monthly Membership includes 30 days of Bluebikes access and is
-          great for people looking for month-to-month flexibility.
-        </Text>
-        <AspectRatio ratio={16 / 9}>
-          <Image
-            marginTop="5"
-            rounded="lg"
-            height="100%"
-            width="100%"
-            source={require("../../../../assets/haveFun.jpg")}
-            alt={"Loading..."}
-          />
-        </AspectRatio>
-      </Box>
+    <Box>
+      <Text fontSize="2xl" marginBottom="3">
+        Monthly Membership
+      </Text>
+      <Text fontWeight="500">
+        The Monthly Membership includes 30 days of Bluebikes access and is great
+        for people looking for month-to-month flexibility.
+      </Text>
+      <AspectRatio ratio={16 / 9}>
+        <Image
+          marginTop="5"
+          rounded="lg"
+          height="100%"
+          width="100%"
+          source={require("../../../../assets/haveFun.jpg")}
+          alt={"Loading..."}
+        />
+      </AspectRatio>
       <Stack p="4" space={6}>
         <Text fontWeight="500" fontWeight="400" marginTop="8">
           When you become a member for $25 per month, you'll get a key that
@@ -77,7 +61,7 @@ export default function () {
   return (
     <NativeBaseProvider>
       <Center flex={1} px="3">
-        <AdventurePassDetails />
+        <MonthlySubDetails />
       </Center>
     </NativeBaseProvider>
   );

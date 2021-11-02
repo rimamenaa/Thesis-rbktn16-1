@@ -1,51 +1,44 @@
 import React from "react";
 import {
   Box,
-  Heading,
-  Icon,
   AspectRatio,
   Image,
   Center,
-  HStack,
   Stack,
   Text,
-  Link,
   NativeBaseProvider,
-  VStack,
-  View,
 } from "native-base";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import Loading from "../../../../src/components/Loading/Loading";
 
 function AdventurePassDetails() {
   return (
-    <Box
-      rounded="lg"
-      overflow="hidden"
-      width="40%"
-      shadow={1}
-      _light={{ backgroundColor: "gray.50" }}
-      _dark={{ backgroundColor: "gray.700" }}
-    >
-      <Box>
-        <Text fontSize="2xl" marginBottom="3">
-          Adventure Pass
-        </Text>
-        <Text fontWeight="500">
-          The Adventure Pass is perfect for tourists, visitors, and anyone
-          looking for a long or leisurely ride.
-        </Text>
-        <AspectRatio ratio={16 / 9}>
-          <Image
-            marginTop="5"
-            rounded="lg"
-            height="100%"
-            width="100%"
-            source={require("../../../../assets/haveFun.jpg")}
-            alt={"Loading..."}
-          />
-        </AspectRatio>
-      </Box>
+    // <Box
+    //   rounded="lg"
+    //   overflow="hidden"
+    //   width="40%"
+    //   shadow={1}
+    //   _light={{ backgroundColor: "gray.50" }}
+    //   _dark={{ backgroundColor: "gray.700" }}
+    // >
+    <Box>
+      <Text fontSize="2xl" marginBottom="3">
+        Adventure Pass
+      </Text>
+      <Text fontWeight="500">
+        The Adventure Pass is perfect for tourists, visitors, and anyone looking
+        for a long or leisurely ride.
+      </Text>
+      <AspectRatio ratio={16 / 9}>
+        <Image
+          marginTop="5"
+          rounded="lg"
+          height="100%"
+          width="100%"
+          source={require("../../../../assets/haveFun.jpg")}
+          alt={"Loading..."}
+        />
+      </AspectRatio>
       <Stack p="4" space={6}>
         <Text fontWeight="500" fontWeight="400" marginTop="8">
           For just 25TD, you'll get 24 hours of access to By-Cycle and you can
