@@ -7,6 +7,7 @@ import {
   Stack,
   Text,
   NativeBaseProvider,
+  Card,
 } from "native-base";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import Loading from "../../../../src/components/Loading/Loading";
@@ -21,7 +22,7 @@ function AdventurePassDetails() {
     //   _light={{ backgroundColor: "gray.50" }}
     //   _dark={{ backgroundColor: "gray.700" }}
     // >
-    <Box>
+    <Card>
       <Text fontSize="2xl" marginBottom="3">
         Adventure Pass
       </Text>
@@ -64,7 +65,7 @@ function AdventurePassDetails() {
           </Text>
         </Stack>
       </Stack>
-    </Box>
+    </Card>
   );
 }
 

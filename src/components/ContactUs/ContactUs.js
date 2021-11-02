@@ -35,7 +35,6 @@ export const ContactUs = () => {
         <AdventurePass></AdventurePass>
         <SingleTrip></SingleTrip> */}
         {/* <AdventurePassDetails></AdventurePassDetails> */}
-        <Rent></Rent>
       </VStack>
     </ScrollView>
   );

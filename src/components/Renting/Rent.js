@@ -15,7 +15,6 @@ import MonthlySub from "./MonthlySub/MonthlySub";
 import SingleTrip from "./SingleTrip/SingleTrip";
 
 function Rent({ navigation }) {
-
   const flexDir = useBreakpointValue({
     base: "column",
     lg: "row",
@@ -23,9 +22,9 @@ function Rent({ navigation }) {
   console.log(navigation);
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      <VStack py="8" space={8} alignItems="center" justifyContent="center">
+      <VStack py="8" space={10} alignItems="center" justifyContent="center">
         <View style={{ flexDirection: flexDir }}>
-          <SingleTrip nav={navigation}></SingleTrip>
+          <SingleTrip></SingleTrip>
           <MonthlySub></MonthlySub>
           <AdventurePass></AdventurePass>
         </View>

@@ -13,22 +13,16 @@ import {
   NativeBaseProvider,
   VStack,
   View,
+  Card,
 } from "native-base";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import Loading from "../../../../src/components/Loading/Loading";
+import { Pressable } from "react-native";
 
 function SingleTripDetails() {
   return (
-    // <Box
-    //   rounded="lg"
-    //   overflow="hidden"
-    //   width="30%"
-    //   shadow={1}
-    //   _light={{ backgroundColor: "gray.50" }}
-    //   _dark={{ backgroundColor: "gray.700" }}
-    // >
-    <Box>
-      <Text fontSize="2xl" marginBottom="3">
+    <Card>
+      <Text fontSize="2xl" marginBottom="10">
         Single Trip
       </Text>
       <Text fontWeight="500">Great for spontaneous, one-way trips.</Text>
@@ -62,7 +56,7 @@ function SingleTripDetails() {
           </Text>
         </Stack>
       </Stack>
-    </Box>
+    </Card>
   );
 }
 
