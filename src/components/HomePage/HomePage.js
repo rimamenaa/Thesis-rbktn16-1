@@ -6,9 +6,9 @@ function HomePage({ navigation }) {
   return (
     <ImageBackground
         style={tailwind("h-full")}
-        source={require("../../../assets/smallBike.jpg")}
+        source={require("../../../assets/smallBike.png")}
       >
-    <SafeAreaView style={tailwind("h-full")}>
+    <SafeAreaView style={tailwind("max-h-full")}>
       <ScrollView>
         <View
           style={tailwind(
@@ -17,7 +17,7 @@ function HomePage({ navigation }) {
         >
           <Text
             style={tailwind(
-              " text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-white border-2 border-white bg-opacity-25 items-center font-bold "
+              " text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
             )}
             onPress={() => {
               navigation.navigate("Commercial");
@@ -26,7 +26,7 @@ function HomePage({ navigation }) {
             Home page
           </Text>
           <Text
-            style={tailwind(" text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-white border-2 border-white bg-opacity-25 items-center font-bold "
+            style={tailwind(" text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
             )}
             onPress={() => {
               navigation.navigate("Rules");
@@ -35,7 +35,7 @@ function HomePage({ navigation }) {
             Rules
           </Text>
           <Text
-            style={tailwind(" text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-white border-2 border-white bg-opacity-25 items-center font-bold "
+            style={tailwind(" text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
             )}
             onPress={() => {
               navigation.navigate("Station");
@@ -44,7 +44,7 @@ function HomePage({ navigation }) {
             Station
           </Text>
           <Text
-            style={tailwind(" text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-white border-2 border-white bg-opacity-25 items-center font-bold "
+            style={tailwind(" text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
             )}
             onPress={() => {
               navigation.navigate("Reviews");
@@ -53,7 +53,7 @@ function HomePage({ navigation }) {
             Reviews
           </Text>
           <Text
-            style={tailwind(" text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-white border-2 border-white bg-opacity-25 items-center font-bold "
+            style={tailwind(" text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
             )}
             onPress={() => {
               navigation.navigate("ContactUs");
@@ -62,7 +62,7 @@ function HomePage({ navigation }) {
             ContactUs
           </Text>
           <Text
-            style={tailwind(" text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-white border-2 border-white bg-opacity-25 items-center font-bold "
+            style={tailwind(" text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
             )}
             onPress={() => {
               navigation.navigate("TestBase");
@@ -71,7 +71,7 @@ function HomePage({ navigation }) {
             TestBase
           </Text>
           <Text
-            style={tailwind("text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-white border-2 border-white bg-opacity-25 items-center font-bold "
+            style={tailwind("text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
             )}
             onPress={() => {
               navigation.navigate("LandingPage");
