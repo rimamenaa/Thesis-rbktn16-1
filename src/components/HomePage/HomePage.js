@@ -37,17 +37,18 @@ function HomePage({ navigation }) {
             Rules
           </Text>
           <Text
-            style={tailwind(" text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+            style={tailwind(" text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
             )}
             onPress={() => {
               navigation.navigate("SuggestionRoads");
             }}
           > 
-            SuggestionRoads
+            Suggestion Roads
           </Text> 
           <Text
-            style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
-            onPress={() => {
+    style={tailwind(" text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+    )}
+                onPress={() => {
               navigation.navigate("Station");
             }}
           >
