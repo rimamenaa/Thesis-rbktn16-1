@@ -9,21 +9,24 @@ import {
 } from "native-base";
 
 import { View } from "native-base";
-
 import AdventurePass from "./AdventurePass/AdventurePass";
 import MonthlySub from "./MonthlySub/MonthlySub";
 import SingleTrip from "./SingleTrip/SingleTrip";
 
-function Rent({ navigation }) {
+function Rent() {
   const flexDir = useBreakpointValue({
     base: "column",
     lg: "row",
   });
-  console.log(navigation);
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      <VStack py="8" space={10} alignItems="center" justifyContent="center">
-        <View style={{ flexDirection: flexDir }}>
+      <VStack
+        py="8"
+        space={10}
+        alignItems="center"
+        justifyContent="space-between"
+      >
+        <View py="6">
           <SingleTrip></SingleTrip>
           <MonthlySub></MonthlySub>
           <AdventurePass></AdventurePass>

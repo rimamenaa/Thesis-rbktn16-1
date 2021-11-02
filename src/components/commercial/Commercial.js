@@ -155,7 +155,7 @@ function Commercial() {
                 >
                   <HStack alignItems="center">
                     <Text color="gray.500" fontWeight="400">
-                      6 mins ago
+                      35 mins ago
                     </Text>
                   </HStack>
                 </HStack>
@@ -197,7 +197,7 @@ function Commercial() {
                 >
                   <HStack alignItems="center">
                     <Text color="gray.500" fontWeight="400">
-                      6 mins ago
+                      42 mins ago
                     </Text>
                   </HStack>
                 </HStack>
@@ -239,7 +239,7 @@ function Commercial() {
                 >
                   <HStack alignItems="center">
                     <Text color="gray.500" fontWeight="400">
-                      6 mins ago
+                      50 mins ago
                     </Text>
                   </HStack>
                 </HStack>
@@ -281,7 +281,7 @@ function Commercial() {
                 >
                   <HStack alignItems="center">
                     <Text color="gray.500" fontWeight="400">
-                      6 mins ago
+                      55 mins ago
                     </Text>
                   </HStack>
                 </HStack>
@@ -330,7 +330,7 @@ function Commercial() {
                 >
                   <HStack alignItems="center">
                     <Text color="gray.500" fontWeight="400">
-                      6 mins ago
+                      1 hour ago
                     </Text>
                   </HStack>
                 </HStack>

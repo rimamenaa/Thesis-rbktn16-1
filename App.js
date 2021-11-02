@@ -19,6 +19,7 @@ import MonthlySub from "./src/components/Renting/MonthlySub/MonthlySub";
 import MonthlySubDetails from "./src/components/Renting/MonthlySub/MonthlySubDetails";
 import AdventurePass from "./src/components/Renting/AdventurePass/AdventurePass";
 import AdventurePassDetails from "./src/components/Renting/AdventurePass/AdventurePassDetails";
+import SuggestionRoads from "./src/components/suggestionroads/SuggestionRoads";
 
 const theme = extendTheme({
   colors: {
@@ -58,6 +59,7 @@ function App() {
             name="AdventurePassDetails"
             component={AdventurePassDetails}
           />
+          <Stack.Screen name="SuggestionRoads" component={SuggestionRoads} />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>

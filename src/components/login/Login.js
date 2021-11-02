@@ -30,6 +30,7 @@ export function SignInForm({ props }) {
   const [pass, setPass] = useState("");
   const [showPass, setShowPass] = React.useState(false);
   return (
+    
     <KeyboardAwareScrollView
       contentContainerStyle={{
         flexGrow: 1,
@@ -291,14 +292,6 @@ export default function SignIn(props) {
         }}
       />
       <Center my="auto" flex="1">
-        {/* <Image
-         resizeMode={"contain"}
-      source={{
-        uri: "https://media.discordapp.net/attachments/902219842738856050/903297989571907585/1_8.png?width=308&height=669",
-      }}
-      alt="Alternate Text"
-      style={{width: 347, height: 812}}
-    /> */}
         <Stack
           flexDirection={{
             base: "column",

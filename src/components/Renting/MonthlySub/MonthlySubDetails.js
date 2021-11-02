@@ -7,12 +7,13 @@ import {
   Stack,
   Text,
   NativeBaseProvider,
+  Card
 } from "native-base";
 import Loading from "../../../../src/components/Loading/Loading";
 
 function MonthlySubDetails() {
   return (
-    <Box>
+    <Card>
       <Text fontSize="2xl" marginBottom="3">
         Monthly Membership
       </Text>
@@ -53,7 +54,7 @@ function MonthlySubDetails() {
           </Text>
         </Stack>
       </Stack>
-    </Box>
+    </Card>
   );
 }
 
