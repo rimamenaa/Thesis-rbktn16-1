@@ -417,9 +417,11 @@ export default function (props) {
                           color: "coolGray.50",
                         }}
                       >
-                        Here we should write some description for guidance !!
-                        Elyes work Elyes work Elyes work Elyes work Elyes work
-                        Elyes work Elyes work
+                        Sidi Bou Said is a town in northern Tunisia located about 20 km from the capital, Tunis.
+                        Cafe de delice and coast view Named for a religious figure who lived there, Abu Said al-Baji, 
+                        it was previously called Jabal el-Menar. The town itself is a tourist attraction and is known 
+                        for its extensive use of blue and white. It can be reached by a TGM train, which runs from Tunis 
+                        to La Marsa.
                       </Text>
                     ) : (
                       reviews.map((item, idx) => {
@@ -793,9 +795,10 @@ export default function (props) {
                           color: "coolGray.50",
                         }}
                       >
-                        Here we should write some description for guidance !!
-                        Elyes work Elyes work Elyes work Elyes work Elyes work
-                        Elyes work Elyes work
+                        La Perle du Lac, an illustration of the impeccable aesthetic reintegration of water bodies into the urban zone, 
+                        is an exceptional area composed of judiciously and coherently arranged residences that value space harmony.
+                        The city, which will be built on 230 hectares outspreads from the Berges du Lac to Tunis city center as its direct extension, 
+                        meets the designers’ ambitions to make it a large metropolis giving Tunis a new face mirrored in water.
                       </Text>
                     ) : (
                       reviews.map((item, idx) => {
@@ -1169,9 +1172,9 @@ export default function (props) {
                           color: "coolGray.50",
                         }}
                       >
-                        Here we should write some description for guidance !!
-                        Elyes work Elyes work Elyes work Elyes work Elyes work
-                        Elyes work Elyes work
+                        is a coastal town in far north eastern Tunisia near the capital Tunis. The population is estimated as 92,987, as of 2014. 
+                        The old summer capital of pre-colonial Tunisia, it is today a popular vacation spot for many wealthy Tunisians. 
+                        It is connected to Tunis by the TGM railway. Gammarth is adjacent to El Marsa further up the coast.
                       </Text>
                     ) : (
                       reviews.map((item, idx) => {

@@ -33,8 +33,8 @@ function App() {
     <NativeBaseProvider theme={theme}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomePage} />
           <Stack.Screen name="LandingPage" component={LandingPage} />
+          <Stack.Screen name="Home" component={HomePage} />
           <Stack.Screen name="ContactUs" component={ContactUs} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Signup" component={Signup} />
