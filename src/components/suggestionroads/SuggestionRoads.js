@@ -1,20 +1,13 @@
 import React from "react";
 import { View, SafeAreaView, ScrollView } from "react-native";
 import {
-  VStack,
   HStack,
-  Button,
-  IconButton,
   Text,
   Box,
-  StatusBar,
   Heading,
-  Icon,
   AspectRatio,
   Image,
-  Center,
   Stack,
-  NativeBaseProvider,
 } from "native-base";
 import tailwind from "tailwind-rn";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -27,7 +20,7 @@ function SuggestionRoads() {
       <ScrollView>
         <View style={tailwind("items-center mt-8")}>
           <Box
-            style={tailwind("mb-8")}
+            style={tailwind("mb-8 items-center")}
             rounded="lg"
             overflow="hidden"
             width="80"
@@ -51,7 +44,7 @@ function SuggestionRoads() {
             </Stack>
           </Box>
           <Box
-            style={tailwind("mb-8")}
+            style={tailwind("w-full items-center mb-8")}
             rounded="lg"
             overflow="hidden"
             width="80"
@@ -98,7 +91,7 @@ function SuggestionRoads() {
             </Stack>
           </Box>
           <Box
-            style={tailwind("mb-8")}
+            style={tailwind("w-full items-center mb-8")}
             rounded="lg"
             overflow="hidden"
             width="80"
@@ -145,7 +138,7 @@ function SuggestionRoads() {
             </Stack>
           </Box>
           <Box
-            style={tailwind("mb-8")}
+            style={tailwind("w-full items-center mb-8")}
             rounded="lg"
             overflow="hidden"
             width="80"
@@ -192,7 +185,7 @@ function SuggestionRoads() {
             </Stack>
           </Box>
           <Box
-            style={tailwind("mb-8")}
+            style={tailwind("w-full items-center mb-8")}
             rounded="lg"
             overflow="hidden"
             width="80"
@@ -236,7 +229,7 @@ function SuggestionRoads() {
             </Text>
           </Box>
           <Box
-            style={tailwind("mb-8")}
+            style={tailwind("w-full items-center mb-8")}
             rounded="lg"
             overflow="hidden"
             width="80"
@@ -283,7 +276,7 @@ function SuggestionRoads() {
             </Stack>
           </Box>
           <Box
-            style={tailwind("mb-8")}
+            style={tailwind("w-full items-center mb-8")}
             rounded="lg"
             overflow="hidden"
             width="80"
@@ -333,7 +326,7 @@ function SuggestionRoads() {
           </Box>
 
           <Box
-            style={tailwind("mb-8")}
+            style={tailwind("w-full items-center mb-8")}
             rounded="lg"
             overflow="hidden"
             width="80"
