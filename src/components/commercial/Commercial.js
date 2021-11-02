@@ -51,7 +51,7 @@ function Commercial() {
             400+ bikes and more than 18+ stations across the country.
           </Text>
           <Box
-              style={tailwind("w-full")}
+              style={tailwind("w-full items-center")}
               rounded="lg"
               overflow="hidden"
               width="72"
@@ -91,7 +91,7 @@ function Commercial() {
             </Box>
 
             <Box
-              style={tailwind("w-full mt-4")}
+              style={tailwind("w-full mt-4 items-center")}
               rounded="lg"
               overflow="hidden"
               width="72"
@@ -132,7 +132,7 @@ function Commercial() {
             </Box>
 
             <Box
-              style={tailwind("w-full mt-4")}
+              style={tailwind("w-full mt-4 items-center")}
               rounded="lg"
               overflow="hidden"
               width="72"
@@ -172,7 +172,7 @@ function Commercial() {
             </Box>
 
             <Box
-              style={tailwind("w-full mt-4")}
+              style={tailwind("w-full mt-4 items-center")}
               rounded="lg"
               overflow="hidden"
               width="72"

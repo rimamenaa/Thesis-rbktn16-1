@@ -14,7 +14,7 @@ export default function LandingPage({ navigation }) {
     <View style={tw`w-full h-full`}>
       <ImageBackground
         style={tw`w-full h-full`}
-        source={require("../../../assets/01 Onboarding.png")}
+        source={require("../../../assets/Onboarding.png")}
       >
         <Image
           style={tw`mt-48 w-32 pl-36 h-24`}
