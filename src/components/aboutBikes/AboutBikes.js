@@ -25,9 +25,6 @@ function AboutBikes() {
   return (
     <View>
       <Text>hello data is not here yet</Text>
-      {/* {data.map((e, key) => {
-        <Image key={key}>{e.photo}</Image>;
-      })} */}
     </View>
   );
 }
