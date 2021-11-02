@@ -32,7 +32,7 @@ export default function LandingPage({ navigation }) {
           </View>
 
           <Text
-            style={tw`pl-28 pt-3 text-yellow-400 text-semibold`}
+            style={tw`pl-28 pt-3 text-yellow-400 font-semibold`}
             onPress={() => {
               navigation.navigate("Login");
             }}
