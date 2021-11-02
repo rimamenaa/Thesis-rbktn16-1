@@ -216,6 +216,7 @@ function Commercial() {
           <Text
             style={tailwind("text-4xl font-bold text-yellow-500 ml-6 mb-6")}
           >
+            
             Why Join By-Cycle?
           </Text>
           <ScrollView horizontal={true}>

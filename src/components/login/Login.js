@@ -7,8 +7,7 @@ import {
   Link,
   Checkbox,
   Divider,
-  IconButton,
-  Icon,
+ 
   Center,
   Hidden,
   StatusBar,
@@ -18,17 +17,14 @@ import {
   Input,
   Image,
 } from "native-base";
-import AntDesign from "react-native-vector-icons/AntDesign";
-import Entypo from "react-native-vector-icons/Entypo";
+
 import tw from "tailwind-react-native-classnames";
 
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export function SignInForm({ props }) {
   // add next router here
-  const [text, setText] = useState("");
-  const [pass, setPass] = useState("");
-  const [showPass, setShowPass] = React.useState(false);
+  
   return (
     
     <KeyboardAwareScrollView
@@ -115,26 +111,37 @@ export function SignInForm({ props }) {
                   Forget Password?
                 </Link>
                 <Checkbox
-                  alignItems="flex-start"
-                  mt="5"
-                  isChecked
-                  value="demo"
-                  colorScheme="primary"
-                  accessibilityLabel="Remember me"
-                >
-                  <Text
-                    pl="3"
-                    fontWeight="normal"
+                alignItems="flex-start"
+                defaultIsChecked
+                value="demo"
+                colorScheme="primary"
+                accessibilityLabel="Remember me"
+              >
+                <HStack alignItems="center">
+                  <Text fontSize="sm" color="coolGray.400" pl="2">
+                  Remember me {" "}
+                  </Text>
+                  <Link
+                    _text={{
+                      fontSize: "sm",
+                      fontWeight: "semibold",
+                      textDecoration: "none",
+                    }}
                     _light={{
-                      color: "coolGray.800",
+                      _text: {
+                        color: "primary.900",
+                      },
                     }}
                     _dark={{
-                      color: "coolGray.400",
+                      _text: {
+                        color: "primary.500",
+                      },
                     }}
                   >
-                    Remember me and keep me logged in
-                  </Text>
-                </Checkbox>
+                    and keep me logged in
+                  </Link>
+                </HStack>
+              </Checkbox>
               </FormControl>
               <Button
                 mt="5"
@@ -309,7 +316,7 @@ export default function SignIn(props) {
           <Hidden from="md">
             <VStack px="4" mt="4" mb="5" space="9">
               <VStack space="2">
-                <Text fontSize="3xl" fontWeight="bold" color="coolGray.50">
+                <Text fontSize="3xl" fontWeight="bold" color="coolGray.700">
                   Welcome back,
                 </Text>
                 <Text
@@ -319,7 +326,7 @@ export default function SignIn(props) {
                     color: "coolGray.400",
                   }}
                   _light={{
-                    color: "primary.300",
+                    color: "primary.700",
                   }}
                 >
                   Sign in to continue
