@@ -130,44 +130,89 @@ function Commercial() {
                 </HStack>
               </Stack>
             </Box>
-            
-          <Text style={tailwind(" text-gray-900 text-base  font-bold p-3")}>
-            Find an available bike nearby, and get a ride code or use your
-            member key to unlock it.
-          </Text>
 
-          <Image
-            source={rule3}
-            style={{
-              width: 265,
-              height: 240,
-            }}
-          />
-          <Text style={tailwind(" text-yellow-500 text-2xl font-bold")}>
-            {" "}
-            Ride
-          </Text>
-          <Text style={tailwind(" text-gray-900 text-base  font-bold p-3")}>
-            Take as many short rides as you want wherever and whenever you want.
-          </Text>
+            <Box
+              style={tailwind("w-full mt-4")}
+              rounded="lg"
+              overflow="hidden"
+              width="72"
+              shadow={1}
+              _light={{ backgroundColor: "gray.50" }}
+              _dark={{ backgroundColor: "gray.700" }}
+            >
+              <Box>
+                <AspectRatio ratio={1.47} height={200}>
+                  <Image
+                    source={require("../../../assets/rule3.png")}
+                    alt="image"
+                  />
+                </AspectRatio>
+              </Box>
+              <Stack p="4" space={3}>
+                <Stack space={2}>
+                  <Heading size="md" ml="-1" color="yellow.500">
+                    RIDE
+                  </Heading>
+                </Stack>
+                <Text fontWeight="800">
+                Take as many short rides as you want wherever and whenever you want.
+                </Text>
+                <HStack
+                  alignItems="center"
+                  space={4}
+                  justifyContent="space-between"
+                >
+                  <HStack alignItems="center">
+                    <Text color="gray.500" fontWeight="400">
+                      35 mins ago
+                    </Text>
+                  </HStack>
+                </HStack>
+              </Stack>
+            </Box>
 
-          <Image
-            source={rule4}
-            style={{
-              width: 280,
-              height: 200,
-            }}
-          />
-          <Text style={tailwind(" text-yellow-500 text-2xl font-bold")}>
-            {" "}
-            Return
-          </Text>
-          <Text style={tailwind(" text-gray-900 text-base  font-bold p-3")}>
-            Return your bike to any station and make sure it's locked.
-          </Text>
+            <Box
+              style={tailwind("w-full mt-4")}
+              rounded="lg"
+              overflow="hidden"
+              width="72"
+              shadow={1}
+              _light={{ backgroundColor: "gray.50" }}
+              _dark={{ backgroundColor: "gray.700" }}
+            >
+              <Box>
+                <AspectRatio ratio={1.47} height={200}>
+                  <Image
+                    source={require("../../../assets/rule4.png")}
+                    alt="image"
+                  />
+                </AspectRatio>
+              </Box>
+              <Stack p="4" space={3}>
+                <Stack space={2}>
+                  <Heading size="md" ml="-1" color="yellow.500">
+                    RETURN
+                  </Heading>
+                </Stack>
+                <Text fontWeight="800">
+                Return your bike to any station and make sure it's locked.
+                </Text>
+                <HStack
+                  alignItems="center"
+                  space={4}
+                  justifyContent="space-between"
+                >
+                  <HStack alignItems="center">
+                    <Text color="gray.500" fontWeight="400">
+                      35 mins ago
+                    </Text>
+                  </HStack>
+                </HStack>
+              </Stack>
+            </Box>
         </View>
 
-        <View>
+        <View  style={tailwind("mt-6")}>
           <Text
             style={tailwind("text-4xl font-bold text-yellow-500 ml-6 mb-6")}
           >
