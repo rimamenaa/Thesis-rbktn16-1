@@ -21,7 +21,7 @@ function SuggestionRoads() {
       <SafeAreaView style={tailwind("h-full")}>
       <ScrollView>
         <View style={tailwind("items-center mt-8")}>
-            <Box style={tailwind("mb-8")}
+            <Box style={tailwind("mb-8 items-center")}
       rounded="lg"
       overflow="hidden"
       width="80"
@@ -42,7 +42,9 @@ function SuggestionRoads() {
         </HStack>
       </Stack>
     </Box>
-            <Box style={tailwind("mb-8")}
+            <Box 
+               style={tailwind("w-full items-center mb-8")}
+
       rounded="lg"
       overflow="hidden"
       width="80"
@@ -77,7 +79,8 @@ Distance: 9km
         </HStack>
       </Stack>
     </Box>
-    <Box style={tailwind("mb-8")}
+    <Box                style={tailwind("w-full items-center mb-8")}
+
       rounded="lg"
       overflow="hidden"
       width="80"
@@ -112,7 +115,8 @@ Distance: 11km
         </HStack>
       </Stack>
     </Box>
-    <Box style={tailwind("mb-8")}
+    <Box                style={tailwind("w-full items-center mb-8")}
+
       rounded="lg"
       overflow="hidden"
       width="80"
@@ -147,7 +151,8 @@ Distance: 11km
         </HStack>
       </Stack>
     </Box>
-    <Box style={tailwind("mb-8")}
+    <Box                style={tailwind("w-full items-center mb-8")}
+
       rounded="lg"
       overflow="hidden"
       width="80"
@@ -178,7 +183,8 @@ Distance: 10.1km
       <Text style={tailwind("ml-6 mr-6 mb-8")} color="gray.600" fontWeight="400">
       Along the shores of the lake, there is a fantastically beautiful route, one spectacular sight chases the next.   </Text>
     </Box>
-    <Box style={tailwind("mb-8")}
+    <Box                style={tailwind("w-full items-center mb-8")}
+
       rounded="lg"
       overflow="hidden"
       width="80"
@@ -213,7 +219,8 @@ Distance: 30km
         </HStack>
       </Stack>
     </Box>
-    <Box style={tailwind("mb-8")}
+    <Box                style={tailwind("w-full items-center mb-8")}
+
       rounded="lg"
       overflow="hidden"
       width="80"
@@ -247,7 +254,8 @@ Distance: 6km
       Riding around your neighborhood, even just around the block, can provide what a lot of us need right now — a break.      </Text>
     </Box>
 
-    <Box style={tailwind("mb-8")}
+    <Box                style={tailwind("w-full items-center mb-8")}
+
       rounded="lg"
       overflow="hidden"
       width="80"

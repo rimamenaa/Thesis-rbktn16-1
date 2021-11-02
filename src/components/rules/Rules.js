@@ -21,8 +21,8 @@ function Rules() {
         <View style={tailwind(" items-center ")}>
       
 <Box 
-              style={tailwind("w-full mb-8")}
-              rounded="lg"
+               style={tailwind("w-full items-center mb-8")}
+               rounded="lg"
               overflow="hidden"
               width="72"
               shadow={1}
@@ -54,8 +54,8 @@ function Rules() {
             </Box>
 
 <Box 
-              style={tailwind("w-full mb-8")}
-              rounded="lg"
+               style={tailwind("w-full items-center mb-8")}
+               rounded="lg"
               overflow="hidden"
               width="72"
               shadow={1}
@@ -85,8 +85,8 @@ function Rules() {
             </Box>
 
 <Box
-              style={tailwind("w-full mb-8")}
-              rounded="lg"
+               style={tailwind("w-full items-center mb-8")}
+               rounded="lg"
               overflow="hidden"
               width="72"
               shadow={1}
@@ -117,8 +117,8 @@ function Rules() {
             </Box>
 
           <Box
-              style={tailwind("w-full mb-8")}
-              rounded="lg"
+               style={tailwind("w-full items-center mb-8")}
+               rounded="lg"
               overflow="hidden"
               width="72"
               shadow={1}
