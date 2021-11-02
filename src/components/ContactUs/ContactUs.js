@@ -1,11 +1,20 @@
 import React from "react";
-import { NativeBaseProvider, Center, ScrollView } from "native-base";
 
-import { useBreakpointValue, Text, VStack } from "native-base";
+import {
+  useBreakpointValue,
+  Text,
+  VStack,
+  NativeBaseProvider,
+  Center,
+  ScrollView,
+} from "native-base";
 import { View } from "react-native";
 import FindUs from "./FindUs";
 import { ByMail } from "./ContactUsByMail";
 import { ByPhone } from "./ContactUsByPhone";
+import { TermsAndConditions } from "../random/TermsAndConditions";
+
+import Rent from "../Renting/Rent";
 
 export const ContactUs = () => {
   const flexDir = useBreakpointValue({
@@ -21,6 +30,11 @@ export const ContactUs = () => {
           <ByMail></ByMail>
           <FindUs></FindUs>
         </View>
+        {/* <TermsAndConditions></TermsAndConditions> */}
+        {/* <MonthlySub></MonthlySub>
+        <AdventurePass></AdventurePass>
+        <SingleTrip></SingleTrip> */}
+        {/* <AdventurePassDetails></AdventurePassDetails> */}
       </VStack>
     </ScrollView>
   );
