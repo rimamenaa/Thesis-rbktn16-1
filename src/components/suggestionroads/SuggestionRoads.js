@@ -1,5 +1,6 @@
 import React from 'react'
-import { View } from "react-native";
+import { View, SafeAreaView, ScrollView
+} from "react-native";
   import {
     VStack,
     HStack,
@@ -24,8 +25,30 @@ import { View } from "react-native";
 
 function SuggestionRoads() {
     return (
-        <View style={tailwind("items-center")}>
-          <Text  style={tailwind("text-gray-600 font-bold text-xl")}> Hilly Roads </Text>
+      <SafeAreaView style={tailwind("h-full")}>
+      <ScrollView>
+        <View style={tailwind("items-center mt-8")}>
+            <Box style={tailwind("mb-8")}
+      rounded="lg"
+      overflow="hidden"
+      width="80"
+      shadow={1}
+      _light={{ backgroundColor: "gray.50" }}
+      _dark={{ backgroundColor: "gray.700" }}
+    >
+     
+      <Stack  p="4" space={3}>
+        <Stack space={2}>
+          <Heading size="md" ml="-1">
+          Bored of riding the same old routes? Struggling for inspiration on how to find new roads to ride? Let us help you!
+          </Heading>
+        </Stack>
+     
+        <HStack alignItems="center" space={4} justifyContent="space-between">
+       
+        </HStack>
+      </Stack>
+    </Box>
             <Box style={tailwind("mb-8")}
       rounded="lg"
       overflow="hidden"
@@ -80,7 +103,7 @@ Distance: 9km
       <Stack  p="4" space={3}>
         <Stack space={2}>
           <Heading size="md" ml="-1">
-          <Entypo name="location-pin" size={24} color="black" /> La Marsa
+          <Entypo name="location-pin" size={24} color="black" /> La Marsa, Tunis
           </Heading>
         </Stack>
         <Text fontWeight="400">
@@ -96,7 +119,6 @@ Distance: 11km
         </HStack>
       </Stack>
     </Box>
-    <Text  style={tailwind("text-gray-600 font-bold text-xl")}> Flat Roads </Text>
     <Box style={tailwind("mb-8")}
       rounded="lg"
       overflow="hidden"
@@ -158,14 +180,10 @@ Distance: 11km
         <FontAwesome5 name="clock" size={24} color="black" /> Duration: 1:04h         <MaterialCommunityIcons name="map-marker-distance" size={24} color="black" />
 Distance: 10.1km 
         </Text>
-        <HStack alignItems="center" space={4} justifyContent="space-between">
-          <HStack alignItems="center">
-            <Text color="gray.500" fontWeight="400">
-              write some important stuff here ...
-            </Text>
-          </HStack>
-        </HStack>
+        
       </Stack>
+      <Text style={tailwind("ml-6 mr-6 mb-8")} color="gray.600" fontWeight="400">
+      Along the shores of the lake, there is a fantastically beautiful route, one spectacular sight chases the next.   </Text>
     </Box>
     <Box style={tailwind("mb-8")}
       rounded="lg"
@@ -202,7 +220,6 @@ Distance: 30km
         </HStack>
       </Stack>
     </Box>
-    <Text  style={tailwind("text-gray-600 font-bold text-xl")}> Short Trips </Text>
     <Box style={tailwind("mb-8")}
       rounded="lg"
       overflow="hidden"
@@ -230,14 +247,13 @@ Distance: 30km
 Distance: 6km 
         </Text>
         <HStack alignItems="center" space={4} justifyContent="space-between">
-          <HStack alignItems="center">
-            <Text color="gray.500" fontWeight="400">
-              write some important stuff here ...
-            </Text>
-          </HStack>
+         
         </HStack>
       </Stack>
+      <Text style={tailwind("ml-6 mr-8 mb-8")} color="gray.600" fontWeight="400">
+      Riding around your neighborhood, even just around the block, can provide what a lot of us need right now — a break.      </Text>
     </Box>
+
     <Box style={tailwind("mb-8")}
       rounded="lg"
       overflow="hidden"
@@ -246,7 +262,7 @@ Distance: 6km
       _light={{ backgroundColor: "gray.50" }}
       _dark={{ backgroundColor: "gray.700" }}
     >
-      <Box >
+      <Box>
         <AspectRatio ratio={1.45} height={200}>
           <Image
             source={require("../../../assets/short2.png")}
@@ -254,7 +270,7 @@ Distance: 6km
           />
         </AspectRatio>
       </Box>
-      <Stack  p="4" space={3}>
+      <Stack p="4" space={3}>
         <Stack space={2}>
           <Heading size="md" ml="-1">
           <Entypo name="location-pin" size={24} color="black" /> Carthage, Tunis
@@ -264,16 +280,14 @@ Distance: 6km
         <FontAwesome5 name="clock" size={24} color="black" /> Duration: 0:44h         <MaterialCommunityIcons name="map-marker-distance" size={24} color="black" />
 Distance: 9.5km 
         </Text>
-        <HStack alignItems="center" space={4} justifyContent="space-between">
-          <HStack alignItems="center">
-            <Text color="gray.500" fontWeight="400">
-              write some important stuff here ...
-            </Text>
-          </HStack>
-        </HStack>
+ 
       </Stack>
+      <Text style={tailwind("ml-6 mr-8 mb-8")} color="gray.600" fontWeight="400">
+      Riding around your neighborhood keeps your body and mind healthy and active, you might be surprised at how much even a short ride can improve your day.            </Text>
     </Box>
         </View>
+        </ScrollView>
+    </SafeAreaView>
     )
 }
 
