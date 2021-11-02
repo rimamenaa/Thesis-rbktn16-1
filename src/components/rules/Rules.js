@@ -1,32 +1,18 @@
 import React from "react";
 import {
-  Animated,
   SafeAreaView,
-  StyleSheet,
-  TouchableOpacity,
   View,
   ScrollView,
 } from "react-native";
 import {
-  VStack,
-  HStack,
-  Button,
-  IconButton,
   Text,
   Box,
-  StatusBar,
   Heading,
-  Icon,
   AspectRatio,
   Image,
-  Center,
   Stack,
-  NativeBaseProvider,
 } from "native-base";
 import tailwind from "tailwind-rn";
-import roadrule2 from "../../../assets/roadrule2.png";
-import roadrule3 from "../../../assets/roadrule3.png";
-import roadrule4 from "../../../assets/roadrule4.png";
 
 function Rules() {
   return (

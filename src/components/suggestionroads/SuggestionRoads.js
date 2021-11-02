@@ -2,20 +2,13 @@ import React from 'react'
 import { View, SafeAreaView, ScrollView
 } from "react-native";
   import {
-    VStack,
     HStack,
-    Button,
-    IconButton,
     Text,
     Box,
-    StatusBar,
     Heading,
-    Icon,
     AspectRatio,
     Image,
-    Center,
     Stack,
-    NativeBaseProvider,
   } from "native-base";
   import tailwind from "tailwind-rn";
   import { MaterialCommunityIcons } from '@expo/vector-icons'; 
