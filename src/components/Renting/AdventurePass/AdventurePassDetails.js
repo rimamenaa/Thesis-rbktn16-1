@@ -49,10 +49,7 @@ function AdventurePassDetails() {
             long ride and want to keep a bike out longer than 2 hours at a time,
             it's only an extra 3TD per additional 30 minutes. With By-Cycle, you
             can take a bike out from any station within the system and return it
-            to any other. So you can take a one-way trip or stop to explore on
-            foot without having to worry about locking up a rental bike. With
-            thousands of bikes across Metro Boston, By-Cycle is the most
-            convenient (and fun!) way to get around.
+            to any other.
           </Text>
           <Stack space={2}>
             <Text

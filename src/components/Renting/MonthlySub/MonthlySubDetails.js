@@ -40,9 +40,7 @@ function MonthlySubDetails() {
             the very same day you sign up by using the Bluebikes mobile app to
             unlock a bike.* You can take as many rides as you want while your
             membership is active, and the first 45 minutes of each ride are
-            included in your plan. If you keep a bike out for longer than 45
-            minutes at a time, it's only an extra $2.50 per additional 30
-            minutes.
+            included in your plan.
           </Text>
           <Stack space={2}>
             <Text
