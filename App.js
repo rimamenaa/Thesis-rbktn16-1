@@ -35,6 +35,7 @@ function App() {
         <Stack.Navigator>
           <Stack.Screen name="LandingPage" component={LandingPage} />
           <Stack.Screen name="Home" component={HomePage} />
+
           <Stack.Screen name="Commercial" component={Commercial} />
           <Stack.Screen name="Rent" component={Rent} />
           <Stack.Screen name="Station" component={Station} />

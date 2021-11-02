@@ -20,6 +20,7 @@ import {
   Link,
   Hidden,
   Menu,
+  View,
 } from "native-base";
 import {
   AntDesign,
@@ -67,63 +68,7 @@ const reviews = [
   },
 ];
 
-const AddToCartButton = (props) => {
-  return (
-    <HStack
-      mt="5"
-      space="4"
-      alignItems="center"
-      display={{
-        base: props.base,
-        md: props.md,
-      }}
-    >
-      <Center
-        p="2"
-        borderRadius="4"
-        _light={{
-          bg: "primary.100",
-        }}
-        _dark={{
-          bg: "coolGray.900",
-        }}
-      >
-        <Icon
-          size="8"
-          name="heart"
-          as={EvilIcons}
-          _dark={{
-            color: "violet.500",
-          }}
-          _light={{
-            color: "primary.900",
-          }}
-
-          
-        />
-      </Center>
-      <Button
-        flex={1}
-        h="100%"
-        py={3}
-        borderRadius="4"
-        _dark={{
-          bg: "violet.700",
-        }}
-        _light={{
-          bg: "primary.900",
-        }}
-        _text={{
-          fontSize: "md",
-          fontWeight: "semibold",
-        }}
-      >
-        Add To Cart
-      </Button>
-    </HStack>
-  );
-};
-
+import tw from "tailwind-react-native-classnames";
 export default function (props) {
   // const router = useRouter(); //use incase of Nextjs
   const [tabName, setTabName] = React.useState("Reviews");
@@ -139,6 +84,8 @@ export default function (props) {
           bg: "coolGray.100",
         }}
       />
+
+     
       <VStack
         flex={1}
         _light={{
@@ -148,184 +95,9 @@ export default function (props) {
           bg: "customGray",
         }}
       >
+         <ScrollView>
         <Box
-          px={{
-            base: "4",
-            md: "8",
-          }}
-          pt={{
-            base: "2",
-            md: "1",
-          }}
-          pb={{
-            base: "5",
-            md: "3",
-          }}
-          borderBottomWidth={{
-            md: "1",
-          }}
-          _dark={{
-            bg: "coolGray.200",
-            borderColor: "coolGray.200",
-          }}
-          _light={{
-            bg: {
-              base: "primary.900",
-              md: "white",
-            },
-            borderColor: "coolGray.200",
-          }}
-        >
-          <Hidden till="md">
-            <HStack alignItems="center" justifyContent="space-between">
-              <HStack space="8" alignItems="center">
-                <IconButton
-                  variant="ghost"
-                  colorScheme="light"
-                  onPress={props.toggleSidebar}
-                  icon={
-                    <Icon
-                      size="6"
-                      name="menu-sharp"
-                      as={Ionicons}
-                      _light={{
-                        color: "coolGray.800",
-                      }}
-                      _dark={{
-                        color: "coolGray.50",
-                      }}
-                    />
-                  }
-                />
-
-                {colorMode == "light" ? (
-                  <Image
-                    h="10"
-                    w="56"
-                    alt="NativeBase Startup+"
-                    resizeMode="contain"
-                    source={require("../../../assets/bike.png")}
-                  />
-                ) : (
-                  <Image
-                    h="10"
-                    w="56"
-                    alt="NativeBase Startup+"
-                    resizeMode="contain"
-                    source={require("../../../assets/bike.png")}
-                  />
-                )}
-              </HStack>
-              <HStack space="8" alignItems="center">
-                <Input
-                  px="4"
-                  w="30%"
-                  size="sm"
-                  placeholder="Search"
-                  InputLeftElement={
-                    <Icon
-                      px="2"
-                      size="4"
-                      name={"search"}
-                      as={FontAwesome}
-                      _light={{
-                        color: "coolGray.400",
-                      }}
-                      _dark={{
-                        color: "coolGray.100",
-                      }}
-                    />
-                  }
-                />
-
-                <HStack space="5" alignItems="center">
-                  <IconButton
-                    icon={
-                      <Icon
-                        size="6"
-                        _dark={{
-                          color: "coolGray.50",
-                        }}
-                        _light={{
-                          color: "coolGray.400",
-                        }}
-                        as={Entypo}
-                        name={"share"}
-                      />
-                    }
-                  />
-                  <IconButton
-                    icon={
-                      <Icon
-                        size="6"
-                        name={"heart"}
-                        as={FontAwesome}
-                        _dark={{
-                          color: "coolGray.50",
-                        }}
-                        _light={{
-                          color: "coolGray.400",
-                        }}
-                      />
-                    }
-                  />
-                  <IconButton
-                    icon={
-                      <Icon
-                        size="6"
-                        _dark={{
-                          color: "coolGray.50",
-                        }}
-                        _light={{
-                          color: "coolGray.400",
-                        }}
-                        as={Feather}
-                        name={"shopping-cart"}
-                      />
-                    }
-                  />
-                </HStack>
-
-                <Menu
-                  closeOnSelect={false}
-                  w="190"
-                  onOpen={() => console.log("opened")}
-                  onClose={() => console.log("closed")}
-                  trigger={(triggerProps) => {
-                    return (
-                      <Pressable {...triggerProps}>
-                        <Avatar
-                          w="8"
-                          h="8"
-                          borderWidth="2"
-                          _dark={{
-                            borderColor: "primary.700",
-                          }}
-                          source={{
-                            uri: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                          }}
-                        />
-                      </Pressable>
-                    );
-                  }}
-                >
-                  <Menu.Group title="Profile">
-                    <Menu.Item>Account</Menu.Item>
-                    <Menu.Item>Billing</Menu.Item>
-                    <Menu.Item>Security</Menu.Item>
-                  </Menu.Group>
-                  <Divider mt="3" w="100%" />
-                  <Menu.Group title="Shortcuts">
-                    <Menu.Item>Settings</Menu.Item>
-                    <Menu.Item>Logout</Menu.Item>
-                  </Menu.Group>
-                </Menu>
-              </HStack>
-            </HStack>
-          </Hidden>
-        </Box>
-
-        <Box
+          style={tw `mt-4`}
           flex={1}
           flexDirection={{
             base: "column",
@@ -350,24 +122,407 @@ export default function (props) {
             }}
           >
             <VStack maxW="1016px" flex={1} width="100%">
-              <Hidden till="md">
-                <HStack mb="4" space={2}>
-                  <Pressable>
-                    <Icon
-                      size="6"
-                      as={AntDesign}
-                      name={"arrowleft"}
-                      _light={{
-                        color: "coolGray.800",
-                      }}
-                      _dark={{
-                        color: "coolGray.50",
-                      }}
-                    />
-                  </Pressable>
-                </HStack>
-              </Hidden>
+              <Stack
+                flex={1}
+                p={{
+                  md: "8",
+                }}
+                _light={{
+                  bg: "white",
+                }}
+                _dark={{
+                  borderColor: "coolGray.700",
+                  bg: {
+                    md: "coolGray.900",
+                    base: "coolGray.800",
+                  },
+                }}
+                borderWidth={1}
+                borderColor="#E5E7EB"
+                borderRadius={8}
+                direction={{
+                  base: "column",
+                  md: "row",
+                }}
+                space="6"
+              >
+                <Box
+                  p="2"
+                  bg="primary.100"
+                  borderRadius="md"
+                  alignItems="center"
+                  w={{
+                    base: "100%",
+                    md: "50%",
+                  }}
+                  h={{
+                    base: "40%",
+                    md: "auto",
+                  }}
+                  pr={{
+                    base: "2",
+                    md: "4",
+                  }}
+                  justifyContent="center"
+                >
+                  
+                  <Image
+                    width="full"
+                    height={{
+                      base: "full",
+                      md: "full",
+                    }}
+                    rounded="lg"
+                    alt="Alternate Text"
+                    source={require("../../../assets/sidibou.png")}
+                  />
+                     {/* <Image
+                    width="full"
+                    height={{
+                      base: "full",
+                      md: "full",
+                    }}
+                    rounded="lg"
+                    alt="Alternate Text"
+                    source={require("../../../assets/sidibou2.png")}
+                  /> */}
+                  
+                     {/* <Image
+                    width="full"
+                    height={{
+                      base: "full",
+                      md: "full",
+                    }}
+                    rounded="lg"
+                    alt="Alternate Text"
+                    source={require("../../../assets/sidibou3.png")}
+                  /> */}
+                  
+                </Box>
+                <ScrollView showsVerticalScrollIndicator={false}>
+                  <Box
+                    flex={1}
+                    px={{
+                      base: "4",
+                    }}
+                  >
+                    <VStack space={1}>
+                      <HStack
+                        justifyContent="space-between"
+                        alignItems="center"
+                      >
+                        <Text
+                          fontSize="lg"
+                          _light={{
+                            color: "coolGray.800",
+                          }}
+                          _dark={{
+                            color: "coolGray.50",
+                          }}
+                        >
+                          Ratings
+                        </Text>
+                        <HStack alignItems="center" space="1">
+                          <Icon
+                            size="4"
+                            name={"star"}
+                            as={AntDesign}
+                            color="amber.400"
+                          />
+                          <Text
+                            fontSize="md"
+                            _light={{
+                              color: "coolGray.800",
+                            }}
+                            _dark={{
+                              color: "coolGray.50",
+                            }}
+                          >
+                            4.9
+                          </Text>
+                          <Text
+                            fontSize="sm"
+                            fontWeight="medium"
+                            _light={{
+                              color: "coolGray.400",
+                            }}
+                            _dark={{
+                              color: "coolGray.300",
+                            }}
+                          >
+                            (120)
+                          </Text>
+                        </HStack>
+                      </HStack>
 
+                      <Text
+                        fontSize="xs"
+                        fontWeight="medium"
+                        _light={{
+                          color: "coolGray.800",
+                        }}
+                        _dark={{
+                          color: "coolGray.50",
+                        }}
+                      >
+                        277 Reviews
+                      </Text>
+                    </VStack>
+
+                    <HStack space="2" mt="5" alignItems="center">
+                      <Text
+                        fontSize="sm"
+                        fontWeight="medium"
+                        color="coolGray.400"
+                      >
+                        (By-cycle)
+                      </Text>
+                      <Link
+                        ml="auto"
+                        _text={{
+                          textDecoration: "none",
+                        }}
+                        _light={{
+                          _text: {
+                            color: "primary.800",
+                            fontSize: "sm",
+                            fontWeight: "medium",
+                          },
+                        }}
+                        _dark={{
+                          _text: {
+                            color: "primary.400",
+                            fontSize: "sm",
+                            fontWeight: "medium",
+                          },
+                        }}
+                      >
+                        Your opinion matters
+                      </Link>
+                    </HStack>
+                    <ScrollView
+                      horizontal={true}
+                      showsHorizontalScrollIndicator={false}
+                    >
+                      <Button.Group space="2" mt={3} alignItems="center">
+                        {categories.map((item) => {
+                          return (
+                            <Button
+                              py="4"
+                              px="5"
+                              borderRadius="4"
+                              variant="subtle"
+                              _text={{
+                                _dark: {
+                                  color: "coolGray.50",
+                                },
+                                _light: {
+                                  color: "coolGray.800",
+                                },
+                                fontWeight: "normal",
+                              }} //@ts-ignore
+                              _light={{
+                                colorScheme: "primary",
+                              }}
+                              _dark={{
+                                bg: "coolGray.100",
+                                //@ts-ignore
+                                colorScheme: "dark",
+                              }}
+                            >
+                              {item.category}
+                            </Button>
+                          );
+                        })}
+                      </Button.Group>
+                    </ScrollView>
+                    {/* <AddToCartButton base="none" md="flex" /> */}
+                    <HStack mt="8" space="5">
+                      <Pressable
+                        onPress={() => {
+                          setTabName("Description");
+                        }}
+                      >
+                        <Text
+                          fontSize="16"
+                          fontWeight="medium"
+                          letterSpacing="0.4"
+                          _light={{
+                            color:
+                              tabName == "Description"
+                                ? "primary.900"
+                                : "coolGray.400",
+                          }}
+                          _dark={{
+                            color:
+                              tabName == "Description"
+                                ? "coolGray.50"
+                                : "coolGray.400",
+                          }}
+                        >
+                          Description
+                        </Text>
+                        {tabName == "Description" ? (
+                          <Box width="100%" py="1">
+                            <Divider bg="primary.100" />
+                          </Box>
+                        ) : (
+                          <></>
+                        )}
+                      </Pressable>
+                      <Pressable
+                        onPress={() => {
+                          setTabName("Reviews");
+                        }}
+                      >
+                        <Text
+                          fontSize="16"
+                          fontWeight="medium"
+                          letterSpacing="0.4"
+                          _light={{
+                            color:
+                              tabName == "Reviews"
+                                ? "primary.900"
+                                : "coolGray.400",
+                          }}
+                          _dark={{
+                            color:
+                              tabName == "Reviews"
+                                ? "coolGray.50"
+                                : "coolGray.400",
+                          }}
+                        >
+                          Reviews
+                        </Text>
+                        {tabName == "Reviews" ? (
+                          <Box width="100%" py="1">
+                            <Divider bg="primary.900" />
+                          </Box>
+                        ) : (
+                          <></>
+                        )}
+                      </Pressable>
+                    </HStack>
+                    {tabName === "Description" ? (
+                      <Text
+                        mt="3"
+                        fontSize="sm"
+                        lineHeight="lg"
+                        fontWeight="medium"
+                        letterSpacing="0.3"
+                        _light={{
+                          color: "coolGray.800",
+                        }}
+                        _dark={{
+                          color: "coolGray.50",
+                        }}
+                      >
+                        Sidi Bou Said is a town in northern Tunisia located about 20 km from the capital, Tunis.
+                        Cafe de delice and coast view Named for a religious figure who lived there, Abu Said al-Baji, 
+                        it was previously called Jabal el-Menar. The town itself is a tourist attraction and is known 
+                        for its extensive use of blue and white. It can be reached by a TGM train, which runs from Tunis 
+                        to La Marsa.
+                      </Text>
+                    ) : (
+                      reviews.map((item, idx) => {
+                        return (
+                          <VStack my="3" px="4" key={idx}>
+                            <HStack justifyContent="space-between">
+                              <HStack space="3">
+                                <Avatar
+                                  source={{
+                                    uri: item.imageUrl,
+                                  }}
+                                  height="9"
+                                  width="9"
+                                />
+                                <VStack space="1">
+                                  <Text
+                                    fontSize="sm"
+                                    fontWeight="semibold"
+                                    _dark={{
+                                      color: "coolGray.50",
+                                    }}
+                                    _light={{
+                                      color: "coolGray.800",
+                                    }}
+                                  >
+                                    {item.name}
+                                  </Text>
+                                  <HStack space="1">
+                                    <Icon
+                                      size="4"
+                                      name="star"
+                                      as={AntDesign}
+                                      color="amber.400"
+                                    />
+                                  </HStack>
+                                </VStack>
+                              </HStack>
+                              <Text
+                                fontSize="sm"
+                                _light={{
+                                  color: "coolGray.500",
+                                }}
+                                _dark={{
+                                  color: "coolGray.300",
+                                }}
+                              >
+                                {item.time}
+                              </Text>
+                            </HStack>
+                            <Text
+                              alignItems="center"
+                              lineHeight="lg"
+                              mt="4"
+                              _light={{
+                                color: "coolGray.500",
+                              }}
+                              _dark={{
+                                color: "coolGray.300",
+                              }}
+                              fontSize="md"
+                            >
+                              {item.review}
+                            </Text>
+                          </VStack>
+                        );
+                      })
+                    )}
+                    {/* <AddToCartButton base="flex" md="none" /> */}
+                  </Box>
+                </ScrollView>
+              </Stack>
+            </VStack>
+          </ScrollView>
+        </Box>
+
+        <Box
+          style={tw `mt-4`}
+          flex={1}
+          flexDirection={{
+            base: "column",
+            md: "row",
+          }}
+          _light={{
+            borderTopColor: "coolGray.200",
+          }}
+          _dark={{
+            bg: "coolGray.800",
+            borderTopColor: "coolGray.700",
+          }}
+        >
+          <ScrollView
+            flex={1}
+            p={{
+              md: 8,
+            }}
+            contentContainerStyle={{
+              alignItems: "center",
+              flex: 1,
+            }}
+          >
+            <VStack maxW="1016px" flex={1} width="100%">
               <Stack
                 flex={1}
                 p={{
@@ -419,7 +574,7 @@ export default function (props) {
                     }}
                     rounded="lg"
                     alt="Alternate Text"
-                    source={require("../../../assets/bike.png")}
+                    source={require("../../../assets/marsa1.png")}
                   />
                 </Box>
                 <ScrollView showsVerticalScrollIndicator={false}>
@@ -640,9 +795,10 @@ export default function (props) {
                           color: "coolGray.50",
                         }}
                       >
-                        Here we should write some description for guidance !!
-                        Elyes work Elyes work Elyes work Elyes work Elyes work
-                        Elyes work Elyes work
+                        La Perle du Lac, an illustration of the impeccable aesthetic reintegration of water bodies into the urban zone, 
+                        is an exceptional area composed of judiciously and coherently arranged residences that value space harmony.
+                        The city, which will be built on 230 hectares outspreads from the Berges du Lac to Tunis city center as its direct extension, 
+                        meets the designers’ ambitions to make it a large metropolis giving Tunis a new face mirrored in water.
                       </Text>
                     ) : (
                       reviews.map((item, idx) => {
@@ -717,6 +873,384 @@ export default function (props) {
             </VStack>
           </ScrollView>
         </Box>
+
+        <Box
+          style={tw `mt-4`}
+          flex={1}
+          flexDirection={{
+            base: "column",
+            md: "row",
+          }}
+          _light={{
+            borderTopColor: "coolGray.200",
+          }}
+          _dark={{
+            bg: "coolGray.800",
+            borderTopColor: "coolGray.700",
+          }}
+        >
+          <ScrollView
+            flex={1}
+            p={{
+              md: 8,
+            }}
+            contentContainerStyle={{
+              alignItems: "center",
+              flex: 1,
+            }}
+          >
+            <VStack maxW="1016px" flex={1} width="100%">
+              <Stack
+                flex={1}
+                p={{
+                  md: "8",
+                }}
+                _light={{
+                  bg: "white",
+                }}
+                _dark={{
+                  borderColor: "coolGray.700",
+                  bg: {
+                    md: "coolGray.900",
+                    base: "coolGray.800",
+                  },
+                }}
+                borderWidth={1}
+                borderColor="#E5E7EB"
+                borderRadius={8}
+                direction={{
+                  base: "column",
+                  md: "row",
+                }}
+                space="6"
+              >
+                <Box
+                  p="2"
+                  bg="primary.100"
+                  borderRadius="md"
+                  alignItems="center"
+                  w={{
+                    base: "100%",
+                    md: "50%",
+                  }}
+                  h={{
+                    base: "40%",
+                    md: "auto",
+                  }}
+                  pr={{
+                    base: "2",
+                    md: "4",
+                  }}
+                  justifyContent="center"
+                >
+                  <Image
+                    width="full"
+                    height={{
+                      base: "full",
+                      md: "full",
+                    }}
+                    rounded="lg"
+                    alt="Alternate Text"
+                    source={require("../../../assets/lac01.png")}
+                  />
+                </Box>
+                <ScrollView showsVerticalScrollIndicator={false}>
+                  <Box
+                    flex={1}
+                    px={{
+                      base: "4",
+                    }}
+                  >
+                    <VStack space={1}>
+                      <HStack
+                        justifyContent="space-between"
+                        alignItems="center"
+                      >
+                        <Text
+                          fontSize="lg"
+                          _light={{
+                            color: "coolGray.800",
+                          }}
+                          _dark={{
+                            color: "coolGray.50",
+                          }}
+                        >
+                          Ratings
+                        </Text>
+                        <HStack alignItems="center" space="1">
+                          <Icon
+                            size="4"
+                            name={"star"}
+                            as={AntDesign}
+                            color="amber.400"
+                          />
+                          <Text
+                            fontSize="md"
+                            _light={{
+                              color: "coolGray.800",
+                            }}
+                            _dark={{
+                              color: "coolGray.50",
+                            }}
+                          >
+                            4.9
+                          </Text>
+                          <Text
+                            fontSize="sm"
+                            fontWeight="medium"
+                            _light={{
+                              color: "coolGray.400",
+                            }}
+                            _dark={{
+                              color: "coolGray.300",
+                            }}
+                          >
+                            (120)
+                          </Text>
+                        </HStack>
+                      </HStack>
+
+                      <Text
+                        fontSize="xs"
+                        fontWeight="medium"
+                        _light={{
+                          color: "coolGray.800",
+                        }}
+                        _dark={{
+                          color: "coolGray.50",
+                        }}
+                      >
+                        277 Reviews
+                      </Text>
+                    </VStack>
+
+                    <HStack space="2" mt="5" alignItems="center">
+                      <Text
+                        fontSize="sm"
+                        fontWeight="medium"
+                        color="coolGray.400"
+                      >
+                        (By-cycle)
+                      </Text>
+                      <Link
+                        ml="auto"
+                        _text={{
+                          textDecoration: "none",
+                        }}
+                        _light={{
+                          _text: {
+                            color: "primary.800",
+                            fontSize: "sm",
+                            fontWeight: "medium",
+                          },
+                        }}
+                        _dark={{
+                          _text: {
+                            color: "primary.400",
+                            fontSize: "sm",
+                            fontWeight: "medium",
+                          },
+                        }}
+                      >
+                        Your opinion matters
+                      </Link>
+                    </HStack>
+                    <ScrollView
+                      horizontal={true}
+                      showsHorizontalScrollIndicator={false}
+                    >
+                      <Button.Group space="2" mt={3} alignItems="center">
+                        {categories.map((item) => {
+                          return (
+                            <Button
+                              py="4"
+                              px="5"
+                              borderRadius="4"
+                              variant="subtle"
+                              _text={{
+                                _dark: {
+                                  color: "coolGray.50",
+                                },
+                                _light: {
+                                  color: "coolGray.800",
+                                },
+                                fontWeight: "normal",
+                              }} //@ts-ignore
+                              _light={{
+                                colorScheme: "primary",
+                              }}
+                              _dark={{
+                                bg: "coolGray.100",
+                                //@ts-ignore
+                                colorScheme: "dark",
+                              }}
+                            >
+                              {item.category}
+                            </Button>
+                          );
+                        })}
+                      </Button.Group>
+                    </ScrollView>
+                    {/* <AddToCartButton base="none" md="flex" /> */}
+                    <HStack mt="8" space="5">
+                      <Pressable
+                        onPress={() => {
+                          setTabName("Description");
+                        }}
+                      >
+                        <Text
+                          fontSize="16"
+                          fontWeight="medium"
+                          letterSpacing="0.4"
+                          _light={{
+                            color:
+                              tabName == "Description"
+                                ? "primary.900"
+                                : "coolGray.400",
+                          }}
+                          _dark={{
+                            color:
+                              tabName == "Description"
+                                ? "coolGray.50"
+                                : "coolGray.400",
+                          }}
+                        >
+                          Description
+                        </Text>
+                        {tabName == "Description" ? (
+                          <Box width="100%" py="1">
+                            <Divider bg="primary.100" />
+                          </Box>
+                        ) : (
+                          <></>
+                        )}
+                      </Pressable>
+                      <Pressable
+                        onPress={() => {
+                          setTabName("Reviews");
+                        }}
+                      >
+                        <Text
+                          fontSize="16"
+                          fontWeight="medium"
+                          letterSpacing="0.4"
+                          _light={{
+                            color:
+                              tabName == "Reviews"
+                                ? "primary.900"
+                                : "coolGray.400",
+                          }}
+                          _dark={{
+                            color:
+                              tabName == "Reviews"
+                                ? "coolGray.50"
+                                : "coolGray.400",
+                          }}
+                        >
+                          Reviews
+                        </Text>
+                        {tabName == "Reviews" ? (
+                          <Box width="100%" py="1">
+                            <Divider bg="primary.900" />
+                          </Box>
+                        ) : (
+                          <></>
+                        )}
+                      </Pressable>
+                    </HStack>
+                    {tabName === "Description" ? (
+                      <Text
+                        mt="3"
+                        fontSize="sm"
+                        lineHeight="lg"
+                        fontWeight="medium"
+                        letterSpacing="0.3"
+                        _light={{
+                          color: "coolGray.800",
+                        }}
+                        _dark={{
+                          color: "coolGray.50",
+                        }}
+                      >
+                        is a coastal town in far north eastern Tunisia near the capital Tunis. The population is estimated as 92,987, as of 2014. 
+                        The old summer capital of pre-colonial Tunisia, it is today a popular vacation spot for many wealthy Tunisians. 
+                        It is connected to Tunis by the TGM railway. Gammarth is adjacent to El Marsa further up the coast.
+                      </Text>
+                    ) : (
+                      reviews.map((item, idx) => {
+                        return (
+                          <VStack my="3" px="4" key={idx}>
+                            <HStack justifyContent="space-between">
+                              <HStack space="3">
+                                <Avatar
+                                  source={{
+                                    uri: item.imageUrl,
+                                  }}
+                                  height="9"
+                                  width="9"
+                                />
+                                <VStack space="1">
+                                  <Text
+                                    fontSize="sm"
+                                    fontWeight="semibold"
+                                    _dark={{
+                                      color: "coolGray.50",
+                                    }}
+                                    _light={{
+                                      color: "coolGray.800",
+                                    }}
+                                  >
+                                    {item.name}
+                                  </Text>
+                                  <HStack space="1">
+                                    <Icon
+                                      size="4"
+                                      name="star"
+                                      as={AntDesign}
+                                      color="amber.400"
+                                    />
+                                  </HStack>
+                                </VStack>
+                              </HStack>
+                              <Text
+                                fontSize="sm"
+                                _light={{
+                                  color: "coolGray.500",
+                                }}
+                                _dark={{
+                                  color: "coolGray.300",
+                                }}
+                              >
+                                {item.time}
+                              </Text>
+                            </HStack>
+                            <Text
+                              alignItems="center"
+                              lineHeight="lg"
+                              mt="4"
+                              _light={{
+                                color: "coolGray.500",
+                              }}
+                              _dark={{
+                                color: "coolGray.300",
+                              }}
+                              fontSize="md"
+                            >
+                              {item.review}
+                            </Text>
+                          </VStack>
+                        );
+                      })
+                    )}
+                    {/* <AddToCartButton base="flex" md="none" /> */}
+                  </Box>
+                </ScrollView>
+              </Stack>
+            </VStack>
+          </ScrollView>
+        </Box>
+
+        </ScrollView>
       </VStack>
     </>
   );
