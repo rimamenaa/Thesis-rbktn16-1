@@ -20,6 +20,7 @@ function MonthlySub() {
   const navigation = useNavigation();
   return (
     <Pressable
+      style={{ margin: 20 }}
       onPress={() => {
         navigation.navigate("MonthlySubDetails");
       }}

@@ -27,7 +27,7 @@ function SingleTrip() {
       onPress={() => {
         navigation.navigate("SingleTripDetails");
       }}
-      style={{ margin: 50 }}
+      style={{ margin: 20 }}
     >
       <Stack p="4" space={3}>
         <Stack space={2}>
