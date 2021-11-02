@@ -1,36 +1,31 @@
 import React from "react";
-import { SafeAreaView, Text, View, ScrollView } from "react-native";
+
+import {
+  SafeAreaView,
+  View,
+  Text,
+  ScrollView,
+  ImageBackground,
+} from "react-native";
+
 import tailwind from "tailwind-rn";
 
-export default function HomePage({ navigation }) {
+function HomePage({ navigation }) {
   return (
-    <SafeAreaView style={tailwind("h-full")}>
-      <ScrollView>
-        <View style={tailwind(" items-center")}>
+    <ImageBackground
+      style={tailwind("h-full")}
+      source={require("../../../assets/smallBike.png")}
+    >
+      <SafeAreaView style={tailwind("max-h-full")}>
+        <ScrollView>
           <View
             style={tailwind(
-              " min-w-full bg-gray-600  items-center  rounded-2xl flex "
+              " min-w-full bg-transparent items-center mt-8 rounded-2xl flex "
             )}
           >
             <Text
-              style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
-              onPress={() => {
-                navigation.navigate("Login");
-              }}
-            >
-              Login
-            </Text>
-            <Text
-              style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
-              onPress={() => {
-                navigation.navigate("Signup");
-              }}
-            >
-              Signup
-            </Text>
-            <Text
               style={tailwind(
-                " text-4xl  text-yellow-400 items-center font-bold py-8 "
+                " text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
               )}
               onPress={() => {
                 navigation.navigate("Commercial");
@@ -39,12 +34,24 @@ export default function HomePage({ navigation }) {
               Home page
             </Text>
             <Text
-              style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
+              style={tailwind(
+                " text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+              )}
               onPress={() => {
                 navigation.navigate("Rules");
               }}
             >
               Rules
+            </Text>
+            <Text
+              style={tailwind(
+                " text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+              )}
+              onPress={() => {
+                navigation.navigate("SuggestionRoads");
+              }}
+            >
+              SuggestionRoads
             </Text>
             <Text
               style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
@@ -55,7 +62,9 @@ export default function HomePage({ navigation }) {
               Station
             </Text>
             <Text
-              style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
+              style={tailwind(
+                " text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+              )}
               onPress={() => {
                 navigation.navigate("Reviews");
               }}
@@ -63,7 +72,9 @@ export default function HomePage({ navigation }) {
               Reviews
             </Text>
             <Text
-              style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
+              style={tailwind(
+                " text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+              )}
               onPress={() => {
                 navigation.navigate("ContactUs");
               }}
@@ -71,16 +82,38 @@ export default function HomePage({ navigation }) {
               ContactUs
             </Text>
             <Text
-              style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
+              style={tailwind(
+                " text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+              )}
               onPress={() => {
                 navigation.navigate("TestBase");
               }}
             >
-              TestBase
+              Test native base
+            </Text>
+            <Text
+              style={tailwind(
+                "text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+              )}
+              onPress={() => {
+                navigation.navigate("Rent");
+              }}
+            >
+              Rent
+            </Text>
+            <Text
+              style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
+              onPress={() => {
+                navigation.navigate("LandingPage");
+              }}
+            >
+              Logout
             </Text>
           </View>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+        </ScrollView>
+      </SafeAreaView>
+    </ImageBackground>
   );
 }
+
+export default HomePage;
