@@ -98,6 +98,8 @@ const AddToCartButton = (props) => {
           _light={{
             color: "primary.900",
           }}
+
+          
         />
       </Center>
       <Button
@@ -639,7 +641,8 @@ export default function (props) {
                         }}
                       >
                         Here we should write some description for guidance !!
-                        Elyes work
+                        Elyes work Elyes work Elyes work Elyes work Elyes work
+                        Elyes work Elyes work
                       </Text>
                     ) : (
                       reviews.map((item, idx) => {
