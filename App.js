@@ -41,7 +41,7 @@ function App() {
           <Stack.Screen name="Commercial" component={Commercial} />
           <Stack.Screen name="Rules" component={Rules} />
           <Stack.Screen name="Station" component={Station} />
-          <Stack.Screen name="TestBase" component={TestBase} />
+          {/* <Stack.Screen name="TestBase" component={TestBase} /> */}
           <Stack.Screen name="Reviews" component={Reviews} />
           <Stack.Screen name="Rent" component={Rent} />
           <Stack.Screen name="SingleTrip" component={SingleTrip} />
