@@ -1,68 +1,101 @@
 import React from "react";
-import { SafeAreaView, Text, View, ScrollView } from "react-native";
+
+import { SafeAreaView,View,Text, ScrollView,ImageBackground } from "react-native";
+
 import tailwind from "tailwind-rn";
 
-export default function HomePage({ navigation }) {
+function HomePage({ navigation }) {
   return (
-    <SafeAreaView style={tailwind("h-full")}>
+    <ImageBackground
+        style={tailwind("h-full")}
+        source={require("../../../assets/smallBike.png")}
+      >
+    <SafeAreaView style={tailwind("max-h-full")}>
       <ScrollView>
-        <View style={tailwind(" items-center ")}>
-          <View
+        <View
+          style={tailwind(
+            " min-w-full bg-transparent items-center mt-8 rounded-2xl flex "
+          )}
+        >
+          <Text
             style={tailwind(
-              " min-w-full bg-blue-200  items-center  rounded-2xl flex "
+              " text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
             )}
+            onPress={() => {
+              navigation.navigate("Commercial");
+            }}
           >
-            <Text
-              style={tailwind(" text-3xl  items-center font-semibold py-8 ")}
-              onPress={() => {
-                navigation.navigate("Commercial");
-              }}
-            >
-              Home page
-            </Text>
-            <Text
-              style={tailwind("text-3xl font-semibold py-8 ")}
-              onPress={() => {
-                navigation.navigate("Rules");
-              }}
-            >
-              Rules
-            </Text>
-            <Text
-              style={tailwind("text-3xl font-semibold py-8 ")}
-              onPress={() => {
-                navigation.navigate("Station");
-              }}
-            >
-              Station
-            </Text>
-            <Text
-              style={tailwind("text-3xl font-semibold py-8 ")}
-              onPress={() => {
-                navigation.navigate("Signup");
-              }}
-            >
-              Signup
-            </Text>
-            <Text
-              style={tailwind("text-3xl font-semibold py-8 ")}
-              onPress={() => {
-                navigation.navigate("Login");
-              }}
-            >
-              Login
-            </Text>
-            <Text
-              style={tailwind("text-3xl font-semibold py-8 ")}
-              onPress={() => {
-                navigation.navigate("ContactUs");
-              }}
-            >
-              ContactUs
-            </Text>
-          </View>
+            Home page
+          </Text>
+          <Text
+            style={tailwind(" text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+            )}
+            onPress={() => {
+              navigation.navigate("Rules");
+            }}
+          > 
+            Rules
+          </Text>
+          <Text
+            style={tailwind(" text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+            )}
+            onPress={() => {
+              navigation.navigate("SuggestionRoads");
+            }}
+          > 
+            SuggestionRoads
+          </Text> 
+          <Text
+            style={tailwind("text-4xl  text-yellow-400 font-bold py-8 ")}
+            onPress={() => {
+              navigation.navigate("Station");
+            }}
+          >
+            Station
+          </Text>
+          <Text
+            style={tailwind(" text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+            )}
+            onPress={() => {
+              navigation.navigate("Reviews");
+            }}
+          >
+            Reviews
+          </Text>
+          <Text
+            style={tailwind(" text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+            )}
+            onPress={() => {
+              navigation.navigate("ContactUs");
+            }}
+          >
+            ContactUs
+          </Text>
+          <Text
+            style={tailwind(" text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+            )}
+            onPress={() => {
+              navigation.navigate("TestBase");
+            }}
+          >
+            Test native base
+          </Text>
+          <Text
+            style={tailwind("text-2xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+            )}
+            onPress={() => {
+              navigation.navigate("LandingPage");
+            }}
+          >
+            Logout
+          </Text>
         </View>
       </ScrollView>
     </SafeAreaView>
+
+    </ImageBackground>
+
   );
 }
+
+export default HomePage;
