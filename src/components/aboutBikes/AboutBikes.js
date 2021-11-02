@@ -1,29 +1,31 @@
 import React, { useEffect, useState } from "react";
-import {
-  SafeAreaView,
-  View,
-  Text,
-  ScrollView,
-  ImageBackground,
-  Image,
-} from "react-native";
 import axios from "axios";
+import { View, Text, Image, Card } from "react-native";
 
 function AboutBikes() {
   const [data, setData] = useState([]);
 
   useEffect(async () => {
-    axios.get(" http://192.168.11.162:3000/bicycle ").then((response) => {
-      setData(response);
-      console.log(data);
+    axios.get(" http://localhost:3000/bicycle ").then((response) => {
+      console.log(response.data);
+      setData(response.data);
     });
   }, []);
 
   return (
     <View>
-      <Text>hello data is not here yet</Text>
-      {data.map((e, key) => {
-        <Image key={key}>{e.photo}</Image>;
+      {data.map((bike, key) => {
+        console.log(bike);
+        return (
+          <View key={key}>
+            <Image
+              style={{ width: 400, height: 400 }}
+              source={{ uri: bike.photo }}
+            />
+            <Text>{bike.description} </Text>
+            <Text>{bike.category} </Text>
+          </View>
+        );
       })}
     </View>
   );
