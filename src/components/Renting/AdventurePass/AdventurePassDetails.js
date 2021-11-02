@@ -30,7 +30,7 @@ function AdventurePassDetails() {
         </Text>
         <Text fontWeight="500">
           The Adventure Pass is perfect for tourists, visitors, and anyone
-          looking for a long or leisurely ride.
+          looking for a long or leisurely ride .
         </Text>
         <AspectRatio ratio={16 / 9}>
           <Image
