@@ -20,13 +20,8 @@ function Rent() {
   });
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      <VStack
-        py="8"
-        space={10}
-        alignItems="center"
-        justifyContent="space-between"
-      >
-        <View py="6">
+      <VStack space={10}>
+        <View style={{ margin: 100, paddingBottom: 20 }}>
           <SingleTrip></SingleTrip>
           <MonthlySub></MonthlySub>
           <AdventurePass></AdventurePass>
