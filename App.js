@@ -20,6 +20,7 @@ import MonthlySubDetails from "./src/components/Renting/MonthlySub/MonthlySubDet
 import AdventurePass from "./src/components/Renting/AdventurePass/AdventurePass";
 import AdventurePassDetails from "./src/components/Renting/AdventurePass/AdventurePassDetails";
 import SuggestionRoads from "./src/components/suggestionroads/SuggestionRoads";
+import AboutBikes from "./src/components/aboutBikes/AboutBikes";
 
 const theme = extendTheme({
   colors: {
@@ -35,7 +36,6 @@ function App() {
         <Stack.Navigator>
           <Stack.Screen name="LandingPage" component={LandingPage} />
           <Stack.Screen name="Home" component={HomePage} />
-
           <Stack.Screen name="Commercial" component={Commercial} />
           <Stack.Screen name="Rent" component={Rent} />
           <Stack.Screen name="Station" component={Station} />
@@ -45,6 +45,8 @@ function App() {
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="ContactUs" component={ContactUs} />
           <Stack.Screen name="SingleTrip" component={SingleTrip} />
+          <Stack.Screen name="AboutBikes" component={AboutBikes} />
+
           <Stack.Screen
             name="SingleTripDetails"
             component={SingleTripDetails}
