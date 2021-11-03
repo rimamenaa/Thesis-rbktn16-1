@@ -15,19 +15,24 @@ function AboutBikes() {
   const [data, setData] = useState([]);
 
   useEffect(async () => {
-    axios.get(" http://localhost:3000/bicycle ").then((response) => {
-      console.log(response.data);
-      setData(response.data);
-    });
+    axios
+      .get(" http://192.168.11.162:3000/bicycle ")
+      .then((response) => {
+        console.log(response.data);
+        setData(response.data);
+      })
+      .catch((err) => {
+        console.log("this is an error", err);
+      });
   }, []);
 
  
   return (
     <ScrollView>
       {data.map((bike, key) => {
-        console.log(bike);
+        // console.log(bike);
         return (
-          <Card>
+          <Card key={key}>
             <Text fontSize="2xl">{bike.category}</Text>
             <AspectRatio ratio={9 / 9}>
               <Image
@@ -36,19 +41,11 @@ function AboutBikes() {
                 height="100%"
                 width="100%"
                 source={{ uri: bike.photo }}
-                alt={<Loading></Loading>}
+                alt={"Loading"}
               />
             </AspectRatio>
             <Stack>
-              <Text
-                fontSize="md"
-                _light={{ color: "black.500" }}
-                _dark={{ color: "black.300" }}
-                fontWeight="500"
-                ml="-0.5"
-                mt="-1"
-                p="4"
-              >
+              <Text fontSize="md" fontWeight="500" ml="-0.5" mt="-1" p="4">
                 {bike.description}
               </Text>
             </Stack>
