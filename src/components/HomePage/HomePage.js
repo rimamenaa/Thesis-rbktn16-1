@@ -25,7 +25,7 @@ function HomePage({ navigation }) {
           >
             <Text
               style={tailwind(
-                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+                " text-xl w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
               )}
               onPress={() => {
                 navigation.navigate("AboutBikes");
@@ -35,7 +35,7 @@ function HomePage({ navigation }) {
             </Text>
             <Text
               style={tailwind(
-                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+                " text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
               )}
               onPress={() => {
                 navigation.navigate("Commercial");
@@ -45,7 +45,7 @@ function HomePage({ navigation }) {
             </Text>
             <Text
               style={tailwind(
-                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+                " text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
               )}
               onPress={() => {
                 navigation.navigate("Rules");
@@ -55,7 +55,7 @@ function HomePage({ navigation }) {
             </Text>
             <Text
               style={tailwind(
-                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+                " text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
               )}
               onPress={() => {
                 navigation.navigate("Profile");
@@ -65,7 +65,7 @@ function HomePage({ navigation }) {
             </Text>
             <Text
               style={tailwind(
-                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+                " text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
               )}
               onPress={() => {
                 navigation.navigate("SuggestionRoads");
@@ -75,7 +75,7 @@ function HomePage({ navigation }) {
             </Text>
             <Text
               style={tailwind(
-                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+                " text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
               )}
               onPress={() => {
                 navigation.navigate("Station");
@@ -85,7 +85,7 @@ function HomePage({ navigation }) {
             </Text>
             <Text
               style={tailwind(
-                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+                " text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
               )}
               onPress={() => {
                 navigation.navigate("Reviews");
@@ -95,7 +95,7 @@ function HomePage({ navigation }) {
             </Text>
             <Text
               style={tailwind(
-                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+                " text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
               )}
               onPress={() => {
                 navigation.navigate("ContactUs");
@@ -105,7 +105,7 @@ function HomePage({ navigation }) {
             </Text>
             {/* <Text
               style={tailwind(
-                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+                " text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
               )}
               onPress={() => {
                 navigation.navigate("TestBase");
@@ -115,7 +115,7 @@ function HomePage({ navigation }) {
             </Text> */}
             <Text
               style={tailwind(
-                "text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+                "text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
               )}
               onPress={() => {
                 navigation.navigate("Rent");
@@ -125,7 +125,7 @@ function HomePage({ navigation }) {
             </Text>
             <Text
               style={tailwind(
-                "text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+                "text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
               )}
               onPress={() => {
                 navigation.navigate("LandingPage");
