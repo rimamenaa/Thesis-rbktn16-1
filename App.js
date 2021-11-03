@@ -20,6 +20,7 @@ import MonthlySubDetails from "./src/components/Renting/MonthlySub/MonthlySubDet
 import AdventurePass from "./src/components/Renting/AdventurePass/AdventurePass";
 import AdventurePassDetails from "./src/components/Renting/AdventurePass/AdventurePassDetails";
 import SuggestionRoads from "./src/components/suggestionroads/SuggestionRoads";
+import Station from "./src/components/Map/Station";
 
 const theme = extendTheme({
   colors: {

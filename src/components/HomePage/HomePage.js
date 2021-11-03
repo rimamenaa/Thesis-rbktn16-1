@@ -12,18 +12,6 @@ import tailwind from "tailwind-rn";
 
 function HomePage({ navigation }) {
   return (
-<<<<<<< HEAD
-    <SafeAreaView style={tailwind("h-full")}>
-      <ScrollView>
-        <View style={tailwind(" items-center ")}>
-          <View
-            style={tailwind(
-              " min-w-full bg-blue-200  items-center  rounded-2xl flex "
-            )}
-          >
-            <Text
-              style={tailwind(" text-3xl  items-center font-semibold py-8 ")}
-=======
     <ImageBackground
       style={tailwind("h-full")}
       source={require("../../../assets/smallBike.png")}
@@ -39,7 +27,6 @@ function HomePage({ navigation }) {
               style={tailwind(
                 " text-xl w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
               )}
->>>>>>> 554a49f18530265e127aa6c3806676a79cbaed78
               onPress={() => {
                 navigation.navigate("Commercial");
               }}
@@ -47,13 +34,9 @@ function HomePage({ navigation }) {
               Home page
             </Text>
             <Text
-<<<<<<< HEAD
-              style={tailwind("text-3xl font-semibold py-8 ")}
-=======
               style={tailwind(
                 " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
               )}
->>>>>>> 554a49f18530265e127aa6c3806676a79cbaed78
               onPress={() => {
                 navigation.navigate("Rules");
               }}
@@ -61,39 +44,25 @@ function HomePage({ navigation }) {
               Rules
             </Text>
             <Text
-<<<<<<< HEAD
-              style={tailwind("text-3xl font-semibold py-8 ")}
+              style={tailwind(
+                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+              )}
               onPress={() => {
-                navigation.navigate("CombinedMap");
+                navigation.navigate("SuggestionRoads");
+              }}
+            >
+              Suggestion Roads
+            </Text>
+            <Text
+              style={tailwind(
+                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+              )}
+              onPress={() => {
+                navigation.navigate("Station");
               }}
             >
               Station
             </Text>
-            <Text
-              style={tailwind("text-3xl font-semibold py-8 ")}
-              onPress={() => {
-                navigation.navigate("Signup");
-              }}
-            >
-              Signup
-=======
-            style={tailwind(" text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-            )}
-            onPress={() => {
-              navigation.navigate("SuggestionRoads");
-            }}
-          > 
-            Suggestion Roads
-          </Text> 
-          <Text
-    style={tailwind(" text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-    )}
-                onPress={() => {
-              navigation.navigate("Station");
-            }}
-          >
-            Station
-          </Text>
             <Text
               style={tailwind(
                 " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
@@ -113,7 +82,6 @@ function HomePage({ navigation }) {
               }}
             >
               ContactUs
->>>>>>> 554a49f18530265e127aa6c3806676a79cbaed78
             </Text>
             {/* <Text
               style={tailwind(
@@ -126,17 +94,6 @@ function HomePage({ navigation }) {
               Test native base
             </Text> */}
             <Text
-<<<<<<< HEAD
-              style={tailwind("text-3xl font-semibold py-8 ")}
-              onPress={() => {
-                navigation.navigate("Login");
-              }}
-            >
-              Login
-            </Text>
-            <Text
-              style={tailwind("text-3xl font-semibold py-8 ")}
-=======
               style={tailwind(
                 "text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
               )}
@@ -147,8 +104,9 @@ function HomePage({ navigation }) {
               Rent
             </Text>
             <Text
-              style={tailwind("text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold ")}
->>>>>>> 554a49f18530265e127aa6c3806676a79cbaed78
+              style={tailwind(
+                "text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+              )}
               onPress={() => {
                 navigation.navigate("LandingPage");
               }}
