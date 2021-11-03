@@ -16,7 +16,7 @@ function AboutBikes() {
 
   useEffect(async () => {
     axios
-      .get(" http://172.20.10.2:3000/bicycle ")
+      .get(" http://192.168.11.178:3000/bicycle ")
       .then((response) => {
         console.log(response.data);
         setData(response.data);
