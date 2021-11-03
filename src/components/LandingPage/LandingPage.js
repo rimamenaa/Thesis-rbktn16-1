@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Image,
@@ -14,7 +14,7 @@ export default function LandingPage({ navigation }) {
     <View style={tw`w-full h-full`}>
       <ImageBackground
         style={tw`w-full h-full`}
-        source={require("../../../assets/01 Onboarding.png")}
+        source={require("../../../assets/Onboarding.png")}
       >
         <Image
           style={tw`mt-48 w-32 pl-36 h-24`}
@@ -46,7 +46,10 @@ export default function LandingPage({ navigation }) {
                 style={tw`mt-1.5 w-4 pl-2 h-4`}
                 source={require("../../../assets/ggl.png")}
               />
-              <Text style={tw`mt-1 pl-2 font-bold text-white`}>GOOGLE</Text>
+
+              <Text style={tw`mt-1 pl-2 font-bold text-white`}>
+                GOOGLE hedhi bech tetna7a
+              </Text>
             </View>
           </View>
         </View>
