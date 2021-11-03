@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import { View, SafeAreaView, ScrollView
 } from "react-native";
   import {
-    HStack,
     Text,
     Box,
     Heading,
@@ -51,10 +50,7 @@ function SuggestionRoads() {
           Bored of riding the same old routes? Struggling for inspiration on how to find new roads to ride? Let us help you!
           </Heading>
         </Stack>
-     
-        <HStack alignItems="center" space={4} justifyContent="space-between">
-       
-        </HStack>
+
       </Stack>
     </Box>
 
