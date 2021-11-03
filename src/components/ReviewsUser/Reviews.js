@@ -17,8 +17,10 @@ import {
   Card,
   TextArea,
   AspectRatio,
+  View,
 } from "native-base";
 import { AntDesign } from "@expo/vector-icons";
+import { Recommendation } from "../random/TermsAndConditions";
 const categories = [
   {
     category: "Family packages",
@@ -397,7 +399,7 @@ export default function (props) {
                             _light={{
                               color: "coolGray.800",
                             }}
-                            h={{ base: "65%" }}
+                            h={{ base: "20" }}
                             placeholder="Your review goes here"
                             w={{
                               base: "100%",
