@@ -4,14 +4,13 @@ import {
   Box,
   AspectRatio,
   Image,
-  Center,
   Stack,
   Text,
-  View,
   Card,
   ScrollView,
 } from "native-base";
 
+import Loading from "../Loading/Loading";
 function AboutBikes() {
   const [data, setData] = useState([]);
 
@@ -23,35 +22,39 @@ function AboutBikes() {
   }, []);
 
   return (
-    <Box>
+    <ScrollView>
       {data.map((bike, key) => {
         console.log(bike);
         return (
-          <ScrollView>
-            <Card>
-              <Text fontSize="2xl" marginBottom="3">
-                {bike.category}
+          <Card>
+            <Text fontSize="2xl">{bike.category}</Text>
+            <AspectRatio ratio={9 / 9}>
+              <Image
+                marginTop="1"
+                rounded="lg"
+                height="100%"
+                width="100%"
+                source={{ uri: bike.photo }}
+                alt={<Loading></Loading>}
+              />
+            </AspectRatio>
+            <Stack>
+              <Text
+                fontSize="md"
+                _light={{ color: "black.500" }}
+                _dark={{ color: "black.300" }}
+                fontWeight="500"
+                ml="-0.5"
+                mt="-1"
+                p="4"
+              >
+                {bike.description}
               </Text>
-              <AspectRatio ratio={16 / 9}>
-                <Image
-                  marginTop="5"
-                  rounded="lg"
-                  height="100%"
-                  width="100%"
-                  source={{ uri: bike.photo }}
-                  alt={"Loading..."}
-                />
-              </AspectRatio>
-              <Stack p="4" space={4}>
-                <Text fontWeight="500" fontWeight="400" marginTop="8">
-                  {bike.description}
-                </Text>
-              </Stack>
-            </Card>
-          </ScrollView>
+            </Stack>
+          </Card>
         );
       })}
-    </Box>
+    </ScrollView>
   );
 }
 
