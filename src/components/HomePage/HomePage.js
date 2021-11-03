@@ -28,6 +28,16 @@ function HomePage({ navigation }) {
                 " text-xl w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
               )}
               onPress={() => {
+                navigation.navigate("AboutBikes");
+              }}
+            >
+              bikes
+            </Text>
+            <Text
+              style={tailwind(
+                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+              )}
+              onPress={() => {
                 navigation.navigate("Commercial");
               }}
             >

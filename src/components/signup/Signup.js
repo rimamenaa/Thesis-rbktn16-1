@@ -192,7 +192,7 @@ export function SignUpForm({ props }) {
                   bg: "primary.700",
                 }}
                 onPress={() => {
-                  props.navigation.navigate("Home");
+                  props.navigation.navigate("Login");
                 }}
               >
                 SIGN UP
