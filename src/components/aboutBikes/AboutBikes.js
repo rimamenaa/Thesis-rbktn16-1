@@ -8,12 +8,13 @@ import {
   Image,
 } from "react-native";
 import axios from "axios";
+import tw from "tailwind-react-native-classnames";
 
 function AboutBikes() {
   const [data, setData] = useState([]);
 
   const getData = () => {
-    axios.get(" http://192.168.11.162:3000/bicycle ").then((response) => {
+    axios.get(" http://localhost:3000/bicycle ").then((response) => {
       setData(response.data);
       console.log(response.data);
     });
@@ -22,12 +23,19 @@ function AboutBikes() {
     getData();
   }, []);
 
+ 
   return (
+    
     <View>
-      <Text>hello data is not here yet</Text>
-      {/* {data.map((e, key) => {
-        <Image key={key}>{e.photo}</Image>;
-      })} */}
+     {data.map((e,key)=>{
+       return(
+         <View key={key}>
+           <Image source={{uri:e.photo}} style={tw `w-44 h-44`}/>
+           <Text>{e.category}</Text>
+           <Text>{e.description}</Text>
+         </View>
+       )
+     })}
     </View>
   );
 }
