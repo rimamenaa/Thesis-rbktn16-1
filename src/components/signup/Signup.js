@@ -180,12 +180,12 @@ export function SignUpForm({ props }) {
                       }}
                       _light={{
                         _text: {
-                          color: "primary.900",
+                          color: "amber.400",
                         },
                       }}
                       _dark={{
                         _text: {
-                          color: "primary.500",
+                          color: "amber.400",
                         },
                       }}
                     >
@@ -201,12 +201,12 @@ export function SignUpForm({ props }) {
                       }}
                       _light={{
                         _text: {
-                          color: "primary.900",
+                          color: "amber.400",
                         },
                       }}
                       _dark={{
                         _text: {
-                          color: "primary.500",
+                          color: "amber.400",
                         },
                       }}
                     >
@@ -223,7 +223,7 @@ export function SignUpForm({ props }) {
                   fontWeight: "medium",
                 }}
                 _light={{
-                  bg: "primary.800",
+                  bg: "primary.700",
                 }}
                 _dark={{
                   bg: "primary.700",
@@ -248,7 +248,7 @@ export function SignUpForm({ props }) {
                 <Divider
                   w="30%"
                   _light={{
-                    bg: "coolGray.200",
+                    bg: "coolGray.700",
                   }}
                   _dark={{
                     bg: "coolGray.700",
@@ -257,10 +257,10 @@ export function SignUpForm({ props }) {
                 <Text
                   fontWeight="medium"
                   _light={{
-                    color: "coolGray.300",
+                    color: "coolGray.800",
                   }}
                   _dark={{
-                    color: "coolGray.500",
+                    color: "coolGray.800",
                   }}
                 >
                   or
@@ -269,7 +269,7 @@ export function SignUpForm({ props }) {
                 <Divider
                   w="30%"
                   _light={{
-                    bg: "coolGray.200",
+                    bg: "coolGray.700",
                   }}
                   _dark={{
                     bg: "coolGray.700",
@@ -335,7 +335,7 @@ export function SignUpForm({ props }) {
             }}
             _light={{
               _text: {
-                color: "yellow.400",
+                color: "amber.400",
               },
             }}
             _dark={{
@@ -372,9 +372,17 @@ export default function Signup(props) {
         _dark={{
           bg: "coolGray.900",
         }}
+       
       />
-      <Center my="auto" flex="1">
-        <Stack
+      <Center my="auto" flex="1" >
+        <Stack 
+        
+        _light={{
+          bg: "primary.700",
+        }}
+        _dark={{
+          bg: "primary.700",
+        }}
           flexDirection={{
             base: "column",
             md: "row",
@@ -391,20 +399,20 @@ export default function Signup(props) {
           <Hidden from="md">
             <VStack px="4" mt="4" mb="5" space="9">
               <VStack space="2">
-                <Text fontSize="3xl" fontWeight="bold" color="coolGray.700">
+                <Text fontSize="3xl" fontWeight="bold" color="amber.400">
                   Welcome back,
                 </Text>
-                <Text
+                <Text 
                   fontSize="md"
                   fontWeight="normal"
                   _dark={{
                     color: "coolGray.400",
                   }}
                   _light={{
-                    color: "primary.700",
+                    color: "amber.400",
                   }}
                 >
-                  Sign in to continue
+                  Sign Up to continue
                 </Text>
               </VStack>
             </VStack>

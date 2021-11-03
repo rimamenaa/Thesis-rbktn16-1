@@ -37,7 +37,7 @@ import axios from "axios";
 function Commercial() {
   const [data, setData] = useState([]);
   const getData = () => {
-    axios.get(" http://localhost:3000/whybycycle").then((response) => {
+    axios.get(" http://172.20.10.2:3000/whybycycle").then((response) => {
       setData(response.data);
       console.log(response.data);
     });
@@ -226,7 +226,7 @@ function Commercial() {
         </View>
         <View style={tailwind("mt-6")}>
           <Text
-            style={tailwind("text-4xl font-bold text-yellow-500 ml-6 mb-6")}
+            style={tailwind("text-4xl font-bold text-yellow-400 ml-6 mb-6")}
           >
             Why Join By-Cycle?
           </Text>
