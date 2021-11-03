@@ -7,7 +7,6 @@ import {
   Link,
   Checkbox,
   Divider,
- 
   Center,
   Hidden,
   StatusBar,
@@ -17,16 +16,51 @@ import {
   Input,
   Image,
 } from "native-base";
-
 import tw from "tailwind-react-native-classnames";
+import * as Google from "expo-google-app-auth";
 
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export function SignInForm({ props }) {
-  // add next router here
-  
+  const [message, setMessage] = useState();
+  const [messageType, setMessageType] = useState();
+  const [googleSubmitting, setGoogleSubmitting] = useState(false);
+
+  const handleMessage = (message, type = "FAILED") => {
+    setMessage(message);
+    setMessageType(type);
+  };
+
+  const handleGoogleSignIn = () => {
+    setGoogleSubmitting(true);
+    const config = {
+      iosClientId: `215341427022-haijkikj7ejpthac9sld1ihejeouoj06.apps.googleusercontent.com`,
+      androidClientId: `215341427022-eosmagesimfkte0p4b84ci77t6b7m6o2.apps.googleusercontent.com`,
+      scopes: ["profile", "email"],
+    };
+    Google.logInAsync(config)
+      .then((result) => {
+        const { type, user } = result;
+        if (type === "success") {
+          const { email, name, photoUrl } = user;
+          handleMessage("Google sign in successful", "success");
+          setTimeout(
+            () => props.navigation.navigate("Home", { email, name, photoUrl }),
+            100
+          );
+        } else {
+          handleMessage("Google signin was cancelled");
+        }
+        setGoogleSubmitting(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        handleMessage("An Errr occured . check your Network and try again");
+        setGoogleSubmitting(false);
+      });
+  };
+
   return (
-    
     <KeyboardAwareScrollView
       contentContainerStyle={{
         flexGrow: 1,
@@ -111,37 +145,37 @@ export function SignInForm({ props }) {
                   Forget Password?
                 </Link>
                 <Checkbox
-                alignItems="flex-start"
-                defaultIsChecked
-                value="demo"
-                colorScheme="primary"
-                accessibilityLabel="Remember me"
-              >
-                <HStack alignItems="center">
-                  <Text fontSize="sm" color="coolGray.400" pl="2">
-                  Remember me {" "}
-                  </Text>
-                  <Link
-                    _text={{
-                      fontSize: "sm",
-                      fontWeight: "semibold",
-                      textDecoration: "none",
-                    }}
-                    _light={{
-                      _text: {
-                        color: "primary.900",
-                      },
-                    }}
-                    _dark={{
-                      _text: {
-                        color: "primary.500",
-                      },
-                    }}
-                  >
-                    and keep me logged in
-                  </Link>
-                </HStack>
-              </Checkbox>
+                  alignItems="flex-start"
+                  defaultIsChecked
+                  value="demo"
+                  colorScheme="primary"
+                  accessibilityLabel="Remember me"
+                >
+                  <HStack alignItems="center">
+                    <Text fontSize="sm" color="coolGray.400" pl="2">
+                      Remember me{" "}
+                    </Text>
+                    <Link
+                      _text={{
+                        fontSize: "sm",
+                        fontWeight: "semibold",
+                        textDecoration: "none",
+                      }}
+                      _light={{
+                        _text: {
+                          color: "primary.900",
+                        },
+                      }}
+                      _dark={{
+                        _text: {
+                          color: "primary.500",
+                        },
+                      }}
+                    >
+                      and keep me logged in
+                    </Link>
+                  </HStack>
+                </Checkbox>
               </FormControl>
               <Button
                 mt="5"
@@ -220,7 +254,10 @@ export function SignInForm({ props }) {
                 bg: "primary.700",
               }}
             >
-              <Text style={{ color: "black", fontWeight: "500" }}>
+              <Text
+                style={{ color: "black", fontWeight: "500" }}
+                onPress={handleGoogleSignIn}
+              >
                 <Image
                   style={{ height: 12, width: 12 }}
                   source={require("../../../assets/ggl.png")}
