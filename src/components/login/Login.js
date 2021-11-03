@@ -131,7 +131,7 @@ export function SignInForm({ props }) {
                   _text={{
                     fontSize: "xs",
                     fontWeight: "500",
-                    color: "coolGray.800",
+                    color: "amber.400",
                   }}
                   alignSelf="flex-end"
                   mt="1"
@@ -334,17 +334,17 @@ export default function SignIn(props) {
                 <Text fontSize="3xl" fontWeight="bold" color="amber.400">
                   Welcome back,
                 </Text>
-                <Text style={tw `text-lg`}
-                  fontSize="md"
+                <Text 
+                  style={tw `text-lg`}
                   fontWeight="normal"
                   _dark={{
                     color: "amber.400",
                   }}
                   _light={{
-                    color: "amber.400",
+                    color: "white",
                   }}
                 >
-                  Sign in to continue
+                  Sign In to continue
                 </Text>
               </VStack>
             </VStack>
