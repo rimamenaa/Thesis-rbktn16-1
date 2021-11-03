@@ -34,15 +34,31 @@ function App() {
     <NativeBaseProvider theme={theme}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="LandingPage" component={LandingPage} />
-          <Stack.Screen name="Home" component={HomePage} />
+          <Stack.Screen
+            name="LandingPage"
+            options={{ headerShown: false }}
+            component={LandingPage}
+          />
+          <Stack.Screen
+            name="Home"
+            options={{ headerShown: false }}
+            component={HomePage}
+          />
           <Stack.Screen name="Commercial" component={Commercial} />
           <Stack.Screen name="Rent" component={Rent} />
           <Stack.Screen name="Station" component={Station} />
           <Stack.Screen name="Rules" component={Rules} />
           <Stack.Screen name="Reviews" component={Reviews} />
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Signup" component={Signup} />
+          <Stack.Screen
+            name="Login"
+            options={{ headerShown: false }}
+            component={Login}
+          />
+          <Stack.Screen
+            name="Signup"
+            options={{ headerShown: false }}
+            component={Signup}
+          />
           <Stack.Screen name="ContactUs" component={ContactUs} />
           <Stack.Screen name="SingleTrip" component={SingleTrip} />
           <Stack.Screen name="AboutBikes" component={AboutBikes} />
