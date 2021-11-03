@@ -1,80 +1,105 @@
 import * as React from "react";
-import MapView from "react-native-maps";
-import * as Location from "expo-location";
-import { StyleSheet } from "react-native";
-import { Text } from "react-native-paper";
+import { Dimensions, StyleSheet, Text, View } from "react-native";
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import MapView, { Callout, Circle, Marker } from "react-native-maps";
 
-const { useState, useEffect } = React;
-
-export default function MapScreen() {
-  const [locationResult, setLocation] = useState(null);
-  const [mapRegion, setRegion] = useState(null);
-
-  useEffect(() => {
-    const getLocationAsync = async () => {
-      let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== "granted") {
-        console.log("Permission to access location was denied");
-        return;
-      }
-
-      let {
-        coords: { latitude, longitude },
-      } = await Location.getCurrentPositionAsync({});
-      setLocation(JSON.stringify({ latitude, longitude }));
-
-      setRegion({
-        latitude,
-        longitude,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
-      });
-    };
-
-    getLocationAsync();
+export default function App() {
+  const [pin, setPin] = React.useState({
+    latitude: 36.78825,
+    longitude: 10.65153,
+  });
+  const [region, setRegion] = React.useState({
+    latitude: 36.78825,
+    longitude: 10.65153,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0421,
   });
 
-  if (locationResult === null) {
-    return <Text>Finding your current location...</Text>;
-  }
-
-  if (hasLocationPermissions === false) {
-    return <Text>Location permissions are not granted.</Text>;
-  }
-
-  if (mapRegion === null) {
-    return <Text>Map region doesn't exist.</Text>;
-  }
-
   return (
-    <MapView
-      style={styles.container}
-      region={mapRegion}
-      zoomEnabled
-      initialRegion={{
-        latitude: 36.67343096953564,
-        latitudeDelta: 0.0922,
-        longitude: 10.53214,
-        longitudeDelta: 0.0421,
-      }}
-      onRegionChange={(region) => setRegion(region)}
-    >
-      <MapView.Marker
-        title="BYCYCLE, Inc."
-        description="Bicycle Rent Station"
-        image={require("../Map/BicycleMarker.png")}
-        coordinate={{ latitude: 36.8951, longitude: 10.1885 }}
+    <View style={{ marginTop: 50, flex: 1 }}>
+      <GooglePlacesAutocomplete
+        placeholder="Search"
+        fetchDetails={true}
+        GooglePlacesSearchQuery={{
+          rankby: "distance",
+        }}
+        onPress={(data, details = null) => {
+          // 'details' is provided when fetchDetails = true
+          console.log(data, details);
+          setRegion({
+            latitude: details.geometry.location.lat,
+            longitude: details.geometry.location.lng,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          });
+        }}
+        query={{
+          key: "KEY",
+          language: "en",
+          components: "country:us",
+          types: "establishment",
+          radius: 30000,
+          location: `${region.latitude}, ${region.longitude}`,
+        }}
+        styles={{
+          container: {
+            flex: 0,
+            position: "absolute",
+            width: "100%",
+            zIndex: 1,
+          },
+          listView: { backgroundColor: "white" },
+        }}
       />
-    </MapView>
+      <MapView
+        style={styles.map}
+        initialRegion={{
+          latitude: 37.78825,
+          longitude: -122.4324,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }}
+        provider="google"
+      >
+        <Marker
+          coordinate={{
+            latitude: region.latitude,
+            longitude: region.longitude,
+          }}
+        />
+        <Marker
+          coordinate={pin}
+          pinColor="black"
+          draggable={true}
+          onDragStart={(e) => {
+            console.log("Drag start", e.nativeEvent.coordinates);
+          }}
+          onDragEnd={(e) => {
+            setPin({
+              latitude: e.nativeEvent.coordinate.latitude,
+              longitude: e.nativeEvent.coordinate.longitude,
+            });
+          }}
+        >
+          <Callout>
+            <Text>I'm here</Text>
+          </Callout>
+        </Marker>
+        <Circle center={pin} radius={1000} />
+      </MapView>
+    </View>
   );
 }
-
-MapScreen.navigationOptions = {
-  header: null,
-};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  map: {
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height,
   },
 });
