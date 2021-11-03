@@ -15,18 +15,23 @@ function AboutBikes() {
   const [data, setData] = useState([]);
 
   useEffect(async () => {
-    axios.get(" http://localhost:3000/bicycle ").then((response) => {
-      console.log(response.data);
-      setData(response.data);
-    });
+    axios
+      .get(" http://192.168.11.178:3000/bicycle ")
+      .then((response) => {
+        console.log(response.data);
+        setData(response.data);
+      })
+      .catch((err) => {
+        console.log("err", err);
+      });
   }, []);
 
   return (
     <ScrollView>
-      {data.map((bike, key) => {
+      {data.slice(0, 3).map((bike, key) => {
         console.log(bike);
         return (
-          <Card>
+          <Card key={key}>
             <Text fontSize="2xl">{bike.category}</Text>
             <AspectRatio ratio={9 / 9}>
               <Image
