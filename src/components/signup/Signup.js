@@ -403,13 +403,13 @@ export default function Signup(props) {
                   Welcome back,
                 </Text>
                 <Text 
-                  fontSize="md"
+                  style={tw `text-lg`}
                   fontWeight="normal"
                   _dark={{
                     color: "coolGray.400",
                   }}
                   _light={{
-                    color: "amber.400",
+                    color: "white",
                   }}
                 >
                   Sign Up to continue
