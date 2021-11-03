@@ -60,7 +60,7 @@ function Commercial() {
 
           <Text style={tailwind(" text-2xl  items-center font-bold py-8 p-3 ")}>
             Welcome to BY-CYCLE, a new bike share system in Tunisia with over
-            400+ bikes and more than 18+ stations across the country 123.
+            400+ bikes and more than 18+ stations across the country.
           </Text>
           <Box
             style={tailwind("w-full items-center")}
