@@ -5,31 +5,20 @@ import {
   Icon,
   Text,
   VStack,
-  StatusBar,
   Avatar,
   Image,
-  Input,
   useColorMode,
   ScrollView,
   Pressable,
-  Center,
   Divider,
   Button,
-  IconButton,
   Stack,
   Link,
-  Hidden,
-  Menu,
-  View,
+  Card,
+  TextArea,
+  AspectRatio,
 } from "native-base";
-import {
-  AntDesign,
-  Entypo,
-  EvilIcons,
-  Feather,
-  FontAwesome,
-  Ionicons,
-} from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 const categories = [
   {
     category: "Family packages",
@@ -145,60 +134,52 @@ export default function (props) {
                   }}
                   space="6"
                 >
-                  <Box
-                    p="2"
-                    bg="primary.100"
-                    borderRadius="md"
-                    alignItems="center"
-                    w={{
-                      base: "100%",
-                      md: "50%",
-                    }}
-                    h={{
-                      base: "40%",
-                      md: "auto",
-                    }}
-                    pr={{
-                      base: "2",
-                      md: "4",
-                    }}
-                    justifyContent="center"
-                  >
-                    <Image
-                      width="full"
-                      height={{
-                        base: "full",
-                        md: "full",
-                      }}
-                      rounded="lg"
-                      alt="Alternate Text"
-                      source={require("../../../assets/sidibou.png")}
-                    />
-                    <Box>
-                      <Text
-                        mt="3"
-                        fontSize="sm"
-                        lineHeight="lg"
-                        fontWeight="medium"
-                        letterSpacing="0.3"
-                        _light={{
-                          color: "coolGray.800",
-                        }}
-                        _dark={{
-                          color: "coolGray.50",
-                        }}
-                      >
-                        Sidi Bou Said is a town in northern Tunisia located
-                        about 20 km from the capital, Tunis. Cafe de delice and
-                        coast view Named for a religious figure who lived there,
-                        Abu Said al-Baji, it was previously called Jabal
-                        el-Menar. The town itself is a tourist attraction and is
-                        known for its extensive use of blue and white. It can be
-                        reached by a TGM train, which runs from Tunis to La
-                        Marsa.
-                      </Text>
-                    </Box>
-                  </Box>
+                  {/* to be replaced by my styled box  */}
+                  <Card>
+                    <Text fontSize="2xl" marginBottom="3">
+                      City name
+                    </Text>
+                    <Text fontWeight="500">
+                      Here to describe the place trips.
+                    </Text>
+                    <AspectRatio ratio={16 / 9}>
+                      <Image
+                        marginTop="1"
+                        rounded="lg"
+                        height="100%"
+                        width="100%"
+                        source={require("../../../assets/sidibou.png")}
+                        alt={"Loading..."}
+                      />
+                    </AspectRatio>
+                    <Stack p="4" space={4}>
+                      <Box>
+                        <Text
+                          mt="3"
+                          fontSize="sm"
+                          lineHeight="lg"
+                          fontWeight="medium"
+                          letterSpacing="0.3"
+                          _light={{
+                            color: "coolGray.800",
+                          }}
+                          _dark={{
+                            color: "coolGray.50",
+                          }}
+                        >
+                          Sidi Bou Said is a town in northern Tunisia located
+                          about 20 km from the capital, Tunis. Cafe de delice
+                          and coast view Named for a religious figure who lived
+                          there, Abu Said al-Baji, it was previously called
+                          Jabal el-Menar. The town itself is a tourist
+                          attraction and is known for its extensive use of blue
+                          and white. It can be reached by a TGM train, which
+                          runs from Tunis to La Marsa.
+                        </Text>
+                      </Box>
+                    </Stack>
+                  </Card>
+
                   <ScrollView showsVerticalScrollIndicator={false}>
                     <Box flex={1}>
                       <VStack space={4}>
@@ -299,7 +280,7 @@ export default function (props) {
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
                       >
-                        <Button.Group space="2" mt={3} alignItems="center">
+                        {/* <Button.Group space="2" mt={3} alignItems="center">
                           {categories.map((item) => {
                             return (
                               <Button
@@ -329,7 +310,7 @@ export default function (props) {
                               </Button>
                             );
                           })}
-                        </Button.Group>
+                        </Button.Group> */}
                       </ScrollView>
                       {/* <AddToCartButton base="none" md="flex" /> */}
 
@@ -407,8 +388,23 @@ export default function (props) {
 
                       {tabName === "AddReview" ? (
                         <Box>
-                          <Input></Input>
-                          <Button></Button>
+                          <TextArea
+                            fontSize="md"
+                            fontWeight="semibold"
+                            _dark={{
+                              color: "coolGray.50",
+                            }}
+                            _light={{
+                              color: "coolGray.800",
+                            }}
+                            h={{ base: "65%" }}
+                            placeholder="Your review goes here"
+                            w={{
+                              base: "100%",
+                              md: "25%",
+                            }}
+                          />
+                          <Button> Add Review</Button>
                         </Box>
                       ) : (
                         reviews.map((item, idx) => {
