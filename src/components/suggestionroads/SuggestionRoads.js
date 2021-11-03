@@ -94,18 +94,14 @@ Distance: {e.distance}
       <Text style={tailwind("ml-6 mr-8 mb-8")} color="gray.600" fontWeight="400">
       {e.description}  </Text>
     </Box>
-
-
-
-
        </View>
      )
    })}
    
         </View>
-        </ScrollView>
+      </ScrollView>
     </SafeAreaView>
-    )
+  );
 }
 
-export default SuggestionRoads
+export default SuggestionRoads;

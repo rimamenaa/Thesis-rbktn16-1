@@ -1,34 +1,60 @@
 import React, { useEffect, useState } from "react";
-import {
-  SafeAreaView,
-  View,
-  Text,
-  ScrollView,
-  ImageBackground,
-  Image,
-} from "react-native";
 import axios from "axios";
+import {
+  Box,
+  AspectRatio,
+  Image,
+  Stack,
+  Text,
+  Card,
+  ScrollView,
+} from "native-base";
 
+import Loading from "../Loading/Loading";
 function AboutBikes() {
   const [data, setData] = useState([]);
 
-  const getData = () => {
-    axios.get(" http://192.168.11.162:3000/bicycle ").then((response) => {
-      setData(response.data);
-      console.log(response.data);
-    });
-  };
   useEffect(async () => {
-    getData();
+    axios.get(" http://localhost:3000/bicycle ").then((response) => {
+      console.log(response.data);
+      setData(response.data);
+    });
   }, []);
 
   return (
-    <View>
-      <Text>hello data is not here yet</Text>
-      {/* {data.map((e, key) => {
-        <Image key={key}>{e.photo}</Image>;
-      })} */}
-    </View>
+    <ScrollView>
+      {data.map((bike, key) => {
+        console.log(bike);
+        return (
+          <Card>
+            <Text fontSize="2xl">{bike.category}</Text>
+            <AspectRatio ratio={9 / 9}>
+              <Image
+                marginTop="1"
+                rounded="lg"
+                height="100%"
+                width="100%"
+                source={{ uri: bike.photo }}
+                alt={<Loading></Loading>}
+              />
+            </AspectRatio>
+            <Stack>
+              <Text
+                fontSize="md"
+                _light={{ color: "black.500" }}
+                _dark={{ color: "black.300" }}
+                fontWeight="500"
+                ml="-0.5"
+                mt="-1"
+                p="4"
+              >
+                {bike.description}
+              </Text>
+            </Stack>
+          </Card>
+        );
+      })}
+    </ScrollView>
   );
 }
 
