@@ -18,7 +18,7 @@ import axios from "axios";
 function SuggestionRoads() {
   const [data, setData] = useState([]);
   const getData = () => {
-    axios.get("http://192.168.11.162:3000/suggestion").then((response) => {
+    axios.get("http://localhost:3000/suggestion").then((response) => {
       setData(response.data);
       console.log(response.data);
     });
