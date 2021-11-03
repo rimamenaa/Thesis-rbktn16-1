@@ -174,15 +174,34 @@ export default function (props) {
                       alt="Alternate Text"
                       source={require("../../../assets/sidibou.png")}
                     />
+                    <Box>
+                      <Text
+                        mt="3"
+                        fontSize="sm"
+                        lineHeight="lg"
+                        fontWeight="medium"
+                        letterSpacing="0.3"
+                        _light={{
+                          color: "coolGray.800",
+                        }}
+                        _dark={{
+                          color: "coolGray.50",
+                        }}
+                      >
+                        Sidi Bou Said is a town in northern Tunisia located
+                        about 20 km from the capital, Tunis. Cafe de delice and
+                        coast view Named for a religious figure who lived there,
+                        Abu Said al-Baji, it was previously called Jabal
+                        el-Menar. The town itself is a tourist attraction and is
+                        known for its extensive use of blue and white. It can be
+                        reached by a TGM train, which runs from Tunis to La
+                        Marsa.
+                      </Text>
+                    </Box>
                   </Box>
                   <ScrollView showsVerticalScrollIndicator={false}>
-                    <Box
-                      flex={1}
-                      px={{
-                        base: "4",
-                      }}
-                    >
-                      <VStack space={1}>
+                    <Box flex={1}>
+                      <VStack space={4}>
                         <HStack
                           justifyContent="space-between"
                           alignItems="center"
@@ -313,10 +332,12 @@ export default function (props) {
                         </Button.Group>
                       </ScrollView>
                       {/* <AddToCartButton base="none" md="flex" /> */}
+
+                      {/* THIS IS THE TAB I WANT TO MAKE LIKE */}
                       <HStack mt="8" space="5">
                         <Pressable
                           onPress={() => {
-                            setTabName("Description");
+                            setTabName("AddReview");
                           }}
                         >
                           <Text
@@ -325,20 +346,20 @@ export default function (props) {
                             letterSpacing="0.4"
                             _light={{
                               color:
-                                tabName == "Description"
+                                tabName == "AddReview"
                                   ? "primary.900"
                                   : "coolGray.400",
                             }}
                             _dark={{
                               color:
-                                tabName == "Description"
+                                tabName == "AddReview"
                                   ? "coolGray.50"
                                   : "coolGray.400",
                             }}
                           >
-                            Description
+                            AddReview
                           </Text>
-                          {tabName == "Description" ? (
+                          {tabName == "AddReview" ? (
                             <Box width="100%" py="1">
                               <Divider bg="primary.100" />
                             </Box>
@@ -380,29 +401,15 @@ export default function (props) {
                         </Pressable>
                       </HStack>
 
-                      {tabName === "Description" ? (
-                        <Text
-                          mt="3"
-                          fontSize="sm"
-                          lineHeight="lg"
-                          fontWeight="medium"
-                          letterSpacing="0.3"
-                          _light={{
-                            color: "coolGray.800",
-                          }}
-                          _dark={{
-                            color: "coolGray.50",
-                          }}
-                        >
-                          Sidi Bou Said is a town in northern Tunisia located
-                          about 20 km from the capital, Tunis. Cafe de delice
-                          and coast view Named for a religious figure who lived
-                          there, Abu Said al-Baji, it was previously called
-                          Jabal el-Menar. The town itself is a tourist
-                          attraction and is known for its extensive use of blue
-                          and white. It can be reached by a TGM train, which
-                          runs from Tunis to La Marsa.
-                        </Text>
+                      {/* IT ENDS HERE */}
+
+                      {/* HERE IS THE CONDITIONAL RENDERING */}
+
+                      {tabName === "AddReview" ? (
+                        <Box>
+                          <Input></Input>
+                          <Button></Button>
+                        </Box>
                       ) : (
                         reviews.map((item, idx) => {
                           return (
