@@ -21,6 +21,7 @@ function AboutBikes() {
     });
   }, []);
 
+ 
   return (
     <ScrollView>
       {data.map((bike, key) => {
