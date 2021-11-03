@@ -1,7 +1,6 @@
 import * as React from "react";
 import MapView from "react-native-maps";
 import * as Location from "expo-location";
-import * as Permissions from "expo-permissions";
 import { StyleSheet } from "react-native";
 import { Text } from "react-native-paper";
 
@@ -10,7 +9,6 @@ const { useState, useEffect } = React;
 export default function MapScreen() {
   const [locationResult, setLocation] = useState(null);
   const [mapRegion, setRegion] = useState(null);
-  const [hasLocationPermissions, setLocationPermission] = useState(false);
 
   useEffect(() => {
     const getLocationAsync = async () => {
