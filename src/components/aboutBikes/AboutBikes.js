@@ -16,7 +16,7 @@ function AboutBikes() {
 
   useEffect(async () => {
     axios
-      .get(" http://192.168.11.178:3000/bicycle ")
+      .get(" http://172.20.10.2:3000/bicycle ")
       .then((response) => {
         console.log(response.data);
         setData(response.data);
@@ -26,7 +26,6 @@ function AboutBikes() {
       });
   }, []);
 
- 
   return (
     <ScrollView>
       {data.slice(0, 3).map((bike, key) => {
@@ -41,7 +40,7 @@ function AboutBikes() {
                 height="100%"
                 width="100%"
                 source={{ uri: bike.photo }}
-                alt={"Loading"}
+                alt={"Loading..."}
               />
             </AspectRatio>
             <Stack>
