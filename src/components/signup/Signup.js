@@ -18,11 +18,48 @@ import {
 } from "native-base";
 
 import tw from "tailwind-react-native-classnames";
+import * as Google from "expo-google-app-auth";
 
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export function SignUpForm({ props }) {
-  // add next router here
+  const [message, setMessage] = useState();
+  const [messageType, setMessageType] = useState();
+  const [googleSubmitting, setGoogleSubmitting] = useState(false);
+
+  const handleMessage = (message, type = "FAILED") => {
+    setMessage(message);
+    setMessageType(type);
+  };
+
+  const handleGoogleSignIn = () => {
+    setGoogleSubmitting(true);
+    const config = {
+      iosClientId: `215341427022-haijkikj7ejpthac9sld1ihejeouoj06.apps.googleusercontent.com`,
+      androidClientId: `215341427022-eosmagesimfkte0p4b84ci77t6b7m6o2.apps.googleusercontent.com`,
+      scopes: ["profile", "email"],
+    };
+    Google.logInAsync(config)
+      .then((result) => {
+        const { type, user } = result;
+        if (type === "success") {
+          const { email, name, photoUrl } = user;
+          handleMessage("Google sign in successful", "success");
+          setTimeout(
+            () => props.navigation.navigate("Home", { email, name, photoUrl }),
+            100
+          );
+        } else {
+          handleMessage("Google signin was cancelled");
+        }
+        setGoogleSubmitting(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        handleMessage("An Errr occured . check your Network and try again");
+        setGoogleSubmitting(false);
+      });
+  };
 
   return (
     <KeyboardAwareScrollView
@@ -143,12 +180,12 @@ export function SignUpForm({ props }) {
                       }}
                       _light={{
                         _text: {
-                          color: "primary.900",
+                          color: "amber.400",
                         },
                       }}
                       _dark={{
                         _text: {
-                          color: "primary.500",
+                          color: "amber.400",
                         },
                       }}
                     >
@@ -164,12 +201,12 @@ export function SignUpForm({ props }) {
                       }}
                       _light={{
                         _text: {
-                          color: "primary.900",
+                          color: "amber.400",
                         },
                       }}
                       _dark={{
                         _text: {
-                          color: "primary.500",
+                          color: "amber.400",
                         },
                       }}
                     >
@@ -186,7 +223,7 @@ export function SignUpForm({ props }) {
                   fontWeight: "medium",
                 }}
                 _light={{
-                  bg: "primary.800",
+                  bg: "primary.700",
                 }}
                 _dark={{
                   bg: "primary.700",
@@ -211,7 +248,7 @@ export function SignUpForm({ props }) {
                 <Divider
                   w="30%"
                   _light={{
-                    bg: "coolGray.200",
+                    bg: "coolGray.700",
                   }}
                   _dark={{
                     bg: "coolGray.700",
@@ -220,10 +257,10 @@ export function SignUpForm({ props }) {
                 <Text
                   fontWeight="medium"
                   _light={{
-                    color: "coolGray.300",
+                    color: "coolGray.800",
                   }}
                   _dark={{
-                    color: "coolGray.500",
+                    color: "coolGray.800",
                   }}
                 >
                   or
@@ -232,7 +269,7 @@ export function SignUpForm({ props }) {
                 <Divider
                   w="30%"
                   _light={{
-                    bg: "coolGray.200",
+                    bg: "coolGray.700",
                   }}
                   _dark={{
                     bg: "coolGray.700",
@@ -255,7 +292,10 @@ export function SignUpForm({ props }) {
                 bg: "primary.700",
               }}
             >
-              <Text style={{ color: "black", fontWeight: "500" }}>
+              <Text
+                style={{ color: "black", fontWeight: "500" }}
+                onPress={handleGoogleSignIn}
+              >
                 <Image
                   style={{ height: 12, width: 12 }}
                   source={require("../../../assets/ggl.png")}
@@ -295,7 +335,7 @@ export function SignUpForm({ props }) {
             }}
             _light={{
               _text: {
-                color: "yellow.400",
+                color: "amber.400",
               },
             }}
             _dark={{
@@ -332,9 +372,17 @@ export default function Signup(props) {
         _dark={{
           bg: "coolGray.900",
         }}
+       
       />
-      <Center my="auto" flex="1">
-        <Stack
+      <Center my="auto" flex="1" >
+        <Stack 
+        
+        _light={{
+          bg: "primary.700",
+        }}
+        _dark={{
+          bg: "primary.700",
+        }}
           flexDirection={{
             base: "column",
             md: "row",
@@ -351,20 +399,20 @@ export default function Signup(props) {
           <Hidden from="md">
             <VStack px="4" mt="4" mb="5" space="9">
               <VStack space="2">
-                <Text fontSize="3xl" fontWeight="bold" color="coolGray.700">
+                <Text fontSize="3xl" fontWeight="bold" color="amber.400">
                   Welcome back,
                 </Text>
-                <Text
+                <Text 
                   fontSize="md"
                   fontWeight="normal"
                   _dark={{
                     color: "coolGray.400",
                   }}
                   _light={{
-                    color: "primary.700",
+                    color: "amber.400",
                   }}
                 >
-                  Sign in to continue
+                  Sign Up to continue
                 </Text>
               </VStack>
             </VStack>
