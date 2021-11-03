@@ -14,7 +14,7 @@ function HomePage({ navigation }) {
   return (
     <ImageBackground
       style={tailwind("h-full")}
-      source={require("../../../assets/smallBike.png")}
+      source={require("../../../assets/yellowbike3.png")}
     >
       <SafeAreaView style={tailwind("max-h-full")}>
         <ScrollView>
@@ -25,7 +25,7 @@ function HomePage({ navigation }) {
           >
             <Text
               style={tailwind(
-                " text-xl w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
               )}
               onPress={() => {
                 navigation.navigate("AboutBikes");
@@ -52,6 +52,16 @@ function HomePage({ navigation }) {
               }}
             >
               Rules
+            </Text>
+            <Text
+              style={tailwind(
+                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+              )}
+              onPress={() => {
+                navigation.navigate("Profile");
+              }}
+            >
+              Profile
             </Text>
             <Text
               style={tailwind(

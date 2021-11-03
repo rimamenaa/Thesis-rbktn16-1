@@ -137,7 +137,7 @@ export function SignInForm({ props }) {
                   _text={{
                     fontSize: "xs",
                     fontWeight: "500",
-                    color: "yellow.500",
+                    color: "coolGray.800",
                   }}
                   alignSelf="flex-end"
                   mt="1"
@@ -155,25 +155,6 @@ export function SignInForm({ props }) {
                     <Text fontSize="sm" color="coolGray.400" pl="2">
                       Remember me{" "}
                     </Text>
-                    <Link
-                      _text={{
-                        fontSize: "sm",
-                        fontWeight: "semibold",
-                        textDecoration: "none",
-                      }}
-                      _light={{
-                        _text: {
-                          color: "primary.900",
-                        },
-                      }}
-                      _dark={{
-                        _text: {
-                          color: "primary.500",
-                        },
-                      }}
-                    >
-                      and keep me logged in
-                    </Link>
                   </HStack>
                 </Checkbox>
               </FormControl>
@@ -185,7 +166,7 @@ export function SignInForm({ props }) {
                   fontWeight: "medium",
                 }}
                 _light={{
-                  bg: "primary.800",
+                  bg: "primary.700",
                 }}
                 _dark={{
                   bg: "primary.700",
@@ -336,7 +317,13 @@ export default function SignIn(props) {
         }}
       />
       <Center my="auto" flex="1">
-        <Stack
+        <Stack   
+        _light={{
+          bg: "primary.700",
+        }}
+        _dark={{
+          bg: "primary.700",
+        }}
           flexDirection={{
             base: "column",
             md: "row",
@@ -353,17 +340,17 @@ export default function SignIn(props) {
           <Hidden from="md">
             <VStack px="4" mt="4" mb="5" space="9">
               <VStack space="2">
-                <Text fontSize="3xl" fontWeight="bold" color="coolGray.700">
+                <Text fontSize="3xl" fontWeight="bold" color="amber.400">
                   Welcome back,
                 </Text>
-                <Text
+                <Text style={tw `text-lg`}
                   fontSize="md"
                   fontWeight="normal"
                   _dark={{
-                    color: "coolGray.400",
+                    color: "amber.400",
                   }}
                   _light={{
-                    color: "primary.700",
+                    color: "amber.400",
                   }}
                 >
                   Sign in to continue
