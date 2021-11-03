@@ -7,7 +7,6 @@ import {
   Link,
   Checkbox,
   Divider,
- 
   Center,
   Hidden,
   StatusBar,
@@ -19,14 +18,50 @@ import {
 } from "native-base";
 
 import tw from "tailwind-react-native-classnames";
+import * as Google from "expo-google-app-auth";
 
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export function SignUpForm({ props }) {
-  // add next router here
-  
+  const [message, setMessage] = useState();
+  const [messageType, setMessageType] = useState();
+  const [googleSubmitting, setGoogleSubmitting] = useState(false);
+
+  const handleMessage = (message, type = "FAILED") => {
+    setMessage(message);
+    setMessageType(type);
+  };
+
+  const handleGoogleSignIn = () => {
+    setGoogleSubmitting(true);
+    const config = {
+      iosClientId: `215341427022-haijkikj7ejpthac9sld1ihejeouoj06.apps.googleusercontent.com`,
+      androidClientId: `215341427022-eosmagesimfkte0p4b84ci77t6b7m6o2.apps.googleusercontent.com`,
+      scopes: ["profile", "email"],
+    };
+    Google.logInAsync(config)
+      .then((result) => {
+        const { type, user } = result;
+        if (type === "success") {
+          const { email, name, photoUrl } = user;
+          handleMessage("Google sign in successful", "success");
+          setTimeout(
+            () => props.navigation.navigate("Home", { email, name, photoUrl }),
+            100
+          );
+        } else {
+          handleMessage("Google signin was cancelled");
+        }
+        setGoogleSubmitting(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        handleMessage("An Errr occured . check your Network and try again");
+        setGoogleSubmitting(false);
+      });
+  };
+
   return (
-    
     <KeyboardAwareScrollView
       contentContainerStyle={{
         flexGrow: 1,
@@ -89,7 +124,7 @@ export function SignUpForm({ props }) {
                 <Input />
               </FormControl>
 
-                <FormControl>
+              <FormControl>
                 <FormControl.Label
                   _text={{
                     color: "coolGray.800",
@@ -100,7 +135,7 @@ export function SignUpForm({ props }) {
                   Username
                 </FormControl.Label>
                 <Input />
-              </FormControl>   
+              </FormControl>
 
               <FormControl>
                 <FormControl.Label
@@ -126,59 +161,59 @@ export function SignUpForm({ props }) {
                 </FormControl.Label>
                 <Input type="password" />
                 <Checkbox
-                style={tw `mt-2`}
-                alignItems="flex-start"
-                defaultIsChecked
-                value="demo"
-                colorScheme="primary"
-                accessibilityLabel="Remember me"
-              >
-                <HStack alignItems="center" style={tw `mt-2`}>
-                  <Text fontSize="sm" color="coolGray.400" pl="2">
-                    I accept the{" "}
-                  </Text>
-                  <Link
-                    _text={{
-                      fontSize: "sm",
-                      fontWeight: "semibold",
-                      textDecoration: "none",
-                    }}
-                    _light={{
-                      _text: {
-                        color: "primary.900",
-                      },
-                    }}
-                    _dark={{
-                      _text: {
-                        color: "primary.500",
-                      },
-                    }}
-                  >
-                    Terms of Use
-                  </Link>
-                  <Text fontSize="sm"> & </Text>
+                  style={tw`mt-2`}
+                  alignItems="flex-start"
+                  defaultIsChecked
+                  value="demo"
+                  colorScheme="primary"
+                  accessibilityLabel="Remember me"
+                >
+                  <HStack alignItems="center" style={tw`mt-2`}>
+                    <Text fontSize="sm" color="coolGray.400" pl="2">
+                      I accept the{" "}
+                    </Text>
+                    <Link
+                      _text={{
+                        fontSize: "sm",
+                        fontWeight: "semibold",
+                        textDecoration: "none",
+                      }}
+                      _light={{
+                        _text: {
+                          color: "primary.900",
+                        },
+                      }}
+                      _dark={{
+                        _text: {
+                          color: "primary.500",
+                        },
+                      }}
+                    >
+                      Terms of Use
+                    </Link>
+                    <Text fontSize="sm"> & </Text>
 
-                  <Link
-                    _text={{
-                      fontSize: "sm",
-                      fontWeight: "semibold",
-                      textDecoration: "none",
-                    }}
-                    _light={{
-                      _text: {
-                        color: "primary.900",
-                      },
-                    }}
-                    _dark={{
-                      _text: {
-                        color: "primary.500",
-                      },
-                    }}
-                  >
-                    Privacy Policy
-                  </Link>
-                </HStack>
-              </Checkbox>
+                    <Link
+                      _text={{
+                        fontSize: "sm",
+                        fontWeight: "semibold",
+                        textDecoration: "none",
+                      }}
+                      _light={{
+                        _text: {
+                          color: "primary.900",
+                        },
+                      }}
+                      _dark={{
+                        _text: {
+                          color: "primary.500",
+                        },
+                      }}
+                    >
+                      Privacy Policy
+                    </Link>
+                  </HStack>
+                </Checkbox>
               </FormControl>
               <Button
                 mt="5"
@@ -194,7 +229,7 @@ export function SignUpForm({ props }) {
                   bg: "primary.700",
                 }}
                 onPress={() => {
-                  props.navigation.navigate("Home");
+                  props.navigation.navigate("Login");
                 }}
               >
                 SIGN UP
@@ -257,7 +292,10 @@ export function SignUpForm({ props }) {
                 bg: "primary.700",
               }}
             >
-              <Text style={{ color: "black", fontWeight: "500" }}>
+              <Text
+                style={{ color: "black", fontWeight: "500" }}
+                onPress={handleGoogleSignIn}
+              >
                 <Image
                   style={{ height: 12, width: 12 }}
                   source={require("../../../assets/ggl.png")}
