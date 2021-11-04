@@ -16,7 +16,7 @@ import tailwind from "tailwind-rn";
 
 function Rules() {
   return (
-    <SafeAreaView style={tailwind("h-full flex-col")}>
+    <SafeAreaView style={tailwind("h-full ")}>
       <ScrollView>
         <View style={tailwind(" items-center ")}>
       
@@ -30,7 +30,7 @@ function Rules() {
               _dark={{ backgroundColor: "gray.700" }}
             >
               <Box>
-                <AspectRatio ratio={1.47} height={200}>
+                <AspectRatio ratio={0.79} height={200}>
                   <Image
                     source={require("../../../assets/roadrule.png")}
                     alt="image"
