@@ -9,6 +9,7 @@ import {
 } from "react-native";
 
 import tailwind from "tailwind-rn";
+import Footer from "../Footer/Footer"
 
 function HomePage({ navigation }) {
   return (
@@ -38,30 +39,10 @@ function HomePage({ navigation }) {
                 " text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
               )}
               onPress={() => {
-                navigation.navigate("Commercial");
-              }}
-            >
-              Home page
-            </Text>
-            <Text
-              style={tailwind(
-                " text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
                 navigation.navigate("Rules");
               }}
             >
               Rules
-            </Text>
-            <Text
-              style={tailwind(
-                " text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("Profile");
-              }}
-            >
-              Profile
             </Text>
             <Text
               style={tailwind(
@@ -103,16 +84,7 @@ function HomePage({ navigation }) {
             >
               ContactUs
             </Text>
-            {/* <Text
-              style={tailwind(
-                " text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("TestBase");
-              }}
-            >
-              Test native base
-            </Text> */}
+    
             <Text
               style={tailwind(
                 "text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
@@ -133,17 +105,9 @@ function HomePage({ navigation }) {
             >
               Info
             </Text>
-
-            <Text
-              style={tailwind(
-                "text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("LandingPage");
-              }}
-            >
-              Logout
-            </Text>
+            <View style={tailwind("w-full mt-52")}>
+            <Footer navigation={navigation}/>
+            </View>
           </View>
         </ScrollView>
       </SafeAreaView>
