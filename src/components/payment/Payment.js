@@ -30,8 +30,8 @@ export const Payment = () => {
         </HStack>
         <HStack alignItems="center" justifyContent="space-between">
           <Text fontWeight="medium">Sub Total</Text>
-          <Text color="blueGray.400">$298.77</Text>
-        </HStack>
+          <Text color="blueGray.400">$218.77</Text>
+        </HStack> 
         <HStack alignItems="center" justifyContent="space-between">
           <Text fontWeight="medium">Tax</Text>
           <Text color="blueGray.400">$38.84</Text>
