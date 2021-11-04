@@ -2,7 +2,6 @@ import React from "react";
 import {
   Box,
   HStack,
-  Icon,
   Text,
   VStack,
   Avatar,
@@ -17,7 +16,6 @@ import {
   Card,
   TextArea,
   AspectRatio,
-  View,
 } from "native-base";
 import { AntDesign } from "@expo/vector-icons";
 import { Rating, AirbnbRating } from "react-native-ratings";
@@ -242,7 +240,7 @@ export default function Circuit4(props) {
                           fontWeight="medium"
                           color="coolGray.400"
                         >
-                          (By-cycle)
+                          By-cycle
                         </Text>
                         <Link
                           ml="auto"
