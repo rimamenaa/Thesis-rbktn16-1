@@ -1,3 +1,4 @@
+import { ScrollView } from "native-base";
 import React, { useState } from "react";
 import {
   View,
@@ -11,7 +12,7 @@ import tw from "tailwind-react-native-classnames";
 
 export default function LandingPage({ navigation }) {
   return (
-    <View style={tw`w-full h-full`}>
+    <ScrollView style={tw`w-full h-full`}>
       <ImageBackground
         style={tw`w-full h-full`}
         source={require("../../../assets/Onboarding.png")}
@@ -32,18 +33,18 @@ export default function LandingPage({ navigation }) {
               color="#2F2C2C"
             />
           </View>
-            <View style={tw`items-center`}>
-          <Text
-            style={tw` pt-6 text-yellow-400 font-semibold`}
-            onPress={() => {
-              navigation.navigate("Login");
-            }}
-          >
-            Already Have an Account?
-          </Text>
+          <View style={tw`items-center`}>
+            <Text
+              style={tw` pt-6 text-yellow-400 font-semibold`}
+              onPress={() => {
+                navigation.navigate("Login");
+              }}
+            >
+              Already Have an Account?
+            </Text>
           </View>
         </View>
       </ImageBackground>
-    </View>
+    </ScrollView>
   );
 }
