@@ -5,7 +5,7 @@ import Commercial from "./src/components/commercial/Commercial";
 import HomePage from "./src/components/HomePage/HomePage";
 import Signup from "./src/components/signup/Signup";
 import ContactUs from "./src/components/ContactUs/ContactUs";
-import Station from "./src/components/Map/Station";
+import CombinedMap from "./src/components/CombinedMap/CombinedMap";
 import Login from "./src/components/login/Login";
 import Rules from "./src/components/rules/Rules";
 import TestBase from "./src/components/TestNativeBase/TestBase";
@@ -20,7 +20,9 @@ import MonthlySubDetails from "./src/components/Renting/MonthlySub/MonthlySubDet
 import AdventurePass from "./src/components/Renting/AdventurePass/AdventurePass";
 import AdventurePassDetails from "./src/components/Renting/AdventurePass/AdventurePassDetails";
 import SuggestionRoads from "./src/components/suggestionroads/SuggestionRoads";
+import Station from "./src/components/Map/Station";
 import AboutBikes from "./src/components/aboutBikes/AboutBikes";
+import Profile from "./src/components/Profile/Profile";
 
 const theme = extendTheme({
   colors: {
@@ -34,15 +36,31 @@ function App() {
     <NativeBaseProvider theme={theme}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="LandingPage" component={LandingPage} />
-          <Stack.Screen name="Home" component={HomePage} />
+          <Stack.Screen
+            name="LandingPage"
+            options={{ headerShown: false }}
+            component={LandingPage}
+          />
+          <Stack.Screen
+            name="Home"
+            options={{ headerShown: false }}
+            component={HomePage}
+          />
           <Stack.Screen name="Commercial" component={Commercial} />
           <Stack.Screen name="Rent" component={Rent} />
           <Stack.Screen name="Station" component={Station} />
           <Stack.Screen name="Rules" component={Rules} />
           <Stack.Screen name="Reviews" component={Reviews} />
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Signup" component={Signup} />
+          <Stack.Screen
+            name="Login"
+            options={{ headerShown: false }}
+            component={Login}
+          />
+          <Stack.Screen
+            name="Signup"
+            options={{ headerShown: false }}
+            component={Signup}
+          />
           <Stack.Screen name="ContactUs" component={ContactUs} />
           <Stack.Screen name="SingleTrip" component={SingleTrip} />
           <Stack.Screen name="AboutBikes" component={AboutBikes} />
@@ -62,6 +80,7 @@ function App() {
             component={AdventurePassDetails}
           />
           <Stack.Screen name="SuggestionRoads" component={SuggestionRoads} />
+          <Stack.Screen name="Profile" component={Profile} />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>

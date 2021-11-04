@@ -18,19 +18,15 @@ import {
 } from "native-base";
 import tw from "tailwind-react-native-classnames";
 import * as Google from "expo-google-app-auth";
-
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-
 export function SignInForm({ props }) {
   const [message, setMessage] = useState();
   const [messageType, setMessageType] = useState();
   const [googleSubmitting, setGoogleSubmitting] = useState(false);
-
   const handleMessage = (message, type = "FAILED") => {
     setMessage(message);
     setMessageType(type);
   };
-
   const handleGoogleSignIn = () => {
     setGoogleSubmitting(true);
     const config = {
@@ -59,7 +55,6 @@ export function SignInForm({ props }) {
         setGoogleSubmitting(false);
       });
   };
-
   return (
     <KeyboardAwareScrollView
       contentContainerStyle={{
@@ -108,7 +103,6 @@ export function SignInForm({ props }) {
                   md: "4",
                 }}
               ></VStack>
-
               {/* Opening Link Tag navigateTo:"OTP" (react/Router) */}
               <FormControl>
                 <FormControl.Label
@@ -137,7 +131,7 @@ export function SignInForm({ props }) {
                   _text={{
                     fontSize: "xs",
                     fontWeight: "500",
-                    color: "yellow.500",
+                    color: "amber.400",
                   }}
                   alignSelf="flex-end"
                   mt="1"
@@ -155,25 +149,6 @@ export function SignInForm({ props }) {
                     <Text fontSize="sm" color="coolGray.400" pl="2">
                       Remember me{" "}
                     </Text>
-                    <Link
-                      _text={{
-                        fontSize: "sm",
-                        fontWeight: "semibold",
-                        textDecoration: "none",
-                      }}
-                      _light={{
-                        _text: {
-                          color: "primary.900",
-                        },
-                      }}
-                      _dark={{
-                        _text: {
-                          color: "primary.500",
-                        },
-                      }}
-                    >
-                      and keep me logged in
-                    </Link>
                   </HStack>
                 </Checkbox>
               </FormControl>
@@ -185,7 +160,7 @@ export function SignInForm({ props }) {
                   fontWeight: "medium",
                 }}
                 _light={{
-                  bg: "primary.800",
+                  bg: "primary.700",
                 }}
                 _dark={{
                   bg: "primary.700",
@@ -227,7 +202,6 @@ export function SignInForm({ props }) {
                 >
                   or
                 </Text>
-
                 <Divider
                   w="30%"
                   _light={{
@@ -239,7 +213,6 @@ export function SignInForm({ props }) {
                 ></Divider>
               </HStack>
             </VStack>
-
             <Button
               mt="5"
               size="md"
@@ -317,7 +290,6 @@ export function SignInForm({ props }) {
     </KeyboardAwareScrollView>
   );
 }
-
 export default function SignIn(props) {
   return (
     <>
@@ -337,6 +309,12 @@ export default function SignIn(props) {
       />
       <Center my="auto" flex="1">
         <Stack
+        _light={{
+          bg: "primary.700",
+        }}
+        _dark={{
+          bg: "primary.700",
+        }}
           flexDirection={{
             base: "column",
             md: "row",
@@ -353,20 +331,20 @@ export default function SignIn(props) {
           <Hidden from="md">
             <VStack px="4" mt="4" mb="5" space="9">
               <VStack space="2">
-                <Text fontSize="3xl" fontWeight="bold" color="coolGray.700">
+                <Text fontSize="3xl" fontWeight="bold" color="amber.400">
                   Welcome back,
                 </Text>
-                <Text
-                  fontSize="md"
+                <Text 
+                  style={tw `text-lg`}
                   fontWeight="normal"
                   _dark={{
-                    color: "coolGray.400",
+                    color: "amber.400",
                   }}
                   _light={{
-                    color: "primary.700",
+                    color: "white",
                   }}
                 >
-                  Sign in to continue
+                  Sign In to continue
                 </Text>
               </VStack>
             </VStack>
