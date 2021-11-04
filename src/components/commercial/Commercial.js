@@ -195,12 +195,12 @@ function Commercial() {
             _dark={{ backgroundColor: "gray.700" }}
           >
             <Box>
-              <AspectRatio ratio={1.47} height={330}>
                 <Image
                   source={require("../../../assets/rule4.png")}
                   alt="image"
+                  height="72"
+
                 />
-              </AspectRatio>
             </Box>
             <Stack p="4" space={3}>
               <Stack space={2}>
