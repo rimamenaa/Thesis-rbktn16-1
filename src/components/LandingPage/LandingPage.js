@@ -18,10 +18,10 @@ export default function LandingPage({ navigation }) {
         source={require("../../../assets/Onboarding.png")}
       >
         <View style={tw`items-center`}>
-          <Image
-            style={tw`w-24 h-24 mt-2`}
-            source={require("../../../assets/LogoBike.png")}
-          />
+        <Image
+          style={tw`w-20 h-20 mt-2`}
+          source={require("../../../assets/LogoBike.png")}
+        />
         </View>
         <View style={tw`my-96 items-center`}>
           <View style={tw`pt-32 w-4/5`}>

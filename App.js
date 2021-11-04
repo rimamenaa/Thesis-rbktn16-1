@@ -8,7 +8,6 @@ import ContactUs from "./src/components/ContactUs/ContactUs";
 import CombinedMap from "./src/components/CombinedMap/CombinedMap";
 import Login from "./src/components/login/Login";
 import Rules from "./src/components/rules/Rules";
-import TestBase from "./src/components/TestNativeBase/TestBase";
 import { NativeBaseProvider, extendTheme, theme as nbTheme } from "native-base";
 import Reviews from "./src/components/ReviewsUser/Reviews";
 import LandingPage from "./src/components/LandingPage/LandingPage";
@@ -23,6 +22,8 @@ import SuggestionRoads from "./src/components/suggestionroads/SuggestionRoads";
 import Station from "./src/components/Map/Station";
 import AboutBikes from "./src/components/aboutBikes/AboutBikes";
 import Profile from "./src/components/Profile/Profile";
+import Payment from "./src/components/payment/Payment";
+import Info from "./src/components/payment/Info";
 
 const theme = extendTheme({
   colors: {
@@ -81,6 +82,8 @@ function App() {
           />
           <Stack.Screen name="SuggestionRoads" component={SuggestionRoads} />
           <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="Payment" component={Payment} />
+          <Stack.Screen name="Info" component={Info} />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
