@@ -82,7 +82,8 @@ function Rules() {
                 </Text>
          
               </Stack>
-            </Box>
+            </Box> 
+            
 
 <Box
                style={tailwind("w-full items-center mb-8")}
