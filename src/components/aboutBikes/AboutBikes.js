@@ -16,7 +16,7 @@ function AboutBikes() {
 
   useEffect(async () => {
     axios
-      .get(" http://192.168.11.188:3000/bicycle ")
+      .get(" http://localhost:3000/bicycle ")
       .then((response) => {
         console.log(response.data);
         setData(response.data);
@@ -26,7 +26,6 @@ function AboutBikes() {
       });
   }, []);
 
- 
   return (
     <ScrollView>
       {data.map((bike, key) => {

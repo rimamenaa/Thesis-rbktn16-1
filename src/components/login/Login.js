@@ -308,7 +308,7 @@ export default function SignIn(props) {
         }}
       />
       <Center my="auto" flex="1">
-        <Stack  
+        <Stack
         _light={{
           bg: "primary.700",
         }}
