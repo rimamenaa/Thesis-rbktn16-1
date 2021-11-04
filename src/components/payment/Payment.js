@@ -24,7 +24,7 @@ export const Payment = () => {
       h="100%" // alignItems="flex-start"
       justifyContent="center"
     >
-      <VStack space={3} w="100%">
+      <VStack space={4} w="100%">
         <HStack alignItems="flex-end">
           <Heading>Order</Heading>
         </HStack>
@@ -80,7 +80,7 @@ export const Payment = () => {
               }}
               fontWeight="medium"
             >
-              Your Order Has Been Placed Successfully. Have A Safe Ride!
+              Your Order Has Been Successfully Placed. Have A Safe Ride!
             </Text>
           </HStack>
         </Box>
