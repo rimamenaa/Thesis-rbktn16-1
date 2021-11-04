@@ -9,7 +9,7 @@ import {
 } from "native-base";
 import { View } from "react-native";
 
-export const TermsAndConditions = () => {
+export const Recommendation = () => {
   const flexDir = useBreakpointValue({
     base: "column",
     lg: "row",
@@ -20,7 +20,7 @@ export const TermsAndConditions = () => {
       <VStack py="8" space={8} justifyContent="center">
         <View style={{ flexDirection: flexDir }}>
           <Checkbox size="sm" value="tnc" justifyContent="center" mb="4">
-            I agree to Terms and conditions
+            Do you recommend this riding circuit ?
           </Checkbox>
         </View>
       </VStack>
@@ -32,7 +32,7 @@ export default function () {
   return (
     <NativeBaseProvider>
       <Center flex={1}>
-        <TermsAndConditions />
+        <Recommendation />
       </Center>
     </NativeBaseProvider>
   );
