@@ -16,28 +16,32 @@ export default function LandingPage({ navigation }) {
         style={tw`w-full h-full`}
         source={require("../../../assets/Onboarding.png")}
       >
+        <View style={tw`items-center`}>
         <Image
-          style={tw`mt-48 w-32 pl-36 h-24`}
+          style={tw`w-24 h-24 mt-2`}
           source={require("../../../assets/LogoBike.png")}
         />
-        <View style={tw`my-72`}>
-          <View style={tw`pt-32 w-4/5 ml-8`}></View>
-          <Button
-            onPress={() => {
-              navigation.navigate("Signup");
-            }}
-            title="Sign Up"
-            color="#2F2C2C"
-          />
-
+        </View>
+        <View style={tw`my-96 items-center`}>
+          <View style={tw`pt-32 w-4/5`}>
+            <Button
+              onPress={() => {
+                navigation.navigate("Signup");
+              }}
+              title="Sign Up"
+              color="#2F2C2C"
+            />
+          </View>
+            <View style={tw`items-center`}>
           <Text
-            style={tw`pl-32 pt-6 text-yellow-400 font-semibold`}
+            style={tw` pt-6 text-yellow-400 font-semibold`}
             onPress={() => {
               navigation.navigate("Login");
             }}
           >
             Already Have an Account?
           </Text>
+          </View>
         </View>
       </ImageBackground>
     </View>
