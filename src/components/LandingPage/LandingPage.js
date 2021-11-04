@@ -16,12 +16,14 @@ export default function LandingPage({ navigation }) {
         style={tw`w-full h-full`}
         source={require("../../../assets/Onboarding.png")}
       >
+        <View style={tw`items-center`}>
         <Image
-          style={tw`mt-48 w-32 pl-36 h-24`}
+          style={tw`w-24 h-24 mt-2`}
           source={require("../../../assets/LogoBike.png")}
         />
-        <View style={tw`my-72`}>
-          <View style={tw`pt-4 w-4/5 ml-8`}>
+        </View>
+        <View style={tw`my-96 items-center`}>
+          <View style={tw`pt-32 w-4/5`}>
             <Button
               onPress={() => {
                 navigation.navigate("Signup");
@@ -30,27 +32,15 @@ export default function LandingPage({ navigation }) {
               color="#2F2C2C"
             />
           </View>
-
+            <View style={tw`items-center`}>
           <Text
-            style={tw`pl-28 pt-3 text-yellow-400 font-semibold`}
+            style={tw` pt-6 text-yellow-400 font-semibold`}
             onPress={() => {
               navigation.navigate("Login");
             }}
           >
             Already Have an Account?
           </Text>
-
-          <View style={tw`items-center bg-transparent rounded w-4/5 ml-8 h-8`}>
-            <View style={tw`flex flex-row`}>
-              <Image
-                style={tw`mt-1.5 w-4 pl-2 h-4`}
-                source={require("../../../assets/ggl.png")}
-              />
-
-              <Text style={tw`mt-1 pl-2 font-bold text-white`}>
-                GOOGLE hedhi bech tetna7a
-              </Text>
-            </View>
           </View>
         </View>
       </ImageBackground>
