@@ -8,7 +8,6 @@ import ContactUs from "./src/components/ContactUs/ContactUs";
 import CombinedMap from "./src/components/CombinedMap/CombinedMap";
 import Login from "./src/components/login/Login";
 import Rules from "./src/components/rules/Rules";
-import TestBase from "./src/components/TestNativeBase/TestBase";
 import { NativeBaseProvider, extendTheme, theme as nbTheme } from "native-base";
 import Reviews from "./src/components/ReviewsUser/Reviews";
 import LandingPage from "./src/components/LandingPage/LandingPage";
