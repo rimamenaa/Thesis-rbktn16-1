@@ -30,7 +30,7 @@ function Rules() {
               _dark={{ backgroundColor: "gray.700" }}
             >
               <Box>
-                <AspectRatio ratio={0.79} height={200}>
+                <AspectRatio ratio={1.47} height={350}>
                   <Image
                     source={require("../../../assets/roadrule.png")}
                     alt="image"
@@ -63,7 +63,7 @@ function Rules() {
               _dark={{ backgroundColor: "gray.700" }}
             >
               <Box>
-                <AspectRatio ratio={1.47} height={200}>
+                <AspectRatio style={tailwind("w-44 h-80 items-center mr-20 mb-72")}>
                   <Image
                     source={require("../../../assets/roadrule2.png")}
                     alt="image"
@@ -94,7 +94,7 @@ function Rules() {
               _dark={{ backgroundColor: "gray.700" }}
             >
               <Box>
-                <AspectRatio ratio={1.00} height={200}>
+                <AspectRatio ratio={1.47} height={300}>
                   <Image
                     source={require("../../../assets/roadrule3.png")}
                     alt="image"
