@@ -128,6 +128,17 @@ function HomePage({ navigation }) {
                 "text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
               )}
               onPress={() => {
+                navigation.navigate("Info");
+              }}
+            >
+              Info
+            </Text>
+
+            <Text
+              style={tailwind(
+                "text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
+              )}
+              onPress={() => {
                 navigation.navigate("LandingPage");
               }}
             >
