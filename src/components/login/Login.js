@@ -309,12 +309,12 @@ export default function SignIn(props) {
       />
       <Center my="auto" flex="1">
         <Stack
-        _light={{
-          bg: "primary.700",
-        }}
-        _dark={{
-          bg: "primary.700",
-        }}
+          _light={{
+            bg: "primary.700",
+          }}
+          _dark={{
+            bg: "primary.700",
+          }}
           flexDirection={{
             base: "column",
             md: "row",
@@ -334,8 +334,8 @@ export default function SignIn(props) {
                 <Text fontSize="3xl" fontWeight="bold" color="amber.400">
                   Welcome back,
                 </Text>
-                <Text 
-                  style={tw `text-lg`}
+                <Text
+                  style={tw`text-lg`}
                   fontWeight="normal"
                   _dark={{
                     color: "amber.400",
