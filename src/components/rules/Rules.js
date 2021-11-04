@@ -30,7 +30,7 @@ function Rules() {
               _dark={{ backgroundColor: "gray.700" }}
             >
               <Box>
-                <AspectRatio ratio={0.79} height={200}>
+                <AspectRatio ratio={1.47} height={350}>
                   <Image
                     source={require("../../../assets/roadrule.png")}
                     alt="image"
@@ -63,12 +63,11 @@ function Rules() {
               _dark={{ backgroundColor: "gray.700" }}
             >
               <Box>
-                <AspectRatio ratio={1.47} height={200}>
                   <Image
                     source={require("../../../assets/roadrule2.png")}
                     alt="image"
+                    h="72"
                   />
-                </AspectRatio>
               </Box>
               <Stack p="4" space={3}>
                 <Stack space={2}>
@@ -84,7 +83,9 @@ function Rules() {
               </Stack>
             </Box>
 
-<Box
+
+                  
+<Box 
                style={tailwind("w-full items-center mb-8")}
                rounded="lg"
               overflow="hidden"
@@ -94,12 +95,12 @@ function Rules() {
               _dark={{ backgroundColor: "gray.700" }}
             >
               <Box>
-                <AspectRatio ratio={1.00} height={200}>
                   <Image
                     source={require("../../../assets/roadrule3.png")}
                     alt="image"
+                    height="72"
+
                   />
-                </AspectRatio>
               </Box>
               <Stack p="4" space={3}>
                 <Stack space={2}>
@@ -126,12 +127,12 @@ function Rules() {
               _dark={{ backgroundColor: "gray.700" }}
             >
               <Box>
-                <AspectRatio ratio={1.03} height={200}>
                   <Image
                     source={require("../../../assets/roadrule4.png")}
                     alt="image"
+                    height="72"
+
                   />
-                </AspectRatio>
               </Box>
               <Stack p="4" space={3}>
                 <Stack space={2}>

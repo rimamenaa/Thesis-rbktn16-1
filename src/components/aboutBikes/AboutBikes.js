@@ -22,14 +22,14 @@ function AboutBikes() {
         setData(response.data);
       })
       .catch((err) => {
-        console.log("this is an error", err);
+        console.log("err", err);
       });
   }, []);
 
   return (
     <ScrollView>
-      {data.map((bike, key) => {
-        // console.log(bike);
+      {data.slice(0, 3).map((bike, key) => {
+        console.log(bike);
         return (
           <Card key={key}>
             <Text fontSize="2xl">{bike.category}</Text>
@@ -40,7 +40,7 @@ function AboutBikes() {
                 height="100%"
                 width="100%"
                 source={{ uri: bike.photo }}
-                alt={"Loading"}
+                alt={"Loading..."}
               />
             </AspectRatio>
             <Stack>
