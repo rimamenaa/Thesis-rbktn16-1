@@ -18,7 +18,7 @@ export default function LandingPage({ navigation }) {
       >
         <View style={tw`items-center`}>
         <Image
-          style={tw`w-24 h-24 mt-2`}
+          style={tw`w-20 h-20 mt-2`}
           source={require("../../../assets/LogoBike.png")}
         />
         </View>

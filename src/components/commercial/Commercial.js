@@ -63,7 +63,7 @@ function Commercial() {
             400+ bikes and more than 18+ stations across the country.
           </Text>
           <Box
-            style={tailwind("w-full items-center")}
+            style={tailwind("w-full h-96 items-center")}
             rounded="lg"
             overflow="hidden"
             width="72"
@@ -71,9 +71,10 @@ function Commercial() {
             _light={{ backgroundColor: "gray.50" }}
             _dark={{ backgroundColor: "gray.700" }}
           >
-            <Box>
-              <AspectRatio ratio={1.47} height={200}>
+            <Box style={tailwind("items-center pr-24")}>
+              <AspectRatio ratio={1.47} height={280}>
                 <Image
+                  height={280}
                   source={require("../../../assets/rule1.png")}
                   alt="image"
                 />
@@ -112,7 +113,7 @@ function Commercial() {
             _dark={{ backgroundColor: "gray.700" }}
           >
             <Box>
-              <AspectRatio ratio={1.47} height={200}>
+              <AspectRatio ratio={1.47} height={330}>
                 <Image
                   source={require("../../../assets/rule2.png")}
                   alt="image"
@@ -153,7 +154,7 @@ function Commercial() {
             _dark={{ backgroundColor: "gray.700" }}
           >
             <Box>
-              <AspectRatio ratio={1.47} height={200}>
+              <AspectRatio ratio={1.47} height={400}>
                 <Image
                   source={require("../../../assets/rule3.png")}
                   alt="image"
@@ -194,12 +195,12 @@ function Commercial() {
             _dark={{ backgroundColor: "gray.700" }}
           >
             <Box>
-              <AspectRatio ratio={1.47} height={200}>
                 <Image
                   source={require("../../../assets/rule4.png")}
                   alt="image"
+                  height="72"
+
                 />
-              </AspectRatio>
             </Box>
             <Stack p="4" space={3}>
               <Stack space={2}>
