@@ -2,7 +2,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Commercial from "./src/components/commercial/Commercial";
-import HomePage from "./src/components/HomePage/HomePage";
+import HomePage from "./src/components/Homepage/HomePage";
 import Signup from "./src/components/signup/Signup";
 import ContactUs from "./src/components/ContactUs/ContactUs";
 import CombinedMap from "./src/components/CombinedMap/CombinedMap";
@@ -23,6 +23,7 @@ import SuggestionRoads from "./src/components/suggestionroads/SuggestionRoads";
 import Station from "./src/components/Map/Station";
 import AboutBikes from "./src/components/aboutBikes/AboutBikes";
 import Profile from "./src/components/Profile/Profile";
+import Payment from "./src/components/payment/Payment";
 
 const theme = extendTheme({
   colors: {
@@ -81,6 +82,8 @@ function App() {
           />
           <Stack.Screen name="SuggestionRoads" component={SuggestionRoads} />
           <Stack.Screen name="Profile" component={Profile} />
+
+          <Stack.Screen name="Payment" component={Payment} />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
