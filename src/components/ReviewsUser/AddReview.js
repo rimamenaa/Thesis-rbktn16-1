@@ -4,15 +4,18 @@ import { AirbnbRating } from "react-native-ratings";
 import axios from "axios";
 
 function AddReview() {
-  const [input, setInput] = useState("");
+  const [review, setInput] = useState("");
 
   const Submit = () => {
     axios
-      .post(`http://bycyclebackend.herokuapp.com/circuit1`, {
-        input,
+      .post(`http://localhost:3000/reviews`, {
+        review,
       })
       .then(() => {
         console.log(`success`);
+      })
+      .catch((err) => {
+        console.log(err, "error");
       });
   };
 
@@ -40,11 +43,11 @@ function AddReview() {
         }}
         onChangeText={(text) => setInput(text)}
         onSubmitEditing={() => {
-          alert(`this is your input:${input}`);
+          alert(`this is your input:${review}`);
           setInput("");
         }}
         placeholder="Your review goes here"
-        value={input}
+        value={review}
       />
       <Button onPress={Submit}>Add Review</Button>
     </Box>

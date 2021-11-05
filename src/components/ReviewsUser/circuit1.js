@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   HStack,
@@ -20,36 +20,50 @@ import {
 import { AirbnbRating } from "react-native-ratings";
 import AddReview from "./AddReview";
 import tw from "tailwind-react-native-classnames";
-const reviews = [
-  {
-    imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBnIObRknPG622IYsgB9rxlS9195YssaXolQ&usqp=CAU",
-    name: "Foulen ben felten",
-    time: "12 May 2021",
-    review:
-      "I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.",
-  },
-  {
-    imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBnIObRknPG622IYsgB9rxlS9195YssaXolQ&usqp=CAU",
-    name: "LSameh derbali",
-    time: "02 Jan 2021",
-    review:
-      "I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.",
-  },
-  {
-    imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBnIObRknPG622IYsgB9rxlS9195YssaXolQ&usqp=CAU",
-    name: "hehi ben houhen",
-    time: "31 Aug 2021",
-    review:
-      "I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.",
-  },
-];
+import axios from "axios";
+// const reviews = [
+//   {
+//     imageUrl:
+//       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBnIObRknPG622IYsgB9rxlS9195YssaXolQ&usqp=CAU",
+//     name: "Foulen ben felten",
+//     time: "12 May 2021",
+//     review:
+//       "I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.",
+//   },
+//   {
+//     imageUrl:
+//       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBnIObRknPG622IYsgB9rxlS9195YssaXolQ&usqp=CAU",
+//     name: "LSameh derbali",
+//     time: "02 Jan 2021",
+//     review:
+//       "I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.",
+//   },
+//   {
+//     imageUrl:
+//       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBnIObRknPG622IYsgB9rxlS9195YssaXolQ&usqp=CAU",
+//     name: "hehi ben houhen",
+//     time: "31 Aug 2021",
+//     review:
+//       "I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.",
+//   },
+// ];
 
 export default function Circuit1(props) {
   // const router = useRouter(); //use incase of Nextjs
   const [tabName, setTabName] = useState("Reviews");
+  const [Data, setData] = useState([]);
+
+  useEffect(async () => {
+    axios
+      .get(`http://localhost:3000/reviews`)
+      .then((response) => {
+        console.log(response.data);
+        setData(response.data);
+      })
+      .catch((err) => {
+        console.log("err", err);
+      });
+  }, []);
 
   return (
     <>
@@ -124,6 +138,7 @@ export default function Circuit1(props) {
                   space="6"
                 >
                   {/* to be replaced by my styled box  */}
+
                   <Card>
                     <Text fontSize="2xl" marginBottom="3">
                       City name
@@ -377,18 +392,18 @@ export default function Circuit1(props) {
                       {tabName === "AddReview" ? (
                         <AddReview></AddReview>
                       ) : (
-                        reviews.map((item, idx) => {
+                        Data.map((review, idx) => {
                           return (
                             <VStack my="3" px="4" key={idx}>
                               <HStack justifyContent="space-between">
                                 <HStack space="3">
-                                  <Avatar
+                                  {/* <Avatar
                                     source={{
                                       uri: item.imageUrl,
                                     }}
                                     height="9"
                                     width="9"
-                                  />
+                                  /> */}
                                   <VStack space="1">
                                     <Text
                                       fontSize="sm"
@@ -400,9 +415,9 @@ export default function Circuit1(props) {
                                         color: "coolGray.800",
                                       }}
                                     >
-                                      {item.name}
+                                      {/* {item.name} */}
                                     </Text>
-                                    <HStack space="1">
+                                    {/* <HStack space="1">
                                       <AirbnbRating
                                         showRating={false}
                                         isDisabled={true}
@@ -411,7 +426,7 @@ export default function Circuit1(props) {
                                         defaultRating={4}
                                         size={20}
                                       />
-                                    </HStack>
+                                    </HStack> */}
                                   </VStack>
                                 </HStack>
                                 <Text
@@ -423,7 +438,7 @@ export default function Circuit1(props) {
                                     color: "coolGray.300",
                                   }}
                                 >
-                                  {item.time}
+                                  {review.CreatedAt}
                                 </Text>
                               </HStack>
                               <Text
@@ -438,7 +453,7 @@ export default function Circuit1(props) {
                                 }}
                                 fontSize="md"
                               >
-                                {item.review}
+                                {review.review}
                               </Text>
                             </VStack>
                           );
