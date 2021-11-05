@@ -382,19 +382,16 @@ export default function Circuit1(props) {
                                 width="80"
                                 shadow={1}
                                 _light={{ backgroundColor: "gray.200" }}
-                                _dark={{ backgroundColor: "gray.700" }}
-                                style={{ margin: 20 }}
+                                style={{ margin: 15 }}
                               >
                                 <Stack p="4" space={3}>
                                   <Stack space={2}>
-                                    {/* <Avatar
-                                        source={{
-                                          uri: item.imageUrl,
-                                        }}
-                                        height="9"
-                                        width="9"
-                                      /> */}
                                     {/* <VStack space="1">
+                                    <Avatar
+                                      source={require("../../../assets/goGreen.jpg")}
+                                      height="9"
+                                      width="9"
+                                    />
                                       <HStack space="1">
                                       <AirbnbRating
                                       showRating={false}
