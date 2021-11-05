@@ -27,13 +27,24 @@ export const Info = () => {
       justifyContent="center"
     >
       <VStack space={3} w="100%">
+
         <HStack alignItems="center">
           <Heading>Personal Information</Heading>
         </HStack>
+
         <Stack mt={3} space={4} alignItems="center">
-          <Input  w="100%" variant="outline" placeholder="ID" />
-          <Input  w="100%" variant="outline" placeholder="Phone Number" />
+          <Input  
+          w="100%" 
+          variant="outline" 
+          placeholder="ID" 
+          />
+          <Input  
+          w="100%" 
+          variant="outline" 
+          placeholder="Phone Number" 
+          />
         </Stack>
+
         <Button
           colorScheme="yellow"
           my="2"
@@ -43,6 +54,7 @@ export const Info = () => {
         >
           Next
         </Button>
+
       </VStack>
     </Box>
   );
@@ -50,10 +62,12 @@ export const Info = () => {
 
 export default () => {
   return (
+
     <NativeBaseProvider>
       <Center flex={1} px="3">
         <Info />
       </Center>
     </NativeBaseProvider>
+  
   );
 };
