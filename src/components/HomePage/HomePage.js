@@ -6,8 +6,6 @@ import {
   Text,
   ScrollView,
   ImageBackground,
-  TouchableOpacity,
-  StyleSheet
 } from "react-native";
 
 import {
@@ -233,21 +231,19 @@ function HomePage({ navigation }) {
             base: "auto",
             md: "0",
           }}
-        >
-           <TouchableOpacity style={styles.buttonContainer}>
+        >  
           <Button
-            // size="lg"
-            // variant="subtle" 
-            // colorScheme="amber"
-            // width="210"
-            // height="12"
+           size="lg"
+           variant="subtle" 
+           colorScheme="amber"
+           width="210"
+           height="12"
             onPress={() => {
               navigation.navigate("Info");
             }} 
           >
             Info
           </Button>
-          </TouchableOpacity>
         </Stack>
 
             <View style={tailwind("w-full mt-32")}>
@@ -262,16 +258,3 @@ function HomePage({ navigation }) {
 
 export default HomePage;
 
-const styles = StyleSheet.create({
-  buttonContainer: {
-    marginTop: 10,
-    height: 45,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: 20,
-    width: 250,
-    borderRadius: 30,
-    backgroundColor: "#ffca28",
-  },
-});
