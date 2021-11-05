@@ -5,14 +5,16 @@ import axios from "axios";
 
 function AddReview() {
   const [review, setInput] = useState("");
+  const [Data, setData] = useState([]);
 
   const Submit = () => {
     axios
       .post(`http://localhost:3000/reviews`, {
         review,
       })
-      .then(() => {
-        console.log(`success`);
+      .then((res) => {
+        setData((data) => [res.data, ...data]);
+        setInput("");
       })
       .catch((err) => {
         console.log(err, "error");

@@ -18,9 +18,9 @@ import {
   View,
 } from "native-base";
 import { AirbnbRating } from "react-native-ratings";
-import AddReview from "./AddReview";
 import tw from "tailwind-react-native-classnames";
 import axios from "axios";
+
 // const reviews = [
 //   {
 //     imageUrl:
@@ -51,19 +51,32 @@ import axios from "axios";
 export default function Circuit1(props) {
   // const router = useRouter(); //use incase of Nextjs
   const [tabName, setTabName] = useState("Reviews");
+  const [review, setInput] = useState("");
   const [Data, setData] = useState([]);
-
-  useEffect(async () => {
+  // useEffect(async () => {
+  //   axios
+  //     .get(`http://localhost:3000/reviews`)
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       setData(response.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log("err", err);
+  //     });
+  // }, []);
+  const Submit = () => {
     axios
-      .get(`http://localhost:3000/reviews`)
-      .then((response) => {
-        console.log(response.data);
-        setData(response.data);
+      .post(`http://localhost:3000/reviews`, {
+        review,
+      })
+      .then((res) => {
+        setData((data) => [res.data, ...data]);
+        setInput("");
       })
       .catch((err) => {
-        console.log("err", err);
+        console.log(err, "error");
       });
-  }, []);
+  };
 
   return (
     <>
@@ -390,7 +403,35 @@ export default function Circuit1(props) {
                       {/* HERE IS THE CONDITIONAL RENDERING */}
 
                       {tabName === "AddReview" ? (
-                        <AddReview></AddReview>
+                        <Box>
+                          <AirbnbRating
+                            count={5}
+                            reviews={[1, 2, 3, 4, 5]}
+                            defaultRating={5}
+                            size={20}
+                          />
+                          <TextArea
+                            fontSize="md"
+                            fontWeight="semibold"
+                            _dark={{
+                              color: "coolGray.50",
+                            }}
+                            _light={{
+                              color: "coolGray.800",
+                            }}
+                            h={{ base: "20" }}
+                            w={{
+                              base: "100%",
+                              md: "25%",
+                            }}
+                            onChangeText={(text) => {
+                              setInput(text);
+                            }}
+                            placeholder="Your review goes here"
+                            value={review}
+                          />
+                          <Button onPress={Submit}>Add Review</Button>
+                        </Box>
                       ) : (
                         Data.map((review, idx) => {
                           return (
