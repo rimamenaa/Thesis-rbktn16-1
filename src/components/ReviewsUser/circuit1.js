@@ -77,18 +77,12 @@ export default function Circuit1(props) {
         _light={{
           bg: "primary.200",
         }}
-        _dark={{
-          bg: "coolGray.100",
-        }}
       />
 
       <VStack
         flex={1}
         _light={{
           bg: "primary.50",
-        }}
-        _dark={{
-          bg: "customGray",
         }}
       >
         <ScrollView>
@@ -101,10 +95,6 @@ export default function Circuit1(props) {
             }}
             _light={{
               borderTopColor: "coolGray.200",
-            }}
-            _dark={{
-              bg: "coolGray.800",
-              borderTopColor: "coolGray.700",
             }}
           >
             <ScrollView
@@ -125,13 +115,6 @@ export default function Circuit1(props) {
                   }}
                   _light={{
                     bg: "white",
-                  }}
-                  _dark={{
-                    borderColor: "coolGray.700",
-                    bg: {
-                      md: "coolGray.900",
-                      base: "coolGray.800",
-                    },
                   }}
                   borderWidth={1}
                   borderColor="#E5E7EB"
@@ -172,9 +155,6 @@ export default function Circuit1(props) {
                           _light={{
                             color: "coolGray.800",
                           }}
-                          _dark={{
-                            color: "coolGray.50",
-                          }}
                         >
                           lac01 is a town in northern Tunisia located about 20
                           km from the capital, Tunis. Cafe de delice and coast
@@ -201,9 +181,6 @@ export default function Circuit1(props) {
                             _light={{
                               color: "coolGray.800",
                             }}
-                            _dark={{
-                              color: "coolGray.50",
-                            }}
                           >
                             Ratings
                           </Text>
@@ -218,9 +195,6 @@ export default function Circuit1(props) {
                               _light={{
                                 color: "coolGray.800",
                               }}
-                              _dark={{
-                                color: "coolGray.50",
-                              }}
                             >
                               (3 reviews average)
                             </Text>
@@ -229,9 +203,6 @@ export default function Circuit1(props) {
                               fontWeight="medium"
                               _light={{
                                 color: "coolGray.400",
-                              }}
-                              _dark={{
-                                color: "coolGray.300",
                               }}
                             >
                               (120 )
@@ -244,9 +215,6 @@ export default function Circuit1(props) {
                           fontWeight="medium"
                           _light={{
                             color: "coolGray.800",
-                          }}
-                          _dark={{
-                            color: "coolGray.50",
                           }}
                         >
                           {Data.length}
@@ -269,13 +237,6 @@ export default function Circuit1(props) {
                           _light={{
                             _text: {
                               color: "primary.800",
-                              fontSize: "sm",
-                              fontWeight: "medium",
-                            },
-                          }}
-                          _dark={{
-                            _text: {
-                              color: "primary.400",
                               fontSize: "sm",
                               fontWeight: "medium",
                             },
@@ -339,12 +300,6 @@ export default function Circuit1(props) {
                                   ? "primary.900"
                                   : "coolGray.400",
                             }}
-                            _dark={{
-                              color:
-                                tabName == "AddReview"
-                                  ? "coolGray.50"
-                                  : "coolGray.400",
-                            }}
                           >
                             AddReview
                           </Text>
@@ -369,12 +324,6 @@ export default function Circuit1(props) {
                               color:
                                 tabName == "Reviews"
                                   ? "primary.900"
-                                  : "coolGray.400",
-                            }}
-                            _dark={{
-                              color:
-                                tabName == "Reviews"
-                                  ? "coolGray.50"
                                   : "coolGray.400",
                             }}
                           >
@@ -405,9 +354,6 @@ export default function Circuit1(props) {
                           <TextArea
                             fontSize="md"
                             fontWeight="semibold"
-                            _dark={{
-                              color: "coolGray.50",
-                            }}
                             _light={{
                               color: "coolGray.800",
                             }}
@@ -425,67 +371,54 @@ export default function Circuit1(props) {
                           <Button onPress={Submit}>Add Review</Button>
                         </Box>
                       ) : (
-                        Data.map((review, idx) => {
+                        Data.sort(function (a, b) {
+                          return a.createdAt - b.createdAt;
+                        }).map((review, idx) => {
                           return (
-                            <VStack my="3" px="4" key={idx}>
-                              <HStack space="3">
-                                {/* <Avatar
-                                    source={{
-                                      uri: item.imageUrl,
-                                    }}
-                                    height="9"
-                                    width="9"
-                                  /> */}
-                                <VStack space="1">
-                                  <Text
-                                    fontSize="md"
-                                    fontWeight="semibold"
-                                    _dark={{
-                                      color: "coolGray.50",
-                                    }}
-                                    _light={{
-                                      color: "amber.800",
-                                    }}
-                                  >
-                                    {/* {item.name} */}
-                                  </Text>
-                                  {/* <HStack space="1">
-                                      <AirbnbRating
-                                        showRating={false}
-                                        isDisabled={true}
-                                        count={5}
-                                        reviews={[1, 2, 3, 4, 5]}
-                                        defaultRating={4}
-                                        size={20}
-                                      />
-                                    </HStack> */}
-                                </VStack>
-                                <Text
-                                  fontSize="sm"
-                                  _light={{
-                                    color: "coolGray.500",
-                                  }}
-                                  _dark={{
-                                    color: "coolGray.300",
-                                  }}
-                                >
-                                  {review.createdAt}
-                                </Text>
-                              </HStack>
-                              <Text
-                                alignItems="center"
-                                lineHeight="lg"
-                                mt="4"
-                                _light={{
-                                  color: "coolGray.500",
-                                }}
-                                _dark={{
-                                  color: "coolGray.300",
-                                }}
-                                fontSize="md"
+                            <VStack my="1" px="4" key={idx}>
+                              <Pressable
+                                rounded="lg"
+                                overflow="hidden"
+                                width="80"
+                                shadow={1}
+                                _light={{ backgroundColor: "gray.200" }}
+                                _dark={{ backgroundColor: "gray.700" }}
+                                style={{ margin: 20 }}
                               >
-                                {review.review}
-                              </Text>
+                                <Stack p="4" space={3}>
+                                  <Stack space={2}>
+                                    {/* <Avatar
+                                        source={{
+                                          uri: item.imageUrl,
+                                        }}
+                                        height="9"
+                                        width="9"
+                                      /> */}
+                                    {/* <VStack space="1">
+                                      <HStack space="1">
+                                      <AirbnbRating
+                                      showRating={false}
+                                      isDisabled={true}
+                                      count={5}
+                                      reviews={[1, 2, 3, 4, 5]}
+                                      defaultRating={4}
+                                      size={20}
+                                      />
+                                    </HStack>
+                                    </VStack> */}
+                                    <Text
+                                      fontSize="xs"
+                                      _light={{ color: "amber.500" }}
+                                      fontWeight="medium"
+                                      ml="-0.5"
+                                      mt="-1"
+                                    >
+                                      {moment(review.createdAt).format("LLL")}
+                                    </Text>
+                                  </Stack>
+                                  <Text fontWeight="400">{review.review}</Text>
+                                </Stack>
+                              </Pressable>
                             </VStack>
                           );
                         })
