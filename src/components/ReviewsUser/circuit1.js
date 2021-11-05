@@ -19,9 +19,10 @@ import {
   AspectRatio,
   View,
 } from "native-base";
-import { AntDesign } from "@expo/vector-icons";
-import { Rating, AirbnbRating } from "react-native-ratings";
-
+import { AirbnbRating } from "react-native-ratings";
+import KeyboardAvoidingWrapper from "./KeyboardAvoidingWrapper";
+import AddReview from "./AddReview";
+import tw from "tailwind-react-native-classnames";
 const reviews = [
   {
     imageUrl:
@@ -49,12 +50,13 @@ const reviews = [
   },
 ];
 
-import tw from "tailwind-react-native-classnames";
-
 export default function Circuit1(props) {
   // const router = useRouter(); //use incase of Nextjs
   const [tabName, setTabName] = React.useState("Reviews");
-  const { colorMode } = useColorMode();
+
+  const [input, setInput] = React.useState("");
+
+  console.log(input);
 
   return (
     <>
@@ -161,7 +163,7 @@ export default function Circuit1(props) {
                             color: "coolGray.50",
                           }}
                         >
-                          lac01  is a town in northern Tunisia located about 20
+                          lac01 is a town in northern Tunisia located about 20
                           km from the capital, Tunis. Cafe de delice and coast
                           view Named for a religious figure who lived there, Abu
                           Said al-Baji, it was previously called Jabal el-Menar.
@@ -380,31 +382,7 @@ export default function Circuit1(props) {
                       {/* HERE IS THE CONDITIONAL RENDERING */}
 
                       {tabName === "AddReview" ? (
-                        <Box>
-                          <AirbnbRating
-                            count={5}
-                            reviews={[1, 2, 3, 4, 5]}
-                            defaultRating={5}
-                            size={20}
-                          />
-                          <TextArea
-                            fontSize="md"
-                            fontWeight="semibold"
-                            _dark={{
-                              color: "coolGray.50",
-                            }}
-                            _light={{
-                              color: "coolGray.800",
-                            }}
-                            h={{ base: "20" }}
-                            placeholder="Your review goes here"
-                            w={{
-                              base: "100%",
-                              md: "25%",
-                            }}
-                          />
-                          <Button> Add Review</Button>
-                        </Box>
+                        <AddReview></AddReview>
                       ) : (
                         reviews.map((item, idx) => {
                           return (
