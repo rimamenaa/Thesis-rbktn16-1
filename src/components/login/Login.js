@@ -217,7 +217,7 @@ export function SignInForm({ props }) {
             </VStack>
             <Button
               mt="5"
-              size="md"
+              size="lg"
               borderRadius="4"
               _text={{
                 fontWeight: "medium",
@@ -234,11 +234,10 @@ export function SignInForm({ props }) {
                 onPress={handleGoogleSignIn}
               >
                 <Image
-                  style={{ height: 12, width: 12 }}
+                  style={{ height: 15, width: 45 }}
                   source={require("../../../assets/ggl.png")}
                   alt="image"
                 />
-                GOOGLE
               </Text>
             </Button>
           </VStack>
