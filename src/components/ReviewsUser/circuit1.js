@@ -49,34 +49,35 @@ import axios from "axios";
 // ];
 
 export default function Circuit1(props) {
-  // const router = useRouter(); //use incase of Nextjs
   const [tabName, setTabName] = useState("Reviews");
   const [review, setInput] = useState("");
   const [Data, setData] = useState([]);
-  // useEffect(async () => {
-  //   axios
-  //     .get(`http://localhost:3000/reviews`)
-  //     .then((response) => {
-  //       console.log(response.data);
-  //       setData(response.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log("err", err);
-  //     });
-  // }, []);
+
   const Submit = () => {
     axios
       .post(`http://localhost:3000/reviews`, {
         review,
       })
-      .then((res) => {
-        setData((data) => [res.data, ...data]);
+      .then(() => {
+        // setData((data) => [res.data, ...data]);
+        // setData(res.data);
         setInput("");
       })
       .catch((err) => {
         console.log(err, "error");
       });
   };
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3000/reviews`)
+      .then((response) => {
+        console.log(response.data);
+        setData(response.data);
+      })
+      .catch((err) => {
+        console.log("err", err);
+      });
+  }, []);
 
   return (
     <>
