@@ -1,13 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   HStack,
-  Icon,
   Text,
   VStack,
   Avatar,
   Image,
-  useColorMode,
   ScrollView,
   Pressable,
   Divider,
@@ -20,43 +18,51 @@ import {
   View,
 } from "native-base";
 import { AirbnbRating } from "react-native-ratings";
-import KeyboardAvoidingWrapper from "./KeyboardAvoidingWrapper";
-import AddReview from "./AddReview";
 import tw from "tailwind-react-native-classnames";
-const reviews = [
-  {
-    imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBnIObRknPG622IYsgB9rxlS9195YssaXolQ&usqp=CAU",
-    name: "Foulen ben felten",
-    time: "12 May 2021",
-    review:
-      "I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.",
-  },
-  {
-    imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBnIObRknPG622IYsgB9rxlS9195YssaXolQ&usqp=CAU",
-    name: "LSameh derbali",
-    time: "02 Jan 2021",
-    review:
-      "I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.",
-  },
-  {
-    imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBnIObRknPG622IYsgB9rxlS9195YssaXolQ&usqp=CAU",
-    name: "hehi ben houhen",
-    time: "31 Aug 2021",
-    review:
-      "I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.",
-  },
-];
+import axios from "axios";
+
+// const reviews = [
+//   {
+//     imageUrl:
+//       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBnIObRknPG622IYsgB9rxlS9195YssaXolQ&usqp=CAU",
+//     name: "Foulen ben felten",
+//     time: "12 May 2021",
+//     review:
+//       "I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.",
+//   },
+// ];
 
 export default function Circuit1(props) {
-  // const router = useRouter(); //use incase of Nextjs
-  const [tabName, setTabName] = React.useState("Reviews");
+  const [tabName, setTabName] = useState("Reviews");
+  const [review, setInput] = useState("");
+  const [Data, setData] = useState([]);
 
-  const [input, setInput] = React.useState("");
-
-  console.log(input);
+  const Submit = () => {
+    axios
+      .post(`http://localhost:3000/reviews`, {
+        review,
+      })
+      .then(() => {
+        console.log("heyyyyyy");
+        // setData((data) => [res.data, ...data]);
+        // setData(res.data);
+        setInput("");
+      })
+      .catch((err) => {
+        console.log(err, "error");
+      });
+  };
+  useEffect(() => {
+    axios
+      .get(`https://bycyclebackend.herokuapp.com/reviews`)
+      .then((response) => {
+        console.log(response.data);
+        setData(response.data);
+      })
+      .catch((err) => {
+        console.log("err", err);
+      });
+  }, []);
 
   return (
     <>
@@ -131,6 +137,7 @@ export default function Circuit1(props) {
                   space="6"
                 >
                   {/* to be replaced by my styled box  */}
+
                   <Card>
                     <Text fontSize="2xl" marginBottom="3">
                       City name
@@ -382,20 +389,48 @@ export default function Circuit1(props) {
                       {/* HERE IS THE CONDITIONAL RENDERING */}
 
                       {tabName === "AddReview" ? (
-                        <AddReview></AddReview>
+                        <Box>
+                          <AirbnbRating
+                            count={5}
+                            reviews={[1, 2, 3, 4, 5]}
+                            defaultRating={5}
+                            size={20}
+                          />
+                          <TextArea
+                            fontSize="md"
+                            fontWeight="semibold"
+                            _dark={{
+                              color: "coolGray.50",
+                            }}
+                            _light={{
+                              color: "coolGray.800",
+                            }}
+                            h={{ base: "20" }}
+                            w={{
+                              base: "100%",
+                              md: "25%",
+                            }}
+                            onChangeText={(text) => {
+                              setInput(text);
+                            }}
+                            placeholder="Your review goes here"
+                            value={review}
+                          />
+                          <Button onPress={Submit}>Add Review</Button>
+                        </Box>
                       ) : (
-                        reviews.map((item, idx) => {
+                        Data.map((review, idx) => {
                           return (
                             <VStack my="3" px="4" key={idx}>
                               <HStack justifyContent="space-between">
                                 <HStack space="3">
-                                  <Avatar
+                                  {/* <Avatar
                                     source={{
                                       uri: item.imageUrl,
                                     }}
                                     height="9"
                                     width="9"
-                                  />
+                                  /> */}
                                   <VStack space="1">
                                     <Text
                                       fontSize="sm"
@@ -407,9 +442,9 @@ export default function Circuit1(props) {
                                         color: "coolGray.800",
                                       }}
                                     >
-                                      {item.name}
+                                      {/* {item.name} */}
                                     </Text>
-                                    <HStack space="1">
+                                    {/* <HStack space="1">
                                       <AirbnbRating
                                         showRating={false}
                                         isDisabled={true}
@@ -418,7 +453,7 @@ export default function Circuit1(props) {
                                         defaultRating={4}
                                         size={20}
                                       />
-                                    </HStack>
+                                    </HStack> */}
                                   </VStack>
                                 </HStack>
                                 <Text
@@ -430,7 +465,7 @@ export default function Circuit1(props) {
                                     color: "coolGray.300",
                                   }}
                                 >
-                                  {item.time}
+                                  {review.CreatedAt}
                                 </Text>
                               </HStack>
                               <Text
@@ -445,7 +480,7 @@ export default function Circuit1(props) {
                                 }}
                                 fontSize="md"
                               >
-                                {item.review}
+                                {review.review}
                               </Text>
                             </VStack>
                           );
