@@ -16,7 +16,6 @@ import Loading from "../../../../src/components/Loading/Loading";
 
 function AdventurePassDetails() {
   return (
-
     <ScrollView>
       <Box>
         <Text fontSize="2xl" marginBottom="3">
