@@ -25,18 +25,28 @@ export const Payment = () => {
       justifyContent="center"
     >
       <VStack space={4} w="100%">
+
         <HStack alignItems="flex-end">
           <Heading>Order</Heading>
         </HStack>
-        <HStack alignItems="center" justifyContent="space-between">
+        
+        <HStack 
+        alignItems="center" 
+        justifyContent="space-between">
           <Text fontWeight="medium">Sub Total</Text>
           <Text color="blueGray.400">$218.77</Text>
         </HStack> 
-        <HStack alignItems="center" justifyContent="space-between">
+        
+        <HStack 
+        alignItems="center" 
+        justifyContent="space-between">
           <Text fontWeight="medium">Tax</Text>
           <Text color="blueGray.400">$38.84</Text>
         </HStack>
-        <HStack alignItems="center" justifyContent="space-between">
+        
+        <HStack 
+        alignItems="center" 
+        justifyContent="space-between">
           <Text fontWeight="medium">Total Amount</Text>
           <Text color="amber.600">$337.61</Text>
         </HStack>
@@ -49,7 +59,9 @@ export const Payment = () => {
         </Button>
 
       </VStack>
+
       <Slide in={isOpen} placement="bottom">
+
         <Box
           w="100%"
           position="absolute"
@@ -83,6 +95,7 @@ export const Payment = () => {
               Your Order Has Been Successfully Placed. Have A Safe Ride!
             </Text>
           </HStack>
+
         </Box>
       </Slide>
     </Box>
@@ -91,10 +104,12 @@ export const Payment = () => {
 
 export default () => {
   return (
+
     <NativeBaseProvider>
       <Center flex={1} px="3">
         <Payment />
       </Center>
     </NativeBaseProvider>
+  
   )
 }
