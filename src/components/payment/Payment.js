@@ -41,14 +41,14 @@ export const Payment = () => {
         alignItems="center" 
         justifyContent="space-between">
           <Text fontWeight="medium">Tax</Text>
-          <Text color="blueGray.400">$38.84</Text>
+          <Text color="blueGray.400">$3.84</Text>
         </HStack>
         
         <HStack 
         alignItems="center" 
         justifyContent="space-between">
           <Text fontWeight="medium">Total Amount</Text>
-          <Text color="amber.600">$337.61</Text>
+          <Text color="amber.600">$5276.61</Text>
         </HStack>
         
         <Button
