@@ -24,7 +24,7 @@ import AboutBikes from "./src/components/aboutBikes/AboutBikes";
 import Profile from "./src/components/Profile/Profile";
 import Payment from "./src/components/payment/Payment";
 import Info from "./src/components/payment/Info";
-import Footer from "./src/components/Footer/Footer"
+import Footer from "./src/components/Footer/Footer";
 
 const theme = extendTheme({
   colors: {
