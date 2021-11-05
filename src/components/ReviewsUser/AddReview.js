@@ -41,10 +41,8 @@ function AddReview() {
           base: "100%",
           md: "25%",
         }}
-        onChangeText={(text) => setInput(text)}
-        onSubmitEditing={() => {
-          alert(`this is your input:${review}`);
-          setInput("");
+        onChangeText={(text) => {
+          setInput(text);
         }}
         placeholder="Your review goes here"
         value={review}
