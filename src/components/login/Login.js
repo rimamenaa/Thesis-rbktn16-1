@@ -32,6 +32,8 @@ export function SignInForm({ props }) {
     const config = {
       iosClientId: `215341427022-haijkikj7ejpthac9sld1ihejeouoj06.apps.googleusercontent.com`,
       androidClientId: `215341427022-eosmagesimfkte0p4b84ci77t6b7m6o2.apps.googleusercontent.com`,
+      iosStandaloneAppClientId: `215341427022-haijkikj7ejpthac9sld1ihejeouoj06.apps.googleusercontent.com`,
+      androidStandaloneAppClientId: `215341427022-eosmagesimfkte0p4b84ci77t6b7m6o2.apps.googleusercontent.com`,
       scopes: ["profile", "email"],
     };
     Google.logInAsync(config)
@@ -215,7 +217,7 @@ export function SignInForm({ props }) {
             </VStack>
             <Button
               mt="5"
-              size="md"
+              size="lg"
               borderRadius="4"
               _text={{
                 fontWeight: "medium",
@@ -232,11 +234,10 @@ export function SignInForm({ props }) {
                 onPress={handleGoogleSignIn}
               >
                 <Image
-                  style={{ height: 12, width: 12 }}
+                  style={{ height: 15, width: 45 }}
                   source={require("../../../assets/ggl.png")}
                   alt="image"
                 />
-                GOOGLE
               </Text>
             </Button>
           </VStack>

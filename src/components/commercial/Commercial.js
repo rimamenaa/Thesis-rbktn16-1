@@ -38,7 +38,7 @@ function Commercial() {
   const [data, setData] = useState([]);
   const getData = () => {
     axios
-      .get(" http://bycyclebackend.herokuapp.com/whybycycle")
+      .get("https://bycyclebackend.herokuapp.com/whybycycle")
       .then((response) => {
         setData(response.data);
         console.log(response.data);

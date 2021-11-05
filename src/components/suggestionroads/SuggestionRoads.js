@@ -11,10 +11,12 @@ function SuggestionRoads() {
   const [data, setData] = useState([]);
 
   const getData = () => {
-    axios.get("https://bycyclebackend.herokuapp.com/suggestion").then((response) => {
-      setData(response.data);
-      console.log(response.data);
-    });
+    axios
+      .get("https://bycyclebackend.herokuapp.com/suggestion")
+      .then((response) => {
+        setData(response.data);
+        console.log(response.data);
+      });
   };
 
   useEffect(async () => {
@@ -25,7 +27,6 @@ function SuggestionRoads() {
     <SafeAreaView style={tailwind("h-full")}>
       <ScrollView>
         <View style={tailwind("items-center mt-8")}>
-
           <Box
             style={tailwind("mb-8 items-center")}
             rounded="lg"
@@ -48,7 +49,6 @@ function SuggestionRoads() {
           {data.map((e, key) => {
             return (
               <View key={key}>
-
                 <Box
                   style={tailwind("w-full items-center mb-8")}
                   rounded="lg"
@@ -90,11 +90,9 @@ function SuggestionRoads() {
                     {e.description}{" "}
                   </Text>
                 </Box>
-
               </View>
             );
           })}
-
         </View>
       </ScrollView>
     </SafeAreaView>
