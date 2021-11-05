@@ -234,9 +234,7 @@ export default function Circuit1(props) {
                       <ScrollView
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
-                      >
-                        
-                      </ScrollView>
+                      ></ScrollView>
                       {/* <AddToCartButton base="none" md="flex" /> */}
 
                       {/* THIS IS THE TAB I WANT TO MAKE LIKE */}
@@ -369,6 +367,7 @@ export default function Circuit1(props) {
                                       {moment(review.createdAt).format("LLL")}
                                     </Text>
                                   </Stack>
+
                                   <Text fontWeight="400">{review.review}</Text>
                                 </Stack>
                               </Pressable>
