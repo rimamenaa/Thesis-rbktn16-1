@@ -37,10 +37,12 @@ import axios from "axios";
 function Commercial() {
   const [data, setData] = useState([]);
   const getData = () => {
-    axios.get(" http://localhost:3000/whybycycle").then((response) => {
-      setData(response.data);
-      console.log(response.data);
-    });
+    axios
+      .get(" http://bycyclebackend.herokuapp.com/whybycycle")
+      .then((response) => {
+        setData(response.data);
+        console.log(response.data);
+      });
   };
   useEffect(async () => {
     getData();
@@ -195,12 +197,11 @@ function Commercial() {
             _dark={{ backgroundColor: "gray.700" }}
           >
             <Box>
-                <Image
-                  source={require("../../../assets/rule4.png")}
-                  alt="image"
-                  height="72"
-
-                />
+              <Image
+                source={require("../../../assets/rule4.png")}
+                alt="image"
+                height="72"
+              />
             </Box>
             <Stack p="4" space={3}>
               <Stack space={2}>
@@ -225,64 +226,56 @@ function Commercial() {
             </Stack>
           </Box>
         </View>
-        <View  style={tailwind("mt-6")}>
+        <View style={tailwind("mt-6")}>
           <Text
             style={tailwind("text-4xl font-bold text-yellow-500 ml-6 mb-6")}
-          >      
+          >
             Why Join By-Cycle?
           </Text>
-            <View>
+          <View>
             <ScrollView horizontal={true}>
-              {data.map((e,key)=>{
+              {data.map((e, key) => {
                 return (
-                 
                   <View key={key}>
-                     
                     <Box
-              style={tailwind("ml-4")}
-              rounded="lg"
-              overflow="hidden"
-              width="72"
-              shadow={1}
-              _light={{ backgroundColor: "gray.50" }}
-              _dark={{ backgroundColor: "gray.700" }}
-            >
-              <Box>
-                <AspectRatio ratio={1.47} height={200}>
-                  <Image
-                    source={{uri:e.photo}}
-                    alt="image"
-                  />
-                </AspectRatio>
-              </Box>
-              <Stack p="4" space={3}>
-                <Stack space={2}>
-                  <Heading size="md" ml="-1">
-                    {e.title}
-                  </Heading>
-                </Stack>
-                <Text fontWeight="400">
-                  {e.description}
-                </Text>
-                <HStack
-                  alignItems="center"
-                  space={4}
-                  justifyContent="space-between"
-                >
-                  <HStack alignItems="center">
-                    <Text color="gray.500" fontWeight="400">
-                      35 mins ago
-                    </Text>
-                  </HStack>
-                </HStack>
-              </Stack>
-            </Box>
-          </View>
-                
-                )
+                      style={tailwind("ml-4")}
+                      rounded="lg"
+                      overflow="hidden"
+                      width="72"
+                      shadow={1}
+                      _light={{ backgroundColor: "gray.50" }}
+                      _dark={{ backgroundColor: "gray.700" }}
+                    >
+                      <Box>
+                        <AspectRatio ratio={1.47} height={200}>
+                          <Image source={{ uri: e.photo }} alt="image" />
+                        </AspectRatio>
+                      </Box>
+                      <Stack p="4" space={3}>
+                        <Stack space={2}>
+                          <Heading size="md" ml="-1">
+                            {e.title}
+                          </Heading>
+                        </Stack>
+                        <Text fontWeight="400">{e.description}</Text>
+                        <HStack
+                          alignItems="center"
+                          space={4}
+                          justifyContent="space-between"
+                        >
+                          <HStack alignItems="center">
+                            <Text color="gray.500" fontWeight="400">
+                              35 mins ago
+                            </Text>
+                          </HStack>
+                        </HStack>
+                      </Stack>
+                    </Box>
+                  </View>
+                );
               })}
             </ScrollView>
-            </View>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>

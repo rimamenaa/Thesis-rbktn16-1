@@ -1,13 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   HStack,
-  Icon,
   Text,
   VStack,
   Avatar,
   Image,
-  useColorMode,
   ScrollView,
   Pressable,
   Divider,
@@ -20,7 +18,6 @@ import {
   View,
 } from "native-base";
 import { AirbnbRating } from "react-native-ratings";
-import KeyboardAvoidingWrapper from "./KeyboardAvoidingWrapper";
 import AddReview from "./AddReview";
 import tw from "tailwind-react-native-classnames";
 const reviews = [
@@ -52,11 +49,7 @@ const reviews = [
 
 export default function Circuit1(props) {
   // const router = useRouter(); //use incase of Nextjs
-  const [tabName, setTabName] = React.useState("Reviews");
-
-  const [input, setInput] = React.useState("");
-
-  console.log(input);
+  const [tabName, setTabName] = useState("Reviews");
 
   return (
     <>
