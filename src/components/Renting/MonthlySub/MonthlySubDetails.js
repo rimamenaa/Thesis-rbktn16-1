@@ -14,10 +14,10 @@ function MonthlySubDetails() {
   return (
     <ScrollView>
       <Box>
-        <Text fontSize="2xl" marginBottom="3">
+        <Text fontSize="2xl" marginBottom="3" marginLeft="3" marginTop="5">
           Monthly Membership
         </Text>
-        <Text fontWeight="500">
+        <Text fontWeight="500" padding="3">
           The Monthly Membership includes 30 days of By-Cycle access and is
           great for people looking for month-to-month flexibility.
         </Text>
@@ -31,7 +31,7 @@ function MonthlySubDetails() {
             alt={"Loading..."}
           />
         </AspectRatio>
-        <Text fontWeight="500" fontWeight="400" marginTop="8">
+        <Text fontWeight="500" fontWeight="400" marginTop="8" padding="5">
           When you become a member for 70TD per month, you'll get a key that
           unlocks thousands of bikes all over the country. You can even ride the
           very same day you sign up by using the ByCycle mobile app to unlock a
@@ -57,9 +57,7 @@ function MonthlySubDetails() {
 export default function () {
   return (
     <NativeBaseProvider>
-      <Center flex={1} px="3">
-        <MonthlySubDetails />
-      </Center>
+      <MonthlySubDetails />
     </NativeBaseProvider>
   );
 }
