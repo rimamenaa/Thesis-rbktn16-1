@@ -16,7 +16,7 @@ function AboutBikes() {
 
   useEffect(async () => {
     axios
-      .get(" http://localhost:3000/bicycle ")
+      .get("https://bycyclebackend.herokuapp.com/bicycle ")
       .then((response) => {
         console.log(response.data);
         setData(response.data);
