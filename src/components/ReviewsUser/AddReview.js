@@ -8,7 +8,7 @@ function AddReview() {
 
   const Submit = () => {
     axios
-      .post(`http://bycyclebackend.herokuapp.com/addReviewFirst`, {
+      .post(`http://bycyclebackend.herokuapp.com/circuit1`, {
         input,
       })
       .then(() => {
