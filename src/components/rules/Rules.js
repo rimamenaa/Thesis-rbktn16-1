@@ -81,7 +81,8 @@ function Rules() {
                 </Text>
          
               </Stack>
-            </Box>
+            </Box> 
+            
 
 
                   

@@ -15,9 +15,8 @@ import {
   Stack,
   Link,
   Card,
-  TextArea,
   AspectRatio,
-  TextInput,
+  TextArea,
   KeyboardAvoidingView,
   View,
 } from "native-base";
@@ -36,7 +35,7 @@ const AddReview = () => {
             defaultRating={5}
             size={20}
           />
-          <TextInput
+          <TextArea
             fontSize="md"
             fontWeight="semibold"
             _dark={{
