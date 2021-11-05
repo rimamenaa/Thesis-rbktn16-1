@@ -9,22 +9,16 @@ import {
   NativeBaseProvider,
   Card,
   ScrollView,
+  Button,
 } from "native-base";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import Loading from "../../../../src/components/Loading/Loading";
 
 function AdventurePassDetails() {
   return (
-    // <Box
-    //   rounded="lg"
-    //   overflow="hidden"
-    //   width="40%"
-    //   shadow={1}
-    //   _light={{ backgroundColor: "gray.50" }}
-    //   _dark={{ backgroundColor: "gray.700" }}
-    // >
+
     <ScrollView>
-      <Card>
+      <Box>
         <Text fontSize="2xl" marginBottom="3">
           Adventure Pass
         </Text>
@@ -42,8 +36,8 @@ function AdventurePassDetails() {
             alt={"Loading..."}
           />
         </AspectRatio>
-        <Stack p="4" space={4}>
-          <Text fontWeight="500" fontWeight="400" marginTop="8">
+        <Stack space={500}>
+          <Text fontWeight="500" fontWeight="400" marginTop="10">
             For just 25TD, you'll get 24 hours of access to By-Cycle and you can
             keep a bike out for up to 2 hours at a time. If you're enjoying a
             long ride and want to keep a bike out longer than 2 hours at a time,
@@ -51,20 +45,18 @@ function AdventurePassDetails() {
             can take a bike out from any station within the system and return it
             to any other.
           </Text>
-          <Stack space={2}>
-            <Text
-              fontSize="xs"
-              _light={{ color: "amber.500" }}
-              _dark={{ color: "amber.300" }}
-              fontWeight="500"
-              ml="-0.5"
-              mt="-1"
-            >
-              Get one
-            </Text>
-          </Stack>
         </Stack>
-      </Card>
+      </Box>
+      <Button
+        colorScheme="amber"
+        fontSize="md"
+        mt="4"
+        _light={{ color: "amber.500" }}
+        _dark={{ color: "amber.300" }}
+        fontWeight="500"
+      >
+        Get one
+      </Button>
     </ScrollView>
   );
 }
