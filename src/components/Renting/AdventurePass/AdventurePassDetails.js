@@ -18,10 +18,10 @@ function AdventurePassDetails() {
   return (
     <ScrollView>
       <Box>
-        <Text fontSize="2xl" marginBottom="3">
+        <Text fontSize="2xl" marginBottom="3" marginLeft="3" marginTop="5">
           Adventure Pass
         </Text>
-        <Text fontWeight="500">
+        <Text fontWeight="500" padding="3">
           The Adventure Pass is perfect for tourists, visitors, and anyone
           looking for a long or leisurely ride .
         </Text>
@@ -36,7 +36,7 @@ function AdventurePassDetails() {
           />
         </AspectRatio>
         <Stack space={500}>
-          <Text fontWeight="500" fontWeight="400" marginTop="10">
+          <Text fontWeight="700" fontWeight="400" marginTop="10" padding="5">
             For just 25TD, you'll get 24 hours of access to By-Cycle and you can
             keep a bike out for up to 2 hours at a time. If you're enjoying a
             long ride and want to keep a bike out longer than 2 hours at a time,
@@ -63,9 +63,9 @@ function AdventurePassDetails() {
 export default function () {
   return (
     <NativeBaseProvider>
-      <Center flex={1} px="3">
-        <AdventurePassDetails />
-      </Center>
+      {/* <Center flex={1} px="5"> */}
+      <AdventurePassDetails />
+      {/* </Center> */}
     </NativeBaseProvider>
   );
 }
