@@ -30,22 +30,6 @@ import axios from "axios";
 //     review:
 //       "I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.",
 //   },
-//   {
-//     imageUrl:
-//       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBnIObRknPG622IYsgB9rxlS9195YssaXolQ&usqp=CAU",
-//     name: "LSameh derbali",
-//     time: "02 Jan 2021",
-//     review:
-//       "I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.",
-//   },
-//   {
-//     imageUrl:
-//       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBnIObRknPG622IYsgB9rxlS9195YssaXolQ&usqp=CAU",
-//     name: "hehi ben houhen",
-//     time: "31 Aug 2021",
-//     review:
-//       "I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.",
-//   },
 // ];
 
 export default function Circuit1(props) {
@@ -55,10 +39,11 @@ export default function Circuit1(props) {
 
   const Submit = () => {
     axios
-      .post(`https://bycyclebackend.herokuapp.com/reviews`, {
+      .post(`http://localhost:3000/reviews`, {
         review,
       })
       .then(() => {
+        console.log("heyyyyyy");
         // setData((data) => [res.data, ...data]);
         // setData(res.data);
         setInput("");

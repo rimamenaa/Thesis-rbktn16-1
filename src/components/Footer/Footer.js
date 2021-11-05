@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React from "react";
 import {
   NativeBaseProvider,
   Box,
@@ -7,36 +6,38 @@ import {
   Icon,
   HStack,
   Center,
-  Pressable
-} from 'native-base';
-import { MaterialCommunityIcons, Entypo, Ionicons  } from '@expo/vector-icons';
-import Commercial from '../commercial/Commercial';
-import Profile from '../Profile/Profile';
-import LandingPage from '../LandingPage/LandingPage';
+  Pressable,
+} from "native-base";
+import { MaterialCommunityIcons, Entypo, Ionicons } from "@expo/vector-icons";
+import Commercial from "../commercial/Commercial";
+import Profile from "../Profile/Profile";
+import LandingPage from "../LandingPage/LandingPage";
 
 export default function Footer({ navigation }) {
   const [selected, setSelected] = React.useState(1);
   return (
-    
     <NativeBaseProvider>
-      <Box flex={1}  safeAreaTop>
+      <Box flex={1} safeAreaTop>
         <Center flex={1}></Center>
         <HStack bg="gray.700" alignItems="center" safeAreaBottom shadow={6}>
-
           <Pressable
             // cursor="pointer"
             opacity={selected === 2 ? 1 : 0.6}
             py="2"
             flex={1}
             onPress={() => {
-                navigation.navigate(Profile);
-              }}
+              navigation.navigate(Profile);
+            }}
           >
             <Center>
               <Icon
                 mb={1}
                 as={
-                  <Ionicons name="ios-person-circle-outline" size={24} color="black" />
+                  <Ionicons
+                    name="ios-person-circle-outline"
+                    size={24}
+                    color="black"
+                  />
                 }
                 color="#FFFFFF"
                 size="lg"
@@ -53,14 +54,15 @@ export default function Footer({ navigation }) {
             py="3"
             flex={1}
             onPress={() => {
-                navigation.navigate(Commercial);
-              }}>
+              navigation.navigate(Commercial);
+            }}
+          >
             <Center>
               <Icon
                 mb="1"
                 as={
                   <MaterialCommunityIcons
-                    name={selected === 0 ? 'home' : 'home-outline'}
+                    name={selected === 0 ? "home" : "home-outline"}
                   />
                 }
                 color="#FFFFFF"
@@ -78,15 +80,13 @@ export default function Footer({ navigation }) {
             py="2"
             flex={1}
             onPress={() => {
-                navigation.navigate(LandingPage);
-              }}
+              navigation.navigate(LandingPage);
+            }}
           >
             <Center>
               <Icon
                 mb={1}
-                as={
-                 <Entypo name="log-out" size={24} color="black" />
-                }
+                as={<Entypo name="log-out" size={24} color="black" />}
                 color="#FFFFFF"
                 size="md"
               />
@@ -98,6 +98,5 @@ export default function Footer({ navigation }) {
         </HStack>
       </Box>
     </NativeBaseProvider>
-    
   );
 }
