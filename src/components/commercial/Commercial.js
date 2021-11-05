@@ -37,10 +37,12 @@ import axios from "axios";
 function Commercial() {
   const [data, setData] = useState([]);
   const getData = () => {
-    axios.get(" http://localhost:3000/whybycycle").then((response) => {
-      setData(response.data);
-      console.log(response.data);
-    });
+    axios
+      .get("https://bycyclebackend.herokuapp.com/whybycycle")
+      .then((response) => {
+        setData(response.data);
+        console.log(response.data);
+      });
   };
   useEffect(async () => {
     getData();
@@ -195,12 +197,11 @@ function Commercial() {
             _dark={{ backgroundColor: "gray.700" }}
           >
             <Box>
-                <Image
-                  source={require("../../../assets/rule4.png")}
-                  alt="image"
-                  height="72"
-
-                />
+              <Image
+                source={require("../../../assets/rule4.png")}
+                alt="image"
+                height="72"
+              />
             </Box>
             <Stack p="4" space={3}>
               <Stack space={2}>
