@@ -6,7 +6,14 @@ import {
   Text,
   ScrollView,
   ImageBackground,
+  TouchableOpacity,
+  StyleSheet
 } from "react-native";
+
+import {
+  Stack,
+  Button
+} from 'native-base'
 
 import tailwind from "tailwind-rn";
 import Footer from "../Footer/Footer"
@@ -21,98 +28,250 @@ function HomePage({ navigation }) {
         <ScrollView>
           <View
             style={tailwind(
-              " min-w-full bg-transparent items-center mt-8 rounded-2xl flex "
+              " min-w-full bg-transparent items-center mt-32 rounded-2xl flex "
             )}
           >
-            <Text
-              style={tailwind(
-                " text-xl w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("AboutBikes");
-              }}
-            >
-              bikes
-            </Text>
-            <Text
-              style={tailwind(
-                " text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("Rules");
-              }}
-            >
-              Rules
-            </Text>
-            <Text
-              style={tailwind(
-                " text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("SuggestionRoads");
-              }}
-            >
-              Suggestion Roads
-            </Text>
-            <Text
-              style={tailwind(
-                " text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("Station");
-              }}
-            >
-              Station
-            </Text>
-            <Text
-              style={tailwind(
-                " text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("Reviews");
-              }}
-            >
-              Reviews
-            </Text>
-            <Text
-              style={tailwind(
-                " text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("ContactUs");
-              }}
-            >
-              ContactUs
-            </Text>
-    
-            <Text
-              style={tailwind(
-                "text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("Rent");
-              }}
-            >
-              Rent
-            </Text>
-            <Text
-              style={tailwind(
-                "text-xl mt-4 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("Info");
-              }}
-            >
-              Info
-            </Text>
-            <View style={tailwind("w-full mt-52")}>
+
+<Stack
+          mb="2.5"
+          mt="1.5"
+          direction={{
+            base: "column",
+            md: "row",
+          }}
+          space={2}
+          mx={{
+            base: "auto",
+            md: "0",
+          }}
+        >
+          <Button
+            size="lg"
+            variant="subtle" 
+            colorScheme="amber"
+            width="210"
+            height="12"
+            onPress={() => {
+              navigation.navigate("AboutBikes");
+            }} 
+          >
+            Bikes
+          </Button>
+        </Stack>
+
+            <Stack
+          mb="2.5"
+          mt="1.5"
+          direction={{
+            base: "column",
+            md: "row",
+          }}
+          space={2}
+          mx={{
+            base: "auto",
+            md: "0",
+          }}
+        >
+          <Button
+            size="lg"
+            variant="subtle" 
+            colorScheme="amber"
+            width="210"
+            height="12"
+            onPress={() => {
+              navigation.navigate("Rules");
+            }} 
+          >
+           Rules
+          </Button>
+        </Stack>
+
+            <Stack
+          mb="2.5"
+          mt="1.5"
+          direction={{
+            base: "column",
+            md: "row",
+          }}
+          space={2}
+          mx={{
+            base: "auto",
+            md: "0",
+          }}
+        >
+          <Button
+            size="lg"
+            variant="subtle" 
+            colorScheme="amber"
+            width="210"
+            height="12"
+            onPress={() => {
+              navigation.navigate("SuggestionRoads");
+            }} 
+          >
+            Suggestion Roads
+          </Button>
+        </Stack>
+
+<Stack
+          mb="2.5"
+          mt="1.5"
+          direction={{
+            base: "column",
+            md: "row",
+          }}
+          space={2}
+          mx={{
+            base: "auto",
+            md: "0",
+          }}
+        >
+          <Button
+            size="lg"
+            variant="subtle" 
+            colorScheme="amber"
+            width="210"
+            height="12"
+            onPress={() => {
+              navigation.navigate("Station");
+            }} 
+          >
+            Station
+          </Button>
+        </Stack>
+
+<Stack
+          mb="2.5"
+          mt="1.5"
+          direction={{
+            base: "column",
+            md: "row",
+          }}
+          space={2}
+          mx={{
+            base: "auto",
+            md: "0",
+          }}
+        >
+          <Button
+            size="lg"
+            variant="subtle" 
+            colorScheme="amber"
+            width="210"
+            height="12"
+            onPress={() => {
+              navigation.navigate("Reviews");
+            }} 
+          >
+            Reviews
+          </Button>
+        </Stack>
+
+            <Stack
+          mb="2.5"
+          mt="1.5"
+          direction={{
+            base: "column",
+            md: "row",
+          }}
+          space={2}
+          mx={{
+            base: "auto",
+            md: "0",
+          }}
+        >
+          <Button
+            size="lg"
+            variant="subtle" 
+            colorScheme="amber"
+            width="210"
+            height="12"
+            onPress={() => {
+              navigation.navigate("ContactUs");
+            }} 
+          >
+            Contact Us
+          </Button>
+        </Stack>
+
+<Stack
+          mb="2.5"
+          mt="1.5"
+          direction={{
+            base: "column",
+            md: "row",
+          }}
+          space={2}
+          mx={{
+            base: "auto",
+            md: "0",
+          }}
+        >
+          <Button
+            size="lg"
+            variant="subtle" 
+            colorScheme="amber"
+            width="210"
+            height="12"
+            onPress={() => {
+              navigation.navigate("Rent");
+            }} 
+          >
+            Rent
+          </Button>
+        </Stack>
+
+<Stack
+          mb="2.5"
+          mt="1.5"
+          direction={{
+            base: "column",
+            md: "row",
+          }}
+          space={2}
+          mx={{
+            base: "auto",
+            md: "0",
+          }}
+        >
+           <TouchableOpacity style={styles.buttonContainer}>
+          <Button
+            // size="lg"
+            // variant="subtle" 
+            // colorScheme="amber"
+            // width="210"
+            // height="12"
+            onPress={() => {
+              navigation.navigate("Info");
+            }} 
+          >
+            Info
+          </Button>
+          </TouchableOpacity>
+        </Stack>
+
+            <View style={tailwind("w-full mt-32")}>
             <Footer navigation={navigation}/>
             </View>
           </View>
         </ScrollView>
       </SafeAreaView>
-    </ImageBackground>
+      </ImageBackground>
   );
 }
 
 export default HomePage;
+
+const styles = StyleSheet.create({
+  buttonContainer: {
+    marginTop: 10,
+    height: 45,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 20,
+    width: 250,
+    borderRadius: 30,
+    backgroundColor: "#ffca28",
+  },
+});

@@ -37,7 +37,7 @@ import axios from "axios";
 function Commercial() {
   const [data, setData] = useState([]);
   const getData = () => {
-    axios.get(" http://localhost:3000/whybycycle").then((response) => {
+    axios.get("https://bycyclebackend.herokuapp.com/whybycycle").then((response) => {
       setData(response.data);
       console.log(response.data);
     });

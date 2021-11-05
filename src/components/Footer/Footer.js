@@ -9,7 +9,7 @@ import {
   Center,
   Pressable,
 } from 'native-base';
-import { MaterialCommunityIcons, Entypo, AntDesign } from '@expo/vector-icons';
+import { MaterialCommunityIcons, Entypo, Ionicons  } from '@expo/vector-icons';
 import Commercial from '../commercial/Commercial';
 import Profile from '../Profile/Profile';
 import LandingPage from '../LandingPage/LandingPage';
@@ -35,10 +35,10 @@ export default function App({ navigation }) {
               <Icon
                 mb={1}
                 as={
-                    <AntDesign name="profile" size={24} color="black" />
+                  <Ionicons name="ios-person-circle-outline" size={24} color="black" />
                 }
                 color="#FFFFFF"
-                size="md"
+                size="lg"
               />
               <Text color="#FFFFFF" fontSize={12}>
                 Profile

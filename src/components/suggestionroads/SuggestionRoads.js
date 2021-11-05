@@ -19,7 +19,7 @@ import { View, SafeAreaView, ScrollView
 function SuggestionRoads() {
   const [data, setData] = useState([]);
   const getData = () => {
-    axios.get("http://localhost:3000/suggestion").then((response) => {
+    axios.get("https://bycyclebackend.herokuapp.com/suggestion").then((response) => {
       setData(response.data);
       console.log(response.data);
     });
