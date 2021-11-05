@@ -11,10 +11,10 @@ export default function Reviews(props) {
   return (
     <ScrollView>
       <Circuit1></Circuit1>
-      <Circuit2></Circuit2>
+      {/* <Circuit2></Circuit2>
       <Circuit3></Circuit3>
       <Circuit4></Circuit4>
-      <Circuit5></Circuit5>
+      <Circuit5></Circuit5> */}
     </ScrollView>
   );
 }

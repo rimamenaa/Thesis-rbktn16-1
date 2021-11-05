@@ -16,7 +16,7 @@ function AboutBikes() {
 
   useEffect(async () => {
     axios
-      .get(" http://localhost:3000/bicycle ")
+      .get("https://bycyclebackend.herokuapp.com/bicycle ")
       .then((response) => {
         console.log(response.data);
         setData(response.data);
@@ -28,7 +28,7 @@ function AboutBikes() {
 
   return (
     <ScrollView>
-      {data.slice(0, 3).map((bike, key) => {
+      {data.map((bike, key) => {
         console.log(bike);
         return (
           <Card key={key}>
