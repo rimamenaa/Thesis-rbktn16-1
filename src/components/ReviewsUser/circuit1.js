@@ -55,7 +55,7 @@ export default function Circuit1(props) {
 
   const Submit = () => {
     axios
-      .post(`http://localhost:3000/reviews`, {
+      .post(`https://bycyclebackend.herokuapp.com/reviews`, {
         review,
       })
       .then(() => {
@@ -69,7 +69,7 @@ export default function Circuit1(props) {
   };
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/reviews`)
+      .get(`https://bycyclebackend.herokuapp.com/reviews`)
       .then((response) => {
         console.log(response.data);
         setData(response.data);
