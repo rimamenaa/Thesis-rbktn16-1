@@ -2,7 +2,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Commercial from "./src/components/commercial/Commercial";
-import HomePage from "./src/components/HomePage/HomePage";
+import HomePage from "./src/components/Homepage/HomePage";
 import Signup from "./src/components/signup/Signup";
 import ContactUs from "./src/components/ContactUs/ContactUs";
 import CombinedMap from "./src/components/CombinedMap/CombinedMap";
