@@ -17,22 +17,11 @@ import {
   AspectRatio,
   View,
 } from "native-base";
+import { RefreshControl } from "react-native";
 import { AirbnbRating } from "react-native-ratings";
 import tw from "tailwind-react-native-classnames";
 import axios from "axios";
-
 import moment from "moment";
-
-// const reviews = [
-//   {
-//     imageUrl:
-//       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBnIObRknPG622IYsgB9rxlS9195YssaXolQ&usqp=CAU",
-//     name: "Foulen ben felten",
-//     time: "12 May 2021",
-//     review:
-//       "I loved the quality of their products. Highly recommended to everyone who is looking for comfortable bodysuits for their kids.",
-//   },
-// ];
 
 export default function Circuit1(props) {
   const [tabName, setTabName] = useState("Reviews");
@@ -55,7 +44,7 @@ export default function Circuit1(props) {
       });
   };
 
-  const getReviews = () => {
+  useEffect(() => {
     axios
       .get(`https://bycyclebackend.herokuapp.com/reviews`)
       .then((response) => {
@@ -65,9 +54,6 @@ export default function Circuit1(props) {
       .catch((err) => {
         console.log("err", err);
       });
-  };
-  useEffect(() => {
-    getReviews();
   }, []);
 
   return (
@@ -249,37 +235,7 @@ export default function Circuit1(props) {
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
                       >
-                        {/* <Button.Group space="2" mt={3} alignItems="center">
-                          {categories.map((item) => {
-                            return (
-                              <Button
-                                py="4"
-                                px="5"
-                                borderRadius="4"
-                                variant="subtle"
-                                _text={{
-                                  _dark: {
-                                    color: "coolGray.50",
-                                  },
-                                  _light: {
-                                    color: "coolGray.800",
-                                  },
-                                  fontWeight: "normal",
-                                }} //@ts-ignore
-                                _light={{
-                                  colorScheme: "primary",
-                                }}
-                                _dark={{
-                                  bg: "coolGray.100",
-                                  //@ts-ignore
-                                  colorScheme: "dark",
-                                }}
-                              >
-                                {item.category}
-                              </Button>
-                            );
-                          })}
-                        </Button.Group> */}
+                        
                       </ScrollView>
                       {/* <AddToCartButton base="none" md="flex" /> */}
 
@@ -372,7 +328,7 @@ export default function Circuit1(props) {
                         </Box>
                       ) : (
                         Data.sort(function (a, b) {
-                          return a.createdAt - b.createdAt;
+                          return new Date(b.createdAt) - new Date(a.createdAt);
                         }).map((review, idx) => {
                           return (
                             <VStack my="1" px="4" key={idx}>
