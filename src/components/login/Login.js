@@ -32,6 +32,8 @@ export function SignInForm({ props }) {
     const config = {
       iosClientId: `215341427022-haijkikj7ejpthac9sld1ihejeouoj06.apps.googleusercontent.com`,
       androidClientId: `215341427022-eosmagesimfkte0p4b84ci77t6b7m6o2.apps.googleusercontent.com`,
+      iosStandaloneAppClientId: `215341427022-haijkikj7ejpthac9sld1ihejeouoj06.apps.googleusercontent.com`,
+      androidStandaloneAppClientId: `215341427022-eosmagesimfkte0p4b84ci77t6b7m6o2.apps.googleusercontent.com`,
       scopes: ["profile", "email"],
     };
     Google.logInAsync(config)
@@ -309,12 +311,12 @@ export default function SignIn(props) {
       />
       <Center my="auto" flex="1">
         <Stack
-        _light={{
-          bg: "primary.700",
-        }}
-        _dark={{
-          bg: "primary.700",
-        }}
+          _light={{
+            bg: "primary.700",
+          }}
+          _dark={{
+            bg: "primary.700",
+          }}
           flexDirection={{
             base: "column",
             md: "row",
@@ -334,8 +336,8 @@ export default function SignIn(props) {
                 <Text fontSize="3xl" fontWeight="bold" color="amber.400">
                   Welcome back,
                 </Text>
-                <Text 
-                  style={tw `text-lg`}
+                <Text
+                  style={tw`text-lg`}
                   fontWeight="normal"
                   _dark={{
                     color: "amber.400",
