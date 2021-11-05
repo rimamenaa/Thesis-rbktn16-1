@@ -21,6 +21,8 @@ import { AirbnbRating } from "react-native-ratings";
 import tw from "tailwind-react-native-classnames";
 import axios from "axios";
 
+import moment from "moment";
+
 // const reviews = [
 //   {
 //     imageUrl:
@@ -52,7 +54,8 @@ export default function Circuit1(props) {
         console.log(err, "error");
       });
   };
-  useEffect(() => {
+
+  const getReviews = () => {
     axios
       .get(`https://bycyclebackend.herokuapp.com/reviews`)
       .then((response) => {
@@ -62,6 +65,9 @@ export default function Circuit1(props) {
       .catch((err) => {
         console.log("err", err);
       });
+  };
+  useEffect(() => {
+    getReviews();
   }, []);
 
   return (
@@ -243,7 +249,7 @@ export default function Circuit1(props) {
                             color: "coolGray.50",
                           }}
                         >
-                          277 Reviews
+                          {Data.length}
                         </Text>
                       </VStack>
 
@@ -253,7 +259,7 @@ export default function Circuit1(props) {
                           fontWeight="medium"
                           color="coolGray.400"
                         >
-                          (By-cycle)
+                          By-cycle
                         </Text>
                         <Link
                           ml="auto"
@@ -422,29 +428,28 @@ export default function Circuit1(props) {
                         Data.map((review, idx) => {
                           return (
                             <VStack my="3" px="4" key={idx}>
-                              <HStack justifyContent="space-between">
-                                <HStack space="3">
-                                  {/* <Avatar
+                              <HStack space="3">
+                                {/* <Avatar
                                     source={{
                                       uri: item.imageUrl,
                                     }}
                                     height="9"
                                     width="9"
                                   /> */}
-                                  <VStack space="1">
-                                    <Text
-                                      fontSize="sm"
-                                      fontWeight="semibold"
-                                      _dark={{
-                                        color: "coolGray.50",
-                                      }}
-                                      _light={{
-                                        color: "coolGray.800",
-                                      }}
-                                    >
-                                      {/* {item.name} */}
-                                    </Text>
-                                    {/* <HStack space="1">
+                                <VStack space="1">
+                                  <Text
+                                    fontSize="md"
+                                    fontWeight="semibold"
+                                    _dark={{
+                                      color: "coolGray.50",
+                                    }}
+                                    _light={{
+                                      color: "amber.800",
+                                    }}
+                                  >
+                                    {/* {item.name} */}
+                                  </Text>
+                                  {/* <HStack space="1">
                                       <AirbnbRating
                                         showRating={false}
                                         isDisabled={true}
@@ -454,8 +459,7 @@ export default function Circuit1(props) {
                                         size={20}
                                       />
                                     </HStack> */}
-                                  </VStack>
-                                </HStack>
+                                </VStack>
                                 <Text
                                   fontSize="sm"
                                   _light={{
@@ -465,7 +469,7 @@ export default function Circuit1(props) {
                                     color: "coolGray.300",
                                   }}
                                 >
-                                  {review.CreatedAt}
+                                  {review.createdAt}
                                 </Text>
                               </HStack>
                               <Text
