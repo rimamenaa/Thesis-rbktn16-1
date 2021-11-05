@@ -37,10 +37,12 @@ import axios from "axios";
 function Commercial() {
   const [data, setData] = useState([]);
   const getData = () => {
-    axios.get(" http://localhost:3000/whybycycle").then((response) => {
-      setData(response.data);
-      console.log(response.data);
-    });
+    axios
+      .get("https://bycyclebackend.herokuapp.com/whybycycle")
+      .then((response) => {
+        setData(response.data);
+        console.log(response.data);
+      });
   };
   useEffect(async () => {
     getData();
@@ -60,10 +62,10 @@ function Commercial() {
 
           <Text style={tailwind(" text-2xl  items-center font-bold py-8 p-3 ")}>
             Welcome to BY-CYCLE, a new bike share system in Tunisia with over
-            400+ bikes and more than 18+ stations across the country...
+            400+ bikes and more than 18+ stations across the country.
           </Text>
           <Box
-            style={tailwind("w-full items-center")}
+            style={tailwind("w-full h-96 items-center")}
             rounded="lg"
             overflow="hidden"
             width="72"
@@ -71,9 +73,10 @@ function Commercial() {
             _light={{ backgroundColor: "gray.50" }}
             _dark={{ backgroundColor: "gray.700" }}
           >
-            <Box>
-              <AspectRatio ratio={1.47} height={200}>
+            <Box style={tailwind("items-center pr-24")}>
+              <AspectRatio ratio={1.47} height={280}>
                 <Image
+                  height={280}
                   source={require("../../../assets/rule1.png")}
                   alt="image"
                 />
@@ -112,7 +115,7 @@ function Commercial() {
             _dark={{ backgroundColor: "gray.700" }}
           >
             <Box>
-              <AspectRatio ratio={1.47} height={200}>
+              <AspectRatio ratio={1.47} height={330}>
                 <Image
                   source={require("../../../assets/rule2.png")}
                   alt="image"
@@ -153,7 +156,7 @@ function Commercial() {
             _dark={{ backgroundColor: "gray.700" }}
           >
             <Box>
-              <AspectRatio ratio={1.47} height={200}>
+              <AspectRatio ratio={1.47} height={400}>
                 <Image
                   source={require("../../../assets/rule3.png")}
                   alt="image"
@@ -194,12 +197,11 @@ function Commercial() {
             _dark={{ backgroundColor: "gray.700" }}
           >
             <Box>
-              <AspectRatio ratio={1.47} height={200}>
-                <Image
-                  source={require("../../../assets/rule4.png")}
-                  alt="image"
-                />
-              </AspectRatio>
+              <Image
+                source={require("../../../assets/rule4.png")}
+                alt="image"
+                height="72"
+              />
             </Box>
             <Stack p="4" space={3}>
               <Stack space={2}>
@@ -226,7 +228,7 @@ function Commercial() {
         </View>
         <View style={tailwind("mt-6")}>
           <Text
-            style={tailwind("text-4xl font-bold text-yellow-400 ml-6 mb-6")}
+            style={tailwind("text-4xl font-bold text-yellow-500 ml-6 mb-6")}
           >
             Why Join By-Cycle?
           </Text>
