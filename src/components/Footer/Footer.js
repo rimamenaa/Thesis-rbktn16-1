@@ -7,16 +7,17 @@ import {
   Icon,
   HStack,
   Center,
-  Pressable,
+  Pressable
 } from 'native-base';
 import { MaterialCommunityIcons, Entypo, Ionicons  } from '@expo/vector-icons';
 import Commercial from '../commercial/Commercial';
 import Profile from '../Profile/Profile';
 import LandingPage from '../LandingPage/LandingPage';
 
-export default function App({ navigation }) {
+export default function Footer({ navigation }) {
   const [selected, setSelected] = React.useState(1);
   return (
+    
     <NativeBaseProvider>
       <Box flex={1}  safeAreaTop>
         <Center flex={1}></Center>
@@ -97,5 +98,6 @@ export default function App({ navigation }) {
         </HStack>
       </Box>
     </NativeBaseProvider>
+    
   );
 }

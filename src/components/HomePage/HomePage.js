@@ -6,6 +6,7 @@ import {
   Text,
   ScrollView,
   ImageBackground,
+  TouchableOpacity
 } from "react-native";
 
 import {
@@ -18,6 +19,7 @@ import Footer from "../Footer/Footer"
 
 function HomePage({ navigation }) {
   return (
+    // <TouchableOpacity>
     <ImageBackground
       style={tailwind("h-full")}
       source={require("../../../assets/yellowbike3.png")}
@@ -245,14 +247,16 @@ function HomePage({ navigation }) {
             Info
           </Button>
         </Stack>
-
+       
             <View style={tailwind("w-full mt-32")}>
-            <Footer navigation={navigation}/>
+            <Footer navigation={navigation} />
             </View>
+            
           </View>
         </ScrollView>
       </SafeAreaView>
       </ImageBackground>
+      // </TouchableOpacity>
   );
 }
 
