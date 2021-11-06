@@ -6,15 +6,30 @@ import {
   Text,
   ScrollView,
   ImageBackground,
+  TouchableOpacity,
+  Linking,
+  Platform,
 } from "react-native";
 
 import { Stack, Button } from "native-base";
 
 import tailwind from "tailwind-rn";
 import Footer from "../Footer/Footer";
+import { FontAwesome5 } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 
 function HomePage({ navigation }) {
+  const makePhoneCall = () => {
+    if (Platform.OS === "android") {
+      Linking.openURL("tel:0021622111333");
+    } else {
+      Linking.openURL("telprompt:0021622111333");
+    }
+  };
   return (
+    // <TouchableOpacity>
     <ImageBackground
       style={tailwind("h-full")}
       source={require("../../../assets/yellowbike3.png")}
@@ -43,13 +58,13 @@ function HomePage({ navigation }) {
                 size="lg"
                 variant="subtle"
                 colorScheme="amber"
-                width="210"
-                height="12"
+                width="81"
+                height="20"
                 onPress={() => {
                   navigation.navigate("AboutBikes");
                 }}
               >
-                Bikes
+                <MaterialCommunityIcons name="bike" size={24} color="black" />
               </Button>
             </Stack>
 
@@ -97,13 +112,13 @@ function HomePage({ navigation }) {
                 size="lg"
                 variant="subtle"
                 colorScheme="amber"
-                width="210"
-                height="12"
+                width="81"
+                height="20"
                 onPress={() => {
-                  navigation.navigate("SuggestionRoads");
+                  navigation.navigate("SuggestedRoutes");
                 }}
               >
-                Suggestion Roads
+                <FontAwesome5 name="route" size={24} color="black" />
               </Button>
             </Stack>
 
@@ -124,13 +139,13 @@ function HomePage({ navigation }) {
                 size="lg"
                 variant="subtle"
                 colorScheme="amber"
-                width="210"
-                height="12"
+                width="81"
+                height="20"
                 onPress={() => {
-                  navigation.navigate("CombinedMap");
+                  navigation.navigate("Station");
                 }}
               >
-                CombinedMap
+                <Entypo name="location" size={24} color="black" />
               </Button>
             </Stack>
 
@@ -151,13 +166,17 @@ function HomePage({ navigation }) {
                 size="lg"
                 variant="subtle"
                 colorScheme="amber"
-                width="210"
-                height="12"
+                width="81"
+                height="20"
                 onPress={() => {
                   navigation.navigate("Reviews");
                 }}
               >
-                Reviews
+                <MaterialCommunityIcons
+                  name="comment-processing-outline"
+                  size={24}
+                  color="black"
+                />
               </Button>
             </Stack>
 
@@ -205,13 +224,13 @@ function HomePage({ navigation }) {
                 size="lg"
                 variant="subtle"
                 colorScheme="amber"
-                width="210"
-                height="12"
+                width="81"
+                height="20"
                 onPress={() => {
                   navigation.navigate("Rent");
                 }}
               >
-                Rent
+                <FontAwesome5 name="money-check" size={24} color="black" />
               </Button>
             </Stack>
 
@@ -232,13 +251,38 @@ function HomePage({ navigation }) {
                 size="lg"
                 variant="subtle"
                 colorScheme="amber"
-                width="210"
-                height="12"
+                width="81"
+                height="20"
                 onPress={() => {
-                  navigation.navigate("Info");
+                  Linking.openURL("mailto:bycycletn@gmail.com");
                 }}
               >
-                Info
+                <Feather name="mail" size={24} color="black" />
+              </Button>
+            </Stack>
+
+            <Stack
+              mb="2.5"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
+              }}
+            >
+              <Button
+                size="lg"
+                variant="subtle"
+                colorScheme="amber"
+                width="81"
+                height="20"
+                onPress={() => makePhoneCall()}
+              >
+                <Feather name="phone-call" size={24} color="black" />
               </Button>
             </Stack>
 
@@ -249,6 +293,7 @@ function HomePage({ navigation }) {
         </ScrollView>
       </SafeAreaView>
     </ImageBackground>
+    // </TouchableOpacity>
   );
 }
 
