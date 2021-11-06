@@ -17,7 +17,6 @@ import {
   AspectRatio,
   View,
 } from "native-base";
-import { RefreshControl } from "react-native";
 import { AirbnbRating } from "react-native-ratings";
 import tw from "tailwind-react-native-classnames";
 import axios from "axios";
@@ -27,6 +26,7 @@ export default function Circuit1(props) {
   const [tabName, setTabName] = useState("Reviews");
   const [review, setInput] = useState("");
   const [Data, setData] = useState([]);
+  const [rating, setRating] = useState(1);
 
   const starsArray = [1, 2, 3, 4, 5];
   const ratingArray = 0;
@@ -36,14 +36,17 @@ export default function Circuit1(props) {
 
   //   }
   // };
+  const getRating=(number)=>{
+    
 
+  }
   const Submit = () => {
     axios
       .post(`http://localhost:3000/reviews`, {
         review,
       })
       .then(() => {
-        console.log("heyyyyyy");
+        console.log("review added");
         // setData((data) => [res.data, ...data]);
         // setData(res.data);
         setInput("");
@@ -359,35 +362,37 @@ export default function Circuit1(props) {
                               >
                                 <Stack p="4" space={3}>
                                   <Stack space={2}>
-                                    {/* <VStack space="1">
-                                    <Avatar
-                                      source={require("../../../assets/goGreen.jpg")}
-                                      height="9"
-                                      width="9"
-                                    />
-                                      <HStack space="1">
-                                      <AirbnbRating
-                                      showRating={false}
-                                      isDisabled={true}
-                                      count={5}
-                                      reviews={[1, 2, 3, 4, 5]}
-                                      defaultRating={4}
-                                      size={20}
+                                    <VStack space="1">
+                                      <Avatar
+                                        source={require("../../../assets/goGreen.jpg")}
+                                        height="9"
+                                        width="9"
                                       />
-                                    </HStack>
-                                    </VStack> */}
-                                    <Text
-                                      fontSize="xs"
-                                      _light={{ color: "amber.500" }}
-                                      fontWeight="medium"
-                                      ml="-0.5"
-                                      mt="-1"
-                                    >
-                                      {moment(review.createdAt).format("LLL")}
-                                    </Text>
+                                      <HStack space="1">
+                                        <AirbnbRating
+                                          showRating={false}
+                                          isDisabled={true}
+                                          count={5}
+                                          reviews={[1, 2, 3, 4, 5]}
+                                          defaultRating={Math.ceil(
+                                            Math.random() * 5
+                                          )}
+                                          size={10}
+                                        />
+                                      </HStack>
+                                    </VStack>
                                   </Stack>
 
-                                  <Text fontWeight="400">{review.review}</Text>
+                                  <Text fontWeight="800">{review.review}</Text>
+                                  <Text
+                                    fontSize="2xs"
+                                    _light={{ color: "amber.500" }}
+                                    fontWeight="medium"
+                                    ml="-0.5"
+                                    mt="-1"
+                                  >
+                                    {moment(review.createdAt).format("LLL")}
+                                  </Text>
                                 </Stack>
                               </Pressable>
                             </VStack>
