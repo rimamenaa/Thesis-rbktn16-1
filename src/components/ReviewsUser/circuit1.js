@@ -18,7 +18,6 @@ import {
   View,
 } from "native-base";
 import { AirbnbRating } from "react-native-ratings";
-import tw from "tailwind-react-native-classnames";
 import axios from "axios";
 import moment from "moment";
 
@@ -86,7 +85,6 @@ export default function Circuit1() {
       >
         <ScrollView>
           <Box
-            style={tw`mt-4`}
             flex={1}
             flexDirection={{
               base: "column",
