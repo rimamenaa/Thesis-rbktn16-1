@@ -8,12 +8,13 @@ import {
   SafeAreaView,
 } from "react-native";
 import Station from "../Map/Station";
-import Search from "../Search/Search";
+import { SpeedDial } from "react-native-elements";
+
 function CombinedMap() {
+  let open = false;
   return (
     <React.Fragment>
       <Station />
-      <Search />
     </React.Fragment>
   );
 }
