@@ -24,7 +24,8 @@ import AboutBikes from "./src/components/aboutBikes/AboutBikes";
 import Profile from "./src/components/Profile/Profile";
 import Payment from "./src/components/payment/Payment";
 import Info from "./src/components/payment/Info";
-import Footer from "./src/components/Footer/Footer"
+import Footer from "./src/components/Footer/Footer";
+import WhyUs from "./src/components/WhyUs/WhyUs";
 
 const theme = extendTheme({
   colors: {
@@ -49,6 +50,7 @@ function App() {
             component={HomePage}
           />
           <Stack.Screen name="Commercial" component={Commercial} />
+          <Stack.Screen name="WhyUs" component={WhyUs} />
           <Stack.Screen name="Rent" component={Rent} />
           <Stack.Screen name="Station" component={Station} />
           <Stack.Screen name="Rules" component={Rules} />

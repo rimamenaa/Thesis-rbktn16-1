@@ -34,7 +34,7 @@ import rule4 from "../../../assets/rule4.png";
 import { marginTop } from "styled-system";
 import axios from "axios";
 
-function Commercial() {
+function Commercial({navigation}) {
   const [data, setData] = useState([]);
   const getData = () => {
     axios
@@ -60,10 +60,6 @@ function Commercial() {
             }}
           />
 
-          <Text style={tailwind(" text-2xl  items-center font-bold py-8 p-3 ")}>
-            Welcome to BY-CYCLE, a new bike share system in Tunisia with over
-            400+ bikes and more than 18+ stations across the country.
-          </Text>
           <Box
             style={tailwind("w-full h-96 items-center")}
             rounded="lg"
@@ -226,58 +222,15 @@ function Commercial() {
             </Stack>
           </Box>
         </View>
-        <View style={tailwind("mt-6")}>
-          <Text
-            style={tailwind("text-4xl font-bold text-yellow-500 ml-6 mb-6")}
-          >
-            Why Join By-Cycle?
-          </Text>
-          <View>
-            <ScrollView horizontal={true}>
-              {data.map((e, key) => {
-                return (
-                  <View key={key}>
-                    <Box
-                      style={tailwind("ml-4")}
-                      rounded="lg"
-                      overflow="hidden"
-                      width="72"
-                      shadow={1}
-                      _light={{ backgroundColor: "gray.50" }}
-                      _dark={{ backgroundColor: "gray.700" }}
-                    >
-                      <Box>
-                        <AspectRatio ratio={1.47} height={200}>
-                          <Image source={{ uri: e.photo }} alt="image" />
-                        </AspectRatio>
-                      </Box>
-                      <Stack p="4" space={3}>
-                        <Stack space={2}>
-                          <Heading size="md" ml="-1">
-                            {e.title}
-                          </Heading>
-                        </Stack>
-                        <Text fontWeight="400">{e.description}</Text>
-                        <HStack
-                          alignItems="center"
-                          space={4}
-                          justifyContent="space-between"
-                        >
-                          <HStack alignItems="center">
-                            <Text color="gray.500" fontWeight="400">
-                              35 mins ago
-                            </Text>
-                          </HStack>
-                        </HStack>
-                      </Stack>
-                    </Box>
-                  </View>
-                );
-              })}
-            </ScrollView>
-          </View>
-        </View>
       </ScrollView>
+      <Button
+            style={tailwind("bg-yellow-500 h-12 w-full")}
+            onPress={() => {
+                navigation.navigate("Home");
+              }}
+          >
+            Lets Get Started
+          </Button>
     </SafeAreaView>
   );
 }

@@ -16,6 +16,7 @@ import {
 
 import tailwind from "tailwind-rn";
 import Footer from "../Footer/Footer"
+import WhyUs from "../WhyUs/WhyUs"
 
 function HomePage({ navigation }) {
   return (
@@ -28,7 +29,7 @@ function HomePage({ navigation }) {
         <ScrollView>
           <View
             style={tailwind(
-              " min-w-full bg-transparent items-center mt-32 rounded-2xl flex "
+              " min-w-full bg-transparent items-center mt-24 rounded-2xl flex "
             )}
           >
 
