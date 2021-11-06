@@ -297,11 +297,10 @@ export function SignUpForm({ props }) {
                 onPress={handleGoogleSignIn}
               >
                 <Image
-                  style={{ height: 12, width: 12 }}
+                  style={{ height: 15, width: 45 }}
                   source={require("../../../assets/ggl.png")}
                   alt="image"
                 />
-                GOOGLE
               </Text>
             </Button>
           </VStack>

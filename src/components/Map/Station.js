@@ -68,7 +68,23 @@ const Station = () => {
       onPress={() => {
         sendLoc();
       }}
-    />
+    >
+      <MapView.Marker
+        coordinate={{ latitude: 36.78825, longitude: 10 }}
+        title={"title"}
+        description={"description"}
+      />
+      <MapView.Marker
+        coordinate={{ latitude: 36.78825, longitude: 10.1 }}
+        title={"title"}
+        description={"description"}
+      />
+      <MapView.Marker
+        coordinate={{ latitude: 36.78825, longitude: 10.2324 }}
+        title={"title"}
+        description={"description"}
+      />
+    </MapView>
   );
 };
 export default Station;
