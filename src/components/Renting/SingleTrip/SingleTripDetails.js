@@ -14,10 +14,12 @@ function SingleTripDetails() {
   return (
     <ScrollView>
       <Box>
-        <Text fontSize="2xl" marginBottom="3">
+        <Text fontSize="2xl" marginBottom="3" marginLeft="3" marginTop="5">
           Single Trip
         </Text>
-        <Text fontWeight="500">Great for spontaneous, one-way trips.</Text>
+        <Text fontWeight="500" padding="3">
+          Great for spontaneous, one-way trips.
+        </Text>
         <AspectRatio ratio={16 / 9}>
           <Image
             marginTop="1"
@@ -28,7 +30,7 @@ function SingleTripDetails() {
             alt={"Loading..."}
           />
         </AspectRatio>
-        <Text fontWeight="500" fontWeight="400" marginTop="8">
+        <Text fontWeight="500" fontWeight="400" marginTop="8" padding="3">
           The
           <Text bold> Single Trip </Text>
           pass includes 60 minutes of ride time to get you anywhere you need to
@@ -53,9 +55,7 @@ function SingleTripDetails() {
 export default function () {
   return (
     <NativeBaseProvider>
-      <Center flex={1} px="3">
-        <SingleTripDetails />
-      </Center>
+      <SingleTripDetails />
     </NativeBaseProvider>
   );
 }
