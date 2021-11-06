@@ -18,24 +18,22 @@ import {
 } from "native-base";
 import tw from "tailwind-react-native-classnames";
 import * as Google from "expo-google-app-auth";
-
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-
 export function SignInForm({ props }) {
   const [message, setMessage] = useState();
   const [messageType, setMessageType] = useState();
   const [googleSubmitting, setGoogleSubmitting] = useState(false);
-
   const handleMessage = (message, type = "FAILED") => {
     setMessage(message);
     setMessageType(type);
   };
-
   const handleGoogleSignIn = () => {
     setGoogleSubmitting(true);
     const config = {
       iosClientId: `215341427022-haijkikj7ejpthac9sld1ihejeouoj06.apps.googleusercontent.com`,
       androidClientId: `215341427022-eosmagesimfkte0p4b84ci77t6b7m6o2.apps.googleusercontent.com`,
+      iosStandaloneAppClientId: `215341427022-haijkikj7ejpthac9sld1ihejeouoj06.apps.googleusercontent.com`,
+      androidStandaloneAppClientId: `215341427022-eosmagesimfkte0p4b84ci77t6b7m6o2.apps.googleusercontent.com`,
       scopes: ["profile", "email"],
     };
     Google.logInAsync(config)
@@ -59,7 +57,6 @@ export function SignInForm({ props }) {
         setGoogleSubmitting(false);
       });
   };
-
   return (
     <KeyboardAwareScrollView
       contentContainerStyle={{
@@ -108,7 +105,6 @@ export function SignInForm({ props }) {
                   md: "4",
                 }}
               ></VStack>
-
               {/* Opening Link Tag navigateTo:"OTP" (react/Router) */}
               <FormControl>
                 <FormControl.Label
@@ -137,7 +133,7 @@ export function SignInForm({ props }) {
                   _text={{
                     fontSize: "xs",
                     fontWeight: "500",
-                    color: "coolGray.800",
+                    color: "amber.400",
                   }}
                   alignSelf="flex-end"
                   mt="1"
@@ -208,7 +204,6 @@ export function SignInForm({ props }) {
                 >
                   or
                 </Text>
-
                 <Divider
                   w="30%"
                   _light={{
@@ -220,7 +215,6 @@ export function SignInForm({ props }) {
                 ></Divider>
               </HStack>
             </VStack>
-
             <Button
               mt="5"
               size="md"
@@ -298,7 +292,6 @@ export function SignInForm({ props }) {
     </KeyboardAwareScrollView>
   );
 }
-
 export default function SignIn(props) {
   return (
     <>
@@ -317,13 +310,13 @@ export default function SignIn(props) {
         }}
       />
       <Center my="auto" flex="1">
-        <Stack   
-        _light={{
-          bg: "primary.700",
-        }}
-        _dark={{
-          bg: "primary.700",
-        }}
+        <Stack
+          _light={{
+            bg: "primary.700",
+          }}
+          _dark={{
+            bg: "primary.700",
+          }}
           flexDirection={{
             base: "column",
             md: "row",
@@ -343,17 +336,17 @@ export default function SignIn(props) {
                 <Text fontSize="3xl" fontWeight="bold" color="amber.400">
                   Welcome back,
                 </Text>
-                <Text style={tw `text-lg`}
-                  fontSize="md"
+                <Text
+                  style={tw`text-lg`}
                   fontWeight="normal"
                   _dark={{
                     color: "amber.400",
                   }}
                   _light={{
-                    color: "amber.400",
+                    color: "white",
                   }}
                 >
-                  Sign in to continue
+                  Sign In to continue
                 </Text>
               </VStack>
             </VStack>

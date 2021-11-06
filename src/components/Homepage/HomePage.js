@@ -8,7 +8,10 @@ import {
   ImageBackground,
 } from "react-native";
 
+import { Stack, Button } from "native-base";
+
 import tailwind from "tailwind-rn";
+import Footer from "../Footer/Footer";
 
 function HomePage({ navigation }) {
   return (
@@ -20,119 +23,228 @@ function HomePage({ navigation }) {
         <ScrollView>
           <View
             style={tailwind(
-              " min-w-full bg-transparent items-center mt-8 rounded-2xl flex "
+              " min-w-full bg-transparent items-center mt-32 rounded-2xl flex "
             )}
           >
-            <Text
-              style={tailwind(
-                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("AboutBikes");
+            <Stack
+              mb="2.5"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
               }}
             >
-              bikes
-            </Text>
-            <Text
-              style={tailwind(
-                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("Commercial");
+              <Button
+                size="lg"
+                variant="subtle"
+                colorScheme="amber"
+                width="210"
+                height="12"
+                onPress={() => {
+                  navigation.navigate("AboutBikes");
+                }}
+              >
+                Bikes
+              </Button>
+            </Stack>
+
+            <Stack
+              mb="2.5"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
               }}
             >
-              Home page
-            </Text>
-            <Text
-              style={tailwind(
-                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("Rules");
+              <Button
+                size="lg"
+                variant="subtle"
+                colorScheme="amber"
+                width="210"
+                height="12"
+                onPress={() => {
+                  navigation.navigate("Rules");
+                }}
+              >
+                Rules
+              </Button>
+            </Stack>
+
+            <Stack
+              mb="2.5"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
               }}
             >
-              Rules
-            </Text>
-            <Text
-              style={tailwind(
-                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("Profile");
+              <Button
+                size="lg"
+                variant="subtle"
+                colorScheme="amber"
+                width="210"
+                height="12"
+                onPress={() => {
+                  navigation.navigate("SuggestionRoads");
+                }}
+              >
+                Suggestion Roads
+              </Button>
+            </Stack>
+
+            <Stack
+              mb="2.5"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
               }}
             >
-              Profile
-            </Text>
-            <Text
-              style={tailwind(
-                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("SuggestionRoads");
+              <Button
+                size="lg"
+                variant="subtle"
+                colorScheme="amber"
+                width="210"
+                height="12"
+                onPress={() => {
+                  navigation.navigate("CombinedMap");
+                }}
+              >
+                CombinedMap
+              </Button>
+            </Stack>
+
+            <Stack
+              mb="2.5"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
               }}
             >
-              Suggestion Roads
-            </Text>
-            <Text
-              style={tailwind(
-                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("Station");
+              <Button
+                size="lg"
+                variant="subtle"
+                colorScheme="amber"
+                width="210"
+                height="12"
+                onPress={() => {
+                  navigation.navigate("Reviews");
+                }}
+              >
+                Reviews
+              </Button>
+            </Stack>
+
+            <Stack
+              mb="2.5"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
               }}
             >
-              Station
-            </Text>
-            <Text
-              style={tailwind(
-                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("Reviews");
+              <Button
+                size="lg"
+                variant="subtle"
+                colorScheme="amber"
+                width="210"
+                height="12"
+                onPress={() => {
+                  navigation.navigate("ContactUs");
+                }}
+              >
+                Contact Us
+              </Button>
+            </Stack>
+
+            <Stack
+              mb="2.5"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
               }}
             >
-              Reviews
-            </Text>
-            <Text
-              style={tailwind(
-                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("ContactUs");
+              <Button
+                size="lg"
+                variant="subtle"
+                colorScheme="amber"
+                width="210"
+                height="12"
+                onPress={() => {
+                  navigation.navigate("Rent");
+                }}
+              >
+                Rent
+              </Button>
+            </Stack>
+
+            <Stack
+              mb="2.5"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
               }}
             >
-              ContactUs
-            </Text>
-            {/* <Text
-              style={tailwind(
-                " text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("TestBase");
-              }}
-            >
-              Test native base
-            </Text> */}
-            <Text
-              style={tailwind(
-                "text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("Rent");
-              }}
-            >
-              Rent
-            </Text>
-            <Text
-              style={tailwind(
-                "text-xl mt-10 w-52 text-center rounded h-12 py-1 text-gray-800 border-4 border-gray-700 bg-opacity-25 items-center font-bold "
-              )}
-              onPress={() => {
-                navigation.navigate("LandingPage");
-              }}
-            >
-              Logout
-            </Text>
+              <Button
+                size="lg"
+                variant="subtle"
+                colorScheme="amber"
+                width="210"
+                height="12"
+                onPress={() => {
+                  navigation.navigate("Info");
+                }}
+              >
+                Info
+              </Button>
+            </Stack>
+
+            <View style={tailwind("w-full mt-32")}>
+              <Footer navigation={navigation} />
+            </View>
           </View>
         </ScrollView>
       </SafeAreaView>
