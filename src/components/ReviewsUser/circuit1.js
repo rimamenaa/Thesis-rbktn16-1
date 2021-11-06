@@ -173,8 +173,8 @@ export default function Circuit1() {
                   </Card>
 
                   <ScrollView showsVerticalScrollIndicator={false}>
-                    <Box flex={2}>
-                      <VStack space={4}>
+                    <Box>
+                      <VStack padding="8" flex={2} space={4}>
                         <HStack
                           justifyContent="space-between"
                           alignItems="center"
@@ -232,7 +232,7 @@ export default function Circuit1() {
                       {/* <AddToCartButton base="none" md="flex" /> */}
 
                       {/* THIS IS THE TAB I WANT TO MAKE LIKE */}
-                      <HStack mt="8" space="5">
+                      <HStack padding="8" flex={2} mt="1" space="4">
                         <Pressable
                           onPress={() => {
                             setTabName("AddReview");
