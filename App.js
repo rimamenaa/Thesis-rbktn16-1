@@ -29,6 +29,7 @@ import MonthlyPayment from "./src/components/payment/MonthlyPayment";
 import MonthlyPackage from "./src/components/payment/MonthlyPackage";
 import AdventurePayment from "./src/components/payment/AdventurePayment";
 import AdventurePackage from "./src/components/payment/AdventurePackage";
+
 const theme = extendTheme({
   colors: {
     primary: nbTheme.colors.gray,
@@ -87,13 +88,10 @@ function App() {
           />
           <Stack.Screen name="SuggestedRoutes" component={SuggestedRoutes} />
           <Stack.Screen name="Profile" component={Profile} />
-
           <Stack.Screen name="SingleTripPayment" component={SingleTripPayment} />
           <Stack.Screen name="SingleTripPackage" component={SingleTripPackage} />
-
           <Stack.Screen name="MonthlyPayment" component={MonthlyPayment} />
           <Stack.Screen name="MonthlyPackage" component={MonthlyPackage} />
-
           <Stack.Screen name="AdventurePayment" component={AdventurePayment} />
           <Stack.Screen name="AdventurePackage" component={AdventurePackage} />
 
