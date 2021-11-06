@@ -28,7 +28,7 @@ function AboutBikes() {
 
   return (
     <ScrollView>
-      {data.slice(0, 3).map((bike, key) => {
+      {data.map((bike, key) => {
         console.log(bike);
         return (
           <Card key={key}>

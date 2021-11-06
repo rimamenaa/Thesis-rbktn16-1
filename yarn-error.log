@@ -1,25 +1,20 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
+  C:\Program Files\nodejs\node.exe C:\Users\MSI\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
 
 PATH: 
-  C:\Users\Lenovo\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Lenovo\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin;C:\Program Files\nodejs;C:\Users\Lenovo\AppData\Local\Android\Sdk\platform-tools;C:\Users\Lenovo\AppData\Local\Yarn\bin;C:\Program Files\heroku\bin;C:\Users\Lenovo\AppData\Roaming\npm;C:\Users\Lenovo\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+  C:\Users\MSI\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\MSI\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\MSI\AppData\Local\Microsoft\WindowsApps;C:\Users\MSI\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\MSI\AppData\Roaming\npm;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MongoDB\Server\5.0\bin;C:\Program Files\heroku\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
 Yarn version: 
-  1.22.5
+  1.22.11
 
 Node version: 
-  14.18.1
+  14.17.5
 
 Platform: 
   win32 x64
 
 Trace: 
-  SyntaxError: D:\RBK hack Reactor\Thesis-rbktn16\package.json: Unexpected token < in JSON at position 747
-      at JSON.parse (<anonymous>)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (C:\Program Files (x86)\Yarn\lib\cli.js:310:30)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:321:13
+  Error: EPERM: operation not permitted, unlink 'C:\Users\MSI\Desktop\Thesis-rbktn16\node_modules\xdl\binaries\windows\adb\adb.exe'
 
 npm manifest: 
   {
@@ -45,11 +40,7 @@ npm manifest:
       "expo-permissions": "^13.0.3",
       "expo-splash-screen": "~0.13.5",
       "expo-status-bar": "~1.1.0",
-  <<<<<<< HEAD
       "expo-updates": "^0.10.12",
-  =======
-      "expo-updates": "~0.10.12",
-  >>>>>>> f6718a4b4b751c528206f0e958d23a89a9aa3533
       "native-base": "^3.2.1",
       "react": "17.0.1",
       "react-dom": "17.0.1",
@@ -6104,11 +6095,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/expo-updates-interface/-/expo-updates-interface-0.4.0.tgz#20961f2cb4bd068a74c29434affa08791dbaa240"
     integrity sha512-EUJaLnDAePikGEQT8w6gjCY3m/dlGgjZKVn5XBaxZMkHzOy3PDQo6QOcK/bcMdkA3CyNrvo6NCe+/7RHrgmK4A==
   
-  <<<<<<< HEAD
   expo-updates@^0.10.12:
-  =======
-  expo-updates@~0.10.12:
-  >>>>>>> f6718a4b4b751c528206f0e958d23a89a9aa3533
     version "0.10.12"
     resolved "https://registry.yarnpkg.com/expo-updates/-/expo-updates-0.10.12.tgz#a60f889ecc2fbd05855f9c448778dee3c3c40455"
     integrity sha512-DltK873QN3UisjLhe+Oi6R0RKvg4ygbqhqNA1K50w9eBTLnDJ5mQHUyOsqeaXaXhDIPcWNLBaNP2zVfuAxBoIw==
