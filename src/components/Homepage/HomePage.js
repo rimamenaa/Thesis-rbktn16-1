@@ -7,6 +7,8 @@ import {
   ScrollView,
   ImageBackground,
   TouchableOpacity,
+  Linking,
+  Platform,
 } from "react-native";
 
 import { Stack, Button } from "native-base";
@@ -14,10 +16,18 @@ import { Stack, Button } from "native-base";
 import tailwind from "tailwind-rn";
 import Footer from "../Footer/Footer";
 import { FontAwesome5 } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from '@expo/vector-icons'; 
-import { Entypo } from '@expo/vector-icons'; 
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 
 function HomePage({ navigation }) {
+  const makePhoneCall = () => {
+    if (Platform.OS === "android") {
+      Linking.openURL("tel:0021622111333");
+    } else {
+      Linking.openURL("telprompt:0021622111333");
+    }
+  };
   return (
     // <TouchableOpacity>
     <ImageBackground
@@ -54,8 +64,8 @@ function HomePage({ navigation }) {
                   navigation.navigate("AboutBikes");
                 }}
               >
-<MaterialCommunityIcons name="bike" size={24} color="black" /> 
-             </Button>
+                <MaterialCommunityIcons name="bike" size={24} color="black" />
+              </Button>
             </Stack>
 
             <Stack
@@ -135,8 +145,8 @@ function HomePage({ navigation }) {
                   navigation.navigate("Station");
                 }}
               >
-<Entypo name="location" size={24} color="black" /> 
-             </Button>
+                <Entypo name="location" size={24} color="black" />
+              </Button>
             </Stack>
 
             <Stack
@@ -162,8 +172,12 @@ function HomePage({ navigation }) {
                   navigation.navigate("Reviews");
                 }}
               >
-<MaterialCommunityIcons name="comment-processing-outline" size={24} color="black" /> 
-             </Button>
+                <MaterialCommunityIcons
+                  name="comment-processing-outline"
+                  size={24}
+                  color="black"
+                />
+              </Button>
             </Stack>
 
             <Stack
@@ -217,6 +231,58 @@ function HomePage({ navigation }) {
                 }}
               >
                 <FontAwesome5 name="money-check" size={24} color="black" />
+              </Button>
+            </Stack>
+
+            <Stack
+              mb="2.5"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
+              }}
+            >
+              <Button
+                size="lg"
+                variant="subtle"
+                colorScheme="amber"
+                width="81"
+                height="20"
+                onPress={() => {
+                  Linking.openURL("mailto:bycycletn@gmail.com");
+                }}
+              >
+                <Feather name="mail" size={24} color="black" />
+              </Button>
+            </Stack>
+
+            <Stack
+              mb="2.5"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
+              }}
+            >
+              <Button
+                size="lg"
+                variant="subtle"
+                colorScheme="amber"
+                width="81"
+                height="20"
+                onPress={() => makePhoneCall()}
+              >
+                <Feather name="phone-call" size={24} color="black" />
               </Button>
             </Stack>
 

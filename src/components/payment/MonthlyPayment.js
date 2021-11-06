@@ -63,7 +63,7 @@ export const Payment = () => {
           bottom="16"
           p="2"
           borderRadius="xs"
-          bg="amber.100"
+          bg="green.300"
           alignItems="center"
           justifyContent="center"
           _dark={{
@@ -73,7 +73,7 @@ export const Payment = () => {
           <HStack space={2}>
             <CheckIcon
               size="4"
-              color="amber.600"
+              color="green.800"
               mt="1"
               _dark={{
                 color: "amber.700",

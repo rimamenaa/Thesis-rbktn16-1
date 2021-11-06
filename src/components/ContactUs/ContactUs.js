@@ -23,7 +23,7 @@ export const ContactUs = () => {
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      <VStack py="8" space={8} alignItems="center" justifyContent="center">
+      <VStack py="8" space={7} alignItems="center" justifyContent="center">
         <View style={{ flexDirection: flexDir }}>
           <ByPhone></ByPhone>
           <ByMail></ByMail>
