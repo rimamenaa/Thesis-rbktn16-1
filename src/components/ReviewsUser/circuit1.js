@@ -32,8 +32,6 @@ export default function Circuit1() {
   var total = 0;
   var average;
 
-  console.log("hhhh", Data);
-
   if (Data) {
     for (var i = 0; i < Data.length; i++) {
       averageArray.push(Data[i].rating);
@@ -48,7 +46,6 @@ export default function Circuit1() {
         rating,
       })
       .then(() => {
-        console.log("review added");
         // setData((data) => [res.data, ...data]);
         // setData(res.data);
         setInput("");
@@ -61,7 +58,6 @@ export default function Circuit1() {
     axios
       .get(`https://bycyclebackend.herokuapp.com/reviews`)
       .then((response) => {
-        console.log(response.data);
         setData(response.data);
       })
       .catch((err) => {
@@ -347,11 +343,11 @@ export default function Circuit1() {
                                         flex={1}
                                         justifyContent="space-between"
                                       >
-                                        <Avatar
+                                        {/* <Avatar
                                           source={require("../../../assets/goGreen.jpg")}
                                           height="9"
                                           width="9"
-                                        />
+                                        /> */}
                                         <Text
                                           fontSize="lg"
                                           _light={{
