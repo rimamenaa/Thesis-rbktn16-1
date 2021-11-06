@@ -1,68 +1,238 @@
 import React from "react";
-import { SafeAreaView, Text, View, ScrollView } from "react-native";
-import tailwind from "tailwind-rn";
 
-export default function HomePage({ navigation }) {
+import {
+  SafeAreaView,
+  View,
+  Text,
+  ScrollView,
+  ImageBackground,
+  TouchableOpacity,
+} from "react-native";
+
+import { Stack, Button } from "native-base";
+
+import tailwind from "tailwind-rn";
+import Footer from "../Footer/Footer";
+import { FontAwesome5 } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
+
+function HomePage({ navigation }) {
   return (
-    <SafeAreaView style={tailwind("h-full")}>
-      <ScrollView>
-        <View style={tailwind(" items-center ")}>
+    // <TouchableOpacity>
+    <ImageBackground
+      style={tailwind("h-full")}
+      source={require("../../../assets/yellowbike3.png")}
+    >
+      <SafeAreaView style={tailwind("max-h-full")}>
+        <ScrollView>
           <View
             style={tailwind(
-              " min-w-full bg-blue-200  items-center  rounded-2xl flex "
+              " min-w-full bg-transparent items-center mt-32 rounded-2xl flex "
             )}
           >
-            <Text
-              style={tailwind(" text-3xl  items-center font-semibold py-8 ")}
-              onPress={() => {
-                navigation.navigate("Commercial");
+            <Stack
+              mb="2.5"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
               }}
             >
-              Home page
-            </Text>
-            <Text
-              style={tailwind("text-3xl font-semibold py-8 ")}
-              onPress={() => {
-                navigation.navigate("Rules");
+              <Button
+                size="lg"
+                variant="subtle"
+                colorScheme="amber"
+                width="81"
+                height="20"
+                onPress={() => {
+                  navigation.navigate("AboutBikes");
+                }}
+              >
+                <MaterialCommunityIcons name="bike" size={24} color="black" />
+              </Button>
+            </Stack>
+
+            <Stack
+              mb="2.5"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
               }}
             >
-              Rules
-            </Text>
-            <Text
-              style={tailwind("text-3xl font-semibold py-8 ")}
-              onPress={() => {
-                navigation.navigate("CombinedMap");
+              <Button
+                size="lg"
+                variant="subtle"
+                colorScheme="amber"
+                width="210"
+                height="12"
+                onPress={() => {
+                  navigation.navigate("Rules");
+                }}
+              >
+                Rules
+              </Button>
+            </Stack>
+
+            <Stack
+              mb="2.5"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
               }}
             >
-              Station
-            </Text>
-            <Text
-              style={tailwind("text-3xl font-semibold py-8 ")}
-              onPress={() => {
-                navigation.navigate("Signup");
+              <Button
+                size="lg"
+                variant="subtle"
+                colorScheme="amber"
+                width="81"
+                height="20"
+                onPress={() => {
+                  navigation.navigate("SuggestedRoutes");
+                }}
+              >
+                <FontAwesome5 name="route" size={24} color="black" />
+              </Button>
+            </Stack>
+
+            <Stack
+              mb="2.5"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
               }}
             >
-              Signup
-            </Text>
-            <Text
-              style={tailwind("text-3xl font-semibold py-8 ")}
-              onPress={() => {
-                navigation.navigate("Login");
+              <Button
+                size="lg"
+                variant="subtle"
+                colorScheme="amber"
+                width="81"
+                height="20"
+                onPress={() => {
+                  navigation.navigate("Station");
+                }}
+              >
+                <Entypo name="location" size={24} color="black" />
+              </Button>
+            </Stack>
+
+            <Stack
+              mb="2.5"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
               }}
             >
-              Login
-            </Text>
-            <Text
-              style={tailwind("text-3xl font-semibold py-8 ")}
-              onPress={() => {
-                navigation.navigate("ContactUs");
+              <Button
+                size="lg"
+                variant="subtle"
+                colorScheme="amber"
+                width="81"
+                height="20"
+                onPress={() => {
+                  navigation.navigate("Reviews");
+                }}
+              >
+                <MaterialCommunityIcons
+                  name="comment-processing-outline"
+                  size={24}
+                  color="black"
+                />
+              </Button>
+            </Stack>
+
+            <Stack
+              mb="2.5"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
               }}
             >
-              ContactUs
-            </Text>
+              <Button
+                size="lg"
+                variant="subtle"
+                colorScheme="amber"
+                width="210"
+                height="12"
+                onPress={() => {
+                  navigation.navigate("ContactUs");
+                }}
+              >
+                Contact Us
+              </Button>
+            </Stack>
+
+            <Stack
+              mb="2.5"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
+              }}
+            >
+              <Button
+                size="lg"
+                variant="subtle"
+                colorScheme="amber"
+                width="81"
+                height="20"
+                onPress={() => {
+                  navigation.navigate("Rent");
+                }}
+              >
+                <FontAwesome5 name="money-check" size={24} color="black" />
+              </Button>
+            </Stack>
+
+            <View style={tailwind("w-full mt-32")}>
+              <Footer navigation={navigation} />
+            </View>
           </View>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+        </ScrollView>
+      </SafeAreaView>
+    </ImageBackground>
+    // </TouchableOpacity>
   );
 }
+
+export default HomePage;

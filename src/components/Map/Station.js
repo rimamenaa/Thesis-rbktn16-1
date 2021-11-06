@@ -1,60 +1,90 @@
-import React, { Component } from "react";
-import { Dimensions, Platform, StyleSheet, Text, View } from "react-native";
-import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
+import React, { useState, useEffect } from "react";
+import { Platform, StyleSheet, Text, View } from "react-native";
+import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import * as Location from "expo-location";
-export default class Station extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      coords: {},
-    };
-  }
-  componentDidMount() {
-    navigator.geolocation.getCurrentPosition((pos) => {
-      var crd = pos.coords;
-      this.setState({
-        coords: crd,
-      });
-    });
-  }
-  render() {
-    return (
-      <MapView
-        style={styles.map}
-        provider={PROVIDER_GOOGLE}
-        showsUserLocation
-        initialRegion={{
-          latitude: this.state.coords.latitude,
-          longitude: this.state.coords.longitude,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-      />
-    );
-  }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-  },
-  map: {
-    flex: 0.6,
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-  },
-  item: {
-    flex: 1,
-    alignItems: "center",
-  },
-  flexer: {
-    justifyContent: "flex-start",
-  },
-  search: {
-    flexWrap: "wrap",
-  },
-});
+const Station = () => {
+  const [location, setLocation] = useState({
+    latitude: 36.8941204,
+    longitude: 10.1870475,
+  });
+
+  /*   const getLocation = async () => {
+    try {
+      await Location.requestBackgroundPermissionsAsync();
+      setLocation(await navigator.geolocation.location());
+    } catch (error) {
+      console.log(error);
+    }
+  }; */
+
+  useEffect(() => {
+    console.log(location);
+    (async () => {
+      let { status } = await Location.requestBackgroundPermissionsAsync();
+      if (status !== "granted") {
+        setErrorMsg("Permission to access location was denied");
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+    })();
+  }, []);
+  const getLoc = () => {
+    console.log("press", location.coords);
+    let latitude = location.coords.latitude;
+    let longitude = location.coords.longitude;
+    setRegion({
+      latitude: latitude,
+      longitude: longitude,
+      latitudeDelta: 0.015,
+      longitudeDelta: 0.0121,
+    });
+  };
+
+  const sendLoc = () => {
+    let latitude = location.coords.latitude;
+    let longitude = location.coords.longitude;
+    console.log(
+      "Use these variables to send current location(",
+      latitude,
+      ",",
+      longitude,
+      ")"
+    );
+  };
+
+  return (
+    <MapView
+      style={{ flex: 0.6 }}
+      provider={PROVIDER_GOOGLE}
+      showsUserLocation
+      initialRegion={{
+        latitude: location.latitude,
+        longitude: location.longitude,
+        latitudeDelta: 0.0181,
+        longitudeDelta: 0.0181,
+      }}
+      onPress={() => {
+        sendLoc();
+      }}
+    >
+      <MapView.Marker
+        coordinate={{ latitude: 36.78825, longitude: 10 }}
+        title={"title"}
+        description={"description"}
+      />
+      <MapView.Marker
+        coordinate={{ latitude: 36.78825, longitude: 10.1 }}
+        title={"title"}
+        description={"description"}
+      />
+      <MapView.Marker
+        coordinate={{ latitude: 36.78825, longitude: 10.2324 }}
+        title={"title"}
+        description={"description"}
+      />
+    </MapView>
+  );
+};
+export default Station;

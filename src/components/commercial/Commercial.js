@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Animated,
-  Image,
   SafeAreaView,
   StyleSheet,
-  Text,
   TouchableOpacity,
   View,
   ScrollView,
 } from "react-native";
+import {
+  VStack,
+  HStack,
+  Button,
+  IconButton,
+  Text,
+  Box,
+  StatusBar,
+  Heading,
+  Icon,
+  AspectRatio,
+  Image,
+  Center,
+  Stack,
+  NativeBaseProvider,
+} from "native-base";
 import commercial from "../../../assets/commercial.png";
 import tailwind from "tailwind-rn";
 import com from "../../../assets/com.png";
@@ -17,8 +31,23 @@ import rule1 from "../../../assets/rule1.png";
 import rule2 from "../../../assets/rule2.png";
 import rule3 from "../../../assets/rule3.png";
 import rule4 from "../../../assets/rule4.png";
+import { marginTop } from "styled-system";
+import axios from "axios";
 
 function Commercial() {
+  const [data, setData] = useState([]);
+  const getData = () => {
+    axios
+      .get("https://bycyclebackend.herokuapp.com/whybycycle")
+      .then((response) => {
+        setData(response.data);
+        console.log(response.data);
+      });
+  };
+  useEffect(async () => {
+    getData();
+  }, []);
+
   return (
     <SafeAreaView style={tailwind("h-full")}>
       <ScrollView>
@@ -35,67 +64,218 @@ function Commercial() {
             Welcome to BY-CYCLE, a new bike share system in Tunisia with over
             400+ bikes and more than 18+ stations across the country.
           </Text>
+          <Box
+            style={tailwind("w-full h-96 items-center")}
+            rounded="lg"
+            overflow="hidden"
+            width="72"
+            shadow={1}
+            _light={{ backgroundColor: "gray.50" }}
+            _dark={{ backgroundColor: "gray.700" }}
+          >
+            <Box style={tailwind("items-center pr-24")}>
+              <AspectRatio ratio={1.47} height={280}>
+                <Image
+                  height={280}
+                  source={require("../../../assets/rule1.png")}
+                  alt="image"
+                />
+              </AspectRatio>
+            </Box>
+            <Stack p="4" space={3}>
+              <Stack space={2}>
+                <Heading size="md" ml="-1" color="yellow.500">
+                  JOIN
+                </Heading>
+              </Stack>
+              <Text fontWeight="800">
+                Become a member and get your pass from any By-Cycle sation.
+              </Text>
+              <HStack
+                alignItems="center"
+                space={4}
+                justifyContent="space-between"
+              >
+                <HStack alignItems="center">
+                  <Text color="gray.500" fontWeight="400">
+                    35 mins ago
+                  </Text>
+                </HStack>
+              </HStack>
+            </Stack>
+          </Box>
 
-          <Image
-            source={rule1}
-            style={{
-              width: 240,
-              height: 180,
-            }}
-          />
-          <Text style={tailwind(" text-yellow-500 text-2xl font-bold")}>
-            {" "}
-            Join
-          </Text>
-          <Text style={tailwind(" text-gray-900 text-base  font-bold p-3")}>
-            {" "}
-            Become a member and get your pass from any By-Cycle sation
-          </Text>
-          <Image
-            source={rule2}
-            style={{
-              width: 300,
-              height: 170,
-            }}
-          />
-          <Text style={tailwind(" text-yellow-500 text-2xl font-bold ")}>
-            {" "}
-            Unlock
-          </Text>
-          <Text style={tailwind(" text-gray-900 text-base  font-bold p-3")}>
-            Find an available bike nearby, and get a ride code or use your
-            member key to unlock it.
-          </Text>
+          <Box
+            style={tailwind("w-full mt-4 items-center")}
+            rounded="lg"
+            overflow="hidden"
+            width="72"
+            shadow={1}
+            _light={{ backgroundColor: "gray.50" }}
+            _dark={{ backgroundColor: "gray.700" }}
+          >
+            <Box>
+              <AspectRatio ratio={1.47} height={330}>
+                <Image
+                  source={require("../../../assets/rule2.png")}
+                  alt="image"
+                />
+              </AspectRatio>
+            </Box>
+            <Stack p="4" space={3}>
+              <Stack space={2}>
+                <Heading size="md" ml="-1" color="yellow.500">
+                  UNLOCK
+                </Heading>
+              </Stack>
+              <Text fontWeight="800">
+                Find an available bike nearby, and get a ride code or use your
+                member key to unlock it.
+              </Text>
+              <HStack
+                alignItems="center"
+                space={4}
+                justifyContent="space-between"
+              >
+                <HStack alignItems="center">
+                  <Text color="gray.500" fontWeight="400">
+                    35 mins ago
+                  </Text>
+                </HStack>
+              </HStack>
+            </Stack>
+          </Box>
 
-          <Image
-            source={rule3}
-            style={{
-              width: 265,
-              height: 240,
-            }}
-          />
-          <Text style={tailwind(" text-yellow-500 text-2xl font-bold")}>
-            {" "}
-            Ride
-          </Text>
-          <Text style={tailwind(" text-gray-900 text-base  font-bold p-3")}>
-            Take as many short rides as you want wherever and whenever you want.
-          </Text>
+          <Box
+            style={tailwind("w-full mt-4 items-center")}
+            rounded="lg"
+            overflow="hidden"
+            width="72"
+            shadow={1}
+            _light={{ backgroundColor: "gray.50" }}
+            _dark={{ backgroundColor: "gray.700" }}
+          >
+            <Box>
+              <AspectRatio ratio={1.47} height={400}>
+                <Image
+                  source={require("../../../assets/rule3.png")}
+                  alt="image"
+                />
+              </AspectRatio>
+            </Box>
+            <Stack p="4" space={3}>
+              <Stack space={2}>
+                <Heading size="md" ml="-1" color="yellow.500">
+                  RIDE
+                </Heading>
+              </Stack>
+              <Text fontWeight="800">
+                Take as many short rides as you want wherever and whenever you
+                want.
+              </Text>
+              <HStack
+                alignItems="center"
+                space={4}
+                justifyContent="space-between"
+              >
+                <HStack alignItems="center">
+                  <Text color="gray.500" fontWeight="400">
+                    35 mins ago
+                  </Text>
+                </HStack>
+              </HStack>
+            </Stack>
+          </Box>
 
-          <Image
-            source={rule4}
-            style={{
-              width: 280,
-              height: 200,
-            }}
-          />
-          <Text style={tailwind(" text-yellow-500 text-2xl font-bold")}>
-            {" "}
-            Return
+          <Box
+            style={tailwind("w-full mt-4 items-center")}
+            rounded="lg"
+            overflow="hidden"
+            width="72"
+            shadow={1}
+            _light={{ backgroundColor: "gray.50" }}
+            _dark={{ backgroundColor: "gray.700" }}
+          >
+            <Box>
+              <Image
+                source={require("../../../assets/rule4.png")}
+                alt="image"
+                height="72"
+              />
+            </Box>
+            <Stack p="4" space={3}>
+              <Stack space={2}>
+                <Heading size="md" ml="-1" color="yellow.500">
+                  RETURN
+                </Heading>
+              </Stack>
+              <Text fontWeight="800">
+                Return your bike to any station and make sure it's locked.
+              </Text>
+              <HStack
+                alignItems="center"
+                space={4}
+                justifyContent="space-between"
+              >
+                <HStack alignItems="center">
+                  <Text color="gray.500" fontWeight="400">
+                    35 mins ago
+                  </Text>
+                </HStack>
+              </HStack>
+            </Stack>
+          </Box>
+        </View>
+        <View style={tailwind("mt-6")}>
+          <Text
+            style={tailwind("text-4xl font-bold text-yellow-500 ml-6 mb-6")}
+          >
+            Why Join By-Cycle?
           </Text>
-          <Text style={tailwind(" text-gray-900 text-base  font-bold p-3")}>
-            Return your bike to any station and make sure it's locked.
-          </Text>
+          <View>
+            <ScrollView horizontal={true}>
+              {data.map((e, key) => {
+                return (
+                  <View key={key}>
+                    <Box
+                      style={tailwind("ml-4")}
+                      rounded="lg"
+                      overflow="hidden"
+                      width="72"
+                      shadow={1}
+                      _light={{ backgroundColor: "gray.50" }}
+                      _dark={{ backgroundColor: "gray.700" }}
+                    >
+                      <Box>
+                        <AspectRatio ratio={1.47} height={200}>
+                          <Image source={{ uri: e.photo }} alt="image" />
+                        </AspectRatio>
+                      </Box>
+                      <Stack p="4" space={3}>
+                        <Stack space={2}>
+                          <Heading size="md" ml="-1">
+                            {e.title}
+                          </Heading>
+                        </Stack>
+                        <Text fontWeight="400">{e.description}</Text>
+                        <HStack
+                          alignItems="center"
+                          space={4}
+                          justifyContent="space-between"
+                        >
+                          <HStack alignItems="center">
+                            <Text color="gray.500" fontWeight="400">
+                              35 mins ago
+                            </Text>
+                          </HStack>
+                        </HStack>
+                      </Stack>
+                    </Box>
+                  </View>
+                );
+              })}
+            </ScrollView>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>

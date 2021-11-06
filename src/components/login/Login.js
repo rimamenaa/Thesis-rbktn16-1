@@ -1,64 +1,358 @@
-import React from "react";
+import React, { useState } from "react";
 import {
-  View,
-  Image,
-  Text,
-  TextInput,
   Button,
-  ImageBackground,
-} from "react-native";
+  HStack,
+  VStack,
+  Text,
+  Link,
+  Checkbox,
+  Divider,
+  Center,
+  Hidden,
+  StatusBar,
+  Stack,
+  Box,
+  FormControl,
+  Input,
+  Image,
+} from "native-base";
 import tw from "tailwind-react-native-classnames";
-
-export default function Login() {
+import * as Google from "expo-google-app-auth";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+export function SignInForm({ props }) {
+  const [message, setMessage] = useState();
+  const [messageType, setMessageType] = useState();
+  const [googleSubmitting, setGoogleSubmitting] = useState(false);
+  const handleMessage = (message, type = "FAILED") => {
+    setMessage(message);
+    setMessageType(type);
+  };
+  const handleGoogleSignIn = () => {
+    setGoogleSubmitting(true);
+    const config = {
+      iosClientId: `215341427022-haijkikj7ejpthac9sld1ihejeouoj06.apps.googleusercontent.com`,
+      androidClientId: `215341427022-eosmagesimfkte0p4b84ci77t6b7m6o2.apps.googleusercontent.com`,
+      iosStandaloneAppClientId: `215341427022-haijkikj7ejpthac9sld1ihejeouoj06.apps.googleusercontent.com`,
+      androidStandaloneAppClientId: `215341427022-eosmagesimfkte0p4b84ci77t6b7m6o2.apps.googleusercontent.com`,
+      scopes: ["profile", "email"],
+    };
+    Google.logInAsync(config)
+      .then((result) => {
+        const { type, user } = result;
+        if (type === "success") {
+          const { email, name, photoUrl } = user;
+          handleMessage("Google sign in successful", "success");
+          setTimeout(
+            () => props.navigation.navigate("Home", { email, name, photoUrl }),
+            100
+          );
+        } else {
+          handleMessage("Google signin was cancelled");
+        }
+        setGoogleSubmitting(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        handleMessage("An Errr occured . check your Network and try again");
+        setGoogleSubmitting(false);
+      });
+  };
   return (
-    <View style={tw`w-full h-full`}>
-      <ImageBackground
-        style={tw`w-full h-full`}
-        source={require("../../../assets/back.png")}
+    <KeyboardAwareScrollView
+      contentContainerStyle={{
+        flexGrow: 1,
+      }}
+      style={{
+        flex: 1,
+      }}
+    >
+      <VStack
+        flex="1"
+        px="6"
+        py="9"
+        _light={{
+          bg: "white",
+        }}
+        _dark={{
+          bg: "coolGray.800",
+        }}
+        space="3"
+        justifyContent="space-between"
+        borderTopRightRadius={{
+          base: "2xl",
+          md: "xl",
+        }}
+        borderBottomRightRadius={{
+          base: "0",
+          md: "xl",
+        }}
+        borderTopLeftRadius={{
+          base: "2xl",
+          md: "0",
+        }}
       >
-        <View style={tw`h-96 mt-44 w-11/12 ml-4 bg-gray-100 rounded`}>
-          <View style={tw` mt-16 w-4/5 ml-8 flex `}>
-            <TextInput
-              style={tw` h-10 rounded bg-white`}
-              type="text"
-              placeholder="username"
-              keyboardType="numeric"
-            />
-            <TextInput
-              style={tw`mt-4 rounded h-10 bg-white `}
-              type="password"
-              placeholder="password"
-            />
-          </View>
-
-          <View style={tw`pt-4 w-4/5 ml-8`}>
-            <Button title="Sign In" color="#2F2C2C" />
-          </View>
-          <View style={tw` items-center pt-6 `}>
-            <Text style={tw`  text-gray-500 font-bold text-xs`}>
-              Or Sign In with credentials{" "}
+        <VStack space="7">
+          <Hidden till="md">
+            <Text fontSize="lg" fontWeight="normal">
+              Sign in to continue!
             </Text>
-          </View>
-          <View
-            style={tw`border border-white items-center bg-white mt-8 rounded w-4/5 ml-8 h-8`}
+          </Hidden>
+          <VStack>
+            <VStack space="3">
+              <VStack
+                space={{
+                  base: "7",
+                  md: "4",
+                }}
+              ></VStack>
+              {/* Opening Link Tag navigateTo:"OTP" (react/Router) */}
+              <FormControl>
+                <FormControl.Label
+                  _text={{
+                    color: "coolGray.800",
+                    fontSize: "xs",
+                    fontWeight: 500,
+                  }}
+                >
+                  Email ID
+                </FormControl.Label>
+                <Input />
+              </FormControl>
+              <FormControl>
+                <FormControl.Label
+                  _text={{
+                    color: "coolGray.800",
+                    fontSize: "xs",
+                    fontWeight: 500,
+                  }}
+                >
+                  Password
+                </FormControl.Label>
+                <Input type="password" />
+                <Link
+                  _text={{
+                    fontSize: "xs",
+                    fontWeight: "500",
+                    color: "amber.400",
+                  }}
+                  alignSelf="flex-end"
+                  mt="1"
+                >
+                  Forget Password?
+                </Link>
+                <Checkbox
+                  alignItems="flex-start"
+                  defaultIsChecked
+                  value="demo"
+                  colorScheme="primary"
+                  accessibilityLabel="Remember me"
+                >
+                  <HStack alignItems="center">
+                    <Text fontSize="sm" color="coolGray.400" pl="2">
+                      Remember me{" "}
+                    </Text>
+                  </HStack>
+                </Checkbox>
+              </FormControl>
+              <Button
+                mt="5"
+                size="md"
+                borderRadius="4"
+                _text={{
+                  fontWeight: "medium",
+                }}
+                _light={{
+                  bg: "primary.700",
+                }}
+                _dark={{
+                  bg: "primary.700",
+                }}
+                onPress={() => {
+                  props.navigation.navigate("Home");
+                }}
+              >
+                SIGN IN
+              </Button>
+              {/* Closing Link Tag */}
+              <HStack
+                mt="5"
+                space="2"
+                mb={{
+                  base: 6,
+                  md: 7,
+                }}
+                alignItems="center"
+                justifyContent="center"
+              >
+                <Divider
+                  w="30%"
+                  _light={{
+                    bg: "coolGray.200",
+                  }}
+                  _dark={{
+                    bg: "coolGray.700",
+                  }}
+                ></Divider>
+                <Text
+                  fontWeight="medium"
+                  _light={{
+                    color: "coolGray.300",
+                  }}
+                  _dark={{
+                    color: "coolGray.500",
+                  }}
+                >
+                  or
+                </Text>
+                <Divider
+                  w="30%"
+                  _light={{
+                    bg: "coolGray.200",
+                  }}
+                  _dark={{
+                    bg: "coolGray.700",
+                  }}
+                ></Divider>
+              </HStack>
+            </VStack>
+            <Button
+              mt="5"
+              size="lg"
+              borderRadius="4"
+              _text={{
+                fontWeight: "medium",
+              }}
+              _light={{
+                bg: "gray.200",
+              }}
+              _dark={{
+                bg: "primary.700",
+              }}
+            >
+              <Text
+                style={{ color: "black", fontWeight: "500" }}
+                onPress={handleGoogleSignIn}
+              >
+                <Image
+                  style={{ height: 15, width: 45 }}
+                  source={require("../../../assets/ggl.png")}
+                  alt="image"
+                />
+              </Text>
+            </Button>
+          </VStack>
+        </VStack>
+        <HStack
+          mb="4"
+          space="1"
+          safeAreaBottom
+          alignItems="center"
+          justifyContent="center"
+          mt={{
+            base: "auto",
+            md: "8",
+          }}
+        >
+          <Text
+            _light={{
+              color: "coolGray.800",
+            }}
+            _dark={{
+              color: "coolGray.400",
+            }}
           >
-            <View style={tw`flex flex-row`}>
-              <Image
-                style={tw`mt-1.5 w-4 pl-2 h-4`}
-                source={require("../../../assets/ggl.png")}
-              />
-              <Text style={tw`mt-1 pl-6 font-bold text-black`}>GOOGLE</Text>
-            </View>
-          </View>
-          <View style={tw`flex flex-row`}>
-            {/* <CheckBox style={tw `mt-6 ml-8`}/> */}
-            <Text style={tw`pl-8 pt-3 text-black`}>
-              I Agree With The{" "}
-              <Text style={tw`text-yellow-300`}>Privacy Policy</Text>
-            </Text>
-          </View>
-        </View>
-      </ImageBackground>
-    </View>
+            Don't have an account?
+          </Text>
+          {/* Opening Link Tag navigateTo:"SignUp" */}
+          <Link
+            _text={{
+              fontWeight: "bold",
+              textDecoration: "none",
+            }}
+            _light={{
+              _text: {
+                color: "yellow.400",
+              },
+            }}
+            _dark={{
+              _text: {
+                color: "primary.500",
+              },
+            }}
+            onPress={() => {
+              props.navigation.navigate("Signup");
+            }}
+          >
+            Sign Up
+          </Link>
+          {/* Closing Link Tag */}
+        </HStack>
+      </VStack>
+    </KeyboardAwareScrollView>
+  );
+}
+export default function SignIn(props) {
+  return (
+    <>
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle="light-content"
+      />
+      <Box
+        safeAreaTop
+        _light={{
+          bg: "primary.900",
+        }}
+        _dark={{
+          bg: "coolGray.900",
+        }}
+      />
+      <Center my="auto" flex="1">
+        <Stack
+          _light={{
+            bg: "primary.700",
+          }}
+          _dark={{
+            bg: "primary.700",
+          }}
+          flexDirection={{
+            base: "column",
+            md: "row",
+          }}
+          w="100%"
+          maxW={{
+            md: "1016px",
+          }}
+          flex={{
+            base: "1",
+            md: "none",
+          }}
+        >
+          <Hidden from="md">
+            <VStack px="4" mt="4" mb="5" space="9">
+              <VStack space="2">
+                <Text fontSize="3xl" fontWeight="bold" color="amber.400">
+                  Welcome back,
+                </Text>
+                <Text
+                  style={tw`text-lg`}
+                  fontWeight="normal"
+                  _dark={{
+                    color: "amber.400",
+                  }}
+                  _light={{
+                    color: "white",
+                  }}
+                >
+                  Sign In to continue
+                </Text>
+              </VStack>
+            </VStack>
+          </Hidden>
+          <SignInForm props={props} />
+        </Stack>
+      </Center>
+    </>
   );
 }
