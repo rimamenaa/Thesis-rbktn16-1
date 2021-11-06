@@ -42,7 +42,7 @@ function AppBar() {
             }
           />
           <Text color="white" fontSize="20" fontWeight="bold">
-            Home
+            Haj heni
           </Text>
         </HStack>
         <HStack space="2">
