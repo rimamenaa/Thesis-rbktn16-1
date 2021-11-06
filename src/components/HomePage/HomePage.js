@@ -106,10 +106,10 @@ function HomePage({ navigation }) {
             width="210"
             height="12"
             onPress={() => {
-              navigation.navigate("SuggestionRoads");
+              navigation.navigate("SuggestedRoutes");
             }} 
           >
-            Suggestion Roads
+            Suggested Routes
           </Button>
         </Stack>
 
@@ -221,7 +221,7 @@ function HomePage({ navigation }) {
           </Button>
         </Stack>
 
-<Stack
+{/* <Stack
           mb="2.5"
           mt="1.5"
           direction={{
@@ -246,7 +246,7 @@ function HomePage({ navigation }) {
           >
             Info
           </Button>
-        </Stack>
+        </Stack> */}
        
             <View style={tailwind("w-full mt-32")}>
             <Footer navigation={navigation} />
