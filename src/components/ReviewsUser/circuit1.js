@@ -22,14 +22,25 @@ import tw from "tailwind-react-native-classnames";
 import axios from "axios";
 import moment from "moment";
 
-export default function Circuit1(props) {
+export default function Circuit1() {
   const [tabName, setTabName] = useState("Reviews");
   const [review, setInput] = useState("");
   const [Data, setData] = useState([]);
-  const [rating, setRating] = useState(Math.ceil(Math.random * 5));
+  const rating = Math.ceil(Math.random(1 / 2) * 5);
 
-  // const ratingArray = 0;
+  const averageArray = [];
+  var total = 0;
+  var average;
 
+  console.log("hhhh", Data);
+
+  if (Data) {
+    for (var i = 0; i < Data.length; i++) {
+      averageArray.push(Data[i].rating);
+      total += averageArray[i];
+      average = Math.ceil(total / averageArray.length);
+    }
+  }
   const Submit = () => {
     axios
       .post(`http://localhost:3000/reviews`, {
@@ -163,7 +174,7 @@ export default function Circuit1(props) {
 
                   <ScrollView showsVerticalScrollIndicator={false}>
                     <Box flex={2}>
-                      <VStack space={8}>
+                      <VStack space={4}>
                         <HStack
                           justifyContent="space-between"
                           alignItems="center"
@@ -181,6 +192,7 @@ export default function Circuit1(props) {
                               showRating={false}
                               isDisabled={true}
                               size={10}
+                              defaultRating={average}
                             />
                             <Text
                               fontSize="md"
@@ -188,17 +200,17 @@ export default function Circuit1(props) {
                                 color: "coolGray.800",
                               }}
                             >
-                              (3 reviews average)
+                              {average}
                             </Text>
-                            <Text
+                            {/* <Text
                               fontSize="sm"
                               fontWeight="medium"
                               _light={{
                                 color: "coolGray.400",
                               }}
                             >
-                              (120 )
-                            </Text>
+                              (120)
+                            </Text> */}
                           </HStack>
                         </HStack>
 
@@ -330,21 +342,35 @@ export default function Circuit1(props) {
                                 <Stack p="4" space={3}>
                                   <Stack space={2}>
                                     <VStack space="1">
-                                      <Avatar
-                                        source={require("../../../assets/goGreen.jpg")}
-                                        height="9"
-                                        width="9"
-                                      />
-                                      <HStack space="1">
-                                        <AirbnbRating
-                                          showRating={false}
-                                          isDisabled={true}
-                                          count={5}
-                                          reviews={[1, 2, 3, 4, 5]}
-                                          defaultRating={review.rating}
-                                          size={10}
+                                      <View
+                                        flexDirection="row"
+                                        flex={1}
+                                        justifyContent="space-between"
+                                      >
+                                        <Avatar
+                                          source={require("../../../assets/goGreen.jpg")}
+                                          height="9"
+                                          width="9"
                                         />
-                                      </HStack>
+                                        <Text
+                                          fontSize="lg"
+                                          _light={{
+                                            color: "coolGray.800",
+                                          }}
+                                        >
+                                          username
+                                        </Text>
+                                        <HStack space="1">
+                                          <AirbnbRating
+                                            showRating={false}
+                                            isDisabled={true}
+                                            count={5}
+                                            reviews={[1, 2, 3, 4, 5]}
+                                            defaultRating={review.rating}
+                                            size={10}
+                                          />
+                                        </HStack>
+                                      </View>
                                     </VStack>
                                   </Stack>
 
