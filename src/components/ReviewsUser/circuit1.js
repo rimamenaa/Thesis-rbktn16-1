@@ -28,6 +28,15 @@ export default function Circuit1(props) {
   const [review, setInput] = useState("");
   const [Data, setData] = useState([]);
 
+  const starsArray = [1, 2, 3, 4, 5];
+  const ratingArray = 0;
+
+  // const getRating = () => {
+  //   for (var i = 0; i < ratingArray.length; i++) {
+
+  //   }
+  // };
+
   const Submit = () => {
     axios
       .post(`http://localhost:3000/reviews`, {
@@ -54,6 +63,10 @@ export default function Circuit1(props) {
         console.log("err", err);
       });
   };
+
+  useEffect(() => {
+    getReview();
+  }, []);
 
   return (
     <>
@@ -155,8 +168,8 @@ export default function Circuit1(props) {
                   </Card>
 
                   <ScrollView showsVerticalScrollIndicator={false}>
-                    <Box flex={1}>
-                      <VStack space={4}>
+                    <Box flex={2}>
+                      <VStack space={8}>
                         <HStack
                           justifyContent="space-between"
                           alignItems="center"
@@ -206,7 +219,7 @@ export default function Circuit1(props) {
                         </Text>
                       </VStack>
 
-                      <HStack space="2" mt="5" alignItems="center">
+                      {/* <HStack space="2" mt="5" alignItems="center">
                         <Text
                           fontSize="sm"
                           fontWeight="medium"
@@ -229,7 +242,7 @@ export default function Circuit1(props) {
                         >
                           Your opinion matters
                         </Link>
-                      </HStack>
+                      </HStack> */}
                       <ScrollView
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
@@ -303,6 +316,7 @@ export default function Circuit1(props) {
                             reviews={[1, 2, 3, 4, 5]}
                             defaultRating={5}
                             size={20}
+                            showRating={false}
                           />
                           <TextArea
                             fontSize="md"
