@@ -7,8 +7,8 @@ import {
   ScrollView,
   ImageBackground,
   TouchableOpacity,
-  Linking, 
-  Platform
+  Linking,
+  Platform,
 } from "react-native";
 
 import { Stack, Button } from "native-base";
@@ -16,9 +16,9 @@ import { Stack, Button } from "native-base";
 import tailwind from "tailwind-rn";
 import Footer from "../Footer/Footer";
 import { FontAwesome5 } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from '@expo/vector-icons'; 
-import { Entypo } from '@expo/vector-icons'; 
-import { Feather } from '@expo/vector-icons'; 
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 
 function HomePage({ navigation }) {
   const makePhoneCall = () => {
@@ -64,8 +64,8 @@ function HomePage({ navigation }) {
                   navigation.navigate("AboutBikes");
                 }}
               >
-<MaterialCommunityIcons name="bike" size={24} color="black" /> 
-             </Button>
+                <MaterialCommunityIcons name="bike" size={24} color="black" />
+              </Button>
             </Stack>
 
             <Stack
@@ -145,8 +145,8 @@ function HomePage({ navigation }) {
                   navigation.navigate("Station");
                 }}
               >
-<Entypo name="location" size={24} color="black" /> 
-             </Button>
+                <Entypo name="location" size={24} color="black" />
+              </Button>
             </Stack>
 
             <Stack
@@ -172,8 +172,12 @@ function HomePage({ navigation }) {
                   navigation.navigate("Reviews");
                 }}
               >
-<MaterialCommunityIcons name="comment-processing-outline" size={24} color="black" /> 
-             </Button>
+                <MaterialCommunityIcons
+                  name="comment-processing-outline"
+                  size={24}
+                  color="black"
+                />
+              </Button>
             </Stack>
 
             <Stack
@@ -250,13 +254,12 @@ function HomePage({ navigation }) {
                 width="81"
                 height="20"
                 onPress={() => {
-                  Linking.openURL("mailto:bycycletn@gmail.com");}}
+                  Linking.openURL("mailto:bycycletn@gmail.com");
+                }}
               >
-<Feather name="mail" size={24} color="black" />    
-           </Button>
+                <Feather name="mail" size={24} color="black" />
+              </Button>
             </Stack>
-
-
 
             <Stack
               mb="2.5"
@@ -277,13 +280,11 @@ function HomePage({ navigation }) {
                 colorScheme="amber"
                 width="81"
                 height="20"
-                  onPress={() => makePhoneCall()}
-                  >
-<Feather name="phone-call" size={24} color="black" />   
-        </Button>
+                onPress={() => makePhoneCall()}
+              >
+                <Feather name="phone-call" size={24} color="black" />
+              </Button>
             </Stack>
-
-
 
             <View style={tailwind("w-full mt-32")}>
               <Footer navigation={navigation} />
