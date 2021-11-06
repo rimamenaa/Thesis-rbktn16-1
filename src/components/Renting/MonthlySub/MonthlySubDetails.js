@@ -4,23 +4,24 @@ import {
   AspectRatio,
   Image,
   Center,
-  Stack,
   Text,
   NativeBaseProvider,
-  Card,
+  Button,
   ScrollView,
 } from "native-base";
-import Loading from "../../../../src/components/Loading/Loading";
+import { useNavigation } from "@react-navigation/native";
 
 function MonthlySubDetails() {
+  const navigation = useNavigation();
+
   return (
     <ScrollView>
-      <Card>
-        <Text fontSize="2xl" marginBottom="3">
+      <Box>
+        <Text fontSize="2xl" marginBottom="3" marginLeft="3" marginTop="5">
           Monthly Membership
         </Text>
-        <Text fontWeight="500">
-          The Monthly Membership includes 30 days of By-Cycle access and is
+        <Text fontWeight="500" padding="3">
+          The Monthly Membership includes 30 days of BY-CYCLE access and is
           great for people looking for month-to-month flexibility.
         </Text>
         <AspectRatio ratio={16 / 9}>
@@ -33,29 +34,30 @@ function MonthlySubDetails() {
             alt={"Loading..."}
           />
         </AspectRatio>
-        <Stack p="1" space={4}>
-          <Text fontWeight="500" fontWeight="400" marginTop="8">
-            When you become a member for 70TD per month, you'll get a key that
-            unlocks thousands of bikes all over the country. You can even ride
-            the very same day you sign up by using the ByCycle mobile app to
-            unlock a bike. You can take as many rides as you want while your
-            membership is active, and the first 45 minutes of each ride are
-            included in your plan.
-          </Text>
-          <Stack space={2}>
-            <Text
-              fontSize="xs"
-              _light={{ color: "amber.500" }}
-              _dark={{ color: "amber.300" }}
-              fontWeight="500"
-              ml="-0.5"
-              mt="-1"
-            >
-              Get one
-            </Text>
-          </Stack>
-        </Stack>
-      </Card>
+        <Text fontWeight="500" fontWeight="400" marginTop="8" padding="5">
+          When you become a member for 70TD per month, you'll get a key that
+          unlocks thousands of bikes all over the country. You can even ride the
+          very same day you sign up by using the BY-CYCLE mobile app to unlock a
+          bike. You can take as many rides as you want while your membership is
+          active, and the first 45 minutes of each ride are included in your
+          plan.
+        </Text>
+      </Box>
+      <Button
+        colorScheme="yellow"
+        fontSize="md"
+        mt="4"
+        _light={{ color: "amber.300" }}
+        _dark={{ color: "amber.300" }}
+        fontWeight="500"
+        marginLeft="24"
+        width="50%"
+        onPress={() => {
+          navigation.navigate("MonthlyPackage");
+        }}
+      >
+        Get one
+      </Button>
     </ScrollView>
   );
 }
@@ -63,9 +65,7 @@ function MonthlySubDetails() {
 export default function () {
   return (
     <NativeBaseProvider>
-      <Center flex={1} px="3">
-        <MonthlySubDetails />
-      </Center>
+      <MonthlySubDetails />
     </NativeBaseProvider>
   );
 }

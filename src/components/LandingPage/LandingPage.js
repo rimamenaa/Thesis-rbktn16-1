@@ -14,7 +14,7 @@ export default function LandingPage({ navigation }) {
   return (
     <ScrollView style={tw`w-full h-full`}>
       <ImageBackground
-        style={tw`w-full h-full`}
+        style={tw`w-full`}
         source={require("../../../assets/Onboarding.png")}
       >
         <View style={tw`items-center`}>
@@ -24,7 +24,11 @@ export default function LandingPage({ navigation }) {
         />
         </View>
         <View style={tw`my-96 items-center`}>
-          <View style={tw`pt-32 w-4/5`}>
+          <View style={tw`my-24 items-center`}>
+            <Text>Welcome to BY-CYCLE, a new bike share system in Tunisia with over
+            400+ bikes and more than 18+ stations across the country.</Text>
+          </View>
+          <View style={tw`w-4/5`}>
             <Button
               onPress={() => {
                 navigation.navigate("Signup");

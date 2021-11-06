@@ -5,24 +5,28 @@ import {
   VStack,
   ScrollView,
   Card,
+  View
 } from "native-base";
 
-import { View } from "native-base";
 import AdventurePass from "./AdventurePass/AdventurePass";
 import MonthlySub from "./MonthlySub/MonthlySub";
 import SingleTrip from "./SingleTrip/SingleTrip";
+import Footer from "../Footer/Footer";
+import tw from "tailwind-react-native-classnames";
 
-function Rent() {
+
+function Rent({navigation}) {
   const flexDir = useBreakpointValue({
     base: "column",
     lg: "row",
   });
   return (
+    <View>
     <Card>
       <VStack space={50}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <Text fontSize="4xl" color="amber.500">
-            Choose your plan.
+            Choose your plan
           </Text>
           <SingleTrip></SingleTrip>
           <MonthlySub></MonthlySub>
@@ -30,6 +34,10 @@ function Rent() {
         </ScrollView>
       </VStack>
     </Card>
+    <View style={tw`bg-yellow-400 bg-opacity-60 mt-32`}>
+              <Footer navigation={navigation} />
+            </View>
+    </View>
   );
 }
 export default Rent;

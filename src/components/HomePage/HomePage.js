@@ -1,265 +1,141 @@
-import React from "react";
-
+import React, { useState } from "react";
 import {
-  SafeAreaView,
-  View,
-  Text,
-  ScrollView,
-  ImageBackground,
-  TouchableOpacity
-} from "react-native";
-
-import {
+  HStack,
+  VStack,
+  Center,
+  Hidden,
+  StatusBar,
   Stack,
-  Button
-} from 'native-base'
+  Box,
+  Image,
+  View
+} from "native-base";
+import tw from "tailwind-react-native-classnames";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import Footer from "../Footer/Footer";
+import Home from "./HomeStyle";
 
-import tailwind from "tailwind-rn";
-import Footer from "../Footer/Footer"
-import WhyUs from "../WhyUs/WhyUs"
-
-function HomePage({ navigation }) {
+export function HomePage({ navigation }) {
   return (
-
-    <ImageBackground
-      style={tailwind("h-full")}
-      source={require("../../../assets/yellowbike3.png")}
+    <KeyboardAwareScrollView
+      contentContainerStyle={{
+        flexGrow: 1,
+      }}
+      style={{
+        flex: 1,
+      }}
     >
-      <SafeAreaView style={tailwind("max-h-full")}>
-        <ScrollView>
-          <View
-            style={tailwind(
-              " min-w-full bg-transparent items-center mt-24 rounded-2xl flex "
-            )}
-          >
-
-<Stack
-          mb="2.5"
-          mt="1.5"
-          direction={{
-            base: "column",
-            md: "row",
-          }}
-          space={2}
-          mx={{
+      
+      <VStack
+        flex="1"
+        px="6"
+        py="9"
+        _light={{
+          bg: "white",
+        }}
+        _dark={{
+          bg: "coolGray.800",
+        }}
+        space="3"
+        justifyContent="space-between"
+        borderTopRightRadius={{
+          base: "2xl",
+          md: "xl",
+        }}
+        borderBottomRightRadius={{
+          base: "0",
+          md: "xl",
+        }}
+        borderTopLeftRadius={{
+          base: "2xl",
+          md: "0",
+        }}
+      >
+       
+        <VStack space="7">
+        <Home navigation={navigation}/>
+        </VStack>
+        <HStack
+          mb="4"
+          space="1"
+          safeAreaBottom
+          alignItems="center"
+          justifyContent="center"
+          mt={{
             base: "auto",
-            md: "0",
+            md: "8",
           }}
         >
-          <Button
-            size="lg"
-            variant="subtle" 
-            colorScheme="amber"
-            width="210"
-            height="12"
-            onPress={() => {
-              navigation.navigate("AboutBikes");
-            }} 
-          >
-            Bikes
-          </Button>
-        </Stack>
-
-            <Stack
-          mb="2.5"
-          mt="1.5"
-          direction={{
-            base: "column",
-            md: "row",
-          }}
-          space={2}
-          mx={{
-            base: "auto",
-            md: "0",
-          }}
-        >
-          <Button
-            size="lg"
-            variant="subtle" 
-            colorScheme="amber"
-            width="210"
-            height="12"
-            onPress={() => {
-              navigation.navigate("Rules");
-            }} 
-          >
-           Rules
-          </Button>
-        </Stack>
-
-            <Stack
-          mb="2.5"
-          mt="1.5"
-          direction={{
-            base: "column",
-            md: "row",
-          }}
-          space={2}
-          mx={{
-            base: "auto",
-            md: "0",
-          }}
-        >
-          <Button
-            size="lg"
-            variant="subtle" 
-            colorScheme="amber"
-            width="210"
-            height="12"
-            onPress={() => {
-              navigation.navigate("SuggestionRoads");
-            }} 
-          >
-            Suggestion Roads
-          </Button>
-        </Stack>
-
-<Stack
-          mb="2.5"
-          mt="1.5"
-          direction={{
-            base: "column",
-            md: "row",
-          }}
-          space={2}
-          mx={{
-            base: "auto",
-            md: "0",
-          }}
-        >
-          <Button
-            size="lg"
-            variant="subtle" 
-            colorScheme="amber"
-            width="210"
-            height="12"
-            onPress={() => {
-              navigation.navigate("Station");
-            }} 
-          >
-            Station
-          </Button>
-        </Stack>
-
-<Stack
-          mb="2.5"
-          mt="1.5"
-          direction={{
-            base: "column",
-            md: "row",
-          }}
-          space={2}
-          mx={{
-            base: "auto",
-            md: "0",
-          }}
-        >
-          <Button
-            size="lg"
-            variant="subtle" 
-            colorScheme="amber"
-            width="210"
-            height="12"
-            onPress={() => {
-              navigation.navigate("Reviews");
-            }} 
-          >
-            Reviews
-          </Button>
-        </Stack>
-
-            <Stack
-          mb="2.5"
-          mt="1.5"
-          direction={{
-            base: "column",
-            md: "row",
-          }}
-          space={2}
-          mx={{
-            base: "auto",
-            md: "0",
-          }}
-        >
-          <Button
-            size="lg"
-            variant="subtle" 
-            colorScheme="amber"
-            width="210"
-            height="12"
-            onPress={() => {
-              navigation.navigate("ContactUs");
-            }} 
-          >
-            Contact Us
-          </Button>
-        </Stack>
-
-<Stack
-          mb="2.5"
-          mt="1.5"
-          direction={{
-            base: "column",
-            md: "row",
-          }}
-          space={2}
-          mx={{
-            base: "auto",
-            md: "0",
-          }}
-        >
-          <Button
-            size="lg"
-            variant="subtle" 
-            colorScheme="amber"
-            width="210"
-            height="12"
-            onPress={() => {
-              navigation.navigate("Rent");
-            }} 
-          >
-            Rent
-          </Button>
-        </Stack>
-
-<Stack
-          mb="2.5"
-          mt="1.5"
-          direction={{
-            base: "column",
-            md: "row",
-          }}
-          space={2}
-          mx={{
-            base: "auto",
-            md: "0",
-          }}
-        >  
-          <Button
-           size="lg"
-           variant="subtle" 
-           colorScheme="amber"
-           width="210"
-           height="12"
-            onPress={() => {
-              navigation.navigate("Info");
-            }} 
-          >
-            Info
-          </Button>
-        </Stack>
-        <View style={tailwind("w-full mt-32")}>
-            <Footer navigation={navigation} />
+        </HStack>
+        
+        <View style={tw`bg-yellow-400 bg-opacity-60 w-full fixed`}>
+              <Footer navigation={navigation} />
             </View>
-            
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-      </ImageBackground>
-            
-
+      </VStack>
+    </KeyboardAwareScrollView>
   );
 }
+export default function SignIn({navigation}) {
+  return (
+    <>
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle="light-content"
+      />
+      <Box
+        safeAreaTop
+        _light={{
+          bg: "primary.900",
+        }}
+        _dark={{
+          bg: "coolGray.900",
+        }}
+      />
+      <Center my="auto" flex="1">
+        <Stack
+          _light={{
+            bg: "primary.200",
+          }}
+          _dark={{
+            bg: "primary.200",
+          }}
+          flexDirection={{
+            base: "column",
+            md: "row",
+          }}
+          w="100%"
+          maxW={{
+            md: "1016px",
+          }}
+          flex={{
+            base: "1",
+            md: "none",
+          }}
+        >
 
-export default HomePage;
+        
 
+          <Hidden from="md">
+            <VStack px="4" mt="4" mb="5" space="9">
+              <VStack space="2">
+               
+              <View style={tw`items-center`}>
+        <Image
+          style={tw`w-20 h-20 mt-2`}
+          source={require("../../../assets/LogoBike.png")}
+        />
+        </View>
+        
+              </VStack>
+            </VStack>
+          </Hidden>
+          
+          <HomePage navigation={navigation} />
+         
+        </Stack>
+        
+      </Center>
+    </>
+  );
+}
