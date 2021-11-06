@@ -43,18 +43,17 @@ export default function Circuit1(props) {
         console.log(err, "error");
       });
   };
-
-  useEffect(() => {
-    axios
-      .get(`https://bycyclebackend.herokuapp.com/reviews`)
-      .then((response) => {
-        console.log(response.data);
-        setData(response.data);
-      })
-      .catch((err) => {
-        console.log("err", err);
-      });
-  }, []);
+  const getReview = () => {
+      axios
+        .get(`https://bycyclebackend.herokuapp.com/reviews`)
+        .then((response) => {
+          console.log(response.data);
+          setData(response.data);
+        })
+        .catch((err) => {
+          console.log("err", err);
+        });
+    };
 
   return (
     <>
@@ -322,7 +321,9 @@ export default function Circuit1(props) {
                             placeholder="Your review goes here"
                             value={review}
                           />
-                          <Button onPress={Submit}>Add Review</Button>
+                          <Button onPress={()=>{Submit(),getReview()}}>
+                            Add Review
+                          </Button>
                         </Box>
                       ) : (
                         Data.sort(function (a, b) {
