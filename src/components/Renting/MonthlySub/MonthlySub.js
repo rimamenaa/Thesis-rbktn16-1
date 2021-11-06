@@ -44,7 +44,7 @@ function MonthlySub() {
             ml="-0.5"
             mt="-1"
           >
-            70 Tunisian Dinars per Month
+            70 TND per Month
           </Text>
         </Stack>
         <Text fontWeight="400">Month to month, cancel anytime.</Text>

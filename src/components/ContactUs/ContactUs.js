@@ -12,7 +12,6 @@ import { View } from "react-native";
 import FindUs from "./FindUs";
 import { ByMail } from "./ContactUsByMail";
 import { ByPhone } from "./ContactUsByPhone";
-import { TermsAndConditions } from "../random/TermsAndConditions";
 
 import Rent from "../Renting/Rent";
 
