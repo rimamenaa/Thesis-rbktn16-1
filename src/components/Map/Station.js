@@ -1,80 +1,90 @@
-import * as React from "react";
-import MapView from "react-native-maps";
+import React, { useState, useEffect } from "react";
+import { Platform, StyleSheet, Text, View } from "react-native";
+import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import * as Location from "expo-location";
-import { StyleSheet } from "react-native";
-import { Text } from "react-native-paper";
 
-const { useState, useEffect } = React;
-
-export default function MapScreen() {
-  const [locationResult, setLocation] = useState(null);
-  const [mapRegion, setRegion] = useState(null);
-
-  useEffect(() => {
-    const getLocationAsync = async () => {
-      let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== "granted") {
-        console.log("Permission to access location was denied");
-        return;
-      }
-
-      let {
-        coords: { latitude, longitude },
-      } = await Location.getCurrentPositionAsync({});
-      setLocation(JSON.stringify({ latitude, longitude }));
-
-      setRegion({
-        latitude,
-        longitude,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
-      });
-    };
-
-    getLocationAsync();
+const Station = () => {
+  const [location, setLocation] = useState({
+    latitude: 36.8941204,
+    longitude: 10.1870475,
   });
 
-  if (locationResult === null) {
-    return <Text>Finding your current location...</Text>;
-  }
+  /*   const getLocation = async () => {
+    try {
+      await Location.requestBackgroundPermissionsAsync();
+      setLocation(await navigator.geolocation.location());
+    } catch (error) {
+      console.log(error);
+    }
+  }; */
 
-  if (hasLocationPermissions === false) {
-    return <Text>Location permissions are not granted.</Text>;
-  }
+  useEffect(() => {
+    console.log(location);
+    (async () => {
+      let { status } = await Location.requestBackgroundPermissionsAsync();
+      if (status !== "granted") {
+        setErrorMsg("Permission to access location was denied");
+      }
 
-  if (mapRegion === null) {
-    return <Text>Map region doesn't exist.</Text>;
-  }
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+    })();
+  }, []);
+  const getLoc = () => {
+    console.log("press", location.coords);
+    let latitude = location.coords.latitude;
+    let longitude = location.coords.longitude;
+    setRegion({
+      latitude: latitude,
+      longitude: longitude,
+      latitudeDelta: 0.015,
+      longitudeDelta: 0.0121,
+    });
+  };
+
+  const sendLoc = () => {
+    let latitude = location.coords.latitude;
+    let longitude = location.coords.longitude;
+    console.log(
+      "Use these variables to send current location(",
+      latitude,
+      ",",
+      longitude,
+      ")"
+    );
+  };
 
   return (
     <MapView
-      style={styles.container}
-      region={mapRegion}
-      zoomEnabled
+      style={{ flex: 0.6 }}
+      provider={PROVIDER_GOOGLE}
+      showsUserLocation
       initialRegion={{
-        latitude: 36.67343096953564,
-        latitudeDelta: 0.0922,
-        longitude: 10.53214,
-        longitudeDelta: 0.0421,
+        latitude: location.latitude,
+        longitude: location.longitude,
+        latitudeDelta: 0.0181,
+        longitudeDelta: 0.0181,
       }}
-      onRegionChange={(region) => setRegion(region)}
+      onPress={() => {
+        sendLoc();
+      }}
     >
       <MapView.Marker
-        title="BYCYCLE, Inc."
-        description="Bicycle Rent Station"
-        image={require("../Map/BicycleMarker.png")}
-        coordinate={{ latitude: 36.8951, longitude: 10.1885 }}
+        coordinate={{ latitude: 36.78825, longitude: 10 }}
+        title={"title"}
+        description={"description"}
+      />
+      <MapView.Marker
+        coordinate={{ latitude: 36.78825, longitude: 10.1 }}
+        title={"title"}
+        description={"description"}
+      />
+      <MapView.Marker
+        coordinate={{ latitude: 36.78825, longitude: 10.2324 }}
+        title={"title"}
+        description={"description"}
       />
     </MapView>
   );
-}
-
-MapScreen.navigationOptions = {
-  header: null,
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+export default Station;
