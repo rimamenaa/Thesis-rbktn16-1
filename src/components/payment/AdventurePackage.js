@@ -49,7 +49,7 @@ export const Info = () => {
           colorScheme="yellow"
           my="2"
           onPress={() => {
-            navigation.navigate("MonthlyPayment");
+            navigation.navigate("AdventurePayment");
           }}
         >
           Next

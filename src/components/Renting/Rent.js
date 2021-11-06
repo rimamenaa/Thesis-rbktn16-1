@@ -22,7 +22,7 @@ function Rent() {
       <VStack space={50}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <Text fontSize="4xl" color="amber.500">
-            Choose your plan.
+            Choose your plan
           </Text>
           <SingleTrip></SingleTrip>
           <MonthlySub></MonthlySub>

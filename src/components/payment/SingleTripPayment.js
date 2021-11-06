@@ -34,16 +34,15 @@ export const Payment = () => {
         alignItems="center" 
         justifyContent="space-between">
           <Text fontWeight="medium">Duration</Text>
-          <Text color="blueGray.400">30 Days</Text>
+          <Text color="blueGray.400">60 mins</Text>
         </HStack> 
         
-      
-        
+   
         <HStack 
         alignItems="center" 
         justifyContent="space-between">
           <Text fontWeight="medium">Total Amount</Text>
-          <Text color="amber.600">70 TND</Text>
+          <Text color="amber.600">5 TND</Text>
         </HStack>
         
         <Button

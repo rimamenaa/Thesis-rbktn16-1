@@ -14,7 +14,7 @@ import {
 import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-export const Info = () => {
+export const SingleTripPackage = () => {
   const navigation = useNavigation();
 
   return (
@@ -49,7 +49,7 @@ export const Info = () => {
           colorScheme="yellow"
           my="2"
           onPress={() => {
-            navigation.navigate("MonthlyPayment");
+            navigation.navigate("SingleTripPayment");
           }}
         >
           Next
@@ -65,7 +65,7 @@ export default () => {
 
     <NativeBaseProvider>
       <Center flex={1} px="3">
-        <Info />
+        <SingleTripPackage />
       </Center>
     </NativeBaseProvider>
   

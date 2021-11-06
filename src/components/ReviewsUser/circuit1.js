@@ -17,24 +17,38 @@ import {
   AspectRatio,
   View,
 } from "native-base";
-import { RefreshControl } from "react-native";
 import { AirbnbRating } from "react-native-ratings";
 import tw from "tailwind-react-native-classnames";
 import axios from "axios";
 import moment from "moment";
 
-export default function Circuit1(props) {
+export default function Circuit1() {
   const [tabName, setTabName] = useState("Reviews");
   const [review, setInput] = useState("");
   const [Data, setData] = useState([]);
+  const rating = Math.ceil(Math.random(1 / 2) * 5);
 
+  const averageArray = [];
+  var total = 0;
+  var average;
+
+  console.log("hhhh", Data);
+
+  if (Data) {
+    for (var i = 0; i < Data.length; i++) {
+      averageArray.push(Data[i].rating);
+      total += averageArray[i];
+      average = Math.ceil(total / averageArray.length);
+    }
+  }
   const Submit = () => {
     axios
       .post(`http://localhost:3000/reviews`, {
         review,
+        rating,
       })
       .then(() => {
-        console.log("heyyyyyy");
+        console.log("review added");
         // setData((data) => [res.data, ...data]);
         // setData(res.data);
         setInput("");
@@ -159,8 +173,8 @@ export default function Circuit1(props) {
                   </Card>
 
                   <ScrollView showsVerticalScrollIndicator={false}>
-                    <Box flex={1}>
-                      <VStack space={4}>
+                    <Box>
+                      <VStack padding="8" flex={2} space={4}>
                         <HStack
                           justifyContent="space-between"
                           alignItems="center"
@@ -178,6 +192,7 @@ export default function Circuit1(props) {
                               showRating={false}
                               isDisabled={true}
                               size={10}
+                              defaultRating={average}
                             />
                             <Text
                               fontSize="md"
@@ -185,17 +200,17 @@ export default function Circuit1(props) {
                                 color: "coolGray.800",
                               }}
                             >
-                              (3 reviews average)
+                              {average}
                             </Text>
-                            <Text
+                            {/* <Text
                               fontSize="sm"
                               fontWeight="medium"
                               _light={{
                                 color: "coolGray.400",
                               }}
                             >
-                              (120 )
-                            </Text>
+                              (120)
+                            </Text> */}
                           </HStack>
                         </HStack>
 
@@ -210,30 +225,6 @@ export default function Circuit1(props) {
                         </Text>
                       </VStack>
 
-                      <HStack space="2" mt="5" alignItems="center">
-                        <Text
-                          fontSize="sm"
-                          fontWeight="medium"
-                          color="coolGray.400"
-                        >
-                          By-cycle
-                        </Text>
-                        <Link
-                          ml="auto"
-                          _text={{
-                            textDecoration: "none",
-                          }}
-                          _light={{
-                            _text: {
-                              color: "primary.800",
-                              fontSize: "sm",
-                              fontWeight: "medium",
-                            },
-                          }}
-                        >
-                          Your opinion matters
-                        </Link>
-                      </HStack>
                       <ScrollView
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
@@ -241,7 +232,7 @@ export default function Circuit1(props) {
                       {/* <AddToCartButton base="none" md="flex" /> */}
 
                       {/* THIS IS THE TAB I WANT TO MAKE LIKE */}
-                      <HStack mt="8" space="5">
+                      <HStack padding="8" flex={2} mt="1" space="4">
                         <Pressable
                           onPress={() => {
                             setTabName("AddReview");
@@ -344,48 +335,61 @@ export default function Circuit1(props) {
                                 rounded="lg"
                                 overflow="hidden"
                                 width="80"
-                                shadow={1}
-                                _light={{ backgroundColor: "gray.200" }}
+                                shadow={5}
+                                _light={{ backgroundColor: "gray.100" }}
                                 style={{ margin: 15 }}
                               >
                                 <Stack p="4" space={3}>
                                   <Stack space={2}>
-                                    {/* <VStack space="1">
-                                    <Avatar
-                                      source={require("../../../assets/goGreen.jpg")}
-                                      height="9"
-                                      width="9"
-                                    />
-                                      <HStack space="1">
-                                      <AirbnbRating
-                                      showRating={false}
-                                      isDisabled={true}
-                                      count={5}
-                                      reviews={[1, 2, 3, 4, 5]}
-                                      defaultRating={4}
-                                      size={20}
-                                      />
-                                    </HStack>
-                                    </VStack> */}
-                                    <Text
-                                      fontSize="xs"
-                                      _light={{ color: "amber.500" }}
-                                      fontWeight="medium"
-                                      ml="-0.5"
-                                      mt="-1"
-                                    >
-                                      {moment(review.createdAt).format("LLL")}
-                                    </Text>
+                                    <VStack space="1">
+                                      <View
+                                        flexDirection="row"
+                                        flex={1}
+                                        justifyContent="space-between"
+                                      >
+                                        <Avatar
+                                          source={require("../../../assets/goGreen.jpg")}
+                                          height="9"
+                                          width="9"
+                                        />
+                                        <Text
+                                          fontSize="lg"
+                                          _light={{
+                                            color: "coolGray.800",
+                                          }}
+                                        >
+                                          username
+                                        </Text>
+                                        <HStack space="1">
+                                          <AirbnbRating
+                                            showRating={false}
+                                            isDisabled={true}
+                                            count={5}
+                                            reviews={[1, 2, 3, 4, 5]}
+                                            defaultRating={review.rating}
+                                            size={10}
+                                          />
+                                        </HStack>
+                                      </View>
+                                    </VStack>
                                   </Stack>
 
-                                  <Text fontWeight="400">{review.review}</Text>
+                                  <Text fontWeight="800">{review.review}</Text>
+                                  <Text
+                                    fontSize="2xs"
+                                    _light={{ color: "amber.500" }}
+                                    fontWeight="medium"
+                                    ml="-0.5"
+                                    mt="-1"
+                                  >
+                                    {moment(review.createdAt).format("LLL")}
+                                  </Text>
                                 </Stack>
                               </Pressable>
                             </VStack>
                           );
                         })
                       )}
-                      {/* <AddToCartButton base="flex" md="none" /> */}
                     </Box>
                   </ScrollView>
                 </Stack>
