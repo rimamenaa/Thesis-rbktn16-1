@@ -44,16 +44,16 @@ export default function Circuit1(props) {
       });
   };
   const getReview = () => {
-      axios
-        .get(`https://bycyclebackend.herokuapp.com/reviews`)
-        .then((response) => {
-          console.log(response.data);
-          setData(response.data);
-        })
-        .catch((err) => {
-          console.log("err", err);
-        });
-    };
+    axios
+      .get(`https://bycyclebackend.herokuapp.com/reviews`)
+      .then((response) => {
+        console.log(response.data);
+        setData(response.data);
+      })
+      .catch((err) => {
+        console.log("err", err);
+      });
+  };
 
   return (
     <>
@@ -321,7 +321,11 @@ export default function Circuit1(props) {
                             placeholder="Your review goes here"
                             value={review}
                           />
-                          <Button onPress={()=>{Submit(),getReview()}}>
+                          <Button
+                            onPress={() => {
+                              Submit(), getReview();
+                            }}
+                          >
                             Add Review
                           </Button>
                         </Box>
@@ -376,7 +380,6 @@ export default function Circuit1(props) {
                           );
                         })
                       )}
-                      {/* <AddToCartButton base="flex" md="none" /> */}
                     </Box>
                   </ScrollView>
                 </Stack>
