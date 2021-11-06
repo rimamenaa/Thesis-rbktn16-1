@@ -9,11 +9,14 @@ import {
   NativeBaseProvider,
   ScrollView,
 } from "native-base";
+import { useNavigation } from "@react-navigation/native";
 
 function SingleTripDetails() {
+  const navigation = useNavigation();
+
   return (
     <ScrollView>
-      <Box>
+      <Box >
         <Text fontSize="2xl" marginBottom="3" marginLeft="3" marginTop="5">
           Single Trip
         </Text>
@@ -35,17 +38,21 @@ function SingleTripDetails() {
           <Text bold> Single Trip </Text>
           pass includes 60 minutes of ride time to get you anywhere you need to
           go. Ride to work, meet up with friends, or run a quick errand. Need to
-          ride longer? It's just 3TD for each additional 30 minutes.
+          ride longer? It's just 2TND for each additional 30 minutes.
         </Text>
       </Box>
       <Button
-        colorScheme="amber"
+        colorScheme="yellow"
         fontSize="md"
         mt="4"
-        _light={{ color: "amber.500" }}
+        marginLeft="24"
+        width="50%"
+        _light={{ color: "amber.300" }}
         _dark={{ color: "amber.300" }}
-        fontWeight="500"
-      >
+        onPress={() => {
+          navigation.navigate("SingleTripPackage");
+        }}
+     >
         Get one
       </Button>
     </ScrollView>
