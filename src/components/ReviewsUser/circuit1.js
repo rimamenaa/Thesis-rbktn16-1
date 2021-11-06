@@ -4,7 +4,6 @@ import {
   HStack,
   Text,
   VStack,
-  Avatar,
   Image,
   ScrollView,
   Pressable,
