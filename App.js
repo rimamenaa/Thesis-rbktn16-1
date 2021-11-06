@@ -95,6 +95,8 @@ function App() {
           <Stack.Screen name="AdventurePayment" component={AdventurePayment} />
           <Stack.Screen name="AdventurePackage" component={AdventurePackage} />
 
+
+
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
