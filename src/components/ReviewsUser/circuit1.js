@@ -44,16 +44,20 @@ export default function Circuit1(props) {
       });
   };
   const getReview = () => {
-      axios
-        .get(`https://bycyclebackend.herokuapp.com/reviews`)
-        .then((response) => {
-          console.log(response.data);
-          setData(response.data);
-        })
-        .catch((err) => {
-          console.log("err", err);
-        });
-    };
+    axios
+      .get(`https://bycyclebackend.herokuapp.com/reviews`)
+      .then((response) => {
+        console.log(response.data);
+        setData(response.data);
+      })
+      .catch((err) => {
+        console.log("err", err);
+      });
+  };
+
+  useEffect(() => {
+    getReview();
+  }, []);
 
   return (
     <>
@@ -303,6 +307,7 @@ export default function Circuit1(props) {
                             reviews={[1, 2, 3, 4, 5]}
                             defaultRating={5}
                             size={20}
+                            showRating={false}
                           />
                           <TextArea
                             fontSize="md"
@@ -321,7 +326,11 @@ export default function Circuit1(props) {
                             placeholder="Your review goes here"
                             value={review}
                           />
-                          <Button onPress={()=>{Submit(),getReview()}}>
+                          <Button
+                            onPress={() => {
+                              Submit(), getReview();
+                            }}
+                          >
                             Add Review
                           </Button>
                         </Box>
