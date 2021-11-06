@@ -26,24 +26,15 @@ export default function Circuit1(props) {
   const [tabName, setTabName] = useState("Reviews");
   const [review, setInput] = useState("");
   const [Data, setData] = useState([]);
-  const [rating, setRating] = useState(1);
+  const [rating, setRating] = useState(Math.ceil(Math.random * 5));
 
-  const starsArray = [1, 2, 3, 4, 5];
-  const ratingArray = 0;
+  // const ratingArray = 0;
 
-  // const getRating = () => {
-  //   for (var i = 0; i < ratingArray.length; i++) {
-
-  //   }
-  // };
-  const getRating=(number)=>{
-    
-
-  }
   const Submit = () => {
     axios
       .post(`http://localhost:3000/reviews`, {
         review,
+        rating,
       })
       .then(() => {
         console.log("review added");
@@ -222,30 +213,6 @@ export default function Circuit1(props) {
                         </Text>
                       </VStack>
 
-                      {/* <HStack space="2" mt="5" alignItems="center">
-                        <Text
-                          fontSize="sm"
-                          fontWeight="medium"
-                          color="coolGray.400"
-                        >
-                          By-cycle
-                        </Text>
-                        <Link
-                          ml="auto"
-                          _text={{
-                            textDecoration: "none",
-                          }}
-                          _light={{
-                            _text: {
-                              color: "primary.800",
-                              fontSize: "sm",
-                              fontWeight: "medium",
-                            },
-                          }}
-                        >
-                          Your opinion matters
-                        </Link>
-                      </HStack> */}
                       <ScrollView
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
@@ -356,8 +323,8 @@ export default function Circuit1(props) {
                                 rounded="lg"
                                 overflow="hidden"
                                 width="80"
-                                shadow={1}
-                                _light={{ backgroundColor: "gray.200" }}
+                                shadow={5}
+                                _light={{ backgroundColor: "gray.100" }}
                                 style={{ margin: 15 }}
                               >
                                 <Stack p="4" space={3}>
@@ -374,9 +341,7 @@ export default function Circuit1(props) {
                                           isDisabled={true}
                                           count={5}
                                           reviews={[1, 2, 3, 4, 5]}
-                                          defaultRating={Math.ceil(
-                                            Math.random() * 5
-                                          )}
+                                          defaultRating={review.rating}
                                           size={10}
                                         />
                                       </HStack>
