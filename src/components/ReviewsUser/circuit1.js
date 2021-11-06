@@ -307,6 +307,7 @@ export default function Circuit1(props) {
                             reviews={[1, 2, 3, 4, 5]}
                             defaultRating={5}
                             size={20}
+                            showRating={false}
                           />
                           <TextArea
                             fontSize="md"
