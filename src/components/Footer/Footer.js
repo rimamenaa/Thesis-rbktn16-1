@@ -11,10 +11,10 @@ import {
 } from 'native-base';
 import { MaterialCommunityIcons, Entypo, Ionicons  } from '@expo/vector-icons';
 import Commercial from '../commercial/Commercial';
-import Profile from '../Profile/Profile';
+// import Profile from '../Profile/Profile';
 import LandingPage from '../LandingPage/LandingPage';
 
-export default function Footer({ navigation }) {
+export default function Footer({ navigation}) {
   const [selected, setSelected] = React.useState(1);
   return (
     
@@ -29,7 +29,7 @@ export default function Footer({ navigation }) {
             py="2"
             flex={1}
             onPress={() => {
-                navigation.navigate(Profile);
+                navigation.navigate("Profile");
               }}
           >
             <Center>
@@ -53,7 +53,7 @@ export default function Footer({ navigation }) {
             py="3"
             flex={1}
             onPress={() => {
-                navigation.navigate(Commercial);
+                navigation.navigate("Commercial");
               }}>
             <Center>
               <Icon
@@ -78,7 +78,7 @@ export default function Footer({ navigation }) {
             py="2"
             flex={1}
             onPress={() => {
-                navigation.navigate(LandingPage);
+                navigation.navigate("LandingPage");
               }}
           >
             <Center>

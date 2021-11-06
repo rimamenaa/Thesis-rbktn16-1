@@ -19,7 +19,7 @@ import Footer from "../Footer/Footer"
 
 function HomePage({ navigation }) {
   return (
-    // <TouchableOpacity>
+
     <ImageBackground
       style={tailwind("h-full")}
       source={require("../../../assets/yellowbike3.png")}
@@ -247,8 +247,7 @@ function HomePage({ navigation }) {
             Info
           </Button>
         </Stack>
-       
-            <View style={tailwind("w-full mt-32")}>
+        <View style={tailwind("w-full mt-32")}>
             <Footer navigation={navigation} />
             </View>
             
@@ -256,7 +255,8 @@ function HomePage({ navigation }) {
         </ScrollView>
       </SafeAreaView>
       </ImageBackground>
-      // </TouchableOpacity>
+            
+
   );
 }
 
