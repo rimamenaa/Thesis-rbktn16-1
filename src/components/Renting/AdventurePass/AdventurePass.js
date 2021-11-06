@@ -42,7 +42,7 @@ function AdventurePass() {
             ml="-0.5"
             mt="-1"
           >
-            25 TND per Day
+            25 Tunisian Dinars per Day.
           </Text>
         </Stack>
         <Text fontWeight="400">Perfect for visitors and tourists</Text>

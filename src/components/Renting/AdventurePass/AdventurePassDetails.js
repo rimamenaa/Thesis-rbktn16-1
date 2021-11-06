@@ -11,12 +11,10 @@ import {
   ScrollView,
   Button,
 } from "native-base";
-
-import { useNavigation } from "@react-navigation/native";
+import { MaterialIcons, Ionicons } from "@expo/vector-icons";
+import Loading from "../../../../src/components/Loading/Loading";
 
 function AdventurePassDetails() {
-  const navigation = useNavigation();
-
   return (
     <ScrollView>
       <Box>
@@ -39,27 +37,22 @@ function AdventurePassDetails() {
         </AspectRatio>
         <Stack space={500}>
           <Text fontWeight="700" fontWeight="400" marginTop="10" padding="5">
-            For just 25TD, you'll get 24 hours of access to BY-CYCLE and you can
+            For just 25TD, you'll get 24 hours of access to By-Cycle and you can
             keep a bike out for up to 2 hours at a time. If you're enjoying a
             long ride and want to keep a bike out longer than 2 hours at a time,
-            it's only an extra 2TND per additional 30 minutes. With BY-CYCLE, you
+            it's only an extra 3TD per additional 30 minutes. With By-Cycle, you
             can take a bike out from any station within the system and return it
             to any other.
           </Text>
         </Stack>
       </Box>
       <Button
-        colorScheme="yellow"
+        colorScheme="amber"
         fontSize="md"
         mt="4"
-        _light={{ color: "amber.300" }}
+        _light={{ color: "amber.500" }}
         _dark={{ color: "amber.300" }}
         fontWeight="500"
-        marginLeft="24"
-        width="50%"
-        onPress={() => {
-          navigation.navigate("AdventurePackage");
-        }}
       >
         Get one
       </Button>

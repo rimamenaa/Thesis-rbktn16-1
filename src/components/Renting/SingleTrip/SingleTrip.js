@@ -42,7 +42,7 @@ function SingleTrip() {
             ml="-0.5"
             mt="-1"
           >
-            5 TND per Hour
+            05 Tunisian Dinars per Hour
           </Text>
         </Stack>
         <Text fontWeight="400">Great for one-way rides.</Text>
