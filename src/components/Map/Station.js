@@ -75,12 +75,32 @@ const Station = () => {
         description={"description"}
       />
       <MapView.Marker
-        coordinate={{ latitude: 36.78825, longitude: 10.1 }}
+        coordinate={{ latitude: 34.70075, longitude: 9.1 }}
         title={"title"}
         description={"description"}
       />
       <MapView.Marker
         coordinate={{ latitude: 36.78825, longitude: 10.2324 }}
+        title={"title"}
+        description={"description"}
+      />
+      <MapView.Marker
+        coordinate={{ latitude: 36.77725, longitude: 10.2324 }}
+        title={"title"}
+        description={"description"}
+      />
+      <MapView.Marker
+        coordinate={{ latitude: 36.64725, longitude: 10.2324 }}
+        title={"title"}
+        description={"description"}
+      />
+      <MapView.Marker
+        coordinate={{ latitude: 36.86625, longitude: 10.2324 }}
+        title={"title"}
+        description={"description"}
+      />
+      <MapView.Marker
+        coordinate={{ latitude: 36.06555, longitude: 10.2324 }}
         title={"title"}
         description={"description"}
       />
