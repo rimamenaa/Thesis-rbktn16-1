@@ -209,7 +209,7 @@ function Home({ navigation }) {
                
           </View>
 
-          <View  style={tailwind("flex flex-row mt-24")}>
+          <View  style={tailwind("flex flex-row mt-24 items-center")}>
             <Stack
               mr="2"
               mt="1.5"

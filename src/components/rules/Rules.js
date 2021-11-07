@@ -14,11 +14,12 @@ import {
   Button
 } from "native-base";
 import tailwind from "tailwind-rn";
+import Footer from "../Footer/Footer";
 
 function Rules({navigation}) {
   return (
     <SafeAreaView style={tailwind("h-full ")}>
-      <ScrollView>
+      <ScrollView style={tailwind("mb-16")}>
         <View style={tailwind(" items-center ")}>
       
 <Box 
@@ -152,14 +153,9 @@ function Rules({navigation}) {
             </Box>
         </View>
       </ScrollView>
-      {/* <Button
-            style={tailwind("bg-yellow-500 h-12 w-full")}
-            onPress={() => {
-                navigation.navigate("");
-              }}
-          >
-            Next
-          </Button> */}
+      <View style={{position: 'absolute', width: "100%", marginTop:655, backgroundColor:"white"}}>
+        <Footer navigation={navigation} />
+      </View>
     </SafeAreaView>
   );
 }
