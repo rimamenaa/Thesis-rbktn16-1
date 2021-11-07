@@ -8,11 +8,13 @@ import {
   Text,
   Card,
   ScrollView,
+  Button
 } from "native-base";
 
 import Loading from "../Loading/Loading";
 import tw from "tailwind-react-native-classnames";
 import Footer from "../Footer/Footer";
+import { FontAwesome } from '@expo/vector-icons'; 
 
 
 function AboutBikes({navigation}) {
@@ -20,7 +22,7 @@ function AboutBikes({navigation}) {
 
   useEffect(async () => {
     axios
-      .get("https://bycyclebackend.herokuapp.com/bicycle ")
+      .get("https://bycyclebackend.herokuapp.com/bicycle")
       .then((response) => {
         console.log(response.data);
         setData(response.data);
@@ -53,6 +55,18 @@ function AboutBikes({navigation}) {
                 {bike.description}
               </Text>
             </Stack>
+            <Button
+                size="lg"
+                variant="outline"
+                colorScheme="amber"
+                width="100%"
+                height="16"
+                onPress={() => {
+                  navigation.navigate("Rent");
+                }}
+              >
+ <FontAwesome name="arrow-circle-right" size={35} color="black" /> 
+             </Button>
           </Card>
         );
       })}
