@@ -34,9 +34,9 @@ function Rent({navigation}) {
         </ScrollView>
       </VStack>
     </Card>
-    <View style={tw`bg-yellow-400 bg-opacity-60 mt-32`}>
-              <Footer navigation={navigation} />
-            </View>
+    <View style={{position: 'absolute', width: "95%",marginLeft:10 , marginTop:650}}>
+        <Footer navigation={navigation} />
+      </View>
     </View>
   );
 }

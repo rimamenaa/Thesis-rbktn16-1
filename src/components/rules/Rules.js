@@ -152,14 +152,14 @@ function Rules({navigation}) {
             </Box>
         </View>
       </ScrollView>
-      <Button
+      {/* <Button
             style={tailwind("bg-yellow-500 h-12 w-full")}
             onPress={() => {
-                navigation.navigate("Commercial");
+                navigation.navigate("");
               }}
           >
             Next
-          </Button>
+          </Button> */}
     </SafeAreaView>
   );
 }

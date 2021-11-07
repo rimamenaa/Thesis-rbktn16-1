@@ -8,14 +8,21 @@ import {
   Stack,
   Box,
   Image,
-  View
+  View,
+ 
 } from "native-base";
 import tw from "tailwind-react-native-classnames";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import Footer from "../Footer/Footer";
 import Home from "./HomeStyle";
 
-export function HomePage({ navigation }) {
+
+
+import tailwind from "tailwind-rn";
+
+
+
+function HomePage({ navigation }) {
   return (
     <KeyboardAwareScrollView
       contentContainerStyle={{

@@ -55,10 +55,9 @@ function App() {
           <Stack.Screen name="Commercial" component={Commercial} />
           <Stack.Screen name="WhyUs" component={WhyUs} />
           <Stack.Screen name="Rent" component={Rent} />
-          <Stack.Screen name="Station" component={Station} />
+          <Stack.Screen name="CombinedMap" component={CombinedMap} />
           <Stack.Screen name="Rules" component={Rules} />
           <Stack.Screen name="Reviews" component={Reviews} />
-          <Stack.Screen name="Footer" component={Footer} />
           <Stack.Screen
             name="Login"
             options={{ headerShown: false }}
@@ -88,12 +87,21 @@ function App() {
           />
           <Stack.Screen name="SuggestedRoutes" component={SuggestedRoutes} />
           <Stack.Screen name="Profile" component={Profile} />
-          <Stack.Screen name="SingleTripPayment" component={SingleTripPayment} />
-          <Stack.Screen name="SingleTripPackage" component={SingleTripPackage} />
+          <Stack.Screen
+            name="SingleTripPayment"
+            component={SingleTripPayment}
+          />
+          <Stack.Screen
+            name="SingleTripPackage"
+            component={SingleTripPackage}
+          />
           <Stack.Screen name="MonthlyPayment" component={MonthlyPayment} />
           <Stack.Screen name="MonthlyPackage" component={MonthlyPackage} />
           <Stack.Screen name="AdventurePayment" component={AdventurePayment} />
           <Stack.Screen name="AdventurePackage" component={AdventurePackage} />
+
+          <Stack.Screen name="Station" component={Station} />
+
 
         </Stack.Navigator>
       </NavigationContainer>
