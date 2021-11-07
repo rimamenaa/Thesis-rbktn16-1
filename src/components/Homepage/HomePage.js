@@ -75,9 +75,9 @@ function HomePage({ navigation }) {
         >
         </HStack>
         
-        <View style={tw`bg-yellow-400 bg-opacity-60 w-full fixed`}>
-              <Footer navigation={navigation} />
-            </View>
+        <View style={{position: 'absolute', width: "95%",marginLeft:30, marginTop:600, backgroundColor:"white"}}>
+        <Footer navigation={navigation} />
+      </View>
       </VStack>
     </KeyboardAwareScrollView>
   );

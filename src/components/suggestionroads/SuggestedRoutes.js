@@ -27,7 +27,7 @@ function SuggestionRoads({navigation}) {
 
   return (
     <SafeAreaView style={tailwind("h-full")}>
-      <ScrollView>
+      <ScrollView style={tailwind("mb-16")}>
         <View style={tailwind("items-center mt-8")}>
           <Box
             style={tailwind("mb-8 items-center")}
@@ -97,7 +97,7 @@ function SuggestionRoads({navigation}) {
           })}
         </View>
       </ScrollView>
-      <View style={{position: 'absolute', width: "95%",marginLeft:10 , marginTop:650}}>
+      <View style={{position: 'absolute', width: "100%", marginTop:655, backgroundColor:"white"}}>
         <Footer navigation={navigation} />
       </View>
     </SafeAreaView>
