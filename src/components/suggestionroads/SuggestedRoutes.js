@@ -6,8 +6,10 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import axios from "axios";
+import Footer from "../Footer/Footer";
 
-function SuggestionRoads() {
+
+function SuggestionRoads({navigation}) {
   const [data, setData] = useState([]);
 
   const getData = () => {
@@ -95,6 +97,9 @@ function SuggestionRoads() {
           })}
         </View>
       </ScrollView>
+      <View style={{position: 'absolute', width: "95%",marginLeft:10 , marginTop:650}}>
+        <Footer navigation={navigation} />
+      </View>
     </SafeAreaView>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
-  Box,
+  View,
   AspectRatio,
   Image,
   Stack,
@@ -11,7 +11,11 @@ import {
 } from "native-base";
 
 import Loading from "../Loading/Loading";
-function AboutBikes() {
+import tw from "tailwind-react-native-classnames";
+import Footer from "../Footer/Footer";
+
+
+function AboutBikes({navigation}) {
   const [data, setData] = useState([]);
 
   useEffect(async () => {
@@ -27,7 +31,8 @@ function AboutBikes() {
   }, []);
 
   return (
-    <ScrollView>
+    <View>
+    <ScrollView>   
       {data.map((bike, key) => {
         console.log(bike);
         return (
@@ -52,6 +57,11 @@ function AboutBikes() {
         );
       })}
     </ScrollView>
+       
+    <View style={{position: 'absolute', width: "95%",marginLeft:10 , marginTop:650}}>
+        <Footer navigation={navigation} />
+      </View>
+      </View>
   );
 }
 
