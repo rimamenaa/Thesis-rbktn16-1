@@ -34,7 +34,7 @@ function AboutBikes({navigation}) {
 
   return (
     <View>
-    <ScrollView>   
+    <ScrollView marginBottom="20">   
       {data.map((bike, key) => {
         console.log(bike);
         return (
@@ -72,7 +72,7 @@ function AboutBikes({navigation}) {
       })}
     </ScrollView>
        
-    <View style={{position: 'absolute', width: "95%",marginLeft:10 , marginTop:650}}>
+    <View style={{position: 'absolute', width: "100%", marginTop:655, backgroundColor:"white"}}>
         <Footer navigation={navigation} />
       </View>
       </View>
