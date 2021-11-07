@@ -9,26 +9,21 @@ import {
   NativeBaseProvider,
   Card,
   ScrollView,
+  Button,
 } from "native-base";
-import { MaterialIcons, Ionicons } from "@expo/vector-icons";
-import Loading from "../../../../src/components/Loading/Loading";
+
+import { useNavigation } from "@react-navigation/native";
 
 function AdventurePassDetails() {
+  const navigation = useNavigation();
+
   return (
-    // <Box
-    //   rounded="lg"
-    //   overflow="hidden"
-    //   width="40%"
-    //   shadow={1}
-    //   _light={{ backgroundColor: "gray.50" }}
-    //   _dark={{ backgroundColor: "gray.700" }}
-    // >
     <ScrollView>
-      <Card>
-        <Text fontSize="2xl" marginBottom="3">
+      <Box>
+        <Text fontSize="2xl" marginBottom="3" marginLeft="3" marginTop="5">
           Adventure Pass
         </Text>
-        <Text fontWeight="500">
+        <Text fontWeight="500" padding="3">
           The Adventure Pass is perfect for tourists, visitors, and anyone
           looking for a long or leisurely ride .
         </Text>
@@ -42,29 +37,32 @@ function AdventurePassDetails() {
             alt={"Loading..."}
           />
         </AspectRatio>
-        <Stack p="4" space={4}>
-          <Text fontWeight="500" fontWeight="400" marginTop="8">
-            For just 25TD, you'll get 24 hours of access to By-Cycle and you can
+        <Stack space={500}>
+          <Text fontWeight="700" fontWeight="400" marginTop="10" padding="5">
+            For just 25TD, you'll get 24 hours of access to BY-CYCLE and you can
             keep a bike out for up to 2 hours at a time. If you're enjoying a
             long ride and want to keep a bike out longer than 2 hours at a time,
-            it's only an extra 3TD per additional 30 minutes. With By-Cycle, you
+            it's only an extra 2TND per additional 30 minutes. With BY-CYCLE, you
             can take a bike out from any station within the system and return it
             to any other.
           </Text>
-          <Stack space={2}>
-            <Text
-              fontSize="xs"
-              _light={{ color: "amber.500" }}
-              _dark={{ color: "amber.300" }}
-              fontWeight="500"
-              ml="-0.5"
-              mt="-1"
-            >
-              Get one
-            </Text>
-          </Stack>
         </Stack>
-      </Card>
+      </Box>
+      <Button
+        colorScheme="yellow"
+        fontSize="md"
+        mt="4"
+        _light={{ color: "amber.300" }}
+        _dark={{ color: "amber.300" }}
+        fontWeight="500"
+        marginLeft="24"
+        width="50%"
+        onPress={() => {
+          navigation.navigate("AdventurePackage");
+        }}
+      >
+        Get one
+      </Button>
     </ScrollView>
   );
 }
@@ -72,9 +70,9 @@ function AdventurePassDetails() {
 export default function () {
   return (
     <NativeBaseProvider>
-      <Center flex={1} px="3">
-        <AdventurePassDetails />
-      </Center>
+      {/* <Center flex={1} px="5"> */}
+      <AdventurePassDetails />
+      {/* </Center> */}
     </NativeBaseProvider>
   );
 }

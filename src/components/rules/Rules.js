@@ -11,10 +11,11 @@ import {
   AspectRatio,
   Image,
   Stack,
+  Button
 } from "native-base";
 import tailwind from "tailwind-rn";
 
-function Rules() {
+function Rules({navigation}) {
   return (
     <SafeAreaView style={tailwind("h-full ")}>
       <ScrollView>
@@ -151,6 +152,14 @@ function Rules() {
             </Box>
         </View>
       </ScrollView>
+      {/* <Button
+            style={tailwind("bg-yellow-500 h-12 w-full")}
+            onPress={() => {
+                navigation.navigate("");
+              }}
+          >
+            Next
+          </Button> */}
     </SafeAreaView>
   );
 }

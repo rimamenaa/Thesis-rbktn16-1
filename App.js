@@ -4,7 +4,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Commercial from "./src/components/commercial/Commercial";
 import HomePage from "./src/components/Homepage/HomePage";
 import Signup from "./src/components/signup/Signup";
-import ContactUs from "./src/components/ContactUs/ContactUs";
 import CombinedMap from "./src/components/CombinedMap/CombinedMap";
 import Login from "./src/components/login/Login";
 import Rules from "./src/components/rules/Rules";
@@ -18,13 +17,18 @@ import MonthlySub from "./src/components/Renting/MonthlySub/MonthlySub";
 import MonthlySubDetails from "./src/components/Renting/MonthlySub/MonthlySubDetails";
 import AdventurePass from "./src/components/Renting/AdventurePass/AdventurePass";
 import AdventurePassDetails from "./src/components/Renting/AdventurePass/AdventurePassDetails";
-import SuggestionRoads from "./src/components/suggestionroads/SuggestionRoads";
+import SuggestedRoutes from "./src/components/suggestionroads/SuggestedRoutes";
 import Station from "./src/components/Map/Station";
 import AboutBikes from "./src/components/aboutBikes/AboutBikes";
 import Profile from "./src/components/Profile/Profile";
-import Payment from "./src/components/payment/Payment";
-import Info from "./src/components/payment/Info";
-import Footer from "./src/components/Footer/Footer"
+import Footer from "./src/components/Footer/Footer";
+import WhyUs from "./src/components/WhyUs/WhyUs";
+import SingleTripPayment from "./src/components/payment/SingleTripPayment";
+import SingleTripPackage from "./src/components/payment/SingleTripPackage";
+import MonthlyPayment from "./src/components/payment/MonthlyPayment";
+import MonthlyPackage from "./src/components/payment/MonthlyPackage";
+import AdventurePayment from "./src/components/payment/AdventurePayment";
+import AdventurePackage from "./src/components/payment/AdventurePackage";
 
 const theme = extendTheme({
   colors: {
@@ -49,11 +53,11 @@ function App() {
             component={HomePage}
           />
           <Stack.Screen name="Commercial" component={Commercial} />
+          <Stack.Screen name="WhyUs" component={WhyUs} />
           <Stack.Screen name="Rent" component={Rent} />
-          <Stack.Screen name="Station" component={Station} />
+          <Stack.Screen name="CombinedMap" component={CombinedMap} />
           <Stack.Screen name="Rules" component={Rules} />
           <Stack.Screen name="Reviews" component={Reviews} />
-          <Stack.Screen name="Footer" component={Footer} />
           <Stack.Screen
             name="Login"
             options={{ headerShown: false }}
@@ -64,7 +68,6 @@ function App() {
             options={{ headerShown: false }}
             component={Signup}
           />
-          <Stack.Screen name="ContactUs" component={ContactUs} />
           <Stack.Screen name="SingleTrip" component={SingleTrip} />
           <Stack.Screen name="AboutBikes" component={AboutBikes} />
 
@@ -82,10 +85,24 @@ function App() {
             name="AdventurePassDetails"
             component={AdventurePassDetails}
           />
-          <Stack.Screen name="SuggestionRoads" component={SuggestionRoads} />
+          <Stack.Screen name="SuggestedRoutes" component={SuggestedRoutes} />
           <Stack.Screen name="Profile" component={Profile} />
-          <Stack.Screen name="Payment" component={Payment} />
-          <Stack.Screen name="Info" component={Info} />
+          <Stack.Screen
+            name="SingleTripPayment"
+            component={SingleTripPayment}
+          />
+          <Stack.Screen
+            name="SingleTripPackage"
+            component={SingleTripPackage}
+          />
+          <Stack.Screen name="MonthlyPayment" component={MonthlyPayment} />
+          <Stack.Screen name="MonthlyPackage" component={MonthlyPackage} />
+          <Stack.Screen name="AdventurePayment" component={AdventurePayment} />
+          <Stack.Screen name="AdventurePackage" component={AdventurePackage} />
+
+          <Stack.Screen name="Station" component={Station} />
+
+
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>

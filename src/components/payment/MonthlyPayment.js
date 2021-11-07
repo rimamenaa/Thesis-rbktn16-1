@@ -33,22 +33,17 @@ export const Payment = () => {
         <HStack 
         alignItems="center" 
         justifyContent="space-between">
-          <Text fontWeight="medium">Sub Total</Text>
-          <Text color="blueGray.400">$218.77</Text>
+          <Text fontWeight="medium">Duration</Text>
+          <Text color="blueGray.400">30 Days</Text>
         </HStack> 
         
-        <HStack 
-        alignItems="center" 
-        justifyContent="space-between">
-          <Text fontWeight="medium">Tax</Text>
-          <Text color="blueGray.400">$38.84</Text>
-        </HStack>
+      
         
         <HStack 
         alignItems="center" 
         justifyContent="space-between">
           <Text fontWeight="medium">Total Amount</Text>
-          <Text color="amber.600">$337.61</Text>
+          <Text color="amber.600">70 TND</Text>
         </HStack>
         
         <Button
@@ -68,7 +63,7 @@ export const Payment = () => {
           bottom="16"
           p="2"
           borderRadius="xs"
-          bg="amber.100"
+          bg="green.300"
           alignItems="center"
           justifyContent="center"
           _dark={{
@@ -78,7 +73,7 @@ export const Payment = () => {
           <HStack space={2}>
             <CheckIcon
               size="4"
-              color="amber.600"
+              color="green.800"
               mt="1"
               _dark={{
                 color: "amber.700",
