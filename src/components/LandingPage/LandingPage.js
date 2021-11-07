@@ -12,9 +12,9 @@ import tw from "tailwind-react-native-classnames";
 
 export default function LandingPage({ navigation }) {
   return (
-    <ScrollView style={tw`w-full h-full`}>
+    
       <ImageBackground
-        style={tw`w-full`}
+        style={tw`w-full h-full`}
         source={require("../../../assets/Onboarding.png")}
       >
         <View style={tw`items-center`}>
@@ -23,23 +23,24 @@ export default function LandingPage({ navigation }) {
           source={require("../../../assets/LogoBike.png")}
         />
         </View>
+ 
         <View style={tw`my-96 items-center`}>
-          <View style={tw`my-24 items-center`}>
-            <Text>Welcome to BY-CYCLE, a new bike share system in Tunisia with over
-            400+ bikes and more than 18+ stations across the country.</Text>
-          </View>
-          <View style={tw`w-4/5`}>
+          
+        <Text style={tw`text-white font-semibold ml-4 text-xl`}>Welcome to BY-CYCLE, a new bike share system in Tunisia with over
+            400+ bikes and more than 19+ stations across the country.</Text>
+          <View style={tw`w-4/5 py-12`}>
             <Button
               onPress={() => {
                 navigation.navigate("Signup");
               }}
-              title="Sign Up"
+              title="Sign Up"  
               color="#2F2C2C"
+              blurRadius={50}
             />
           </View>
           <View style={tw`items-center`}>
             <Text
-              style={tw` pt-6 text-yellow-400 font-semibold`}
+              style={tw`pt-4 text-yellow-400 font-semibold`}
               onPress={() => {
                 navigation.navigate("Login");
               }}
@@ -49,6 +50,5 @@ export default function LandingPage({ navigation }) {
           </View>
         </View>
       </ImageBackground>
-    </ScrollView>
   );
 }
