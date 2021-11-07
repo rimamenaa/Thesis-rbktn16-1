@@ -120,9 +120,6 @@ export default function SignIn({navigation}) {
             md: "none",
           }}
         >
-
-        
-
           <Hidden from="md">
             <VStack px="4" mt="4" mb="5" space="9">
               <VStack space="2">
