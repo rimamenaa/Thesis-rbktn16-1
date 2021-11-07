@@ -52,31 +52,21 @@ function Commercial({navigation}) {
     <SafeAreaView style={tailwind("h-full")}>
       <ScrollView>
         <View style={tailwind(" items-center ")}>
-          <Image
-            source={bike}
-            style={{
-              width: 420,
-              height: 260,
-            }}
-          />
-
           <Box
             style={tailwind("w-full h-96 items-center")}
             rounded="lg"
             overflow="hidden"
-            width="72"
+            width="70"
             shadow={1}
             _light={{ backgroundColor: "gray.50" }}
             _dark={{ backgroundColor: "gray.700" }}
           >
-            <Box style={tailwind("items-center pr-24")}>
-              <AspectRatio ratio={1.47} height={280}>
+            <Box style={tailwind("items-center mt-4")}>
                 <Image
-                  height={280}
-                  source={require("../../../assets/rule1.png")}
+                  height={200}
+                  source={require("../../../assets/card.png")}
                   alt="image"
                 />
-              </AspectRatio>
             </Box>
             <Stack p="4" space={3}>
               <Stack space={2}>
