@@ -11,16 +11,16 @@ import Footer from "../Footer/Footer";
 export default function Reviews({navigation}) {
   return (
     <View>
-    <ScrollView>
+    <ScrollView marginBottom="20">
       <Circuit1 ></Circuit1>
       {/* <Circuit2></Circuit2>
       <Circuit3></Circuit3>
       <Circuit4></Circuit4>
       <Circuit5></Circuit5> */}
     </ScrollView>
-    <View style={{position: 'absolute', width: "95%",marginLeft:10 , marginTop:680}}>
-    <Footer navigation={navigation} />
-  </View>
+    <View style={{position: 'absolute', width: "95%",marginLeft:10 , marginTop:655, backgroundColor:"white"}}>
+        <Footer navigation={navigation} />
+      </View>
   </View>
   );
 }

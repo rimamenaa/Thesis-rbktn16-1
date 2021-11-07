@@ -19,7 +19,7 @@ import Footer from "../Footer/Footer";
 function Rules({navigation}) {
   return (
     <SafeAreaView style={tailwind("h-full ")}>
-      <ScrollView>
+      <ScrollView style={tailwind("mb-16")}>
         <View style={tailwind(" items-center ")}>
       
 <Box 
@@ -153,9 +153,9 @@ function Rules({navigation}) {
             </Box>
         </View>
       </ScrollView>
-      <View style={{position: 'absolute', width: "95%",marginLeft:10 , marginTop:680}}>
-    <Footer navigation={navigation} />
-  </View>
+      <View style={{position: 'absolute', width: "100%", marginTop:655, backgroundColor:"white"}}>
+        <Footer navigation={navigation} />
+      </View>
     </SafeAreaView>
   );
 }
