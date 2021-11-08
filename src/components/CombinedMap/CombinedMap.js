@@ -8,27 +8,15 @@ import {
   SafeAreaView,
 } from "react-native";
 import Station from "../Map/Station";
-import { SpeedDial } from "react-native-elements";
-import { Entypo } from '@expo/vector-icons'; 
 
 function CombinedMap() {
-  let open = false;
+  // let open = false;
   return (
-    <View>
     <React.Fragment>
       <Station />
-          <Text>yey</Text>
-
-    </React.Fragment>      
-</View>
+    </React.Fragment>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-  },
-});
 
 export default CombinedMap;

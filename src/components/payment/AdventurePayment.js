@@ -11,14 +11,20 @@ import {
   CheckIcon,
   Center,
   Button,
+  View,
   NativeBaseProvider,
 } from "native-base"
+import Footer from "../Footer/Footer";
+import { useNavigation } from "@react-navigation/native";
+
 export const Payment = () => {
+  const navigation = useNavigation();
+
   const [isOpen, setIsOpen] = React.useState(false)
   return (
     <Box
       width={{
-        base: "75%",
+        base: "100%",
         md: "50%",
       }}
       h="100%" // alignItems="flex-start"
@@ -50,7 +56,9 @@ export const Payment = () => {
          onPress={() => setIsOpen(true)}>
           Place Order
         </Button>
-
+        <View style={{position: 'absolute', width: "100%",marginTop:380, backgroundColor:"white"}}>
+        <Footer navigation={navigation} />
+      </View>
       </VStack>
 
       <Slide in={isOpen} placement="bottom">
@@ -58,7 +66,7 @@ export const Payment = () => {
         <Box
           w="100%"
           position="absolute"
-          bottom="16"
+          bottom="24"
           p="2"
           borderRadius="xs"
           bg="green.300"

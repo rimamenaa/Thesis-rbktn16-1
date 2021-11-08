@@ -24,7 +24,7 @@ function Rent({navigation}) {
     <View>
     <Card>
       <VStack space={50}>
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView showsVerticalScrollIndicator={false} >
           <Text fontSize="4xl" color="amber.500">
             Choose your plan
           </Text>
@@ -34,7 +34,7 @@ function Rent({navigation}) {
         </ScrollView>
       </VStack>
     </Card>
-    <View style={{position: 'absolute', width: "95%",marginLeft:10 , marginTop:650}}>
+    <View style={{position: 'absolute', width: "100%",marginTop:655, backgroundColor:"white"}}>
         <Footer navigation={navigation} />
       </View>
     </View>
