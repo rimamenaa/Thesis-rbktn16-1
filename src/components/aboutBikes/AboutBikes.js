@@ -1,22 +1,28 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
-  Box,
+  View,
   AspectRatio,
   Image,
   Stack,
   Text,
   Card,
   ScrollView,
+  Button
 } from "native-base";
 
 import Loading from "../Loading/Loading";
-function AboutBikes() {
+import tw from "tailwind-react-native-classnames";
+import Footer from "../Footer/Footer";
+import { FontAwesome } from '@expo/vector-icons'; 
+
+
+function AboutBikes({navigation}) {
   const [data, setData] = useState([]);
 
   useEffect(async () => {
     axios
-      .get("https://bycyclebackend.herokuapp.com/bicycle ")
+      .get("https://bycyclebackend.herokuapp.com/bicycle")
       .then((response) => {
         console.log(response.data);
         setData(response.data);
@@ -27,7 +33,8 @@ function AboutBikes() {
   }, []);
 
   return (
-    <ScrollView>
+    <View>
+    <ScrollView marginBottom="20">   
       {data.map((bike, key) => {
         console.log(bike);
         return (
@@ -48,10 +55,27 @@ function AboutBikes() {
                 {bike.description}
               </Text>
             </Stack>
+            <Button
+                size="lg"
+                variant="outline"
+                colorScheme="amber"
+                width="100%"
+                height="16"
+                onPress={() => {
+                  navigation.navigate("Rent");
+                }}
+              >
+ <FontAwesome name="arrow-circle-right" size={35} color="black" /> 
+             </Button>
           </Card>
         );
       })}
     </ScrollView>
+       
+    <View style={{position: 'absolute', width: "100%", marginTop:655, backgroundColor:"white"}}>
+        <Footer navigation={navigation} />
+      </View>
+      </View>
   );
 }
 

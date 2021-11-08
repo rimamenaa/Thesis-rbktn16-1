@@ -1,300 +1,145 @@
-import React from "react";
-
+import React, { useState } from "react";
 import {
-  SafeAreaView,
+  HStack,
+  VStack,
+  Center,
+  Hidden,
+  StatusBar,
+  Stack,
+  Box,
+  Image,
   View,
-  Text,
-  ScrollView,
-  ImageBackground,
-  TouchableOpacity,
-  Linking,
-  Platform,
-} from "react-native";
+ 
+} from "native-base";
+import tw from "tailwind-react-native-classnames";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import Footer from "../Footer/Footer";
+import Home from "./HomeStyle";
 
-import { Stack, Button } from "native-base";
+
 
 import tailwind from "tailwind-rn";
-import Footer from "../Footer/Footer";
-import { FontAwesome5 } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
-import { Feather } from "@expo/vector-icons";
+
+
 
 function HomePage({ navigation }) {
-  const makePhoneCall = () => {
-    if (Platform.OS === "android") {
-      Linking.openURL("tel:0021622111333");
-    } else {
-      Linking.openURL("telprompt:0021622111333");
-    }
-  };
   return (
-    // <TouchableOpacity>
-    <ImageBackground
-      style={tailwind("h-full")}
-      source={require("../../../assets/yellowbike3.png")}
+    <KeyboardAwareScrollView
+      contentContainerStyle={{
+        flexGrow: 1,
+      }}
+      style={{
+        flex: 1,
+      }}
     >
-      <SafeAreaView style={tailwind("max-h-full")}>
-        <ScrollView>
-          <View
-            style={tailwind(
-              " min-w-full bg-transparent items-center mt-32 rounded-2xl flex "
-            )}
-          >
-            <Stack
-              mb="2.5"
-              mt="1.5"
-              direction={{
-                base: "column",
-                md: "row",
-              }}
-              space={2}
-              mx={{
-                base: "auto",
-                md: "0",
-              }}
-            >
-              <Button
-                size="lg"
-                variant="subtle"
-                colorScheme="amber"
-                width="81"
-                height="20"
-                onPress={() => {
-                  navigation.navigate("AboutBikes");
-                }}
-              >
-                <MaterialCommunityIcons name="bike" size={24} color="black" />
-              </Button>
-            </Stack>
-
-            <Stack
-              mb="2.5"
-              mt="1.5"
-              direction={{
-                base: "column",
-                md: "row",
-              }}
-              space={2}
-              mx={{
-                base: "auto",
-                md: "0",
-              }}
-            >
-              <Button
-                size="lg"
-                variant="subtle"
-                colorScheme="amber"
-                width="210"
-                height="12"
-                onPress={() => {
-                  navigation.navigate("Rules");
-                }}
-              >
-                Rules
-              </Button>
-            </Stack>
-
-            <Stack
-              mb="2.5"
-              mt="1.5"
-              direction={{
-                base: "column",
-                md: "row",
-              }}
-              space={2}
-              mx={{
-                base: "auto",
-                md: "0",
-              }}
-            >
-              <Button
-                size="lg"
-                variant="subtle"
-                colorScheme="amber"
-                width="81"
-                height="20"
-                onPress={() => {
-                  navigation.navigate("SuggestedRoutes");
-                }}
-              >
-                <FontAwesome5 name="route" size={24} color="black" />
-              </Button>
-            </Stack>
-
-            <Stack
-              mb="2.5"
-              mt="1.5"
-              direction={{
-                base: "column",
-                md: "row",
-              }}
-              space={2}
-              mx={{
-                base: "auto",
-                md: "0",
-              }}
-            >
-              <Button
-                size="lg"
-                variant="subtle"
-                colorScheme="amber"
-                width="81"
-                height="20"
-                onPress={() => {
-                  navigation.navigate("Station");
-                }}
-              >
-                <Entypo name="location" size={24} color="black" />
-              </Button>
-            </Stack>
-
-            <Stack
-              mb="2.5"
-              mt="1.5"
-              direction={{
-                base: "column",
-                md: "row",
-              }}
-              space={2}
-              mx={{
-                base: "auto",
-                md: "0",
-              }}
-            >
-              <Button
-                size="lg"
-                variant="subtle"
-                colorScheme="amber"
-                width="81"
-                height="20"
-                onPress={() => {
-                  navigation.navigate("Reviews");
-                }}
-              >
-                <MaterialCommunityIcons
-                  name="comment-processing-outline"
-                  size={24}
-                  color="black"
-                />
-              </Button>
-            </Stack>
-
-            <Stack
-              mb="2.5"
-              mt="1.5"
-              direction={{
-                base: "column",
-                md: "row",
-              }}
-              space={2}
-              mx={{
-                base: "auto",
-                md: "0",
-              }}
-            >
-              <Button
-                size="lg"
-                variant="subtle"
-                colorScheme="amber"
-                width="210"
-                height="12"
-                onPress={() => {
-                  navigation.navigate("ContactUs");
-                }}
-              >
-                Contact Us
-              </Button>
-            </Stack>
-
-            <Stack
-              mb="2.5"
-              mt="1.5"
-              direction={{
-                base: "column",
-                md: "row",
-              }}
-              space={2}
-              mx={{
-                base: "auto",
-                md: "0",
-              }}
-            >
-              <Button
-                size="lg"
-                variant="subtle"
-                colorScheme="amber"
-                width="81"
-                height="20"
-                onPress={() => {
-                  navigation.navigate("Rent");
-                }}
-              >
-                <FontAwesome5 name="money-check" size={24} color="black" />
-              </Button>
-            </Stack>
-
-            <Stack
-              mb="2.5"
-              mt="1.5"
-              direction={{
-                base: "column",
-                md: "row",
-              }}
-              space={2}
-              mx={{
-                base: "auto",
-                md: "0",
-              }}
-            >
-              <Button
-                size="lg"
-                variant="subtle"
-                colorScheme="amber"
-                width="81"
-                height="20"
-                onPress={() => {
-                  Linking.openURL("mailto:bycycletn@gmail.com");
-                }}
-              >
-                <Feather name="mail" size={24} color="black" />
-              </Button>
-            </Stack>
-
-            <Stack
-              mb="2.5"
-              mt="1.5"
-              direction={{
-                base: "column",
-                md: "row",
-              }}
-              space={2}
-              mx={{
-                base: "auto",
-                md: "0",
-              }}
-            >
-              <Button
-                size="lg"
-                variant="subtle"
-                colorScheme="amber"
-                width="81"
-                height="20"
-                onPress={() => makePhoneCall()}
-              >
-                <Feather name="phone-call" size={24} color="black" />
-              </Button>
-            </Stack>
-
-            <View style={tailwind("w-full mt-32")}>
-              <Footer navigation={navigation} />
-            </View>
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </ImageBackground>
-    // </TouchableOpacity>
+      
+      <VStack
+        flex="1"
+        px="6"
+        py="9"
+        _light={{
+          bg: "white",
+        }}
+        _dark={{
+          bg: "coolGray.800",
+        }}
+        space="3"
+        justifyContent="space-between"
+        borderTopRightRadius={{
+          base: "2xl",
+          md: "xl",
+        }}
+        borderBottomRightRadius={{
+          base: "0",
+          md: "xl",
+        }}
+        borderTopLeftRadius={{
+          base: "2xl",
+          md: "0",
+        }}
+      >
+       
+        <VStack space="7">
+        <Home navigation={navigation}/>
+        </VStack>
+        <HStack
+          mb="4"
+          space="1"
+          safeAreaBottom
+          alignItems="center"
+          justifyContent="center"
+          mt={{
+            base: "auto",
+            md: "8",
+          }}
+        >
+        </HStack>
+        
+        <View style={{position: 'absolute', width: "95%",marginLeft:30, marginTop:600, backgroundColor:"white"}}>
+        <Footer navigation={navigation} />
+      </View>
+      </VStack>
+    </KeyboardAwareScrollView>
   );
 }
-
-export default HomePage;
+export default function SignIn({navigation}) {
+  return (
+    <>
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle="light-content"
+      />
+      <Box
+        safeAreaTop
+        _light={{
+          bg: "primary.900",
+        }}
+        _dark={{
+          bg: "coolGray.900",
+        }}
+      />
+      <Center my="auto" flex="1">
+        <Stack
+          _light={{
+            bg: "primary.200",
+          }}
+          _dark={{
+            bg: "primary.200",
+          }}
+          flexDirection={{
+            base: "column",
+            md: "row",
+          }}
+          w="100%"
+          maxW={{
+            md: "1016px",
+          }}
+          flex={{
+            base: "1",
+            md: "none",
+          }}
+        >
+          <Hidden from="md">
+            <VStack px="4" mt="4" mb="5" space="9">
+              <VStack space="2">
+               
+              <View style={tw`items-center`}>
+        <Image
+          style={tw`w-20 h-20 mt-2`}
+          source={require("../../../assets/LogoBike.png")}
+        />
+        </View>
+        
+              </VStack>
+            </VStack>
+          </Hidden>
+          
+          <HomePage navigation={navigation} />
+         
+        </Stack>
+        
+      </Center>
+    </>
+  );
+}

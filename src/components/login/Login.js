@@ -43,7 +43,7 @@ export function SignInForm({ props }) {
           const { email, name, photoUrl } = user;
           handleMessage("Google sign in successful", "success");
           setTimeout(
-            () => props.navigation.navigate("Home", { email, name, photoUrl }),
+            () => props.navigation.navigate("WhyUs", { email, name, photoUrl }),
             100
           );
         } else {
@@ -168,7 +168,7 @@ export function SignInForm({ props }) {
                   bg: "primary.700",
                 }}
                 onPress={() => {
-                  props.navigation.navigate("Home");
+                  props.navigation.navigate("WhyUs");
                 }}
               >
                 SIGN IN

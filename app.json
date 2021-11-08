@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Thesis-rbktn16",
-    "slug": "Thesis-rbktn16",
+    "name": "bycycle",
+    "slug": "bycycle",
     "version": "1.0.0",
     "orientation": "portrait",
 
@@ -23,7 +23,7 @@
 
     },
     "android": {
-      "package": "name.name",
+      "package": "com.bycycle.bycycle",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
