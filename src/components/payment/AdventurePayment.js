@@ -12,6 +12,7 @@ import {
   Center,
   Button,
   View,
+  
   NativeBaseProvider,
 } from "native-base"
 import Footer from "../Footer/Footer";
