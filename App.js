@@ -101,8 +101,6 @@ function App() {
           <Stack.Screen name="AdventurePackage" component={AdventurePackage} />
 
           <Stack.Screen name="Station" component={Station} />
-
-
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
