@@ -46,7 +46,7 @@ export function SignUpForm({ props }) {
           const { email, name, photoUrl } = user;
           handleMessage("Google sign in successful", "success");
           setTimeout(
-            () => props.navigation.navigate("Home", { email, name, photoUrl }),
+            () => props.navigation.navigate("WhyUs", { email, name, photoUrl }),
             100
           );
         } else {
@@ -371,17 +371,15 @@ export default function Signup(props) {
         _dark={{
           bg: "coolGray.900",
         }}
-       
       />
-      <Center my="auto" flex="1" >
-        <Stack 
-        
-        _light={{
-          bg: "primary.700",
-        }}
-        _dark={{
-          bg: "primary.700",
-        }}
+      <Center my="auto" flex="1">
+        <Stack
+          _light={{
+            bg: "primary.700",
+          }}
+          _dark={{
+            bg: "primary.700",
+          }}
           flexDirection={{
             base: "column",
             md: "row",
@@ -401,8 +399,8 @@ export default function Signup(props) {
                 <Text fontSize="3xl" fontWeight="bold" color="amber.400">
                   Welcome back,
                 </Text>
-                <Text 
-                  style={tw `text-lg`}
+                <Text
+                  style={tw`text-lg`}
                   fontWeight="normal"
                   _dark={{
                     color: "coolGray.400",
