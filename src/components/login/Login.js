@@ -168,7 +168,7 @@ export function SignInForm({ props }) {
                   bg: "primary.700",
                 }}
                 onPress={() => {
-                  props.navigation.navigate("Home");
+                  props.navigation.navigate("WhyUs");
                 }}
               >
                 SIGN IN
