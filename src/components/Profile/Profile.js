@@ -20,10 +20,10 @@ export default class Profile extends Component {
             </Text>
 
             <TouchableOpacity style={styles.buttonContainer}>
-              <Text>Opcion 1</Text>
+              <Text>Rent A Bike</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.buttonContainer}>
-              <Text>Opcion 2</Text>
+              <Text>Change Password</Text>
             </TouchableOpacity>
           </View>
         </View>
