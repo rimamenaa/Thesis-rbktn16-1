@@ -15,7 +15,7 @@ import {
   NativeBaseProvider,
 } from "native-base"
 import Footer from "../Footer/Footer";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation  } from "@react-navigation/native";
 
 export const Payment = () => {
   const navigation = useNavigation();
