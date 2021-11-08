@@ -40,11 +40,11 @@ const theme = extendTheme({
 });
 const Stack = createNativeStackNavigator();
 
-function App() {
+export default function App() {
   /*   const [isLoading, setIsLoading] = useState(true);
   const [userToken, setUserToken] = useState(null); */
 
-  initialLoginState = {
+  const initialLoginState = {
     isLoading: true,
     fullName: null,
     userToken: null,
@@ -204,6 +204,4 @@ function App() {
         </AuthContext.Provider>
       </NativeBaseProvider>
     );
-}
-
-export default App ;
+}}
