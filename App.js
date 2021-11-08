@@ -40,38 +40,15 @@ const theme = extendTheme({
 });
 const Stack = createNativeStackNavigator();
 
-export default function App() {
-  /*   const [isLoading, setIsLoading] = useState(true);
-  const [userToken, setUserToken] = useState(null); */
-
-  const initialLoginState = {
-    isLoading: true,
-    fullName: null,
-    userToken: null,
-  };
-
-  const loginReducer = (prevState, action) => {
-    switch (action.type) {
-      case "RECIEVE_TOKEN":
-      return { ...prevState, userToken: action.type, isLoading: false };
-      case "LOGIN" :
-      return { ...prevState, fullName: action.id, userToken: action.token,isLoading : false };
-      case 'LOGOUT' : 
-      return {...prevState , fullName : null , userToken : null , isLoading : false}
-      case 'REGISTER' : 
-      return { ...prevState, fullName : action.id, userToken : action.token , isLoading: false}
-  };
-
-  const [loginState ,dispatch] = React.useReducer(loginReducer , initialLoginState)
-
+function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [userToken, setUserToken] = useState(null);
 
   const authContext = React.useMemo(
     () => ({
-      signIn: async (email , password) => {
-        const data = await axios.get("http://localhost:3000/user/login", {email : email, password : password})
-        if (data.data.accessToken){
-          dispatch()
-        }
+      signIn: () => {
+        setUserToken("jhfs");
+        setIsLoading(false);
       },
       singOut: () => {
         setUserToken(null);
@@ -204,4 +181,6 @@ export default function App() {
         </AuthContext.Provider>
       </NativeBaseProvider>
     );
-}}
+}
+
+export default App;
