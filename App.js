@@ -69,7 +69,9 @@ function App() {
     () => ({
       signIn: async (email , password) => {
         const data = await axios.get("http://localhost:3000/user/login", {email : email, password : password})
-        if (data.data.accessToken){}
+        if (data.data.accessToken){
+          dispatch()
+        }
       },
       singOut: () => {
         setUserToken(null);
@@ -204,4 +206,4 @@ function App() {
     );
 }
 
-export default App;
+export default App ;
