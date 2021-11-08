@@ -4,7 +4,6 @@ import {
   HStack,
   Text,
   VStack,
-  Avatar,
   Image,
   ScrollView,
   Pressable,
@@ -90,7 +89,6 @@ export default function Circuit1() {
       >
         <ScrollView>
           <Box
-            style={tw`mt-4`}
             flex={1}
             flexDirection={{
               base: "column",
@@ -347,11 +345,11 @@ export default function Circuit1() {
                                         flex={1}
                                         justifyContent="space-between"
                                       >
-                                        <Avatar
+                                        {/* <Avatar
                                           source={require("../../../assets/goGreen.jpg")}
                                           height="9"
                                           width="9"
-                                        />
+                                        /> */}
                                         <Text
                                           fontSize="lg"
                                           _light={{

@@ -11,13 +11,15 @@ import {
   AspectRatio,
   Image,
   Stack,
+  Button
 } from "native-base";
 import tailwind from "tailwind-rn";
+import Footer from "../Footer/Footer";
 
-function Rules() {
+function Rules({navigation}) {
   return (
     <SafeAreaView style={tailwind("h-full ")}>
-      <ScrollView>
+      <ScrollView style={tailwind("mb-16")}>
         <View style={tailwind(" items-center ")}>
       
 <Box 
@@ -151,6 +153,9 @@ function Rules() {
             </Box>
         </View>
       </ScrollView>
+      <View style={{position: 'absolute', width: "100%", marginTop:655, backgroundColor:"white"}}>
+        <Footer navigation={navigation} />
+      </View>
     </SafeAreaView>
   );
 }
