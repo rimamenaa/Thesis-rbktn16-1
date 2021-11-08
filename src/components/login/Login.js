@@ -69,7 +69,7 @@ export function SignInForm({ props }) {
         setGoogleSubmitting(false);
       });
   };
-  const { SignIn } = React.useContext(AuthContext);
+  // const { SignIn } = React.useContext(AuthContext);
 
   const submitLogin = async () => {
     await axios
@@ -200,7 +200,6 @@ export function SignInForm({ props }) {
                   bg: "primary.700",
                 }}
                 onPress={() => {
-                  submitLogin();
                   props.navigation.navigate("WhyUs");
                 }}
               >
