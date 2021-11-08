@@ -29,6 +29,9 @@ import MonthlyPayment from "./src/components/payment/MonthlyPayment";
 import MonthlyPackage from "./src/components/payment/MonthlyPackage";
 import AdventurePayment from "./src/components/payment/AdventurePayment";
 import AdventurePackage from "./src/components/payment/AdventurePackage";
+import AdultBikes from "./src/components/aboutBikes/AdultBikes";
+import KidBikes from "./src/components/aboutBikes/KidBikes";
+
 
 const theme = extendTheme({
   colors: {
@@ -99,6 +102,9 @@ function App() {
           <Stack.Screen name="MonthlyPackage" component={MonthlyPackage} />
           <Stack.Screen name="AdventurePayment" component={AdventurePayment} />
           <Stack.Screen name="AdventurePackage" component={AdventurePackage} />
+
+          <Stack.Screen name="AdultBikes" component={AdultBikes} />
+          <Stack.Screen name="KidBikes" component={KidBikes} />
 
           <Stack.Screen name="Station" component={Station} />
         </Stack.Navigator>
