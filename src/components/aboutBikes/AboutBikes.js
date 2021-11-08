@@ -16,6 +16,7 @@ import {
   Flex,
   Center,
   NativeBaseProvider,
+  VStack
 } from "native-base";
 
 
@@ -43,49 +44,7 @@ function AboutBikes() {
 
 
   return (
-//     <View>
-//     <ScrollView marginBottom="20">   
-//       {data.map((bike, key) => {
-//         console.log(bike);
-//         return (
-//           <Card key={key}>
-//             <Text fontSize="2xl">{bike.category}</Text>
-//             <AspectRatio ratio={9 / 9}>
-//               <Image
-//                 marginTop="1"
-//                 rounded="lg"
-//                 height="100%"
-//                 width="100%"
-//                 source={{ uri: bike.photo }}
-//                 alt={"Loading..."}
-//               />
-//             </AspectRatio>
-//             <Stack>
-//               <Text fontSize="md" fontWeight="500" ml="-0.5" mt="-1" p="4">
-//                 {bike.description}
-//               </Text>
-//             </Stack>
-//             <Button
-//                 size="lg"
-//                 variant="outline"
-//                 colorScheme="amber"
-//                 width="100%"
-//                 height="16"
-//                 onPress={() => {
-//                   navigation.navigate("Rent");
-//                 }}
-//               >
-//  <FontAwesome name="arrow-circle-right" size={35} color="black" /> 
-//              </Button>
-//           </Card>
-//         );
-//       })}
-//     </ScrollView>
-       
-//     <View style={{position: 'absolute', width: "100%", marginTop:655, backgroundColor:"white"}}>
-//         <Footer navigation={navigation} />
-//       </View>
-//       </View>
+
 <View alignItems="center">
 
 <Pressable
@@ -93,32 +52,15 @@ onPress={() => {
   navigation.navigate("AdultBikes");
 }}
 > 
-{/* <AspectRatio ratio={1.08} height={250} width={200}>
-                  <Image
-                   rounded="sm"
-                    source={require("../../../assets/adult.jpg")}
-                    alt="image"
-                    // marginTop="8"
-                  />
-                </AspectRatio> */}
-                 <Card>
-            <AspectRatio ratio={9 / 9}>
-              <Image
-                marginTop="1"
-                rounded="lg"
-                height="100%"
-                width="100%"
-                source={require("../../../assets/adult.jpg")}
-                alt={"image..."}
-              />
-            </AspectRatio>
-            <Stack>
-              <Text fontSize="md" fontWeight="500" ml="-0.5" mt="-1" p="4">
-                Bicycles For Adults
-              </Text>
-            </Stack>
-        
-          </Card>
+                 <VStack space={2} alignItems="center" safeAreaTop my={6}>
+            <Image
+              size="2xl"
+              resizeMode="cover"
+              source={require("../../../assets/adult.jpg")}
+
+              alt="Alternate Text"
+            />
+        </VStack>
 
 </Pressable>
 
@@ -127,33 +69,15 @@ onPress={() => {
   navigation.navigate("KidBikes");
 }}
 > 
-{/* <AspectRatio ratio={1.15} height={250} width={200}>
-                  <Image
-                   rounded="sm"
-                   source={require("../../../assets/kid.jpg")}
-                    alt="image"
-                    // marginTop="8"
+                      <VStack space={2} alignItems="center" safeAreaTop my={6}>
+            <Image
+              size="2xl"
+              resizeMode="cover"
+              source={require("../../../assets/kid.jpg")}
 
-                  />
-                </AspectRatio> */}
-                   <Card>
-            <AspectRatio ratio={9 / 9}>
-              <Image
-                marginTop="1"
-                rounded="lg"
-                height="100%"
-                width="100%"
-                source={require("../../../assets/kid.jpg")}
-                alt={"image..."}
-              />
-            </AspectRatio>
-            <Stack>
-              <Text fontSize="md" fontWeight="500" ml="-0.5" mt="-1" p="4">
-                Bicycles For Kids
-              </Text>
-            </Stack>
-        
-          </Card>
+              alt="kid"
+            />
+        </VStack>
 </Pressable>
 </View>
 
