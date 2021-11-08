@@ -27,7 +27,7 @@ export default function LandingPage({ navigation }) {
  
         <View style={tw`my-96 items-center`}>
           
-        <Text style={tw`text-white pt-16 font-semibold ml-4 text-base`}>Welcome to <Text style={tw`font-bold text-yellow-400`}>BY-CYCLE</Text>, a new bike share system in Tunisia with over
+        <Text style={tw`text-white pt-2 font-semibold ml-4 text-base`}>Welcome to <Text style={tw`font-bold text-yellow-400`}>BY-CYCLE</Text>, a new bike share system in Tunisia with over
             400+ bikes and more than 23+ stations across the country.</Text>
           <BlurView
            style={tw`w-11/12 h-12 my-6 rounded items-center`} intensity={50} tint="light" color="red">

@@ -9,13 +9,18 @@ import {
 } from "react-native";
 import Station from "../Map/Station";
 import { SpeedDial } from "react-native-elements";
+import { Entypo } from '@expo/vector-icons'; 
 
 function CombinedMap() {
   let open = false;
   return (
+    <View>
     <React.Fragment>
       <Station />
-    </React.Fragment>
+          <Text>yey</Text>
+
+    </React.Fragment>      
+</View>
   );
 }
 
