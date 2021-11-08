@@ -20,7 +20,7 @@ export const Info = () => {
   return (
     <Box
       width={{
-        base: "75%",
+        base: "100%",
         md: "50%",
       }}
       h="100%" // alignItems="flex-start"
