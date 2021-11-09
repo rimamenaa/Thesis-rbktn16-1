@@ -15,6 +15,8 @@ import {
   FormControl,
   Input,
   Image,
+  Slide,
+  CheckIcon,
 } from "native-base";
 
 import tw from "tailwind-react-native-classnames";
@@ -26,6 +28,7 @@ export function SignUpForm({ props }) {
   const [message, setMessage] = useState();
   const [messageType, setMessageType] = useState();
   const [googleSubmitting, setGoogleSubmitting] = useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const handleMessage = (message, type = "FAILED") => {
     setMessage(message);
@@ -123,7 +126,7 @@ export function SignUpForm({ props }) {
                 >
                   Name
                 </FormControl.Label>
-                <Input />
+                <Input type="text" placeholder="Enter your name..." />
               </FormControl>
 
               <FormControl>
@@ -136,7 +139,7 @@ export function SignUpForm({ props }) {
                 >
                   Username
                 </FormControl.Label>
-                <Input />
+                <Input type="text" placeholder="Enter your username..." />
               </FormControl>
 
               <FormControl>
@@ -149,7 +152,7 @@ export function SignUpForm({ props }) {
                 >
                   Email ID
                 </FormControl.Label>
-                <Input />
+                <Input type="email" placeholder="Enter your email..." />
               </FormControl>
               <FormControl>
                 <FormControl.Label
@@ -161,7 +164,7 @@ export function SignUpForm({ props }) {
                 >
                   Password
                 </FormControl.Label>
-                <Input type="password" />
+                <Input type="password" placeholder="Enter your password..." />
                 <Checkbox
                   style={tw`mt-2`}
                   alignItems="flex-start"
@@ -231,7 +234,8 @@ export function SignUpForm({ props }) {
                   bg: "primary.700",
                 }}
                 onPress={() => {
-                  props.navigation.navigate("Login");
+                  setIsOpen(true);
+                  setTimeout(() => props.navigation.navigate("Login"), 2500);
                 }}
               >
                 SIGN UP
@@ -279,7 +283,42 @@ export function SignUpForm({ props }) {
                 ></Divider>
               </HStack>
             </VStack>
-
+            <Slide in={isOpen} placement="bottom">
+              <Box
+                w="100%"
+                position="absolute"
+                bottom="24"
+                p="2"
+                borderRadius="xs"
+                bg="green.300"
+                alignItems="center"
+                justifyContent="center"
+                _dark={{
+                  bg: "amber.200",
+                }}
+              >
+                <HStack space={2}>
+                  <CheckIcon
+                    size="4"
+                    color="green.800"
+                    mt="1"
+                    _dark={{
+                      color: "amber.700",
+                    }}
+                  />
+                  <Text
+                    color="gray.600"
+                    textAlign="center"
+                    _dark={{
+                      color: "gray.700",
+                    }}
+                    fontWeight="medium"
+                  >
+                    Account Successfully Created!
+                  </Text>
+                </HStack>
+              </Box>
+            </Slide>
             <Button
               mt="5"
               size="md"

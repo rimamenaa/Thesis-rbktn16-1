@@ -50,15 +50,16 @@ function Home({ navigation }) {
             >
               <Button
                 size="lg"
-                variant="subtle"
-                colorScheme="amber"
+                variant="solid"
+                style={tailwind("bg-yellow-300")}
                 width="100"
                 height="24"
                 onPress={() => {
                   navigation.navigate("AboutBikes");
                 }}
               >
-<MaterialCommunityIcons name="bike" size={35} color="black" /> 
+              <MaterialCommunityIcons name="bike" size={35} color="black" /> 
+              <Text>Bikes</Text>
              </Button>
             </Stack>
 
@@ -77,8 +78,8 @@ function Home({ navigation }) {
             >
               <Button
                 size="lg"
-                variant="subtle"
-                colorScheme="amber"
+                variant="solid"
+                style={tailwind("bg-yellow-300")}
                 width="100"
                 height="24"
                 onPress={() => {
@@ -86,6 +87,7 @@ function Home({ navigation }) {
                 }}
               >
                 <FontAwesome5 name="route" size={35} color="black" />
+                <Text>Routes</Text>
               </Button>
             </Stack>
             </View>
@@ -107,15 +109,16 @@ function Home({ navigation }) {
             >
               <Button
                 size="lg"
-                variant="subtle"
-                colorScheme="amber"
+                variant="solid"
+                style={tailwind("bg-yellow-300")}
                 width="100"
                 height="24"
                 onPress={() => {
                   navigation.navigate("Station");
                 }}
               >
-<Entypo name="location" size={35} color="black" /> 
+              <Entypo style={tailwind("ml-2")} name="location" size={35} color="black" /> 
+              <Text>Stations</Text>
              </Button>
             </Stack>
 
@@ -134,15 +137,16 @@ function Home({ navigation }) {
             >
               <Button
                 size="lg"
-                variant="subtle"
-                colorScheme="amber"
+                variant="solid"
+                style={tailwind("bg-yellow-300")}
                 width="100"
                 height="24"
                 onPress={() => {
                   navigation.navigate("Reviews");
                 }}
               >
-<MaterialCommunityIcons name="comment-processing-outline" size={35} color="black" /> 
+              <MaterialCommunityIcons style={tailwind("ml-2")} name="comment-processing-outline" size={35} color="black" /> 
+              <Text>Reviews</Text>
              </Button>
             </Stack>
             </View>
@@ -164,8 +168,8 @@ function Home({ navigation }) {
             >
               <Button
                 size="lg"
-                variant="subtle"
-                colorScheme="amber"
+                variant="solid"
+                style={tailwind("bg-yellow-300")}
                 width="100"
                 height="24"
                 onPress={() => {
@@ -173,6 +177,7 @@ function Home({ navigation }) {
                 }}
               >
                <MaterialIcons name="rule-folder" size={35} color="black" />
+               <Text>Rules</Text>
               </Button>
             </Stack>
 
@@ -193,8 +198,8 @@ function Home({ navigation }) {
             >
               <Button
                 size="lg"
-                variant="subtle"
-                colorScheme="amber"
+                variant="solid"
+                style={tailwind("bg-yellow-300")}
                 width="100"
                 height="24"
                 onPress={() => {
@@ -202,6 +207,7 @@ function Home({ navigation }) {
                 }}
               >
                 <FontAwesome5 name="money-check" size={24} color="black" />
+                <Text>Rent</Text>
               </Button>
             </Stack>
                 </View>
@@ -226,15 +232,15 @@ function Home({ navigation }) {
               <Button
                 size="lg"
                 variant="subtle"
-                colorScheme="indigo"
                 width="160"
                 height="12"
+                colorScheme="indigo"
                 onPress={() => {
                   Linking.openURL("mailto:bycycletn@gmail.com");
                 }}
               >
-                <Feather name="mail" size={24} color="black" />
-              </Button>
+                <MaterialCommunityIcons name="gmail" size={30} color="black" />
+              </Button>  
             </Stack>
 
             <Stack
