@@ -22,7 +22,7 @@ function AboutBikes({ navigation }) {
     axios
       .get("https://bycyclebackend.herokuapp.com/bicycle")
       .then((response) => {
-        console.log("adults", response.data.slice(0, 9));
+        console.log("kids", response.data.slice(10, 17));
         setData(response.data);
       })
       .catch((err) => {
@@ -33,13 +33,14 @@ function AboutBikes({ navigation }) {
   return (
     <View>
       <ScrollView marginBottom="20">
-        <View style={tailwind("items-center")}>
-          <Text color="amber.500" style={tailwind("text-2xl font-bold")}>
-            Bicycles For Adults
-          </Text>
+      <View style={tailwind("items-center")}>
+
+        <Text color="amber.500" style={tailwind("text-2xl font-bold")}>
+          Bicycles For Kids
+        </Text>
         </View>
 
-        {data.slice(0, 9).map((bike, key) => {
+        {data.slice(10, 17).map((bike, key) => {
           console.log(bike);
           return (
             <Card key={key}>
@@ -58,6 +59,20 @@ function AboutBikes({ navigation }) {
                   {bike.description}
                 </Text>
               </Stack>
+              <Button
+                colorScheme="yellow"
+                my="2"
+                width="100%"
+                onPress={() => {
+                  navigation.navigate("Rent");
+                }}
+              >
+                <FontAwesome
+                  name="arrow-circle-right"
+                  size={35}
+                  color="black"
+                />
+              </Button>
             </Card>
           );
         })}
@@ -67,7 +82,7 @@ function AboutBikes({ navigation }) {
         style={{
           position: "absolute",
           width: "100%",
-          marginTop: 680,
+          marginTop: 670,
           backgroundColor: "white",
         }}
       >
