@@ -25,13 +25,7 @@ import {
 } from "native-base";
 import commercial from "../../../assets/commercial.png";
 import tailwind from "tailwind-rn";
-import com from "../../../assets/com.png";
-import bike from "../../../assets/bike.png";
-import rule1 from "../../../assets/rule1.png";
-import rule2 from "../../../assets/rule2.png";
-import rule3 from "../../../assets/rule3.png";
-import rule4 from "../../../assets/rule4.png";
-import { marginTop } from "styled-system";
+import Footer from "../Footer/Footer";
 import axios from "axios";
 
 function Commercial({navigation}) {
@@ -50,20 +44,22 @@ function Commercial({navigation}) {
 
   return (
     <SafeAreaView style={tailwind("h-full")}>
-      <ScrollView>
+      <ScrollView style={tailwind("mb-20")}>
         <View style={tailwind(" items-center ")}>
+          
           <Box
-            style={tailwind("w-full h-96 items-center")}
+            style={tailwind("items-center")}
             rounded="lg"
             overflow="hidden"
-            width="70"
+            width="95%"
             shadow={1}
             _light={{ backgroundColor: "gray.50" }}
             _dark={{ backgroundColor: "gray.700" }}
           >
             <Box style={tailwind("items-center mt-4")}>
                 <Image
-                  height={200}
+                  height={180}
+                  width={350}
                   source={require("../../../assets/card.png")}
                   alt="image"
                 />
@@ -92,10 +88,10 @@ function Commercial({navigation}) {
           </Box>
 
           <Box
-            style={tailwind("w-full mt-4 items-center")}
+            style={tailwind("mt-4 items-center")}
             rounded="lg"
             overflow="hidden"
-            width="72"
+            width="95%"
             shadow={1}
             _light={{ backgroundColor: "gray.50" }}
             _dark={{ backgroundColor: "gray.700" }}
@@ -133,10 +129,10 @@ function Commercial({navigation}) {
           </Box>
 
           <Box
-            style={tailwind("w-full mt-4 items-center")}
+            style={tailwind("mt-4 items-center")}
             rounded="lg"
             overflow="hidden"
-            width="72"
+            width="95%"
             shadow={1}
             _light={{ backgroundColor: "gray.50" }}
             _dark={{ backgroundColor: "gray.700" }}
@@ -174,10 +170,10 @@ function Commercial({navigation}) {
           </Box>
 
           <Box
-            style={tailwind("w-full mt-4 items-center")}
+            style={tailwind("mt-4 items-center")}
             rounded="lg"
             overflow="hidden"
-            width="72"
+            width="95%"
             shadow={1}
             _light={{ backgroundColor: "gray.50" }}
             _dark={{ backgroundColor: "gray.700" }}
@@ -213,14 +209,9 @@ function Commercial({navigation}) {
           </Box>
         </View>
       </ScrollView>
-      <Button
-            style={tailwind("bg-yellow-500 h-12 w-full")}
-            onPress={() => {
-                navigation.navigate("Home");
-              }}
-          >
-            Lets Get Started
-          </Button>
+      <View style={{position: 'absolute', width: "100%", marginTop:655, backgroundColor:"white"}}>
+        <Footer navigation={navigation} />
+      </View>
     </SafeAreaView>
   );
 }

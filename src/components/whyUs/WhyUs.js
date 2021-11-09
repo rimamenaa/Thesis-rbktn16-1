@@ -87,10 +87,10 @@ function WhyUs({navigation}) {
       <Button
             style={tailwind("bg-yellow-500 h-12 w-full")}
             onPress={() => {
-                navigation.navigate("Commercial");
+                navigation.navigate("Home");
               }}
           >
-            Next
+            Lets Get Started
           </Button>
     </SafeAreaView>
   );

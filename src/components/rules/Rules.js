@@ -23,10 +23,10 @@ function Rules({navigation}) {
         <View style={tailwind(" items-center ")}>
       
 <Box 
-               style={tailwind("w-full items-center mb-8")}
+               style={tailwind("items-center mb-8")}
                rounded="lg"
               overflow="hidden"
-              width="72"
+              width="95%"
               shadow={1}
               _light={{ backgroundColor: "gray.50" }}
               _dark={{ backgroundColor: "gray.700" }}
@@ -56,10 +56,10 @@ function Rules({navigation}) {
             </Box>
 
 <Box 
-               style={tailwind("w-full items-center mb-8")}
+               style={tailwind("items-center mb-8")}
                rounded="lg"
               overflow="hidden"
-              width="72"
+              width="95%"
               shadow={1}
               _light={{ backgroundColor: "gray.50" }}
               _dark={{ backgroundColor: "gray.700" }}
@@ -89,10 +89,10 @@ function Rules({navigation}) {
 
                   
 <Box 
-               style={tailwind("w-full items-center mb-8")}
+               style={tailwind("items-center mb-8")}
                rounded="lg"
               overflow="hidden"
-              width="72"
+              width="95%"
               shadow={1}
               _light={{ backgroundColor: "gray.50" }}
               _dark={{ backgroundColor: "gray.700" }}
@@ -121,10 +121,10 @@ function Rules({navigation}) {
             </Box>
 
           <Box
-               style={tailwind("w-full items-center mb-8")}
+               style={tailwind("items-center mb-8")}
                rounded="lg"
               overflow="hidden"
-              width="72"
+              width="95%"
               shadow={1}
               _light={{ backgroundColor: "gray.50" }}
               _dark={{ backgroundColor: "gray.700" }}

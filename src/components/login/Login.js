@@ -137,11 +137,12 @@ export function SignInForm({ props }) {
                     fontWeight: 500,
                   }}
                 >
-                  Email ID
+                  Email
                 </FormControl.Label>
                 <Input
                   type="email"
                   name="email"
+                  placeholder= "Enter Your email ..."
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </FormControl>
@@ -158,6 +159,7 @@ export function SignInForm({ props }) {
                 <Input
                   type="password"
                   name="password"
+                  placeholder= "Enter your password..."
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <Link
@@ -219,7 +221,7 @@ export function SignInForm({ props }) {
                 <Divider
                   w="30%"
                   _light={{
-                    bg: "coolGray.200",
+                    bg: "coolGray.700",
                   }}
                   _dark={{
                     bg: "coolGray.700",
@@ -228,10 +230,10 @@ export function SignInForm({ props }) {
                 <Text
                   fontWeight="medium"
                   _light={{
-                    color: "coolGray.300",
+                    color: "coolGray.800",
                   }}
                   _dark={{
-                    color: "coolGray.500",
+                    color: "coolGray.800",
                   }}
                 >
                   or
@@ -239,7 +241,7 @@ export function SignInForm({ props }) {
                 <Divider
                   w="30%"
                   _light={{
-                    bg: "coolGray.200",
+                    bg: "coolGray.700",
                   }}
                   _dark={{
                     bg: "coolGray.700",

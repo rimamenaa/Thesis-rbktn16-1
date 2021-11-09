@@ -27,9 +27,7 @@ function SuggestionRoads({navigation}) {
 
   return (
     <SafeAreaView style={tailwind("h-full")}>
-      <ScrollView>
-
-
+      <ScrollView style={tailwind("mb-16")}>
       <View style={tailwind("items-center")}>
       <View style={tailwind("flex flex-row mb-6")}>
 
@@ -109,10 +107,10 @@ function SuggestionRoads({navigation}) {
             return (
               <View key={key}>
                 <Box
-                  style={tailwind("w-96 mb-8")}
+                  style={tailwind("mb-8")}
                   rounded="lg"
                   overflow="hidden"
-                  // width="80"
+                  width="95%"
                   shadow={1}
                   _light={{ backgroundColor: "gray.50" }}
                   _dark={{ backgroundColor: "gray.700" }}

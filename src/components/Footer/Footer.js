@@ -24,7 +24,7 @@ export default function Footer({ navigation}) {
             py="2"
             flex={1}
             onPress={() => {
-                navigation.navigate("Profile");
+                navigation.navigate("Commercial");
               }}
           >
             <Center>
