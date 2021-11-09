@@ -7,23 +7,22 @@ import {
   Stack,
   VStack,
   HStack,
-  Slide,
   NativeBaseProvider,
   Button,
 } from "native-base";
-import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 export const SingleTripPackage = () => {
   const navigation = useNavigation();
 
   return (
+                //   ----- Personal Information ----- 
     <Box
       width={{
         base: "100%",
         md: "50%",
       }}
-      h="100%" // alignItems="flex-start"
+      h="100%"
       justifyContent="center"
     >
       <VStack space={3} w="100%">
