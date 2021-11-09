@@ -37,6 +37,8 @@ export function SignUpForm({ props }) {
     const config = {
       iosClientId: `215341427022-haijkikj7ejpthac9sld1ihejeouoj06.apps.googleusercontent.com`,
       androidClientId: `215341427022-eosmagesimfkte0p4b84ci77t6b7m6o2.apps.googleusercontent.com`,
+      androidStandaloneAppClientId: `215341427022-ktifsf6rj56ubln7ddtac012o0s4rlb5.apps.googleusercontent.com`,
+
       scopes: ["profile", "email"],
     };
     Google.logInAsync(config)
@@ -46,7 +48,7 @@ export function SignUpForm({ props }) {
           const { email, name, photoUrl } = user;
           handleMessage("Google sign in successful", "success");
           setTimeout(
-            () => props.navigation.navigate("Home", { email, name, photoUrl }),
+            () => props.navigation.navigate("WhyUs", { email, name, photoUrl }),
             100
           );
         } else {
@@ -121,7 +123,7 @@ export function SignUpForm({ props }) {
                 >
                   Name
                 </FormControl.Label>
-                <Input />
+                <Input type="text" placeholder= "Enter your name..."/>
               </FormControl>
 
               <FormControl>
@@ -134,7 +136,7 @@ export function SignUpForm({ props }) {
                 >
                   Username
                 </FormControl.Label>
-                <Input />
+                <Input type="text" placeholder= "Enter your username..."/>
               </FormControl>
 
               <FormControl>
@@ -147,7 +149,7 @@ export function SignUpForm({ props }) {
                 >
                   Email ID
                 </FormControl.Label>
-                <Input />
+                <Input type="email" placeholder= "Enter your email..."/>
               </FormControl>
               <FormControl>
                 <FormControl.Label
@@ -159,7 +161,7 @@ export function SignUpForm({ props }) {
                 >
                   Password
                 </FormControl.Label>
-                <Input type="password" />
+                <Input type="password" placeholder= "Enter your password..."/>
                 <Checkbox
                   style={tw`mt-2`}
                   alignItems="flex-start"
@@ -371,17 +373,15 @@ export default function Signup(props) {
         _dark={{
           bg: "coolGray.900",
         }}
-       
       />
-      <Center my="auto" flex="1" >
-        <Stack 
-        
-        _light={{
-          bg: "primary.700",
-        }}
-        _dark={{
-          bg: "primary.700",
-        }}
+      <Center my="auto" flex="1">
+        <Stack
+          _light={{
+            bg: "primary.700",
+          }}
+          _dark={{
+            bg: "primary.700",
+          }}
           flexDirection={{
             base: "column",
             md: "row",
@@ -401,8 +401,8 @@ export default function Signup(props) {
                 <Text fontSize="3xl" fontWeight="bold" color="amber.400">
                   Welcome back,
                 </Text>
-                <Text 
-                  style={tw `text-lg`}
+                <Text
+                  style={tw`text-lg`}
                   fontWeight="normal"
                   _dark={{
                     color: "coolGray.400",
