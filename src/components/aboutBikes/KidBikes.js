@@ -68,7 +68,7 @@ function AboutBikes({ navigation }) {
         style={{
           position: "absolute",
           width: "100%",
-          marginTop: 680,
+          marginTop: 660,
           backgroundColor: "white",
         }}
       >
