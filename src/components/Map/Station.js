@@ -50,9 +50,9 @@ const Station = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#E6E5E5' }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#E6E5E5',borderTopLeftRadius:100}}>
     <MapView
-      style={{ flex: 0.6 }}
+      style={{ flex: 1 }}
       provider={PROVIDER_GOOGLE}
       showsUserLocation
       initialRegion={{
@@ -101,22 +101,8 @@ const Station = ({navigation}) => {
         description={"description"}
       />
     </MapView>
-    <BlurView
-          style={tw`w-11/12 h-12 my-6 rounded items-center ml-4`}
-          // intensity={50}
-          tint="light"  
-        >
-          <Text
-            onPress={() => {
-              navigation.navigate("Bikes");
-            }}
-            style={tw`text-yellow-400 pt-2 font-bold text-xl`}
-          >
-            Order
-          </Text>
-        </BlurView>
-        
-        <View style={tw `items-center`}>
+
+        <View style={tw `items-center mt-8`}>
       <View style={tw `flex flex-row mb-6`}>
 
         <Text style={tw `font-bold text-xl`}>
@@ -129,43 +115,58 @@ const Station = ({navigation}) => {
         
 
         <View  style={tw   `rounded-md flex flex-row items-center mr-16`}>
-        <Text style={tw `font-bold ml-12`} >
+        <Text style={tw `font-bold text-lg ml-12`} >
           <Entypo name="location-pin" size={20} color="red" /> La Marsa
         </Text>
-        <Text style={tw `ml-20`} >
+        <Text style={tw `ml-20 text-lg`} >
           13 bikes
         </Text>
               </View>
-              <View  style={tw   `rounded-md flex flex-row items-center mr-14`}>
-        <Text style={tw `ml-12 font-bold`} >
+              <View  style={tw   `rounded-md flex flex-row items-center mr-16`}>
+        <Text style={tw `ml-12 text-lg font-bold`} >
           <Entypo name="location-pin" size={20} color="red" /> Lac 3
         </Text>
       
-        <Text style={tw `ml-28`} >
+        <Text style={tw `ml-28 text-lg`} >
           26 bikes
         </Text>
         </View>
         <View  style={tw   `rounded-md flex flex-row items-center mr-16`}>
 
-        <Text style={tw `ml-12 font-bold`} >
+        <Text style={tw `ml-12 text-lg font-bold`} >
           <Entypo name="location-pin" size={20} color="red" /> Sidi Bousaid
         </Text>
       
-        <Text style={tw `ml-14`} >
+        <Text style={tw `ml-14 text-lg`} >
             18 bikes
         </Text>
         </View>
 
         <View  style={tw   `rounded-md flex flex-row items-center mr-16`}>
 
-      <Text style={tw `ml-12 font-bold`} >
+      <Text style={tw `ml-12 text-lg font-bold`} >
         <Entypo name="location-pin" size={20} color="red" /> La Goulette
       </Text>
-      <Text style={tw `ml-16`} >
+      <Text style={tw `ml-16 text-lg`} >
       22 bikes
       </Text>
 </View>
 </View>
+
+        <View
+          style={tw`w-11/12 h-12 my-6 rounded bg-yellow-500 items-center ml-4`}
+          // intensity={50}
+          // tint="dark"  
+        >
+          <Text
+            onPress={() => {
+              navigation.navigate("Bikes");
+            }}
+            style={tw`text-black pt-2 font-bold text-xl`}
+          >
+            Order
+          </Text>
+        </View> 
     </SafeAreaView>
   );
 };

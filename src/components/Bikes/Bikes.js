@@ -91,7 +91,7 @@ function AboutBikes() {
           color="grey"
         >
           <Text color="amber.500" style={tailwind("text-2xl mt-2 font-bold absolute")} >
-          ADULTS
+          KIDS
         </Text>
         </BlurView>
         </VStack>
