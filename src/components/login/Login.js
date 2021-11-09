@@ -85,7 +85,7 @@ export function SignInForm({ props }) {
 
   const submitLogin = async () => {
     await axios
-      .post("http://localhost:3000/user/login", {
+      .post("https://bycyclebackend.herokuapp.com/user/login", {
         email: email,
         password: password,
       })
@@ -212,7 +212,7 @@ export function SignInForm({ props }) {
                   bg: "primary.700",
                 }}
                 onPress={() => {
-                  props.navigation.navigate("WhyUs");
+                  submitLogin(), props.navigation.navigate("WhyUs");
                 }}
               >
                 SIGN IN
