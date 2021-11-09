@@ -8,23 +8,32 @@ import {
   Text,
   Card,
   ScrollView,
-  Button
+  Button,
+  Pressable,
+  Box,
+  HStack,
+  Spacer,
+  Flex,
+  Center,
+  NativeBaseProvider,
+  VStack,
 } from "native-base";
+import tailwind from "tailwind-rn";
 
-import Loading from "../Loading/Loading";
-import tw from "tailwind-react-native-classnames";
 import Footer from "../Footer/Footer";
-import { FontAwesome } from '@expo/vector-icons'; 
+import { FontAwesome } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
+function AboutBikes() {
+  const navigation = useNavigation();
 
-function AboutBikes({navigation}) {
   const [data, setData] = useState([]);
 
   useEffect(async () => {
     axios
       .get("https://bycyclebackend.herokuapp.com/bicycle")
       .then((response) => {
-        console.log(response.data);
+        console.log("dataaaa", response.data.slice(7, 14));
         setData(response.data);
       })
       .catch((err) => {
@@ -33,49 +42,52 @@ function AboutBikes({navigation}) {
   }, []);
 
   return (
-    <View>
-    <ScrollView marginBottom="20">   
-      {data.map((bike, key) => {
-        console.log(bike);
-        return (
-          <Card key={key}>
-            <Text fontSize="2xl">{bike.category}</Text>
-            <AspectRatio ratio={9 / 9}>
-              <Image
-                marginTop="1"
-                rounded="lg"
-                height="100%"
-                width="100%"
-                source={{ uri: bike.photo }}
-                alt={"Loading..."}
-              />
-            </AspectRatio>
-            <Stack>
-              <Text fontSize="md" fontWeight="500" ml="-0.5" mt="-1" p="4">
-                {bike.description}
-              </Text>
-            </Stack>
-            <Button
-                size="lg"
-                variant="outline"
-                colorScheme="amber"
-                width="100%"
-                height="16"
-                onPress={() => {
-                  navigation.navigate("Rent");
-                }}
-              >
- <FontAwesome name="arrow-circle-right" size={35} color="black" /> 
-             </Button>
-          </Card>
-        );
-      })}
-    </ScrollView>
-       
-    <View style={{position: 'absolute', width: "100%", marginTop:655, backgroundColor:"white"}}>
-        <Footer navigation={navigation} />
-      </View>
-      </View>
+    <View alignItems="center">
+      <Pressable
+        onPress={() => {
+          navigation.navigate("AdultBikes");
+        }}
+      >
+        <VStack space={2} alignItems="center" safeAreaTop my={6}>
+          <Image
+            size="2xl"
+            resizeMode="cover"
+            borderRadius={5}
+            source={require("../../../assets/adult.jpg")}
+            alt="Adult"
+          />
+        </VStack>
+        <View style={tailwind("items-center")}>
+        <Text color="amber.500" style={tailwind("text-2xl font-bold")} >
+          ADULTS
+        </Text>
+        </View>
+      </Pressable>
+
+      <Pressable
+        onPress={() => {
+          navigation.navigate("KidBikes");
+        }}
+      >
+        <VStack space={2} alignItems="center" safeAreaTop my={6}>
+          <Image
+            size="2xl"
+            resizeMode="cover"
+            borderRadius={5}
+            marginTop={12}
+            source={require("../../../assets/kid.jpg")}
+            alt="kid"
+          />
+        </VStack>
+        <View style={tailwind("items-center")}>
+
+        <Text color="amber.500" style={tailwind("text-2xl font-bold")} >
+          KIDS
+        </Text>
+        </View>
+
+      </Pressable>
+    </View>
   );
 }
 
