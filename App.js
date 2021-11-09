@@ -104,7 +104,7 @@ function App() {
             />
             <Stack.Screen name="Commercial" component={Commercial} />
             <Stack.Screen name="WhyUs" component={WhyUs} />
-            <Stack.Screen name="Rent" component={Rent} />
+            <Stack.Screen name="Rent" component={Rent} options={{ headerShown: false }}/>
             <Stack.Screen name="CombinedMap" component={CombinedMap} />
             <Stack.Screen name="Rules" component={Rules} />
             <Stack.Screen name="Reviews" component={Reviews} />

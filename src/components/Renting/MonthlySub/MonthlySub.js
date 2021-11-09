@@ -1,24 +1,21 @@
 import React from "react";
 import {
-  Box,
   Heading,
-  Icon,
-  AspectRatio,
-  Image,
   Text,
   Center,
-  HStack,
   Stack,
   NativeBaseProvider,
   Pressable,
+  View
 } from "native-base";
-import { MaterialIcons, Ionicons } from "@expo/vector-icons";
-import { Button } from "react-native";
+
 import { useNavigation } from "@react-navigation/native";
+import tw from "tailwind-react-native-classnames";
 
 function MonthlySub() {
   const navigation = useNavigation();
   return (
+            //   ----- Monthly Package Card Details ----- 
     <Pressable
       style={{ margin: 20 }}
       onPress={() => {
@@ -31,11 +28,12 @@ function MonthlySub() {
       _light={{ backgroundColor: "white" }}
       _dark={{ backgroundColor: "white" }}
     >
-      <Stack p="4" space={3}>
+      <Stack p="4" space={3} style={tw `items-center`}>
         <Stack space={2}>
           <Heading size="md" ml="-1">
             Monthly Membership
           </Heading>
+          <View style={tw `items-center`}>
           <Text
             fontSize="xs"
             _light={{ color: "amber.500" }}
@@ -46,6 +44,7 @@ function MonthlySub() {
           >
             70 TND per Month
           </Text>
+          </View>
         </Stack>
         <Text fontWeight="400">Month to month, cancel anytime.</Text>
       </Stack>

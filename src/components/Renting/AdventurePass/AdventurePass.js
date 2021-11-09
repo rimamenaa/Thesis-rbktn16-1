@@ -1,22 +1,20 @@
 import React from "react";
 import {
-  Box,
   Heading,
-  Icon,
-  AspectRatio,
-  Image,
   Text,
   Center,
-  HStack,
   Stack,
   NativeBaseProvider,
   Pressable,
+  View
 } from "native-base";
 import { useNavigation } from "@react-navigation/native";
+import tw from "tailwind-react-native-classnames";
 
 function AdventurePass() {
   const navigation = useNavigation();
   return (
+            //   ----- Adventure Package Card ----- 
     <Pressable
       onPress={() => {
         navigation.navigate("AdventurePassDetails");
@@ -29,12 +27,13 @@ function AdventurePass() {
       _dark={{ backgroundColor: "white" }}
       style={{ margin: 20 }}
     >
-      <Stack p="4" space={3}>
+      <Stack p="4" space={3} style={tw `items-center`}>
         <Stack space={2}>
           <Heading size="md" ml="-1">
             Adventure Pass
           </Heading>
-          <Text
+          <View style={tw `items-center`}>
+          <Text 
             fontSize="xs"
             _light={{ color: "amber.500" }}
             _dark={{ color: "amber.500" }}
@@ -44,6 +43,7 @@ function AdventurePass() {
           >
             25 TND per Day
           </Text>
+          </View>
         </Stack>
         <Text fontWeight="400">Perfect for visitors and tourists</Text>
       </Stack>

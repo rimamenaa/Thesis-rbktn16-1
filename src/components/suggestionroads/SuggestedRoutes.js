@@ -2,16 +2,14 @@ import React, { useState, useEffect } from "react";
 import { View, SafeAreaView, ScrollView } from "react-native";
 import { Text, Box, Heading, AspectRatio, Image, Stack } from "native-base";
 import tailwind from "tailwind-rn";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { FontAwesome5 } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
+import { MaterialCommunityIcons, FontAwesome5, Entypo } from "@expo/vector-icons";
 import axios from "axios";
 import Footer from "../Footer/Footer";
 
 
 function SuggestionRoads({navigation}) {
   const [data, setData] = useState([]);
-
+// fetching data from database
   const getData = () => {
     axios
       .get("https://bycyclebackend.herokuapp.com/suggestion")

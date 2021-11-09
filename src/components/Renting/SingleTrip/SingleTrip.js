@@ -1,23 +1,23 @@
 import React from "react";
 import {
   Heading,
-  AspectRatio,
-  Image,
   Text,
   Center,
-  HStack,
   Stack,
   NativeBaseProvider,
   Pressable,
-  Card,
+  View
 } from "native-base";
 
 import { useNavigation } from "@react-navigation/native";
+import tw from "tailwind-react-native-classnames";
 
 function SingleTrip() {
   const navigation = useNavigation();
   return (
+    //   ----- Single Package Card ----- 
     <Pressable
+    
       rounded="lg"
       overflow="hidden"
       width="72"
@@ -29,11 +29,12 @@ function SingleTrip() {
       }}
       style={{ margin: 20 }}
     >
-      <Stack p="4" space={3}>
+      <Stack p="4" space={3} style={tw `items-center`}>
         <Stack space={2}>
           <Heading size="md" ml="-1">
             Single Trip
           </Heading>
+          <View style={tw `items-center`}>
           <Text
             fontSize="xs"
             _light={{ color: "amber.500" }}
@@ -44,6 +45,7 @@ function SingleTrip() {
           >
             5 TND per Hour
           </Text>
+          </View>
         </Stack>
         <Text fontWeight="400">Great for one-way rides.</Text>
       </Stack>

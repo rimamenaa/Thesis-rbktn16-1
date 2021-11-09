@@ -3,11 +3,9 @@ import {
   Box,
   AspectRatio,
   Image,
-  Center,
   Stack,
   Text,
   NativeBaseProvider,
-  Card,
   ScrollView,
   Button,
 } from "native-base";
@@ -18,6 +16,8 @@ function AdventurePassDetails() {
   const navigation = useNavigation();
 
   return (
+            //   ----- Adventure Package Card Details ----- 
+
     <ScrollView>
       <Box>
         <Text fontSize="2xl" marginBottom="3" marginLeft="3" marginTop="5">
