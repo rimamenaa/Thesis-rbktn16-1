@@ -1,9 +1,7 @@
 import React from "react"
 import {
   Slide,
-//   Button,
   Box,
-  Input,
   Heading,
   VStack,
   HStack,
@@ -22,6 +20,7 @@ export const Payment = () => {
 
   const [isOpen, setIsOpen] = React.useState(false)
   return (
+                //   ----- Payment Details ----- 
     <Box
       width={{
         base: "100%",

@@ -2,16 +2,14 @@ import React, { useState, useEffect } from "react";
 import { View, SafeAreaView, ScrollView } from "react-native";
 import { Text, Box, Heading, AspectRatio, Image, Stack } from "native-base";
 import tailwind from "tailwind-rn";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { FontAwesome5 } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
+import { MaterialCommunityIcons, FontAwesome5, Entypo } from "@expo/vector-icons";
 import axios from "axios";
 import Footer from "../Footer/Footer";
 
 
 function SuggestionRoads({navigation}) {
   const [data, setData] = useState([]);
-
+// fetching data from database
   const getData = () => {
     axios
       .get("https://bycyclebackend.herokuapp.com/suggestion")
@@ -27,9 +25,7 @@ function SuggestionRoads({navigation}) {
 
   return (
     <SafeAreaView style={tailwind("h-full")}>
-      <ScrollView>
-
-
+      <ScrollView style={tailwind("mb-16")}>
       <View style={tailwind("items-center")}>
       <View style={tailwind("flex flex-row mb-6")}>
 
@@ -109,10 +105,10 @@ function SuggestionRoads({navigation}) {
             return (
               <View key={key}>
                 <Box
-                  style={tailwind("w-96 mb-8")}
+                  style={tailwind("mb-8")}
                   rounded="lg"
                   overflow="hidden"
-                  // width="80"
+                  width="95%"
                   shadow={1}
                   _light={{ backgroundColor: "gray.50" }}
                   _dark={{ backgroundColor: "gray.700" }}

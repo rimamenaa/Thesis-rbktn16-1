@@ -44,11 +44,13 @@ export default function LandingPage({ navigation }) {
       </View>
 
       <View style={tw`my-96 items-center`}>
-        <Text style={tw`text-white pt-12 font-semibold ml-4 text-base`}>
+        <View style={tw`items-center`}>
+        <Text style={tw`text-white pt-12 font-semibold text-base`}>
           {newName[0]}
           <Text></Text>
           {newName[1]}
         </Text>
+        </View>
         <BlurView
           style={tw`w-11/12 h-12 my-6 rounded items-center`}
           intensity={50}
