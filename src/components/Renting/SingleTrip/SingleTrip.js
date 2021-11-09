@@ -1,15 +1,11 @@
 import React from "react";
 import {
   Heading,
-  AspectRatio,
-  Image,
   Text,
   Center,
-  HStack,
   Stack,
   NativeBaseProvider,
   Pressable,
-  Card,
 } from "native-base";
 
 import { useNavigation } from "@react-navigation/native";
@@ -17,6 +13,7 @@ import { useNavigation } from "@react-navigation/native";
 function SingleTrip() {
   const navigation = useNavigation();
   return (
+    //   ----- Single Package Card ----- 
     <Pressable
       rounded="lg"
       overflow="hidden"

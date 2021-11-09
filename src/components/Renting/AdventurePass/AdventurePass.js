@@ -1,13 +1,8 @@
 import React from "react";
 import {
-  Box,
   Heading,
-  Icon,
-  AspectRatio,
-  Image,
   Text,
   Center,
-  HStack,
   Stack,
   NativeBaseProvider,
   Pressable,
@@ -17,6 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 function AdventurePass() {
   const navigation = useNavigation();
   return (
+            //   ----- Adventure Package Card ----- 
     <Pressable
       onPress={() => {
         navigation.navigate("AdventurePassDetails");

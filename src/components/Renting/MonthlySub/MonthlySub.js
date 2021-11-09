@@ -1,24 +1,19 @@
 import React from "react";
 import {
-  Box,
   Heading,
-  Icon,
-  AspectRatio,
-  Image,
   Text,
   Center,
-  HStack,
   Stack,
   NativeBaseProvider,
   Pressable,
 } from "native-base";
-import { MaterialIcons, Ionicons } from "@expo/vector-icons";
-import { Button } from "react-native";
+
 import { useNavigation } from "@react-navigation/native";
 
 function MonthlySub() {
   const navigation = useNavigation();
   return (
+            //   ----- Monthly Package Card Details ----- 
     <Pressable
       style={{ margin: 20 }}
       onPress={() => {

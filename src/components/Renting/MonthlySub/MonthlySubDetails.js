@@ -3,7 +3,6 @@ import {
   Box,
   AspectRatio,
   Image,
-  Center,
   Text,
   NativeBaseProvider,
   Button,
@@ -13,8 +12,8 @@ import { useNavigation } from "@react-navigation/native";
 
 function MonthlySubDetails() {
   const navigation = useNavigation();
-
   return (
+            //   ----- Monthly Package Card Details ----- 
     <ScrollView>
       <Box>
         <Text fontSize="2xl" marginBottom="3" marginLeft="3" marginTop="5">
