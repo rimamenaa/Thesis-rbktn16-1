@@ -4,39 +4,40 @@ import {
   VStack,
   ScrollView,
   Card,
-  View
+  View,
 } from "native-base";
-
+import {
+  ImageBackground,
+} from "react-native";
 import AdventurePass from "./AdventurePass/AdventurePass";
 import MonthlySub from "./MonthlySub/MonthlySub";
 import SingleTrip from "./SingleTrip/SingleTrip";
 import Footer from "../Footer/Footer";
+import tw from "tailwind-react-native-classnames";
 
 function Rent({navigation}) {
   return (
-    <View>
-    <Card>
-      <VStack space={50}>
-        <ScrollView showsVerticalScrollIndicator={false} >
-
-      {/* ----- Packages cards -----  */}
-
-          <Text fontSize="4xl" color="amber.500">
-            Choose your plan
+    <ImageBackground style={tw`w-full h-full`} source={require("../../../assets/RentImage.jpg")}>
+    <View style={tw`mt-24`}>
+      
+      <VStack>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          {/* <View style={tw `items-center`}>
+          <Text fontSize="2xl" fontWeight="bold" color="white">
+            Choose Your Plan
           </Text>
+          </View> */}
           <SingleTrip></SingleTrip>
           <MonthlySub></MonthlySub>
           <AdventurePass></AdventurePass>
         </ScrollView>
       </VStack>
-    </Card>
 
-      {/* ----- Footer -----  */}
-      
-      <View style={{position: 'absolute', width: "100%",marginTop:655, backgroundColor:"white"}}>
+    <View style={{position: 'absolute', width: "100%",marginTop:655, backgroundColor:"white"}}>
         <Footer navigation={navigation} />
       </View>
     </View>
+    </ImageBackground>
   );
 }
 export default Rent;

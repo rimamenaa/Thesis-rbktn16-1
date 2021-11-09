@@ -8,7 +8,7 @@ import {
   Center,
   Pressable
 } from 'native-base';
-import { MaterialCommunityIcons, Entypo, Ionicons  } from '@expo/vector-icons';
+import { MaterialCommunityIcons, Entypo, Ionicons, AntDesign  } from '@expo/vector-icons';
 import tw from "tailwind-react-native-classnames";
 
 export default function Footer({ navigation}) {
@@ -24,24 +24,20 @@ export default function Footer({ navigation}) {
             py="2"
             flex={1}
             onPress={() => {
-                navigation.navigate("Profile");
+                navigation.navigate("Commercial");
               }}
           >
             <Center>
               <Icon
                 mb={1}
                 as={
-                  <Ionicons
-                    name="ios-person-circle-outline"
-                    size={24}
-                    color="#000000"
-                  />
+                  <AntDesign name="staro" size={10} color="#000000"/>
                 }
                 color="#000000"
                 size="lg"
               />
               <Text color="#000000" fontSize={12}>
-                Profile
+                About Us
               </Text>
             </Center>
           </Pressable>
