@@ -18,7 +18,8 @@ import {
   NativeBaseProvider,
   VStack,
 } from "native-base";
-import tailwind from "tailwind-rn";
+import tw from "tailwind-react-native-classnames";
+import { BlurView } from "expo-blur";
 
 import Footer from "../Footer/Footer";
 import { FontAwesome } from "@expo/vector-icons";
@@ -56,12 +57,17 @@ function AboutBikes() {
             source={require("../../../assets/adult.jpg")}
             alt="Adult"
           />
-        </VStack>
-        <View style={tailwind("items-center")}>
-        <Text color="amber.500" style={tailwind("text-2xl font-bold")} >
+          <BlurView
+          style={tw`w-full h-12 rounded items-center mt-7 absolute`}
+          intensity={70}
+          tint="dark"
+          color="grey"
+        >
+        <Text color="amber.500" style={tw `text-2xl font-bold`} >
           ADULTS
         </Text>
-        </View>
+        </BlurView>
+        </VStack>
       </Pressable>
 
       <Pressable
@@ -78,14 +84,17 @@ function AboutBikes() {
             source={require("../../../assets/kid.jpg")}
             alt="kid"
           />
-        </VStack>
-        <View style={tailwind("items-center")}>
-
-        <Text color="amber.500" style={tailwind("text-2xl font-bold pt-4")} >
+           <BlurView
+          style={tw`w-full h-12 rounded items-center mt-12 absolute`}
+          intensity={70}
+          tint="dark"
+          color="grey"
+        >
+          <Text color="amber.500" style={tw `text-2xl mt-2 font-bold absolute`} >
           KIDS
         </Text>
-        </View>
-
+        </BlurView>
+        </VStack>
       </Pressable>
     </View>
   );

@@ -154,9 +154,7 @@ const Station = ({navigation}) => {
 </View>
 
         <View
-          style={tw`w-11/12 h-12 my-6 rounded bg-yellow-500 items-center ml-4`}
-          // intensity={50}
-          // tint="dark"  
+          style={tw`w-11/12 h-12 my-6 rounded bg-yellow-500 items-center ml-4`}  
         >
           <Text
             onPress={() => {
