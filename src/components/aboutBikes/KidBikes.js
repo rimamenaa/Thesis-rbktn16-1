@@ -22,7 +22,7 @@ function AboutBikes({ navigation }) {
     axios
       .get("https://bycyclebackend.herokuapp.com/bicycle")
       .then((response) => {
-        console.log("kids", response.data.slice(10, 17));
+        
         setData(response.data);
       })
       .catch((err) => {
@@ -41,7 +41,7 @@ function AboutBikes({ navigation }) {
         </View>
 
         {data.slice(10, 17).map((bike, key) => {
-          console.log(bike);
+          
           return (
             <Card key={key}>
               <AspectRatio ratio={9 / 9}>
