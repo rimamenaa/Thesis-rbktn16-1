@@ -50,7 +50,7 @@ function Home({ navigation }) {
             >
               <Button
                 size="lg"
-                variant="subtle"
+                variant="solid"
                 colorScheme="amber"
                 width="100"
                 height="24"
@@ -77,7 +77,7 @@ function Home({ navigation }) {
             >
               <Button
                 size="lg"
-                variant="subtle"
+                variant="solid"
                 colorScheme="amber"
                 width="100"
                 height="24"
@@ -107,7 +107,7 @@ function Home({ navigation }) {
             >
               <Button
                 size="lg"
-                variant="subtle"
+                variant="solid"
                 colorScheme="amber"
                 width="100"
                 height="24"
@@ -134,7 +134,7 @@ function Home({ navigation }) {
             >
               <Button
                 size="lg"
-                variant="subtle"
+                variant="solid"
                 colorScheme="amber"
                 width="100"
                 height="24"
@@ -164,7 +164,7 @@ function Home({ navigation }) {
             >
               <Button
                 size="lg"
-                variant="subtle"
+                variant="solid"
                 colorScheme="amber"
                 width="100"
                 height="24"
@@ -193,7 +193,7 @@ function Home({ navigation }) {
             >
               <Button
                 size="lg"
-                variant="subtle"
+                variant="solid"
                 colorScheme="amber"
                 width="100"
                 height="24"
@@ -226,15 +226,16 @@ function Home({ navigation }) {
               <Button
                 size="lg"
                 variant="subtle"
-                colorScheme="indigo"
                 width="160"
                 height="12"
+                style={tailwind("text-yellow-600")}
                 onPress={() => {
                   Linking.openURL("mailto:bycycletn@gmail.com");
                 }}
               >
                 <Feather name="mail" size={24} color="black" />
               </Button>
+              
             </Stack>
 
             <Stack
