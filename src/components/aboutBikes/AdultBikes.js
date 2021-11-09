@@ -8,23 +8,21 @@ import {
   Text,
   Card,
   ScrollView,
-  Button
+  Button,
 } from "native-base";
 import tailwind from "tailwind-rn";
 
-
 import Footer from "../Footer/Footer";
-import { FontAwesome } from '@expo/vector-icons'; 
+import { FontAwesome } from "@expo/vector-icons";
 
-
-function AboutBikes({navigation}) {
+function AboutBikes({ navigation }) {
   const [data, setData] = useState([]);
 
   useEffect(async () => {
     axios
       .get("https://bycyclebackend.herokuapp.com/bicycle")
       .then((response) => {
-        console.log('adults', response.data.slice(0,9));
+        console.log("adults", response.data.slice(0, 9));
         setData(response.data);
       })
       .catch((err) => {
@@ -32,32 +30,35 @@ function AboutBikes({navigation}) {
       });
   }, []);
 
-
   return (
     <View>
-    <ScrollView marginBottom="20">   
-    <Text style={tailwind("text-2xl text-yellow-600 font-bold")}>Bicycles For Adults</Text>
+      <ScrollView marginBottom="20">
+        <View style={tailwind("items-center")}>
+          <Text color="amber.500" style={tailwind("text-2xl font-bold")}>
+            Bicycles For Adults
+          </Text>
+        </View>
 
-      {data.slice(0,9).map((bike, key) => {
-        console.log(bike);
-        return (
-          <Card key={key}>
-            <AspectRatio ratio={9 / 9}>
-              <Image
-                marginTop="1"
-                rounded="lg"
-                height="100%"
-                width="100%"
-                source={{ uri: bike.photo }}
-                alt={"Loading..."}
-              />
-            </AspectRatio>
-            <Stack>
-              <Text fontSize="md" fontWeight="500" ml="-0.5" mt="-1" p="4">
-                {bike.description}
-              </Text>
-            </Stack>
-            <Button
+        {data.slice(0, 9).map((bike, key) => {
+          console.log(bike);
+          return (
+            <Card key={key}>
+              <AspectRatio ratio={9 / 9}>
+                <Image
+                  marginTop="1"
+                  rounded="lg"
+                  height="100%"
+                  width="100%"
+                  source={{ uri: bike.photo }}
+                  alt={"Loading..."}
+                />
+              </AspectRatio>
+              <Stack>
+                <Text fontSize="md" fontWeight="500" ml="-0.5" mt="-1" p="4">
+                  {bike.description}
+                </Text>
+              </Stack>
+              {/* <Button
                 size="lg"
                 variant="outline"
                 colorScheme="amber"
@@ -68,16 +69,37 @@ function AboutBikes({navigation}) {
                 }}
               >
  <FontAwesome name="arrow-circle-right" size={35} color="black" /> 
-             </Button>
-          </Card>
-        );
-      })}
-    </ScrollView>
-       
-    <View style={{position: 'absolute', width: "100%", marginTop:655, backgroundColor:"white"}}>
+             </Button> */}
+              <Button
+                colorScheme="yellow"
+                my="2"
+                width="100%"
+                onPress={() => {
+                  navigation.navigate("Rent");
+                }}
+              >
+                <FontAwesome
+                  name="arrow-circle-right"
+                  size={35}
+                  color="black"
+                />
+              </Button>
+            </Card>
+          );
+        })}
+      </ScrollView>
+
+      <View
+        style={{
+          position: "absolute",
+          width: "100%",
+          marginTop: 680,
+          backgroundColor: "white",
+        }}
+      >
         <Footer navigation={navigation} />
       </View>
-      </View>
+    </View>
   );
 }
 

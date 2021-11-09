@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Button,
   HStack,
@@ -16,9 +16,20 @@ import {
   Input,
   Image,
 } from "native-base";
+import axios from "axios";
+import instance from "../../../android/app/src/helpers/axiosInstance";
 import tw from "tailwind-react-native-classnames";
 import * as Google from "expo-google-app-auth";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+/* const instance = axios.create({
+  baseURL: "http://localhost:3000/",
+  timeout: 1000,
+  headers: { "x-token": "7ot el token ya wissem" },
+}); */
+import { AuthContext } from "../context/context";
+
 export function SignInForm({ props }) {
   const [message, setMessage] = useState();
   const [messageType, setMessageType] = useState();
@@ -27,13 +38,17 @@ export function SignInForm({ props }) {
     setMessage(message);
     setMessageType(type);
   };
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const handleGoogleSignIn = () => {
     setGoogleSubmitting(true);
     const config = {
       iosClientId: `215341427022-haijkikj7ejpthac9sld1ihejeouoj06.apps.googleusercontent.com`,
       androidClientId: `215341427022-eosmagesimfkte0p4b84ci77t6b7m6o2.apps.googleusercontent.com`,
-      iosStandaloneAppClientId: `215341427022-haijkikj7ejpthac9sld1ihejeouoj06.apps.googleusercontent.com`,
-      androidStandaloneAppClientId: `215341427022-eosmagesimfkte0p4b84ci77t6b7m6o2.apps.googleusercontent.com`,
+      androidStandaloneAppClientId: `215341427022-ktifsf6rj56ubln7ddtac012o0s4rlb5.apps.googleusercontent.com`,
+
       scopes: ["profile", "email"],
     };
     Google.logInAsync(config)
@@ -56,6 +71,26 @@ export function SignInForm({ props }) {
         handleMessage("An Errr occured . check your Network and try again");
         setGoogleSubmitting(false);
       });
+  };
+  // useEffect(async () => {
+  //   const data = await AsyncStorage.getItem("auth");
+  //   if (data) {
+  //     props.navigation.navigate("WhyUs");
+  //   } else {
+  //     props.navigation.navigate("LandingPage");
+  //   }
+  // }, []);
+
+  // const { SignIn } = React.useContext(AuthContext);
+
+  const submitLogin = async () => {
+    await axios
+      .post("http://localhost:3000/user/login", {
+        email: email,
+        password: password,
+      })
+      .then((res) => SignIn(res.data.accessToken))
+      .catch((err) => console.log(err));
   };
   return (
     <KeyboardAwareScrollView
@@ -116,7 +151,11 @@ export function SignInForm({ props }) {
                 >
                   Email ID
                 </FormControl.Label>
-                <Input />
+                <Input
+                  type="email"
+                  name="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </FormControl>
               <FormControl>
                 <FormControl.Label
@@ -128,7 +167,11 @@ export function SignInForm({ props }) {
                 >
                   Password
                 </FormControl.Label>
-                <Input type="password" />
+                <Input
+                  type="password"
+                  name="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
                 <Link
                   _text={{
                     fontSize: "xs",
@@ -137,6 +180,7 @@ export function SignInForm({ props }) {
                   }}
                   alignSelf="flex-end"
                   mt="1"
+                  sin
                 >
                   Forget Password?
                 </Link>
