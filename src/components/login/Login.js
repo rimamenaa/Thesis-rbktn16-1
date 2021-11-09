@@ -26,8 +26,7 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
   timeout: 1000,
   headers: { "x-token": "7ot el token ya wissem" },
 }); */
-import { AuthContext } from "../context/context";
-
+import { signIn } from "../services/auth";
 export function SignInForm({ props }) {
   const [message, setMessage] = useState();
   const [messageType, setMessageType] = useState();
@@ -36,10 +35,6 @@ export function SignInForm({ props }) {
     setMessage(message);
     setMessageType(type);
   };
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
   const handleGoogleSignIn = () => {
     setGoogleSubmitting(true);
     const config = {
@@ -70,17 +65,10 @@ export function SignInForm({ props }) {
         setGoogleSubmitting(false);
       });
   };
-  const { SignIn } = React.useContext(AuthContext);
 
-  const submitLogin = async () => {
-    await axios
-      .post("http://localhost:3000/user/login", {
-        email: email,
-        password: password,
-      })
-      .then((res) => SignIn(res.data.accessToken))
-      .catch((err) => console.log(err));
-  };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <KeyboardAwareScrollView
       contentContainerStyle={{
@@ -143,7 +131,7 @@ export function SignInForm({ props }) {
                 <Input
                   type="email"
                   name="email"
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChangeText={(value) => setEmail(value)}
                 />
               </FormControl>
               <FormControl>
@@ -159,7 +147,7 @@ export function SignInForm({ props }) {
                 <Input
                   type="password"
                   name="password"
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChangeText={(value) => setPassword(value)}
                 />
                 <Link
                   _text={{
@@ -201,8 +189,9 @@ export function SignInForm({ props }) {
                   bg: "primary.700",
                 }}
                 onPress={() => {
-                  submitLogin();
-                  props.navigation.navigate("WhyUs");
+                  signIn({ email, password }).then(() =>
+                    props.navigation.navigate("Rules")
+                  );
                 }}
               >
                 SIGN IN

@@ -41,146 +41,81 @@ const theme = extendTheme({
 const Stack = createNativeStackNavigator();
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [userToken, setUserToken] = useState(null);
+  return (
+    <NativeBaseProvider theme={theme}>
+      <AuthContext.Provider AuthContext={AuthContext}>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen
+              name="LandingPage"
+              options={{ headerShown: false }}
+              component={LandingPage}
+            />
+            <Stack.Screen
+              name="Home"
+              options={{ headerShown: false }}
+              component={HomePage}
+            />
+            <Stack.Screen name="Commercial" component={Commercial} />
+            <Stack.Screen name="WhyUs" component={WhyUs} />
+            <Stack.Screen name="Rent" component={Rent} />
+            <Stack.Screen name="CombinedMap" component={CombinedMap} />
+            <Stack.Screen name="Rules" component={Rules} />
+            <Stack.Screen name="Reviews" component={Reviews} />
+            <Stack.Screen
+              name="Login"
+              options={{ headerShown: false }}
+              component={Login}
+            />
+            <Stack.Screen
+              name="Signup"
+              options={{ headerShown: false }}
+              component={Signup}
+            />
+            <Stack.Screen name="SingleTrip" component={SingleTrip} />
+            <Stack.Screen name="AboutBikes" component={AboutBikes} />
 
-  const authContext = React.useMemo(
-    () => ({
-      signIn: () => {
-        setUserToken("jhfs");
-        setIsLoading(false);
-      },
-      singOut: () => {
-        setUserToken(null);
-        setIsLoading(false);
-      },
-      singUp: () => {
-        setUserToken("fgkj");
-        setIsLoading(false);
-      },
-    }),
-    []
+            <Stack.Screen
+              name="SingleTripDetails"
+              component={SingleTripDetails}
+            />
+            <Stack.Screen name="MonthlySub" component={MonthlySub} />
+            <Stack.Screen
+              name="MonthlySubDetails"
+              component={MonthlySubDetails}
+            />
+            <Stack.Screen name="AdventurePass" component={AdventurePass} />
+            <Stack.Screen
+              name="AdventurePassDetails"
+              component={AdventurePassDetails}
+            />
+            <Stack.Screen name="SuggestedRoutes" component={SuggestedRoutes} />
+            <Stack.Screen name="Profile" component={Profile} />
+            <Stack.Screen
+              name="SingleTripPayment"
+              component={SingleTripPayment}
+            />
+            <Stack.Screen
+              name="SingleTripPackage"
+              component={SingleTripPackage}
+            />
+            <Stack.Screen name="MonthlyPayment" component={MonthlyPayment} />
+            <Stack.Screen name="MonthlyPackage" component={MonthlyPackage} />
+            <Stack.Screen
+              name="AdventurePayment"
+              component={AdventurePayment}
+            />
+            <Stack.Screen
+              name="AdventurePackage"
+              component={AdventurePackage}
+            />
+
+            <Stack.Screen name="Station" component={Station} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </AuthContext.Provider>
+    </NativeBaseProvider>
   );
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    });
-  }, []);
-
-  if (isLoading) {
-    return (
-      <NativeBaseProvider>
-        <View
-          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-        >
-          <ActivityIndicator size="large" />
-        </View>
-      </NativeBaseProvider>
-    );
-  } else
-    return (
-      <NativeBaseProvider theme={theme}>
-        <AuthContext.Provider value={authContext}>
-          {userToken !== null ? (
-            <NavigationContainer>
-              <Stack.Navigator>
-                <Stack.Screen
-                  name="LandingPage"
-                  options={{ headerShown: false }}
-                  component={LandingPage}
-                />
-                <Stack.Screen
-                  name="Home"
-                  options={{ headerShown: false }}
-                  component={HomePage}
-                />
-                <Stack.Screen name="Commercial" component={Commercial} />
-                <Stack.Screen name="WhyUs" component={WhyUs} />
-                <Stack.Screen name="Rent" component={Rent} />
-                <Stack.Screen name="CombinedMap" component={CombinedMap} />
-                <Stack.Screen name="Rules" component={Rules} />
-                <Stack.Screen name="Reviews" component={Reviews} />
-                <Stack.Screen
-                  name="Login"
-                  options={{ headerShown: false }}
-                  component={Login}
-                />
-                <Stack.Screen
-                  name="Signup"
-                  options={{ headerShown: false }}
-                  component={Signup}
-                />
-                <Stack.Screen name="SingleTrip" component={SingleTrip} />
-                <Stack.Screen name="AboutBikes" component={AboutBikes} />
-
-                <Stack.Screen
-                  name="SingleTripDetails"
-                  component={SingleTripDetails}
-                />
-                <Stack.Screen name="MonthlySub" component={MonthlySub} />
-                <Stack.Screen
-                  name="MonthlySubDetails"
-                  component={MonthlySubDetails}
-                />
-                <Stack.Screen name="AdventurePass" component={AdventurePass} />
-                <Stack.Screen
-                  name="AdventurePassDetails"
-                  component={AdventurePassDetails}
-                />
-                <Stack.Screen
-                  name="SuggestedRoutes"
-                  component={SuggestedRoutes}
-                />
-                <Stack.Screen name="Profile" component={Profile} />
-                <Stack.Screen
-                  name="SingleTripPayment"
-                  component={SingleTripPayment}
-                />
-                <Stack.Screen
-                  name="SingleTripPackage"
-                  component={SingleTripPackage}
-                />
-                <Stack.Screen
-                  name="MonthlyPayment"
-                  component={MonthlyPayment}
-                />
-                <Stack.Screen
-                  name="MonthlyPackage"
-                  component={MonthlyPackage}
-                />
-                <Stack.Screen
-                  name="AdventurePayment"
-                  component={AdventurePayment}
-                />
-                <Stack.Screen
-                  name="AdventurePackage"
-                  component={AdventurePackage}
-                />
-
-                <Stack.Screen name="Station" component={Station} />
-              </Stack.Navigator>
-            </NavigationContainer>
-          ) : (
-            <NavigationContainer>
-              <Stack.Navigator>
-                <Stack.Screen
-                  name="LandingPage"
-                  options={{ headerShown: false }}
-                  component={LandingPage}
-                />
-                <Stack.Screen name="Login" component={Login} />
-                <Stack.Screen
-                  name="Signup"
-                  options={{ headerShown: false }}
-                  component={Signup}
-                />
-              </Stack.Navigator>
-            </NavigationContainer>
-          )}
-        </AuthContext.Provider>
-      </NativeBaseProvider>
-    );
 }
 
 export default App;
