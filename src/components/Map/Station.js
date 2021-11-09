@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { Platform,Text, Button, SafeAreaView } from "react-native";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
+import { FontAwesome } from "@expo/vector-icons";
 import * as Location from "expo-location";
+import { BlurView } from "expo-blur";
+import tw from "tailwind-react-native-classnames";
 
-const Station = () => {
+const Station = ({navigation}) => {
   const [location, setLocation] = useState({
     latitude: 36.8941204,
     longitude: 10.1870475,
@@ -55,6 +58,7 @@ const Station = () => {
   };
 
   return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#E6E5E5' }}>
     <MapView
       style={{ flex: 0.6 }}
       provider={PROVIDER_GOOGLE}
@@ -105,6 +109,23 @@ const Station = () => {
         description={"description"}
       />
     </MapView>
+    <BlurView
+          style={tw`w-11/12 h-12 my-6 rounded items-center ml-4`}
+          // intensity={50}
+          tint="light"
+          
+          
+        >
+          <Text
+            onPress={() => {
+              navigation.navigate("Bikes");
+            }}
+            style={tw`text-yellow-400 pt-2 font-semibold text-lg`}
+          >
+            Order
+          </Text>
+        </BlurView>
+    </SafeAreaView>
   );
 };
 export default Station;

@@ -41,7 +41,7 @@ function Rules({navigation}) {
               </Box>
               <Stack p="4" space={3}>
                 <Stack space={2}>
-                  <Heading size="md" ml="-1" color="yellow.500">
+                  <Heading size="lg" ml="-1" color="gray.700">
                   Ride With Traffic
                   </Heading>
                 </Stack>
@@ -73,7 +73,7 @@ function Rules({navigation}) {
               </Box>
               <Stack p="4" space={3}>
                 <Stack space={2}>
-                  <Heading size="md" ml="-1" color="yellow.500">
+                  <Heading size="lg" ml="-1" color="gray.700">
                   Obey Traffic Signals
                   </Heading>
                 </Stack>
@@ -107,7 +107,7 @@ function Rules({navigation}) {
               </Box>
               <Stack p="4" space={3}>
                 <Stack space={2}>
-                  <Heading size="md" ml="-1" color="yellow.500">
+                  <Heading size="lg" ml="-1" color="gray.700">
                   Yield To Pedestrians
                   </Heading>
                 </Stack>
@@ -139,7 +139,7 @@ function Rules({navigation}) {
               </Box>
               <Stack p="4" space={3}>
                 <Stack space={2}>
-                  <Heading size="md" ml="-1" color="yellow.500">
+                  <Heading size="lg" ml="-1" color="gray.700">
                   Don't Ride Distracted
                   </Heading>
                 </Stack>

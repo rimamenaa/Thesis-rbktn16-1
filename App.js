@@ -29,6 +29,12 @@ import AdventurePayment from "./src/components/payment/AdventurePayment";
 import AdventurePackage from "./src/components/payment/AdventurePackage";
 import AdultBikes from "./src/components/aboutBikes/AdultBikes";
 import KidBikes from "./src/components/aboutBikes/KidBikes";
+import Bikes from "./src/components/Bikes/Bikes";
+import AdultsBikes from "./src/components/Bikes/AdultsBikes";
+import KidsBikes from "./src/components/Bikes/KidsBikes";
+
+
+
 
 import { ActivityIndicator } from "react-native-paper";
 import { AuthContext } from "./src/components/context/context";
@@ -114,6 +120,8 @@ function App() {
             />
             <Stack.Screen name="SingleTrip" component={SingleTrip} />
             <Stack.Screen name="AboutBikes" component={AboutBikes} />
+            <Stack.Screen name="Bikes" component={Bikes} />
+
 
             <Stack.Screen
               name="SingleTripDetails"
@@ -148,10 +156,12 @@ function App() {
               name="AdventurePackage"
               component={AdventurePackage}
             />
-                      <Stack.Screen name="AdultBikes" component={AdultBikes} />
+          <Stack.Screen name="AdultBikes" component={AdultBikes} />
           <Stack.Screen name="KidBikes" component={KidBikes} />
+          <Stack.Screen name="AdultsBikes" component={AdultsBikes} />
+          <Stack.Screen name="KidsBikes" component={KidsBikes} />
 
-            <Stack.Screen name="Station" component={Station} />
+          <Stack.Screen name="Station" component={Station} />
           </Stack.Navigator>
         </NavigationContainer>
         {/* )}

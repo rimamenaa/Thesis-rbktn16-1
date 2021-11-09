@@ -19,11 +19,12 @@ import {
   VStack,
 } from "native-base";
 import tailwind from "tailwind-rn";
-
+import { BlurView } from "expo-blur";
 import Footer from "../Footer/Footer";
 import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-
+import { ImageBackground } from "react-native";
+import tw from "tailwind-react-native-classnames";
 function AboutBikes() {
   const navigation = useNavigation();
 
@@ -45,7 +46,7 @@ function AboutBikes() {
     <View alignItems="center">
       <Pressable
         onPress={() => {
-          navigation.navigate("AdultBikes");
+          navigation.navigate("AdultsBikes");
         }}
       >
         <VStack space={2} alignItems="center" safeAreaTop my={6}>
@@ -56,17 +57,22 @@ function AboutBikes() {
             source={require("../../../assets/adult.jpg")}
             alt="Adult"
           />
-        </VStack>
-        <View style={tailwind("items-center")}>
-        <Text color="amber.500" style={tailwind("text-2xl font-bold")} >
+            <BlurView
+          style={tw`w-full h-12 rounded items-center mt-7 absolute`}
+          intensity={70}
+          tint="dark"
+          color="grey"
+        >
+          <Text color="amber.500" style={tailwind("text-2xl mt-2 font-bold absolute")} >
           ADULTS
         </Text>
-        </View>
+        </BlurView>
+        </VStack>
       </Pressable>
 
       <Pressable
         onPress={() => {
-          navigation.navigate("KidBikes");
+          navigation.navigate("KidsBikes");
         }}
       >
         <VStack space={2} alignItems="center">
@@ -78,13 +84,17 @@ function AboutBikes() {
             source={require("../../../assets/kid.jpg")}
             alt="kid"
           />
-        </VStack>
-        <View style={tailwind("items-center")}>
-
-        <Text color="amber.500" style={tailwind("text-2xl font-bold pt-4")} >
-          KIDS
+             <BlurView
+          style={tw`w-full h-12 rounded items-center mt-12 absolute`}
+          intensity={70}
+          tint="dark"
+          color="grey"
+        >
+          <Text color="amber.500" style={tailwind("text-2xl mt-2 font-bold absolute")} >
+          ADULTS
         </Text>
-        </View>
+        </BlurView>
+        </VStack>
 
       </Pressable>
     </View>

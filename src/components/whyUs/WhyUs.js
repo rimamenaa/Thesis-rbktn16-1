@@ -14,7 +14,7 @@ import {
   Stack,
   Button
 } from "native-base";
-import commercial from "../../../assets/commercial.png";
+
 import tailwind from "tailwind-rn";
 import axios from "axios";
 
@@ -69,11 +69,6 @@ function WhyUs({navigation}) {
                           space={4}
                           justifyContent="space-between"
                         >
-                          <HStack alignItems="center" mt="16">
-                            <Text color="gray.500" fontWeight="400">
-                              35 mins ago
-                            </Text>
-                          </HStack>
                         </HStack>
                       </Stack>
                     </Box>

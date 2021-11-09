@@ -233,9 +233,8 @@ function Home({ navigation }) {
                   Linking.openURL("mailto:bycycletn@gmail.com");
                 }}
               >
-                <Feather name="mail" size={24} color="black" />
-              </Button>
-              
+                <MaterialCommunityIcons name="gmail" size={30} color="black" />
+              </Button>  
             </Stack>
 
             <Stack
