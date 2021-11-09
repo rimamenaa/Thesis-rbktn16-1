@@ -153,7 +153,7 @@ function Rules({navigation}) {
             </Box>
         </View>
       </ScrollView>
-      <View style={{position: 'absolute', width: "100%", marginTop:655, backgroundColor:"white"}}>
+      <View style={{position: 'absolute', width: "100%", marginTop:680, backgroundColor:"white"}}>
         <Footer navigation={navigation} />
       </View>
     </SafeAreaView>

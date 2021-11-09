@@ -29,6 +29,9 @@ import MonthlyPayment from "./src/components/payment/MonthlyPayment";
 import MonthlyPackage from "./src/components/payment/MonthlyPackage";
 import AdventurePayment from "./src/components/payment/AdventurePayment";
 import AdventurePackage from "./src/components/payment/AdventurePackage";
+import AdultBikes from "./src/components/aboutBikes/AdultBikes";
+import KidBikes from "./src/components/aboutBikes/KidBikes";
+
 import { ActivityIndicator } from "react-native-paper";
 import { AuthContext } from "./src/components/context/context";
 import { View } from "native-base";
@@ -148,6 +151,8 @@ function App() {
               name="AdventurePackage"
               component={AdventurePackage}
             />
+                      <Stack.Screen name="AdultBikes" component={AdultBikes} />
+          <Stack.Screen name="KidBikes" component={KidBikes} />
 
             <Stack.Screen name="Station" component={Station} />
           </Stack.Navigator>
