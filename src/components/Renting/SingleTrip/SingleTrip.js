@@ -6,9 +6,9 @@ import {
   Stack,
   NativeBaseProvider,
   Pressable,
-  View
+  View,
 } from "native-base";
-
+import { BlurView } from "expo-blur";
 import { useNavigation } from "@react-navigation/native";
 import tw from "tailwind-react-native-classnames";
 
@@ -16,30 +16,32 @@ function SingleTrip() {
   const navigation = useNavigation();
   return (
     //   ----- Single Package Card ----- 
+    <BlurView
+    style={tw`w-4/5 h-32 my-6 rounded items-center`}
+    intensity={100}
+    tint="light"
+    color="red"
+  > 
     <Pressable
-    
       rounded="lg"
       overflow="hidden"
-      width="72"
-      shadow={1}
-      _light={{ backgroundColor: "white" }}
-      _dark={{ backgroundColor: "white" }}
       onPress={() => {
         navigation.navigate("SingleTripDetails");
       }}
-      style={{ margin: 20 }}
+      // style={{ margin: 10 }}
     >
-      <Stack p="4" space={3} style={tw `items-center`}>
+      <Stack p="4" space={3} style={tw `items-center`} >
+    
         <Stack space={2}>
-          <Heading size="md" ml="-1">
+          <Heading size="lg" ml="-1">
             Single Trip
           </Heading>
           <View style={tw `items-center`}>
           <Text
-            fontSize="xs"
+            fontSize="md"
             _light={{ color: "amber.500" }}
             _dark={{ color: "amber.500" }}
-            fontWeight="medium"
+            fontWeight="bold"
             ml="-0.5"
             mt="-1"
           >
@@ -47,9 +49,10 @@ function SingleTrip() {
           </Text>
           </View>
         </Stack>
-        <Text fontWeight="400">Great for one-way rides.</Text>
+        <Text fontWeight="bold">Great for one-way rides.</Text> 
       </Stack>
     </Pressable>
+    </BlurView>
   );
 }
 
