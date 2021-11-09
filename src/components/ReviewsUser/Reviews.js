@@ -18,9 +18,9 @@ export default function Reviews({navigation}) {
       <Circuit4></Circuit4>
       <Circuit5></Circuit5> */}
     </ScrollView>
-    {/* <View style={{position: 'absolute', width: "95%",marginLeft:10 , marginTop:655, backgroundColor:"white"}}>
+     <View style={{position: 'absolute', width: "100%", marginTop:665, backgroundColor:"white"}}>
         <Footer navigation={navigation} />
-      </View> */}
+      </View> 
   </View>
   );
 }

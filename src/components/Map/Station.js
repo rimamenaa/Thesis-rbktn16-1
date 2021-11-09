@@ -1,25 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Platform,Text, Button, SafeAreaView } from "react-native";
+import { Platform,Text, Button, SafeAreaView, View } from "react-native";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import { FontAwesome } from "@expo/vector-icons";
 import * as Location from "expo-location";
 import { BlurView } from "expo-blur";
 import tw from "tailwind-react-native-classnames";
+import { Entypo } from "@expo/vector-icons";
 
 const Station = ({navigation}) => {
   const [location, setLocation] = useState({
     latitude: 36.8941204,
     longitude: 10.1870475,
   });
-
-  /*   const getLocation = async () => {
-    try {
-      await Location.requestBackgroundPermissionsAsync();
-      setLocation(await navigator.geolocation.location());
-    } catch (error) {
-      console.log(error);
-    }
-  }; */
 
   useEffect(() => {
     console.log(location);
@@ -112,20 +104,71 @@ const Station = ({navigation}) => {
     <BlurView
           style={tw`w-11/12 h-12 my-6 rounded items-center ml-4`}
           // intensity={50}
-          tint="light"
-          
-          
+          tint="light"  
         >
           <Text
             onPress={() => {
               navigation.navigate("Bikes");
             }}
-            style={tw`text-yellow-400 pt-2 font-semibold text-lg`}
+            style={tw`text-yellow-400 pt-2 font-bold text-xl`}
           >
             Order
           </Text>
         </BlurView>
+        
+        <View style={tw `items-center`}>
+      <View style={tw `flex flex-row mb-6`}>
+
+        <Text style={tw `font-bold text-xl`}>
+          Stations
+        </Text> 
+        <Text style={tw `ml-16 font-bold text-xl`}>
+          Availability
+        </Text> 
+        </View>
+        
+
+        <View  style={tw   `rounded-md flex flex-row items-center mr-16`}>
+        <Text style={tw `font-bold ml-12`} >
+          <Entypo name="location-pin" size={20} color="red" /> La Marsa
+        </Text>
+        <Text style={tw `ml-20`} >
+          13 bikes
+        </Text>
+              </View>
+              <View  style={tw   `rounded-md flex flex-row items-center mr-14`}>
+        <Text style={tw `ml-12 font-bold`} >
+          <Entypo name="location-pin" size={20} color="red" /> Lac 3
+        </Text>
+      
+        <Text style={tw `ml-28`} >
+          26 bikes
+        </Text>
+        </View>
+        <View  style={tw   `rounded-md flex flex-row items-center mr-16`}>
+
+        <Text style={tw `ml-12 font-bold`} >
+          <Entypo name="location-pin" size={20} color="red" /> Sidi Bousaid
+        </Text>
+      
+        <Text style={tw `ml-14`} >
+            18 bikes
+        </Text>
+        </View>
+
+        <View  style={tw   `rounded-md flex flex-row items-center mr-16`}>
+
+      <Text style={tw `ml-12 font-bold`} >
+        <Entypo name="location-pin" size={20} color="red" /> La Goulette
+      </Text>
+      <Text style={tw `ml-16`} >
+      22 bikes
+      </Text>
+</View>
+</View>
     </SafeAreaView>
   );
 };
 export default Station;
+
+
