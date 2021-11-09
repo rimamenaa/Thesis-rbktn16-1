@@ -32,7 +32,7 @@ function Commercial({navigation}) {
   const [data, setData] = useState([]);
   const getData = () => {
     axios
-      .get("https://bycyclebackend.herokuapp.com/whybycycle")
+      .get("https://bycyclethesis.herokuapp.com/whybycycle")
       .then((response) => {
         setData(response.data);
         console.log(response.data);

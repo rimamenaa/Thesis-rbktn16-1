@@ -150,7 +150,7 @@ export function SignUpForm({ props }) {
                     fontWeight: 500,
                   }}
                 >
-                  Email ID
+                  Email
                 </FormControl.Label>
                 <Input type="email" placeholder="Enter your email..." />
               </FormControl>
