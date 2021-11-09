@@ -123,7 +123,7 @@ export function SignUpForm({ props }) {
                 >
                   Name
                 </FormControl.Label>
-                <Input />
+                <Input type="text" placeholder= "Enter your name..."/>
               </FormControl>
 
               <FormControl>
@@ -136,7 +136,7 @@ export function SignUpForm({ props }) {
                 >
                   Username
                 </FormControl.Label>
-                <Input />
+                <Input type="text" placeholder= "Enter your username..."/>
               </FormControl>
 
               <FormControl>
@@ -149,7 +149,7 @@ export function SignUpForm({ props }) {
                 >
                   Email ID
                 </FormControl.Label>
-                <Input />
+                <Input type="email" placeholder= "Enter your email..."/>
               </FormControl>
               <FormControl>
                 <FormControl.Label
@@ -161,7 +161,7 @@ export function SignUpForm({ props }) {
                 >
                   Password
                 </FormControl.Label>
-                <Input type="password" />
+                <Input type="password" placeholder= "Enter your password..."/>
                 <Checkbox
                   style={tw`mt-2`}
                   alignItems="flex-start"

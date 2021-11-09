@@ -12,9 +12,12 @@ import Station from "../Map/Station";
 function CombinedMap() {
   // let open = false;
   return (
+  
     <React.Fragment>
       <Station />
     </React.Fragment>
+      
+  
   );
 }
 

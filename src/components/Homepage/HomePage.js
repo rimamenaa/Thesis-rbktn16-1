@@ -75,7 +75,7 @@ function HomePage({ navigation }) {
         >
         </HStack>
         
-        <View style={{position: 'absolute', width: "95%",marginLeft:30, marginTop:600, backgroundColor:"white"}}>
+        <View style={{position: 'absolute', width: "95%",marginLeft:30, marginTop:590, backgroundColor:"white"}}>
         <Footer navigation={navigation} />
       </View>
       </VStack>
