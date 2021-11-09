@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  SafeAreaView,
-  View,
-  ScrollView,
-} from "react-native";
+import { SafeAreaView, View, ScrollView } from "react-native";
 import {
   HStack,
   Text,
@@ -12,13 +8,13 @@ import {
   AspectRatio,
   Image,
   Stack,
-  Button
+  Button,
 } from "native-base";
 import commercial from "../../../assets/commercial.png";
 import tailwind from "tailwind-rn";
 import axios from "axios";
 
-function WhyUs({navigation}) {
+function WhyUs({ navigation }) {
   const [data, setData] = useState([]);
   const getData = () => {
     axios
@@ -35,7 +31,6 @@ function WhyUs({navigation}) {
   return (
     <SafeAreaView style={tailwind("h-full")}>
       <ScrollView>
-        
         <View style={tailwind("mt-6 items-center h-full")}>
           <View>
             <ScrollView>
@@ -47,14 +42,13 @@ function WhyUs({navigation}) {
                       rounded="lg"
                       overflow="hidden"
                       width="350"
-                      
                       shadow={1}
                       _light={{ backgroundColor: "gray.50" }}
                       _dark={{ backgroundColor: "gray.700" }}
                     >
-                      <Box >
-                        <AspectRatio  style={tailwind("h-68")}>
-                          <Image source={{ uri: e.photo }}    alt="image" />
+                      <Box>
+                        <AspectRatio style={tailwind("h-68")}>
+                          <Image source={{ uri: e.photo }} alt="image" />
                         </AspectRatio>
                       </Box>
                       <Stack p="4" space={3}>
@@ -63,7 +57,9 @@ function WhyUs({navigation}) {
                             {e.title}
                           </Heading>
                         </Stack>
-                        <Text  style={tailwind("mt-6 text-lg")}>{e.description}</Text>
+                        <Text style={tailwind("mt-6 text-lg")}>
+                          {e.description}
+                        </Text>
                         <HStack
                           alignItems="center"
                           space={4}
@@ -85,13 +81,13 @@ function WhyUs({navigation}) {
         </View>
       </ScrollView>
       <Button
-            style={tailwind("bg-yellow-500 h-12 w-full")}
-            onPress={() => {
-                navigation.navigate("Commercial");
-              }}
-          >
-            Next
-          </Button>
+        style={tailwind("bg-yellow-500 h-12 w-full")}
+        onPress={() => {
+          navigation.navigate("Commercial");
+        }}
+      >
+        Next
+      </Button>
     </SafeAreaView>
   );
 }
