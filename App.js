@@ -20,8 +20,6 @@ import AdventurePassDetails from "./src/components/Renting/AdventurePass/Adventu
 import SuggestedRoutes from "./src/components/suggestionroads/SuggestedRoutes";
 import Station from "./src/components/Map/Station";
 import AboutBikes from "./src/components/aboutBikes/AboutBikes";
-import Profile from "./src/components/Profile/Profile";
-import Footer from "./src/components/Footer/Footer";
 import WhyUs from "./src/components/whyUs/WhyUs";
 import SingleTripPayment from "./src/components/payment/SingleTripPayment";
 import SingleTripPackage from "./src/components/payment/SingleTripPackage";
@@ -29,6 +27,12 @@ import MonthlyPayment from "./src/components/payment/MonthlyPayment";
 import MonthlyPackage from "./src/components/payment/MonthlyPackage";
 import AdventurePayment from "./src/components/payment/AdventurePayment";
 import AdventurePackage from "./src/components/payment/AdventurePackage";
+import AdultBikes from "./src/components/aboutBikes/AdultBikes";
+import KidBikes from "./src/components/aboutBikes/KidBikes";
+import Bikes from "./src/components/Bikes/Bikes";
+import AdultsBikes from "./src/components/Bikes/AdultsBikes";
+import KidsBikes from "./src/components/Bikes/KidsBikes";
+
 import { ActivityIndicator } from "react-native-paper";
 import { AuthContext } from "./src/components/context/context";
 import { View } from "native-base";

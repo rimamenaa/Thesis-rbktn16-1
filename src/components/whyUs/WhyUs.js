@@ -10,7 +10,7 @@ import {
   Stack,
   Button,
 } from "native-base";
-import commercial from "../../../assets/commercial.png";
+
 import tailwind from "tailwind-rn";
 import axios from "axios";
 import { isSignedIn } from "../services/auth";
@@ -19,7 +19,7 @@ function WhyUs({ navigation }) {
   const [data, setData] = useState([]);
   const getData = () => {
     axios
-      .get("https://bycyclebackend.herokuapp.com/whybycycle")
+      .get("https://bycyclethesis.herokuapp.com/whybycycle")
       .then((response) => {
         setData(response.data);
         console.log(response.data);
@@ -68,13 +68,7 @@ function WhyUs({ navigation }) {
                           alignItems="center"
                           space={4}
                           justifyContent="space-between"
-                        >
-                          <HStack alignItems="center" mt="16">
-                            <Text color="gray.500" fontWeight="400">
-                              35 mins ago
-                            </Text>
-                          </HStack>
-                        </HStack>
+                        ></HStack>
                       </Stack>
                     </Box>
                   </View>
@@ -87,10 +81,10 @@ function WhyUs({ navigation }) {
       <Button
         style={tailwind("bg-yellow-500 h-12 w-full")}
         onPress={() => {
-          navigation.navigate("Commercial");
+          navigation.navigate("Home");
         }}
       >
-        Next
+        Lets Get Started
       </Button>
     </SafeAreaView>
   );
