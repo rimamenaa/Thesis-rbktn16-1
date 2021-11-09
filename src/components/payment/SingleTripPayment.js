@@ -2,7 +2,6 @@ import React from "react"
 import {
   Slide,
   Box,
-  Input,
   Heading,
   VStack,
   HStack,
@@ -21,12 +20,13 @@ export const Payment = () => {
 
   const [isOpen, setIsOpen] = React.useState(false)
   return (
+            //   ----- Payment Details ----- 
     <Box
       width={{
         base: "100%",
         md: "50%",
       }}
-      h="100%" // alignItems="flex-start"
+      h="100%"
       justifyContent="center"
     >
       <VStack space={4} w="100%">
