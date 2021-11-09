@@ -6,44 +6,51 @@ import {
   Stack,
   NativeBaseProvider,
   Pressable,
+  View
 } from "native-base";
 import { useNavigation } from "@react-navigation/native";
+import tw from "tailwind-react-native-classnames";
+import { BlurView } from "expo-blur";
 
 function AdventurePass() {
   const navigation = useNavigation();
   return (
             //   ----- Adventure Package Card ----- 
+   <BlurView
+     style={tw`w-4/5 h-32 my-6 rounded items-center`}
+     intensity={100}
+     tint="light"
+     color="red"
+   > 
     <Pressable
       onPress={() => {
         navigation.navigate("AdventurePassDetails");
       }}
       rounded="lg"
       overflow="hidden"
-      width="72"
-      shadow={1}
-      _light={{ backgroundColor: "gray.200" }}
-      _dark={{ backgroundColor: "gray.700" }}
-      style={{ margin: 20 }}
     >
-      <Stack p="4" space={3}>
+      <Stack p="4" space={3} style={tw `items-center`}>
         <Stack space={2}>
-          <Heading size="md" ml="-1">
+          <Heading size="lg" ml="-1">
             Adventure Pass
           </Heading>
-          <Text
-            fontSize="xs"
+          <View style={tw `items-center`}>
+          <Text 
+            fontSize="md"
             _light={{ color: "amber.500" }}
             _dark={{ color: "amber.500" }}
-            fontWeight="medium"
+            fontWeight="bold"
             ml="-0.5"
             mt="-1"
           >
             25 TND per Day
           </Text>
+          </View>
         </Stack>
-        <Text fontWeight="400">Perfect for visitors and tourists</Text>
+        <Text fontWeight="bold">Perfect for visitors and tourists</Text>
       </Stack>
     </Pressable>
+    </BlurView>
   );
 }
 
