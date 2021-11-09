@@ -51,7 +51,7 @@ function Home({ navigation }) {
               <Button
                 size="lg"
                 variant="solid"
-                colorScheme="amber"
+                style={tailwind("bg-yellow-300")}
                 width="100"
                 height="24"
                 onPress={() => {
@@ -78,7 +78,7 @@ function Home({ navigation }) {
               <Button
                 size="lg"
                 variant="solid"
-                colorScheme="amber"
+                style={tailwind("bg-yellow-300")}
                 width="100"
                 height="24"
                 onPress={() => {
@@ -108,7 +108,7 @@ function Home({ navigation }) {
               <Button
                 size="lg"
                 variant="solid"
-                colorScheme="amber"
+                style={tailwind("bg-yellow-300")}
                 width="100"
                 height="24"
                 onPress={() => {
@@ -135,7 +135,7 @@ function Home({ navigation }) {
               <Button
                 size="lg"
                 variant="solid"
-                colorScheme="amber"
+                style={tailwind("bg-yellow-300")}
                 width="100"
                 height="24"
                 onPress={() => {
@@ -165,7 +165,7 @@ function Home({ navigation }) {
               <Button
                 size="lg"
                 variant="solid"
-                colorScheme="amber"
+                style={tailwind("bg-yellow-300")}
                 width="100"
                 height="24"
                 onPress={() => {
@@ -194,7 +194,7 @@ function Home({ navigation }) {
               <Button
                 size="lg"
                 variant="solid"
-                colorScheme="amber"
+                style={tailwind("bg-yellow-300")}
                 width="100"
                 height="24"
                 onPress={() => {
@@ -228,7 +228,7 @@ function Home({ navigation }) {
                 variant="subtle"
                 width="160"
                 height="12"
-                style={tailwind("text-yellow-600")}
+                colorScheme="indigo"
                 onPress={() => {
                   Linking.openURL("mailto:bycycletn@gmail.com");
                 }}
