@@ -22,18 +22,20 @@ function Rent({navigation}) {
   });
   return (
     <View>
-    <Card>
-      <VStack space={50}>
-        <ScrollView showsVerticalScrollIndicator={false} >
-          <Text fontSize="4xl" color="amber.500">
-            Choose your plan
+  
+      <VStack>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={tw `items-center`}>
+          <Text fontSize="2xl" fontWeight="bold" color="amber.500">
+            Choose Your Plan
           </Text>
+          </View>
           <SingleTrip></SingleTrip>
           <MonthlySub></MonthlySub>
           <AdventurePass></AdventurePass>
         </ScrollView>
       </VStack>
-    </Card>
+
     <View style={{position: 'absolute', width: "100%",marginTop:655, backgroundColor:"white"}}>
         <Footer navigation={navigation} />
       </View>

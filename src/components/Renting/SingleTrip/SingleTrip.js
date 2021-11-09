@@ -22,8 +22,8 @@ function SingleTrip() {
       overflow="hidden"
       width="72"
       shadow={1}
-      _light={{ backgroundColor: "gray.200" }}
-      _dark={{ backgroundColor: "gray.700" }}
+      _light={{ backgroundColor: "white" }}
+      _dark={{ backgroundColor: "white" }}
       onPress={() => {
         navigation.navigate("SingleTripDetails");
       }}

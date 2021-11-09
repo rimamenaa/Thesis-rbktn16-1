@@ -58,7 +58,8 @@ function Home({ navigation }) {
                   navigation.navigate("AboutBikes");
                 }}
               >
-<MaterialCommunityIcons name="bike" size={35} color="black" /> 
+              <MaterialCommunityIcons name="bike" size={35} color="black" /> 
+              <Text>Bikes</Text>
              </Button>
             </Stack>
 
@@ -86,6 +87,7 @@ function Home({ navigation }) {
                 }}
               >
                 <FontAwesome5 name="route" size={35} color="black" />
+                <Text>Routes</Text>
               </Button>
             </Stack>
             </View>
@@ -115,7 +117,8 @@ function Home({ navigation }) {
                   navigation.navigate("Station");
                 }}
               >
-<Entypo name="location" size={35} color="black" /> 
+              <Entypo style={tailwind("ml-2")} name="location" size={35} color="black" /> 
+              <Text>Stations</Text>
              </Button>
             </Stack>
 
@@ -142,7 +145,8 @@ function Home({ navigation }) {
                   navigation.navigate("Reviews");
                 }}
               >
-<MaterialCommunityIcons name="comment-processing-outline" size={35} color="black" /> 
+              <MaterialCommunityIcons style={tailwind("ml-2")} name="comment-processing-outline" size={35} color="black" /> 
+              <Text>Reviews</Text>
              </Button>
             </Stack>
             </View>
@@ -173,6 +177,7 @@ function Home({ navigation }) {
                 }}
               >
                <MaterialIcons name="rule-folder" size={35} color="black" />
+               <Text>Rules</Text>
               </Button>
             </Stack>
 
@@ -202,6 +207,7 @@ function Home({ navigation }) {
                 }}
               >
                 <FontAwesome5 name="money-check" size={24} color="black" />
+                <Text>Rent</Text>
               </Button>
             </Stack>
                 </View>

@@ -25,8 +25,8 @@ function AdventurePass() {
       overflow="hidden"
       width="72"
       shadow={1}
-      _light={{ backgroundColor: "gray.200" }}
-      _dark={{ backgroundColor: "gray.700" }}
+      _light={{ backgroundColor: "white" }}
+      _dark={{ backgroundColor: "white" }}
       style={{ margin: 20 }}
     >
       <Stack p="4" space={3}>

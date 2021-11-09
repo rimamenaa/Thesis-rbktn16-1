@@ -11,7 +11,7 @@ import {
   ScrollView,
   Button,
 } from "native-base";
-
+import tw from "tailwind-react-native-classnames";
 import { useNavigation } from "@react-navigation/native";
 
 function AdventurePassDetails() {
