@@ -195,9 +195,10 @@ export function SignInForm({ props }) {
                   bg: "primary.700",
                 }}
                 onPress={() => {
-                  signIn({ email, password }).then(() =>
-                    props.navigation.navigate("WhyUs")
-                  );
+                  signIn({ email, password }).then(() => {
+                    setIsOpen(true);
+                    setTimeout(() => props.navigation.navigate("WhyUs"), 2500);
+                  });
                 }}
               >
                 SIGN IN
