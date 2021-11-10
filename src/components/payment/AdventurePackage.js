@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState }  from "react";
 import {
   Input,
   Box,
@@ -10,11 +10,39 @@ import {
   NativeBaseProvider,
   Button,
 } from "native-base";
+import axios from "axios";
+
 import { useNavigation } from "@react-navigation/native";
 
 export const Info = () => {
   const navigation = useNavigation();
+  const [id, setId] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
+  const onChangeIdHandler = (id) => {
+    setId(id);
+  };
+  const onChangePhoneNumberHandler = (phoneNumber) => {
+    setPhoneNumber(phoneNumber);
+  };
+
+  const onSubmit = () => {
+    axios
+      .post('http://localhost:3000/pi', {
+        id,
+        phoneNumber
+      })
+      .then(function (response) {
+        // handle success
+        console.log('then', JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        // handle error
+        console.log('error catch', error.message);
+        console.log('info', id, phoneNumber);
+      });
+  };
+  
   return (
                     //   ----- Personal Information ----- 
     <Box
@@ -36,11 +64,15 @@ export const Info = () => {
           w="100%" 
           variant="outline" 
           placeholder="ID" 
+          onChangeText={onChangeIdHandler}
+
           />
           <Input  
           w="100%" 
           variant="outline" 
           placeholder="Phone Number" 
+          onChangeText={onChangePhoneNumberHandler}
+
           />
         </Stack>
 
@@ -48,7 +80,7 @@ export const Info = () => {
           colorScheme="yellow"
           my="2"
           onPress={() => {
-            navigation.navigate("AdventurePayment");
+            navigation.navigate("AdventurePayment"); onSubmit()
           }}
         >
           Next
