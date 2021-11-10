@@ -16,12 +16,6 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import Footer from "../Footer/Footer";
 import Home from "./HomeStyle";
 
-
-
-import tailwind from "tailwind-rn";
-
-
-
 function HomePage({ navigation }) {
   return (
     <KeyboardAwareScrollView
@@ -128,6 +122,7 @@ export default function SignIn({navigation}) {
         <Image
           style={tw`w-20 h-20 mt-2`}
           source={require("../../../assets/LogoBike.png")}
+          alt="image"
         />
         </View>
         

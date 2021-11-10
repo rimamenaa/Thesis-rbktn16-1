@@ -82,7 +82,7 @@ function AboutBikes() {
             borderRadius={5}
             marginTop={12}
             source={require("../../../assets/kid.jpg")}
-            alt="kid"
+            alt="image"
           />
            <BlurView
           style={tw`w-full h-12 rounded items-center mt-12 absolute`}
