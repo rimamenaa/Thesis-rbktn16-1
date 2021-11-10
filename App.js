@@ -32,10 +32,10 @@ import KidBikes from "./src/components/aboutBikes/KidBikes";
 import Bikes from "./src/components/Bikes/Bikes";
 import AdultsBikes from "./src/components/Bikes/AdultsBikes";
 import KidsBikes from "./src/components/Bikes/KidsBikes";
-
 import { ActivityIndicator } from "react-native-paper";
 import { AuthContext } from "./src/components/context/context";
 import { View } from "native-base";
+import { isSignedIn } from "./src/components/services/auth";
 
 const theme = extendTheme({
   colors: {
@@ -45,6 +45,7 @@ const theme = extendTheme({
 const Stack = createNativeStackNavigator();
 
 function App() {
+  isSignedIn()
   return (
     <NativeBaseProvider theme={theme}>
       <AuthContext.Provider AuthContext={AuthContext}>
