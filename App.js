@@ -47,41 +47,38 @@ const theme = extendTheme({
 const Stack = createNativeStackNavigator();
 
 function App() {
-  const [token,setToken] = useState(null)
+  const [token, setToken] = useState(null);
 
-  setInterval(()=>{
-   setToken( isSignedIn())
-  },10000)
+  setInterval(() => {
+    setToken(isSignedIn());
+  }, 10000);
 
-  if(!token){
+  if (!token) {
     return (
-
-          <NativeBaseProvider theme={theme}>
-      <AuthContext.Provider AuthContext={AuthContext}>
-        <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen
-              name="LandingPage"
-              options={{ headerShown: false }}
-              component={LandingPage}
-            />
-            <Stack.Screen
-              name="Signup"
-              options={{ headerShown: false }}
-              component={Signup}
-            />
-             <Stack.Screen
-              name="Login"
-              options={{ headerShown: false }}
-              component={Login}
-            />
+      <NativeBaseProvider theme={theme}>
+        <AuthContext.Provider AuthContext={AuthContext}>
+          <NavigationContainer>
+            <Stack.Navigator>
+              <Stack.Screen
+                name="LandingPage"
+                options={{ headerShown: false }}
+                component={LandingPage}
+              />
+              <Stack.Screen
+                name="Signup"
+                options={{ headerShown: false }}
+                component={Signup}
+              />
+              <Stack.Screen
+                name="Login"
+                options={{ headerShown: false }}
+                component={Login}
+              />
             </Stack.Navigator>
-            </NavigationContainer>
-            </AuthContext.Provider>
-            </NativeBaseProvider>
-    )
-
-
+          </NavigationContainer>
+        </AuthContext.Provider>
+      </NativeBaseProvider>
+    );
   }
   return (
     <NativeBaseProvider theme={theme}>
@@ -99,9 +96,16 @@ function App() {
               component={HomePage}
             />
             <Stack.Screen name="Commercial" component={Commercial} />
-            <Stack.Screen name="WhyUs" component={WhyUs}  options={{ headerShown: false }}
-/>
-            <Stack.Screen name="Rent" component={Rent} />
+            <Stack.Screen
+              name="WhyUs"
+              component={WhyUs}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Rent"
+              component={Rent}
+              options={{ headerShown: false }}
+            />
             <Stack.Screen name="CombinedMap" component={CombinedMap} />
             <Stack.Screen name="Rules" component={Rules} />
             <Stack.Screen name="Reviews" component={Reviews} />
@@ -154,7 +158,6 @@ function App() {
 
             <Stack.Screen name="Station" component={Station} />
             <Stack.Screen name="PaymentKonnect" component={PaymentKonnect} />
-
           </Stack.Navigator>
         </NavigationContainer>
       </AuthContext.Provider>
