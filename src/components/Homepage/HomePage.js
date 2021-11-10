@@ -16,12 +16,6 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import Footer from "../Footer/Footer";
 import Home from "./HomeStyle";
 
-
-
-import tailwind from "tailwind-rn";
-
-
-
 function HomePage({ navigation }) {
   return (
     <KeyboardAwareScrollView
