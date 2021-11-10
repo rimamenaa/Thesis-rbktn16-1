@@ -30,8 +30,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
   timeout: 1000,
   headers: { "x-token": "7ot el token ya wissem" },
 }); */
-import { AuthContext } from "../context/context";
-
+import { signIn } from "../services/auth";
 export function SignInForm({ props }) {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -42,10 +41,6 @@ export function SignInForm({ props }) {
     setMessage(message);
     setMessageType(type);
   };
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
   const handleGoogleSignIn = () => {
     setGoogleSubmitting(true);
     const config = {
@@ -76,17 +71,10 @@ export function SignInForm({ props }) {
         setGoogleSubmitting(false);
       });
   };
- 
 
-  const submitLogin = async () => {
-    await axios
-      .post("https://bycyclethesis.herokuapp.com/user/login", {
-        email: email,
-        password: password,
-      })
-      .then((res) => SignIn(res.data.accessToken))
-      .catch((err) => console.log(err));
-  };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <KeyboardAwareScrollView
       contentContainerStyle={{
@@ -149,8 +137,7 @@ export function SignInForm({ props }) {
                 <Input
                   type="email"
                   name="email"
-                  placeholder="Enter Your email ..."
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChangeText={(value) => setEmail(value)}
                 />
               </FormControl>
               <FormControl>
@@ -166,8 +153,7 @@ export function SignInForm({ props }) {
                 <Input
                   type="password"
                   name="password"
-                  placeholder="Enter your password..."
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChangeText={(value) => setPassword(value)}
                 />
                 <Link
                   _text={{
@@ -209,8 +195,9 @@ export function SignInForm({ props }) {
                   bg: "primary.700",
                 }}
                 onPress={() => {
-                  setIsOpen(true);
-                  setTimeout(() => props.navigation.navigate("WhyUs"), 2500);
+                  signIn({ email, password }).then(() =>
+                    props.navigation.navigate("WhyUs")
+                  );
                 }}
               >
                 SIGN IN
