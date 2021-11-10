@@ -15,17 +15,20 @@ import {
   FormControl,
   Input,
   Image,
+  Slide,
+  CheckIcon,
 } from "native-base";
 
 import tw from "tailwind-react-native-classnames";
 import * as Google from "expo-google-app-auth";
-
+import { signUp } from "../services/auth";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export function SignUpForm({ props }) {
   const [message, setMessage] = useState();
   const [messageType, setMessageType] = useState();
   const [googleSubmitting, setGoogleSubmitting] = useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const handleMessage = (message, type = "FAILED") => {
     setMessage(message);
@@ -37,6 +40,8 @@ export function SignUpForm({ props }) {
     const config = {
       iosClientId: `215341427022-haijkikj7ejpthac9sld1ihejeouoj06.apps.googleusercontent.com`,
       androidClientId: `215341427022-eosmagesimfkte0p4b84ci77t6b7m6o2.apps.googleusercontent.com`,
+      androidStandaloneAppClientId: `215341427022-ktifsf6rj56ubln7ddtac012o0s4rlb5.apps.googleusercontent.com`,
+
       scopes: ["profile", "email"],
     };
     Google.logInAsync(config)
@@ -60,6 +65,10 @@ export function SignUpForm({ props }) {
         setGoogleSubmitting(false);
       });
   };
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [fullname, setFullName] = useState("");
 
   return (
     <KeyboardAwareScrollView
@@ -119,9 +128,16 @@ export function SignUpForm({ props }) {
                     fontWeight: 500,
                   }}
                 >
-                  Name
+                  Full Name
                 </FormControl.Label>
-                <Input />
+                <Input
+                  type="text"
+                  name="fullname"
+                  placeholder="Full Name"
+                  onChangeText={(value) => {
+                    setFullName(value);
+                  }}
+                />
               </FormControl>
 
               <FormControl>
@@ -132,22 +148,16 @@ export function SignUpForm({ props }) {
                     fontWeight: 500,
                   }}
                 >
-                  Username
+                  Email
                 </FormControl.Label>
-                <Input />
-              </FormControl>
-
-              <FormControl>
-                <FormControl.Label
-                  _text={{
-                    color: "coolGray.800",
-                    fontSize: "xs",
-                    fontWeight: 500,
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  onChangeText={(value) => {
+                    setEmail(value);
                   }}
-                >
-                  Email ID
-                </FormControl.Label>
-                <Input />
+                />
               </FormControl>
               <FormControl>
                 <FormControl.Label
@@ -159,7 +169,14 @@ export function SignUpForm({ props }) {
                 >
                   Password
                 </FormControl.Label>
-                <Input type="password" />
+                <Input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  onChangeText={(value) => {
+                    setPassword(value);
+                  }}
+                />
                 <Checkbox
                   style={tw`mt-2`}
                   alignItems="flex-start"
@@ -229,7 +246,9 @@ export function SignUpForm({ props }) {
                   bg: "primary.700",
                 }}
                 onPress={() => {
-                  props.navigation.navigate("Login");
+                  signUp({ fullname, email, password }).then(() => {
+                    props.navigation.navigate("Home");
+                  });
                 }}
               >
                 SIGN UP
@@ -277,7 +296,42 @@ export function SignUpForm({ props }) {
                 ></Divider>
               </HStack>
             </VStack>
-
+            <Slide in={isOpen} placement="bottom">
+              <Box
+                w="100%"
+                position="absolute"
+                bottom="24"
+                p="2"
+                borderRadius="xs"
+                bg="green.300"
+                alignItems="center"
+                justifyContent="center"
+                _dark={{
+                  bg: "amber.200",
+                }}
+              >
+                <HStack space={2}>
+                  <CheckIcon
+                    size="4"
+                    color="green.800"
+                    mt="1"
+                    _dark={{
+                      color: "amber.700",
+                    }}
+                  />
+                  <Text
+                    color="gray.600"
+                    textAlign="center"
+                    _dark={{
+                      color: "gray.700",
+                    }}
+                    fontWeight="medium"
+                  >
+                    Account Successfully Created!
+                  </Text>
+                </HStack>
+              </Box>
+            </Slide>
             <Button
               mt="5"
               size="md"
