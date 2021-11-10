@@ -37,8 +37,8 @@ function AdventurePass() {
           <View style={tw `items-center`}>
           <Text 
             fontSize="md"
-            _light={{ color: "amber.500" }}
-            _dark={{ color: "amber.500" }}
+            _light={{ color: "orange.400" }}
+            _dark={{ color: "orange.400" }}
             fontWeight="bold"
             ml="-0.5"
             mt="-1"

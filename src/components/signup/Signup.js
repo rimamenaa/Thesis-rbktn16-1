@@ -16,19 +16,19 @@ import {
   Input,
   Image,
   Slide,
-  CheckIcon
+  CheckIcon,
 } from "native-base";
 
 import tw from "tailwind-react-native-classnames";
 import * as Google from "expo-google-app-auth";
-
+import { signUp } from "../services/auth";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export function SignUpForm({ props }) {
   const [message, setMessage] = useState();
   const [messageType, setMessageType] = useState();
   const [googleSubmitting, setGoogleSubmitting] = useState(false);
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const handleMessage = (message, type = "FAILED") => {
     setMessage(message);
@@ -65,6 +65,10 @@ export function SignUpForm({ props }) {
         setGoogleSubmitting(false);
       });
   };
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [fullname, setFullName] = useState("");
 
   return (
     <KeyboardAwareScrollView
@@ -124,9 +128,16 @@ export function SignUpForm({ props }) {
                     fontWeight: 500,
                   }}
                 >
-                  Name
+                  Full Name
                 </FormControl.Label>
-                <Input type="text" placeholder= "Enter your name..."/>
+                <Input
+                  type="text"
+                  name="fullname"
+                  placeholder="Full Name"
+                  onChangeText={(value) => {
+                    setFullName(value);
+                  }}
+                />
               </FormControl>
 
               <FormControl>
@@ -137,22 +148,16 @@ export function SignUpForm({ props }) {
                     fontWeight: 500,
                   }}
                 >
-                  Username
+                  Email
                 </FormControl.Label>
-                <Input type="text" placeholder= "Enter your username..."/>
-              </FormControl>
-
-              <FormControl>
-                <FormControl.Label
-                  _text={{
-                    color: "coolGray.800",
-                    fontSize: "xs",
-                    fontWeight: 500,
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  onChangeText={(value) => {
+                    setEmail(value);
                   }}
-                >
-                  Email ID
-                </FormControl.Label>
-                <Input type="email" placeholder= "Enter your email..."/>
+                />
               </FormControl>
               <FormControl>
                 <FormControl.Label
@@ -164,7 +169,14 @@ export function SignUpForm({ props }) {
                 >
                   Password
                 </FormControl.Label>
-                <Input type="password" placeholder= "Enter your password..."/>
+                <Input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  onChangeText={(value) => {
+                    setPassword(value);
+                  }}
+                />
                 <Checkbox
                   style={tw`mt-2`}
                   alignItems="flex-start"
@@ -233,10 +245,12 @@ export function SignUpForm({ props }) {
                 _dark={{
                   bg: "primary.700",
                 }}
-                onPress={() => { setIsOpen(true) ;  setTimeout(
-                  () =>  props.navigation.navigate("Login"),
-                  1500
-                );}}   
+                onPress={() => {
+                  signUp({ fullname, email, password }).then(() => {
+                    setIsOpen(true);
+                    setTimeout(() => props.navigation.navigate("Login"), 2500);
+                  });
+                }}
               >
                 SIGN UP
               </Button>
@@ -284,43 +298,41 @@ export function SignUpForm({ props }) {
               </HStack>
             </VStack>
             <Slide in={isOpen} placement="bottom">
-
-<Box
-  w="100%"
-  position="absolute"
-  bottom="24"
-  p="2"
-  borderRadius="xs"
-  bg="green.300"
-  alignItems="center"
-  justifyContent="center"
-  _dark={{
-    bg: "amber.200",
-  }}
->
-  <HStack space={2}>
-    <CheckIcon
-      size="4"
-      color="green.800"
-      mt="1"
-      _dark={{
-        color: "amber.700",
-      }}
-    />
-    <Text
-      color="gray.600"
-      textAlign="center"
-      _dark={{
-        color: "gray.700",
-      }}
-      fontWeight="medium"
-    >
-      Account Successfully Created!
-    </Text>
-  </HStack>
-
-</Box>
-</Slide>
+              <Box
+                w="100%"
+                position="absolute"
+                bottom="24"
+                p="2"
+                borderRadius="xs"
+                bg="green.300"
+                alignItems="center"
+                justifyContent="center"
+                _dark={{
+                  bg: "amber.200",
+                }}
+              >
+                <HStack space={2}>
+                  <CheckIcon
+                    size="4"
+                    color="green.800"
+                    mt="1"
+                    _dark={{
+                      color: "amber.700",
+                    }}
+                  />
+                  <Text
+                    color="gray.600"
+                    textAlign="center"
+                    _dark={{
+                      color: "gray.700",
+                    }}
+                    fontWeight="medium"
+                  >
+                    Account Successfully Created!
+                  </Text>
+                </HStack>
+              </Box>
+            </Slide>
             <Button
               mt="5"
               size="md"

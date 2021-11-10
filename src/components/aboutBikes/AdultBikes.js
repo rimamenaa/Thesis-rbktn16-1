@@ -20,9 +20,9 @@ function AboutBikes({ navigation }) {
 
   useEffect(async () => {
     axios
-      .get("https://bycyclebackend.herokuapp.com/bicycle")
+      .get("https://bycyclethesis.herokuapp.com/bicycle")
       .then((response) => {
-        console.log("adults", response.data.slice(0, 9));
+        
         setData(response.data);
       })
       .catch((err) => {
@@ -40,7 +40,7 @@ function AboutBikes({ navigation }) {
         </View>
 
         {data.slice(0, 9).map((bike, key) => {
-          console.log(bike);
+         
           return (
             <Card key={key}>
               <AspectRatio ratio={9 / 9}>
@@ -67,7 +67,7 @@ function AboutBikes({ navigation }) {
         style={{
           position: "absolute",
           width: "100%",
-          marginTop: 680,
+          marginTop: 660,
           backgroundColor: "white",
         }}
       >

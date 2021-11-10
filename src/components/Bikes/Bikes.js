@@ -32,7 +32,7 @@ function AboutBikes() {
 
   useEffect(async () => {
     axios
-      .get("https://bycyclebackend.herokuapp.com/bicycle")
+      .get("https://bycyclethesis.herokuapp.com/bicycle")
       .then((response) => {
         console.log("dataaaa", response.data.slice(7, 14));
         setData(response.data);
