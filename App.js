@@ -32,6 +32,7 @@ import KidBikes from "./src/components/aboutBikes/KidBikes";
 import Bikes from "./src/components/Bikes/Bikes";
 import AdultsBikes from "./src/components/Bikes/AdultsBikes";
 import KidsBikes from "./src/components/Bikes/KidsBikes";
+import PaymentKonnect from "./src/components/paymentKonnect/PaymentKonnect";
 
 import { ActivityIndicator } from "react-native-paper";
 import { AuthContext } from "./src/components/context/context";
@@ -171,6 +172,8 @@ function App() {
             <Stack.Screen name="KidsBikes" component={KidsBikes} />
 
             <Stack.Screen name="Station" component={Station} />
+            <Stack.Screen name="PaymentKonnect" component={PaymentKonnect} />
+
           </Stack.Navigator>
         </NavigationContainer>
         {/* )}
