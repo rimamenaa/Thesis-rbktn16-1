@@ -1,20 +1,30 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\MSI\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+  /usr/local/bin/node /home/brinis/.yarn/bin/yarn.js add @react-native@0.64.3
 
 PATH: 
-  C:\Users\MSI\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\MSI\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\MSI\AppData\Local\Microsoft\WindowsApps;C:\Users\MSI\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\MSI\AppData\Roaming\npm;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MongoDB\Server\5.0\bin;C:\Program Files\heroku\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+  /home/brinis/.yarn/bin:/home/brinis/.config/yarn/global/node_modules/.bin:/home/brinis/.yarn/bin:/home/brinis/.config/yarn/global/node_modules/.bin:/home/brinis/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
 Yarn version: 
-  1.22.11
+  1.22.15
 
 Node version: 
   14.17.5
 
 Platform: 
-  win32 x64
+  linux x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\MSI\Desktop\Thesis-rbktn16\node_modules\xdl\binaries\windows\adb\adb.exe'
+  Error: https://registry.yarnpkg.com/@react-native: Request "https://registry.yarnpkg.com/@react-native" returned a 405
+      at Request.params.callback [as _callback] (/home/brinis/.yarn/lib/cli.js:67040:18)
+      at Request.self.callback (/home/brinis/.yarn/lib/cli.js:140885:22)
+      at Request.emit (events.js:400:28)
+      at Request.<anonymous> (/home/brinis/.yarn/lib/cli.js:141857:10)
+      at Request.emit (events.js:400:28)
+      at IncomingMessage.<anonymous> (/home/brinis/.yarn/lib/cli.js:141779:12)
+      at Object.onceWrapper (events.js:519:28)
+      at IncomingMessage.emit (events.js:412:35)
+      at endReadableNT (internal/streams/readable.js:1317:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21)
 
 npm manifest: 
   {
@@ -26,13 +36,18 @@ npm manifest:
       "eject": "expo eject"
     },
     "dependencies": {
+      "@mapbox/polyline": "^1.1.1",
+      "@react-native-async-storage/async-storage": "~1.15.0",
+      "@react-native-community/geolocation": "^2.0.2",
       "@react-native-community/masked-view": "^0.1.11",
       "@react-navigation/drawer": "^6.1.8",
       "@react-navigation/native": "^6.0.6",
       "@react-navigation/native-stack": "^6.2.5",
       "@react-navigation/stack": "^6.0.11",
       "@types/react-native-snap-carousel": "^3.8.5",
+      "axios": "^0.24.0",
       "expo": "^43.0.0",
+      "expo-blur": "~10.0.3",
       "expo-cli": "^4.12.10",
       "expo-google-app-auth": "~9.0.0",
       "expo-google-sign-in": "^10.0.3",
@@ -40,7 +55,8 @@ npm manifest:
       "expo-permissions": "^13.0.3",
       "expo-splash-screen": "~0.13.5",
       "expo-status-bar": "~1.1.0",
-      "expo-updates": "^0.10.12",
+      "expo-updates": "^0.10.13",
+      "galio-framework": "^0.8.0",
       "moment": "^2.29.1",
       "native-base": "^3.2.1",
       "react": "17.0.1",
@@ -48,11 +64,14 @@ npm manifest:
       "react-native": "^0.64.2",
       "react-native-dotenv": "^3.2.0",
       "react-native-elements": "^3.4.2",
+      "react-native-geolocation-service": "^5.3.0-beta.3",
       "react-native-gesture-handler": "~1.10.2",
+      "react-native-google-places-autocomplete": "^2.4.1",
       "react-native-keyboard-aware-scroll-view": "^0.9.4",
       "react-native-maps": "0.28.0",
       "react-native-pager-view": "5.4.6",
       "react-native-paper": "^4.10.0",
+      "react-native-permissions": "^3.1.0",
       "react-native-phone-call": "^1.0.9",
       "react-native-ratings": "^8.1.0",
       "react-native-reanimated": "~2.2.0",
@@ -1647,6 +1666,13 @@ Lockfile:
       "@types/yargs" "^15.0.0"
       chalk "^4.0.0"
   
+  "@mapbox/polyline@^1.1.1":
+    version "1.1.1"
+    resolved "https://registry.yarnpkg.com/@mapbox/polyline/-/polyline-1.1.1.tgz#ab96e5e6936f4847a4894e14558daf43e40e3bd2"
+    integrity sha512-z9Sl7NYzsEIrAza658H92mc0OvpBjQwjp7Snv4xREKhsCMat7m1IKdWJMjQ5opiPYa0veMf7kCaSd1yx55AhmQ==
+    dependencies:
+      meow "^6.1.1"
+  
   "@nodelib/fs.scandir@2.1.5":
     version "2.1.5"
     resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -2106,6 +2132,13 @@ Lockfile:
       "@react-aria/ssr" "^3.0.1"
       "@react-aria/utils" "^3.3.0"
   
+  "@react-native-async-storage/async-storage@~1.15.0":
+    version "1.15.11"
+    resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.15.11.tgz#da625b906529076414c32fd337d813b565149858"
+    integrity sha512-l/I+PK+lh5M25QSdk44aX+UR63ian2d2CSx6WbydwU+RUZmKP7eOEPe+OeaTWgfOFSVtlEqEcP2AbW2YM7ukMA==
+    dependencies:
+      merge-options "^3.0.4"
+  
   "@react-native-community/cli-debugger-ui@^5.0.1":
     version "5.0.1"
     resolved "https://registry.yarnpkg.com/@react-native-community/cli-debugger-ui/-/cli-debugger-ui-5.0.1.tgz#6b1f3367b8e5211e899983065ea2e72c1901d75f"
@@ -2229,6 +2262,11 @@ Lockfile:
       strip-ansi "^5.2.0"
       sudo-prompt "^9.0.0"
       wcwidth "^1.0.1"
+  
+  "@react-native-community/geolocation@^2.0.2":
+    version "2.0.2"
+    resolved "https://registry.yarnpkg.com/@react-native-community/geolocation/-/geolocation-2.0.2.tgz#ba8b40f560ead8d014740d1cdea970b33f19312e"
+    integrity sha512-tTNXRCgnhJBu79mulQwzabXRpDqfh/uaDqfHVpvF0nX4NTpolpy6mvTRiFg7eWFPGRArsnZz1EYp6rHfJWGgEA==
   
   "@react-native-community/masked-view@^0.1.11":
     version "0.1.11"
@@ -3592,6 +3630,13 @@ Lockfile:
     integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
     dependencies:
       follow-redirects "^1.10.0"
+  
+  axios@^0.24.0:
+    version "0.24.0"
+    resolved "https://registry.yarnpkg.com/axios/-/axios-0.24.0.tgz#804e6fa1e4b9c5288501dd9dff56a7a0940d20d6"
+    integrity sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==
+    dependencies:
+      follow-redirects "^1.14.4"
   
   babel-core@^7.0.0-bridge.0:
     version "7.0.0-bridge.0"
@@ -5893,6 +5938,13 @@ Lockfile:
       path-browserify "^1.0.0"
       url-parse "^1.4.4"
   
+  expo-blur@~10.0.3:
+    version "10.0.3"
+    resolved "https://registry.yarnpkg.com/expo-blur/-/expo-blur-10.0.3.tgz#d2960a4a3bfb4cab2a85989f3f2203be42680564"
+    integrity sha512-poU7fUDoSnt4UjAAEIkxV0zjyL0bKDvmA73rZIh47ISO+qxCGau7E046dCCa2MqjhCrAIXL5hujInEswASC7YA==
+    dependencies:
+      expo-modules-core "~0.4.4"
+  
   expo-cli@^4.12.10:
     version "4.12.11"
     resolved "https://registry.yarnpkg.com/expo-cli/-/expo-cli-4.12.11.tgz#5bf9ea583ba825a5b9f629b540d6e8dc8313af26"
@@ -6096,10 +6148,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/expo-updates-interface/-/expo-updates-interface-0.4.0.tgz#20961f2cb4bd068a74c29434affa08791dbaa240"
     integrity sha512-EUJaLnDAePikGEQT8w6gjCY3m/dlGgjZKVn5XBaxZMkHzOy3PDQo6QOcK/bcMdkA3CyNrvo6NCe+/7RHrgmK4A==
   
-  expo-updates@^0.10.12:
-    version "0.10.12"
-    resolved "https://registry.yarnpkg.com/expo-updates/-/expo-updates-0.10.12.tgz#a60f889ecc2fbd05855f9c448778dee3c3c40455"
-    integrity sha512-DltK873QN3UisjLhe+Oi6R0RKvg4ygbqhqNA1K50w9eBTLnDJ5mQHUyOsqeaXaXhDIPcWNLBaNP2zVfuAxBoIw==
+  expo-updates@^0.10.13:
+    version "0.10.13"
+    resolved "https://registry.yarnpkg.com/expo-updates/-/expo-updates-0.10.13.tgz#8e4eb506f7e78ed6fcd97bd4d18bce6f0637bf5b"
+    integrity sha512-IrEIvitWtxJkxbcWQidUmHvZAn9sPIXQq7gJXuaeXAa7aNQEj6kK0KLHqD4IoPSHEJ2oYdonXEnePNgwCl8XwA==
     dependencies:
       "@expo/config" "^5.0.9"
       "@expo/config-plugins" "^4.0.2"
@@ -6496,7 +6548,7 @@ Lockfile:
       inherits "^2.0.3"
       readable-stream "^2.3.6"
   
-  follow-redirects@^1.0.0, follow-redirects@^1.10.0:
+  follow-redirects@^1.0.0, follow-redirects@^1.10.0, follow-redirects@^1.14.4:
     version "1.14.5"
     resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.5.tgz#f09a5848981d3c772b5392309778523f8d85c381"
     integrity sha512-wtphSXy7d4/OR+MvIFbCVBDzZ5520qV8XfPklSN5QtxuMUJZ+b0Wnst1e1lCDocfzuCkHqj8k0FpZqO+UIaKNA==
@@ -6679,6 +6731,13 @@ Lockfile:
     version "1.1.1"
     resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
     integrity sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
+  
+  galio-framework@^0.8.0:
+    version "0.8.0"
+    resolved "https://registry.yarnpkg.com/galio-framework/-/galio-framework-0.8.0.tgz#565566b88157d87e1c515aa16279fac58c514f66"
+    integrity sha512-ca1iDbu700NQuE27OdmE8ADPDswyf05GXHOZUHjKqPxeX/7rehYlRxLI+PWWTqI1a+L7Vp2Eidn8+dtdjARmWQ==
+    dependencies:
+      opencollective-postinstall "^2.0.1"
   
   gauge@~2.7.3:
     version "2.7.4"
@@ -7819,6 +7878,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-1.1.0.tgz#71a50c8429dfca773c92a390a4a03b39fcd51d3e"
     integrity sha1-caUMhCnfync8kqOQpKA7OfzVHT4=
   
+  is-plain-obj@^2.1.0:
+    version "2.1.0"
+    resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-2.1.0.tgz#45e42e37fccf1f40da8e5f76ee21515840c09287"
+    integrity sha512-YWnfyRwxL/+SsrWYfOpUtz5b3YD+nyfkHvjbcanzk8zgyO4ASD67uVMRt8k5bM4lLMDnXfriRhOpemw+NfT1eA==
+  
   is-plain-object@^2.0.3, is-plain-object@^2.0.4:
     version "2.0.4"
     resolved "https://registry.yarnpkg.com/is-plain-object/-/is-plain-object-2.0.4.tgz#2c163b3fafb1b606d9d17928f05c2a1c38e07677"
@@ -8736,6 +8800,23 @@ Lockfile:
       errno "^0.1.3"
       readable-stream "^2.0.1"
   
+  meow@^6.1.1:
+    version "6.1.1"
+    resolved "https://registry.yarnpkg.com/meow/-/meow-6.1.1.tgz#1ad64c4b76b2a24dfb2f635fddcadf320d251467"
+    integrity sha512-3YffViIt2QWgTy6Pale5QpopX/IvU3LPL03jOTqp6pGj3VjesdO/U8CuHMKpnQr4shCNCM5fd5XFFvIIl6JBHg==
+    dependencies:
+      "@types/minimist" "^1.2.0"
+      camelcase-keys "^6.2.2"
+      decamelize-keys "^1.1.0"
+      hard-rejection "^2.1.0"
+      minimist-options "^4.0.2"
+      normalize-package-data "^2.5.0"
+      read-pkg-up "^7.0.1"
+      redent "^3.0.0"
+      trim-newlines "^3.0.0"
+      type-fest "^0.13.1"
+      yargs-parser "^18.1.3"
+  
   meow@^7.0.1:
     version "7.1.1"
     resolved "https://registry.yarnpkg.com/meow/-/meow-7.1.1.tgz#7c01595e3d337fcb0ec4e8eed1666ea95903d306"
@@ -8757,6 +8838,13 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/merge-descriptors/-/merge-descriptors-1.0.1.tgz#b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
     integrity sha1-sAqqVW3YtEVoFQ7J0blT8/kMu2E=
+  
+  merge-options@^3.0.4:
+    version "3.0.4"
+    resolved "https://registry.yarnpkg.com/merge-options/-/merge-options-3.0.4.tgz#84709c2aa2a4b24c1981f66c179fe5565cc6dbb7"
+    integrity sha512-2Sug1+knBjkaMsMgf1ctR1Ujx+Ayku4EdJN4Z+C2+JzoeF7A3OZ9KM2GY0CpQS51NR61LTurMJrRKPhSs3ZRTQ==
+    dependencies:
+      is-plain-obj "^2.1.0"
   
   merge-stream@^2.0.0:
     version "2.0.0"
@@ -9235,7 +9323,7 @@ Lockfile:
     dependencies:
       brace-expansion "^1.1.7"
   
-  minimist-options@4.1.0:
+  minimist-options@4.1.0, minimist-options@^4.0.2:
     version "4.1.0"
     resolved "https://registry.yarnpkg.com/minimist-options/-/minimist-options-4.1.0.tgz#c0655713c53a8a2ebd77ffa247d342c40f010619"
     integrity sha512-Q4r8ghd80yhO/0j1O3B2BjweX3fiHg9cdOwjJd2J76Q135c+NDxGCqdYKQ1SKBuFfgWbAUzBfvYjPUEeNgqN1A==
@@ -10002,7 +10090,7 @@ Lockfile:
       is-docker "^2.1.1"
       is-wsl "^2.2.0"
   
-  opencollective-postinstall@^2.0.3:
+  opencollective-postinstall@^2.0.1, opencollective-postinstall@^2.0.3:
     version "2.0.3"
     resolved "https://registry.yarnpkg.com/opencollective-postinstall/-/opencollective-postinstall-2.0.3.tgz#7a0fff978f6dbfa4d006238fbac98ed4198c3259"
     integrity sha512-8AV/sCtuzUeTo8gQK5qDZzARrulB3egtLzFgteqB2tcT4Mw7B8Kt7JcDHmltjz6FOAHsvTevk70gZEbhM4ZS9Q==
@@ -11078,6 +11166,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
     integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
   
+  qs@~6.9.1:
+    version "6.9.6"
+    resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.6.tgz#26ed3c8243a431b2924aca84cc90471f35d5a0ee"
+    integrity sha512-TIRk4aqYLNoJUbd+g2lEdz5kLWIuTMRagAXxl78Q0RiVjAOugHmeKNGdd3cwo/ktpf9aL9epCfFqWDEKysUlLQ==
+  
   query-string@^7.0.0:
     version "7.0.1"
     resolved "https://registry.yarnpkg.com/query-string/-/query-string-7.0.1.tgz#45bd149cf586aaa582dffc7ec7a8ad97dd02f75d"
@@ -11286,6 +11379,11 @@ Lockfile:
       react-native-ratings "8.0.4"
       react-native-size-matters "^0.3.1"
   
+  react-native-geolocation-service@^5.3.0-beta.3:
+    version "5.3.0-beta.3"
+    resolved "https://registry.yarnpkg.com/react-native-geolocation-service/-/react-native-geolocation-service-5.3.0-beta.3.tgz#6afd291e886ecb5fdf8c096ea0a694ccb0975330"
+    integrity sha512-TRIrkD1CV6yAOUNAqFsHiYuTyzBXJ8bttk84r4dCSKLJbYzKkvGyKoqtIIydAVlHRyZhU6u6U4Uz1bkdXPlT3g==
+  
   react-native-gesture-handler@~1.10.2:
     version "1.10.3"
     resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.10.3.tgz#942bbf2963bbf49fa79593600ee9d7b5dab3cfc0"
@@ -11296,6 +11394,15 @@ Lockfile:
       hoist-non-react-statics "^3.3.0"
       invariant "^2.2.4"
       prop-types "^15.7.2"
+  
+  react-native-google-places-autocomplete@^2.4.1:
+    version "2.4.1"
+    resolved "https://registry.yarnpkg.com/react-native-google-places-autocomplete/-/react-native-google-places-autocomplete-2.4.1.tgz#16b02a330890adf0232954a286f4c3203df06355"
+    integrity sha512-NJrzZ5zsguhTqe0C5tIW9PfxOn2wkWDiGYIBFksHzFOIIURxFPUlO0cJmfOjs5CBIDtMampgNXBdgADExBen5w==
+    dependencies:
+      lodash.debounce "^4.0.8"
+      prop-types "^15.7.2"
+      qs "~6.9.1"
   
   react-native-iphone-x-helper@^1.0.3, react-native-iphone-x-helper@^1.3.1:
     version "1.3.1"
@@ -11330,6 +11437,11 @@ Lockfile:
       "@callstack/react-theme-provider" "^3.0.7"
       color "^3.1.2"
       react-native-iphone-x-helper "^1.3.1"
+  
+  react-native-permissions@^3.1.0:
+    version "3.1.0"
+    resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-3.1.0.tgz#4cff584e0cc567aefe7c10b0d4f74f00950a68dd"
+    integrity sha512-Y/kAU8cUTNhX5CLxfAG96ItEjjmwvyqnVBie38Gj8HoomXQcKM+ToFmq/rPt+DOziCq7YFKinn9AIlnLBiV3AQ==
   
   react-native-phone-call@^1.0.9:
     version "1.0.9"
