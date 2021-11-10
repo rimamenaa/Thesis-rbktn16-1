@@ -102,7 +102,7 @@ function SuggestionRoads({ navigation }) {
                 >
                   <Box style={tailwind("items-center")}>
                     <AspectRatio ratio={0.79} height={200}>
-                      <Image source={{ uri: e.photo }} alt="image" />
+                      <Image source={{ uri: e.photo ? e.photo: "null" }} alt="image" />
                     </AspectRatio>
                   </Box>
 

@@ -21,7 +21,7 @@ import {
 
 import tw from "tailwind-react-native-classnames";
 import * as Google from "expo-google-app-auth";
-
+import { signUp } from "../services/auth";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export function SignUpForm({ props }) {
@@ -65,6 +65,10 @@ export function SignUpForm({ props }) {
         setGoogleSubmitting(false);
       });
   };
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [fullname, setFullName] = useState("");
 
   return (
     <KeyboardAwareScrollView
@@ -124,22 +128,16 @@ export function SignUpForm({ props }) {
                     fontWeight: 500,
                   }}
                 >
-                  Name
+                  Full Name
                 </FormControl.Label>
-                <Input type="text" placeholder="Enter your name..." />
-              </FormControl>
-
-              <FormControl>
-                <FormControl.Label
-                  _text={{
-                    color: "coolGray.800",
-                    fontSize: "xs",
-                    fontWeight: 500,
+                <Input
+                  type="text"
+                  name="fullname"
+                  placeholder="Full Name"
+                  onChangeText={(value) => {
+                    setFullName(value);
                   }}
-                >
-                  Username
-                </FormControl.Label>
-                <Input type="text" placeholder="Enter your username..." />
+                />
               </FormControl>
 
               <FormControl>
@@ -152,7 +150,14 @@ export function SignUpForm({ props }) {
                 >
                   Email
                 </FormControl.Label>
-                <Input type="email" placeholder="Enter your email..." />
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  onChangeText={(value) => {
+                    setEmail(value);
+                  }}
+                />
               </FormControl>
               <FormControl>
                 <FormControl.Label
@@ -164,7 +169,14 @@ export function SignUpForm({ props }) {
                 >
                   Password
                 </FormControl.Label>
-                <Input type="password" placeholder="Enter your password..." />
+                <Input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  onChangeText={(value) => {
+                    setPassword(value);
+                  }}
+                />
                 <Checkbox
                   style={tw`mt-2`}
                   alignItems="flex-start"
@@ -234,8 +246,10 @@ export function SignUpForm({ props }) {
                   bg: "primary.700",
                 }}
                 onPress={() => {
-                  setIsOpen(true);
-                  setTimeout(() => props.navigation.navigate("Login"), 2500);
+                  signUp({ fullname, email, password }).then(() => {
+                    setIsOpen(true);
+                    setTimeout(() => props.navigation.navigate("Login"), 2500);
+                  });
                 }}
               >
                 SIGN UP

@@ -40,6 +40,7 @@ export default function LandingPage({ navigation }) {
         <Image
           style={tw`w-20 h-20 mt-8`}
           source={require("../../../assets/LogoBike.png")}
+          alt="image"
         />
       </View>
 
