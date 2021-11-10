@@ -13,6 +13,7 @@ import {
 
 import tailwind from "tailwind-rn";
 import axios from "axios";
+import { isSignedIn } from "../services/auth";
 
 function WhyUs({ navigation }) {
   const [data, setData] = useState([]);
@@ -28,6 +29,9 @@ function WhyUs({ navigation }) {
     getData();
   }, []);
 
+  const truth = isSignedIn;
+
+  console.log(truth);
   return (
     <SafeAreaView style={tailwind("h-full")}>
       <ScrollView>
