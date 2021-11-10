@@ -23,7 +23,6 @@ import instance from "../../../android/app/src/helpers/axiosInstance";
 import tw from "tailwind-react-native-classnames";
 import * as Google from "expo-google-app-auth";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 /* const instance = axios.create({
   baseURL: "http://localhost:3000/",
