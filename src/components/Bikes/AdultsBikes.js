@@ -20,7 +20,7 @@ function AboutBikes({ navigation }) {
 
   useEffect(async () => {
     axios
-      .get("https://bycyclebackend.herokuapp.com/bicycle")
+      .get("https://bycyclethesis.herokuapp.com/bicycle")
       .then((response) => {
         console.log("adults", response.data.slice(0, 9));
         setData(response.data);
@@ -49,7 +49,7 @@ function AboutBikes({ navigation }) {
                   rounded="lg"
                   height="100%"
                   width="100%"
-                  source={{ uri: bike.photo }}
+                  source={{ uri: bike.photo ? bike.photo:"null"}}
                   alt={"Loading..."}
                 />
               </AspectRatio>

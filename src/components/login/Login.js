@@ -16,7 +16,7 @@ import {
   Input,
   Image,
   CheckIcon,
-  Slide
+  Slide,
 } from "native-base";
 import axios from "axios";
 import instance from "../../../android/app/src/helpers/axiosInstance";
@@ -30,10 +30,9 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
   timeout: 1000,
   headers: { "x-token": "7ot el token ya wissem" },
 }); */
-import { AuthContext } from "../context/context";
-
+import { signIn } from "../services/auth";
 export function SignInForm({ props }) {
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const [message, setMessage] = useState();
   const [messageType, setMessageType] = useState();
@@ -42,16 +41,12 @@ export function SignInForm({ props }) {
     setMessage(message);
     setMessageType(type);
   };
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
   const handleGoogleSignIn = () => {
     setGoogleSubmitting(true);
     const config = {
       iosClientId: `215341427022-haijkikj7ejpthac9sld1ihejeouoj06.apps.googleusercontent.com`,
       androidClientId: `215341427022-eosmagesimfkte0p4b84ci77t6b7m6o2.apps.googleusercontent.com`,
-      androidStandaloneAppClientId: `215341427022-ktifsf6rj56ubln7ddtac012o0s4rlb5.apps.googleusercontent.com`,
+      androidStandaloneAppClientId: `759598068494-hg5cakbf3gpfntdoaasqi0a8dqd6r9j9.apps.googleusercontent.com`,
 
       scopes: ["profile", "email"],
     };
@@ -76,26 +71,10 @@ export function SignInForm({ props }) {
         setGoogleSubmitting(false);
       });
   };
-  // useEffect(async () => {
-  //   const data = await AsyncStorage.getItem("auth");
-  //   if (data) {
-  //     props.navigation.navigate("WhyUs");
-  //   } else {
-  //     props.navigation.navigate("LandingPage");
-  //   }
-  // }, []);
 
-  // const { SignIn } = React.useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const submitLogin = async () => {
-    await axios
-      .post("http://localhost:3000/user/login", {
-        email: email,
-        password: password,
-      })
-      .then((res) => SignIn(res.data.accessToken))
-      .catch((err) => console.log(err));
-  };
   return (
     <KeyboardAwareScrollView
       contentContainerStyle={{
@@ -158,8 +137,7 @@ export function SignInForm({ props }) {
                 <Input
                   type="email"
                   name="email"
-                  placeholder= "Enter Your email ..."
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChangeText={(value) => setEmail(value)}
                 />
               </FormControl>
               <FormControl>
@@ -175,8 +153,7 @@ export function SignInForm({ props }) {
                 <Input
                   type="password"
                   name="password"
-                  placeholder= "Enter your password..."
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChangeText={(value) => setPassword(value)}
                 />
                 <Link
                   _text={{
@@ -217,11 +194,12 @@ export function SignInForm({ props }) {
                 _dark={{
                   bg: "primary.700",
                 }}
-            
-                onPress={() => { setIsOpen(true) ;  setTimeout(
-                  () =>  props.navigation.navigate("WhyUs"),
-                  1500
-                );}}   
+                onPress={() => {
+                  signIn({ email, password }).then(() => {
+                    setIsOpen(true);
+                    setTimeout(() => props.navigation.navigate("WhyUs"), 2500);
+                  });
+                }}
               >
                 SIGN IN
               </Button>
@@ -267,45 +245,43 @@ export function SignInForm({ props }) {
                 ></Divider>
               </HStack>
             </VStack>
-            
+
             <Slide in={isOpen} placement="bottom">
-
-<Box
-  w="100%"
-  position="absolute"
-  bottom="24"
-  p="2"
-  borderRadius="xs"
-  bg="green.300"
-  alignItems="center"
-  justifyContent="center"
-  _dark={{
-    bg: "amber.200",
-  }}
->
-  <HStack space={2}>
-    <CheckIcon
-      size="4"
-      color="green.800"
-      mt="1"
-      _dark={{
-        color: "amber.700",
-      }}
-    />
-    <Text
-      color="gray.600"
-      textAlign="center"
-      _dark={{
-        color: "gray.700",
-      }}
-      fontWeight="medium"
-    >
-      Welcome Back!
-    </Text>
-  </HStack>
-
-</Box>
-</Slide>
+              <Box
+                w="100%"
+                position="absolute"
+                bottom="24"
+                p="2"
+                borderRadius="xs"
+                bg="green.300"
+                alignItems="center"
+                justifyContent="center"
+                _dark={{
+                  bg: "amber.200",
+                }}
+              >
+                <HStack space={2}>
+                  <CheckIcon
+                    size="4"
+                    color="green.800"
+                    mt="1"
+                    _dark={{
+                      color: "amber.700",
+                    }}
+                  />
+                  <Text
+                    color="gray.600"
+                    textAlign="center"
+                    _dark={{
+                      color: "gray.700",
+                    }}
+                    fontWeight="medium"
+                  >
+                    Welcome Back!
+                  </Text>
+                </HStack>
+              </Box>
+            </Slide>
             <Button
               mt="5"
               size="lg"

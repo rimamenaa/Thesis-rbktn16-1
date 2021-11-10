@@ -20,7 +20,7 @@ function AboutBikes({ navigation }) {
 
   useEffect(async () => {
     axios
-      .get("https://bycyclebackend.herokuapp.com/bicycle")
+      .get("https://bycyclethesis.herokuapp.com/bicycle")
       .then((response) => {
         console.log("kids", response.data.slice(10, 17));
         setData(response.data);
@@ -33,11 +33,10 @@ function AboutBikes({ navigation }) {
   return (
     <View>
       <ScrollView marginBottom="20">
-      <View style={tailwind("items-center")}>
-
-        <Text color="amber.500" style={tailwind("text-2xl font-bold")}>
-          Bicycles For Kids
-        </Text>
+        <View style={tailwind("items-center")}>
+          <Text color="amber.500" style={tailwind("text-2xl font-bold")}>
+            Bicycles For Kids
+          </Text>
         </View>
 
         {data.slice(10, 17).map((bike, key) => {
@@ -50,8 +49,8 @@ function AboutBikes({ navigation }) {
                   rounded="lg"
                   height="100%"
                   width="100%"
-                  source={{ uri: bike.photo }}
-                  alt={"Loading..."}
+                  source={{ uri: bike.photo ? bike.photo:"null" }}
+                  alt="image"
                 />
               </AspectRatio>
               <Stack>

@@ -32,13 +32,12 @@ import KidBikes from "./src/components/aboutBikes/KidBikes";
 import Bikes from "./src/components/Bikes/Bikes";
 import AdultsBikes from "./src/components/Bikes/AdultsBikes";
 import KidsBikes from "./src/components/Bikes/KidsBikes";
-
-
-
+import PaymentKonnect from "./src/components/paymentKonnect/PaymentKonnect";
 
 import { ActivityIndicator } from "react-native-paper";
 import { AuthContext } from "./src/components/context/context";
 import { View } from "native-base";
+import { isSignedIn } from "./src/components/services/auth";
 
 const theme = extendTheme({
   colors: {
@@ -48,48 +47,45 @@ const theme = extendTheme({
 const Stack = createNativeStackNavigator();
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [userToken, setUserToken] = useState(null);
+  const [token,setToken] = useState(null)
 
-  const authContext = React.useMemo(
-    () => ({
-      signIn: () => {
-        setUserToken("jhfs");
-        setIsLoading(false);
-      },
-      singOut: () => {
-        setUserToken(null);
-        setIsLoading(false);
-      },
-      singUp: () => {
-        setUserToken("fgkj");
-        setIsLoading(false);
-      },
-    }),
-    []
-  );
+  setInterval(()=>{
+   setToken( isSignedIn())
+  },10000)
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    });
-  }, []);
-
-  if (isLoading) {
+  if(!token){
     return (
-      <NativeBaseProvider>
-        <View
-          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-        >
-          <ActivityIndicator size="large" />
-        </View>
-      </NativeBaseProvider>
-    );
-  } else
-    return (
-      <NativeBaseProvider theme={theme}>
-        {/* <AuthContext.Provider value={authContext}>
-          {userToken !== null ? ( */}
+
+          <NativeBaseProvider theme={theme}>
+      <AuthContext.Provider AuthContext={AuthContext}>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen
+              name="LandingPage"
+              options={{ headerShown: false }}
+              component={LandingPage}
+            />
+            <Stack.Screen
+              name="Signup"
+              options={{ headerShown: false }}
+              component={Signup}
+            />
+             <Stack.Screen
+              name="Login"
+              options={{ headerShown: false }}
+              component={Login}
+            />
+            </Stack.Navigator>
+            </NavigationContainer>
+            </AuthContext.Provider>
+            </NativeBaseProvider>
+    )
+
+
+  }
+  return (
+    <NativeBaseProvider theme={theme}>
+      <AuthContext.Provider AuthContext={AuthContext}>
         <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen
@@ -103,8 +99,9 @@ function App() {
               component={HomePage}
             />
             <Stack.Screen name="Commercial" component={Commercial} />
-            <Stack.Screen name="WhyUs" component={WhyUs} />
-            <Stack.Screen name="Rent" component={Rent} options={{ headerShown: false }}/>
+            <Stack.Screen name="WhyUs" component={WhyUs}  options={{ headerShown: false }}
+/>
+            <Stack.Screen name="Rent" component={Rent} />
             <Stack.Screen name="CombinedMap" component={CombinedMap} />
             <Stack.Screen name="Rules" component={Rules} />
             <Stack.Screen name="Reviews" component={Reviews} />
@@ -120,7 +117,11 @@ function App() {
             />
             <Stack.Screen name="SingleTrip" component={SingleTrip} />
             <Stack.Screen name="AboutBikes" component={AboutBikes} />
-            <Stack.Screen name="Bikes" component={Bikes} />
+            <Stack.Screen name="AdultBikes" component={AdultBikes} />
+            <Stack.Screen name="KidBikes" component={KidBikes} />
+            <Stack.Screen name="AdultsBikes" component={AdultsBikes} />
+            <Stack.Screen name="KidsBikes" component={KidsBikes} />
+
 
 
             <Stack.Screen
@@ -156,18 +157,15 @@ function App() {
               name="AdventurePackage"
               component={AdventurePackage}
             />
-          <Stack.Screen name="AdultBikes" component={AdultBikes} />
-          <Stack.Screen name="KidBikes" component={KidBikes} />
-          <Stack.Screen name="AdultsBikes" component={AdultsBikes} />
-          <Stack.Screen name="KidsBikes" component={KidsBikes} />
 
-          <Stack.Screen name="Station" component={Station} />
+            <Stack.Screen name="Station" component={Station} />
+            <Stack.Screen name="PaymentKonnect" component={PaymentKonnect} />
+
           </Stack.Navigator>
         </NavigationContainer>
-        {/* )}
-        </AuthContext.Provider> */}
-      </NativeBaseProvider>
-    );
+      </AuthContext.Provider>
+    </NativeBaseProvider>
+  );
 }
 
 export default App;
