@@ -6,13 +6,23 @@ import {
   Icon,
   HStack,
   Center,
-  Pressable
-} from 'native-base';
-import { MaterialCommunityIcons, Entypo, Ionicons, AntDesign  } from '@expo/vector-icons';
+  Pressable,
+} from "native-base";
+import {
+  MaterialCommunityIcons,
+  Entypo,
+  Ionicons,
+  AntDesign,
+} from "@expo/vector-icons";
 import tw from "tailwind-react-native-classnames";
+import { logOutAsync } from "expo-google-app-auth";
 
-export default function Footer({ navigation}) {
+export default function Footer({ navigation }) {
   const [selected] = React.useState(1);
+  const logout = async () => {
+    await AsyncStorage.removeItem("token");
+    navigation.navigate("Login");
+  };
   return (
     <NativeBaseProvider>
       <Box flex={1} safeAreaTop style={tw`w-full`}>
@@ -20,19 +30,17 @@ export default function Footer({ navigation}) {
         <HStack alignItems="center" safeAreaBottom>
           <Pressable
             opacity={selected === 2 ? 1 : 0.6}
-            color= "#000000"
+            color="#000000"
             py="2"
             flex={1}
             onPress={() => {
-                navigation.navigate("Commercial");
-              }}
+              navigation.navigate("Commercial");
+            }}
           >
             <Center>
               <Icon
                 mb={1}
-                as={
-                  <AntDesign name="staro" size={10} color="#000000"/>
-                }
+                as={<AntDesign name="staro" size={10} color="#000000" />}
                 color="#000000"
                 size="lg"
               />
@@ -46,8 +54,9 @@ export default function Footer({ navigation}) {
             py="3"
             flex={1}
             onPress={() => {
-                navigation.navigate("Home");
-              }}>
+              navigation.navigate("Home");
+            }}
+          >
             <Center>
               <Icon
                 mb="1"
@@ -69,8 +78,8 @@ export default function Footer({ navigation}) {
             py="2"
             flex={1}
             onPress={() => {
-                navigation.navigate("LandingPage");
-              }}
+              navigation.navigate("LandingPage");
+            }}
           >
             <Center>
               <Icon
