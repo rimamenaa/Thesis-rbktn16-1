@@ -58,7 +58,7 @@ export default function Circuit1() {
   };
   const getReview = () => {
     axios
-      .get(`https://bycyclebackend.herokuapp.com/reviews`)
+      .get(`https://bycyclethesis.herokuapp.com/reviews`)
       .then((response) => {
         console.log(response.data);
         setData(response.data);
