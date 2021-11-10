@@ -247,7 +247,8 @@ export function SignUpForm({ props }) {
                 }}
                 onPress={() => {
                   signUp({ fullname, email, password }).then(() => {
-                    props.navigation.navigate("Login");
+                    setIsOpen(true);
+                    setTimeout(() => props.navigation.navigate("Login"), 2500);
                   });
                 }}
               >
