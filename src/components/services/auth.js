@@ -12,9 +12,6 @@ export const signUp = async ({ fullname, email, password }) => {
       email: email,
       password: password,
     })
-    .then(() => {
-      signIn({ email, password });
-    });
 };
 
 export const signIn = async ({ email, password }) => {
