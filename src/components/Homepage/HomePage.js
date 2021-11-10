@@ -122,6 +122,7 @@ export default function SignIn({navigation}) {
         <Image
           style={tw`w-20 h-20 mt-2`}
           source={require("../../../assets/LogoBike.png")}
+          alt="image"
         />
         </View>
         

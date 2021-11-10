@@ -20,7 +20,7 @@ import AdventurePassDetails from "./src/components/Renting/AdventurePass/Adventu
 import SuggestedRoutes from "./src/components/suggestionroads/SuggestedRoutes";
 import Station from "./src/components/Map/Station";
 import AboutBikes from "./src/components/aboutBikes/AboutBikes";
-import WhyUs from "./src/components/whyUs/WhyUs";
+import WhyUs from "./src/components/WhyUs/WhyUs";
 import SingleTripPayment from "./src/components/payment/SingleTripPayment";
 import SingleTripPackage from "./src/components/payment/SingleTripPackage";
 import MonthlyPayment from "./src/components/payment/MonthlyPayment";
@@ -121,6 +121,12 @@ function App() {
             />
             <Stack.Screen name="SingleTrip" component={SingleTrip} />
             <Stack.Screen name="AboutBikes" component={AboutBikes} />
+            <Stack.Screen name="AdultBikes" component={AdultBikes} />
+            <Stack.Screen name="KidBikes" component={KidBikes} />
+            <Stack.Screen name="AdultsBikes" component={AdultsBikes} />
+            <Stack.Screen name="KidsBikes" component={KidsBikes} />
+
+
 
             <Stack.Screen
               name="SingleTripDetails"
