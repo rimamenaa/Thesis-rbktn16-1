@@ -53,6 +53,7 @@ export default function Login() {
               <Image
                 style={tw`mt-1.5 w-4 pl-2 h-4`}
                 source={require("../../../assets/ggl.png")}
+                alt="image"
               />
               <Text style={tw`mt-1 pl-6 font-bold text-black`}>GOOGLE</Text>
             </View>

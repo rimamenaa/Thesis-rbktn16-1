@@ -52,7 +52,7 @@ function WhyUs({ navigation }) {
                     >
                       <Box >
                         <AspectRatio  ratio={1.1} style={tailwind("h-66")}>
-                          <Image source={{ uri: e.photo }}    alt="image" />
+                          <Image source={{ uri: e.photo ? e.photo: "null" }}    alt="image" />
                         </AspectRatio>
                       </Box>
                       <Stack p="4" space={3}>
