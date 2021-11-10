@@ -1,17 +1,16 @@
 import axios from "axios";
-import AsyncStorage from "@react-native-community/async-storage";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { BASE_URL } from "./env";
 
 export const TOKEN_KEY = "@Jwt:token";
 
 export const signUp = async ({ fullname, email, password }) => {
-  const response = await axios
-    .post(`${BASE_URL}user`, {
-      fullName: fullname,
-      email: email,
-      password: password,
-    })
+  const response = await axios.post(`${BASE_URL}user`, {
+    fullName: fullname,
+    email: email,
+    password: password,
+  });
 };
 
 export const signIn = async ({ email, password }) => {
