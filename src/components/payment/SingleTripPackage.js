@@ -11,6 +11,7 @@ import {
   Button,
 } from "native-base";
 import axios from "axios";
+import {Alert} from "react-native"
 
 import { useNavigation } from "@react-navigation/native";
 
@@ -25,6 +26,7 @@ export const SingleTripPackage = () => {
   const onChangePhoneNumberHandler = (phoneNumber) => {
     setPhoneNumber(phoneNumber);
   };
+
 
   const onSubmit = () => {
     axios
@@ -42,7 +44,7 @@ export const SingleTripPackage = () => {
         console.log('info', id, phoneNumber);
       });
   };
-  
+
   return (
                 //   ----- Personal Information ----- 
     <Box
@@ -80,7 +82,11 @@ export const SingleTripPackage = () => {
           colorScheme="yellow"
           my="2"
           onPress={() => {
-            navigation.navigate("SingleTripPayment"); onSubmit()
+            if ( id.length < 8 || phoneNumber.length < 8) {
+              alert("Please type valid inputs!");
+            } else {
+              onSubmit();  navigation.navigate("SingleTripPayment");
+            }
           }}
         >
           Next
