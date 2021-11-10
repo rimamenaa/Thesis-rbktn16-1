@@ -15,14 +15,11 @@ import {
   AntDesign,
 } from "@expo/vector-icons";
 import tw from "tailwind-react-native-classnames";
-import { logOutAsync } from "expo-google-app-auth";
-
+import { signOut } from "../services/auth";
 export default function Footer({ navigation }) {
   const [selected] = React.useState(1);
-  const logout = async () => {
-    await AsyncStorage.removeItem("token");
-    navigation.navigate("Login");
-  };
+
+  
   return (
     <NativeBaseProvider>
       <Box flex={1} safeAreaTop style={tw`w-full`}>
@@ -77,8 +74,10 @@ export default function Footer({ navigation }) {
           <Pressable
             py="2"
             flex={1}
-            onPress={() => {
-              logOut();
+
+            onPress={async() => {
+              await signOut() ;
+              navigation.navigate("LandingPage");
             }}
           >
             <Center>
