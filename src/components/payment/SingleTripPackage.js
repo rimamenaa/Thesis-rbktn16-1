@@ -42,6 +42,7 @@ export const SingleTripPackage = () => {
         console.log('info', id, phoneNumber);
       });
   };
+  
   return (
                 //   ----- Personal Information ----- 
     <Box
