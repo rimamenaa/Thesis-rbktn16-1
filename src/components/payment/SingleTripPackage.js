@@ -62,6 +62,7 @@ export const SingleTripPackage = () => {
         </HStack>
 
         <Stack mt={3} space={4} alignItems="center">
+          
           <Input  
           w="100%" 
           variant="outline" 
