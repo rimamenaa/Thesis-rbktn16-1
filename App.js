@@ -94,7 +94,6 @@ function App() {
               component={AdventurePassDetails}
             />
             <Stack.Screen name="SuggestedRoutes" component={SuggestedRoutes} />
-            <Stack.Screen name="Profile" component={Profile} />
             <Stack.Screen
               name="SingleTripPayment"
               component={SingleTripPayment}

@@ -78,7 +78,7 @@ export default function Footer({ navigation }) {
             py="2"
             flex={1}
             onPress={() => {
-              logOut();
+              navigation.navigate("LandingPage");
             }}
           >
             <Center>

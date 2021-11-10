@@ -247,7 +247,7 @@ export function SignUpForm({ props }) {
                 }}
                 onPress={() => {
                   signUp({ fullname, email, password }).then(() => {
-                    props.navigation.navigate("Home");
+                    props.navigation.navigate("Login");
                   });
                 }}
               >

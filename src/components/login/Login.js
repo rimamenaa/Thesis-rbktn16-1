@@ -46,7 +46,7 @@ export function SignInForm({ props }) {
     const config = {
       iosClientId: `215341427022-haijkikj7ejpthac9sld1ihejeouoj06.apps.googleusercontent.com`,
       androidClientId: `215341427022-eosmagesimfkte0p4b84ci77t6b7m6o2.apps.googleusercontent.com`,
-      androidStandaloneAppClientId: `215341427022-ktifsf6rj56ubln7ddtac012o0s4rlb5.apps.googleusercontent.com`,
+      androidStandaloneAppClientId: `759598068494-hg5cakbf3gpfntdoaasqi0a8dqd6r9j9.apps.googleusercontent.com`,
 
       scopes: ["profile", "email"],
     };
@@ -196,7 +196,7 @@ export function SignInForm({ props }) {
                 }}
                 onPress={() => {
                   signIn({ email, password }).then(() =>
-                    props.navigation.navigate("Rules")
+                    props.navigation.navigate("WhyUs")
                   );
                 }}
               >
