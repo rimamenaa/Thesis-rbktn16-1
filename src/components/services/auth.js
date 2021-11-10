@@ -12,9 +12,6 @@ export const signUp = async ({ fullname, email, password }) => {
       email: email,
       password: password,
     })
-    .then(() => {
-      signIn({ email, password });
-    });
 };
 
 export const signIn = async ({ email, password }) => {
@@ -26,7 +23,9 @@ export const signIn = async ({ email, password }) => {
   await AsyncStorage.setItem("@Jwt:token", response.data.accessToken);
 };
 
-export const signOut = () => AsyncStorage.removeItem(TOKEN_KEY);
+export const signOut = () => {
+  AsyncStorage.removeItem(TOKEN_KEY);
+};
 
 export const getToken = async () => {
   return await AsyncStorage.getItem("@Jwt:token");
