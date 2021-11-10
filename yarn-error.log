@@ -1,30 +1,25 @@
 Arguments: 
-  /usr/local/bin/node /home/brinis/.yarn/bin/yarn.js add @react-native@0.64.3
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
 
 PATH: 
-  /home/brinis/.yarn/bin:/home/brinis/.config/yarn/global/node_modules/.bin:/home/brinis/.yarn/bin:/home/brinis/.config/yarn/global/node_modules/.bin:/home/brinis/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+  C:\Users\Lenovo\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Lenovo\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin;C:\Program Files\nodejs;C:\Program Files\Java\jdk-17.0.1\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\Lenovo\AppData\Local\Yarn\bin;C:\Users\Lenovo\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\heroku\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
 Yarn version: 
-  1.22.15
+  1.22.5
 
 Node version: 
-  14.17.5
+  14.18.1
 
 Platform: 
-  linux x64
+  win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@react-native: Request "https://registry.yarnpkg.com/@react-native" returned a 405
-      at Request.params.callback [as _callback] (/home/brinis/.yarn/lib/cli.js:67040:18)
-      at Request.self.callback (/home/brinis/.yarn/lib/cli.js:140885:22)
-      at Request.emit (events.js:400:28)
-      at Request.<anonymous> (/home/brinis/.yarn/lib/cli.js:141857:10)
-      at Request.emit (events.js:400:28)
-      at IncomingMessage.<anonymous> (/home/brinis/.yarn/lib/cli.js:141779:12)
-      at Object.onceWrapper (events.js:519:28)
-      at IncomingMessage.emit (events.js:412:35)
-      at endReadableNT (internal/streams/readable.js:1317:12)
-      at processTicksAndRejections (internal/process/task_queues.js:82:21)
+  SyntaxError: D:\RBK hack Reactor\Thesis-rbktn16\package.json: Unexpected token < in JSON at position 298
+      at JSON.parse (<anonymous>)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:310:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:321:13
 
 npm manifest: 
   {
@@ -38,6 +33,10 @@ npm manifest:
     "dependencies": {
       "@mapbox/polyline": "^1.1.1",
       "@react-native-async-storage/async-storage": "~1.15.0",
+  <<<<<<< HEAD
+      "@react-native-community/async-storage": "^1.12.1",
+  =======
+  >>>>>>> b45f369bc765372f3682525b326fd7dc321367db
       "@react-native-community/geolocation": "^2.0.2",
       "@react-native-community/masked-view": "^0.1.11",
       "@react-navigation/drawer": "^6.1.8",
@@ -61,7 +60,7 @@ npm manifest:
       "native-base": "^3.2.1",
       "react": "17.0.1",
       "react-dom": "17.0.1",
-      "react-native": "^0.64.2",
+      "react-native": "^0.64.3",
       "react-native-dotenv": "^3.2.0",
       "react-native-elements": "^3.4.2",
       "react-native-geolocation-service": "^5.3.0-beta.3",
