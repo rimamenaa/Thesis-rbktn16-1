@@ -74,6 +74,7 @@ export default function Footer({ navigation }) {
           <Pressable
             py="2"
             flex={1}
+
             onPress={async() => {
               await signOut() ;
               navigation.navigate("LandingPage");
