@@ -76,16 +76,7 @@ export function SignInForm({ props }) {
         setGoogleSubmitting(false);
       });
   };
-  // useEffect(async () => {
-  //   const data = await AsyncStorage.getItem("auth");
-  //   if (data) {
-  //     props.navigation.navigate("WhyUs");
-  //   } else {
-  //     props.navigation.navigate("LandingPage");
-  //   }
-  // }, []);
-
-  // const { SignIn } = React.useContext(AuthContext);
+ 
 
   const submitLogin = async () => {
     await axios
