@@ -22,6 +22,7 @@ function AboutBikes({ navigation }) {
     axios
       .get("https://bycyclethesis.herokuapp.com/bicycle")
       .then((response) => {
+        console.log("kids", response.data.slice(10, 17));
         setData(response.data);
       })
       .catch((err) => {
@@ -39,6 +40,7 @@ function AboutBikes({ navigation }) {
         </View>
 
         {data.slice(10, 17).map((bike, key) => {
+          console.log(bike);
           return (
             <Card key={key}>
               <AspectRatio ratio={9 / 9}>
@@ -56,6 +58,20 @@ function AboutBikes({ navigation }) {
                   {bike.description}
                 </Text>
               </Stack>
+              <Button
+                colorScheme="yellow"
+                my="2"
+                width="100%"
+                onPress={() => {
+                  navigation.navigate("Rent");
+                }}
+              >
+                <FontAwesome
+                  name="arrow-circle-right"
+                  size={35}
+                  color="black"
+                />
+              </Button>
             </Card>
           );
         })}
@@ -65,7 +81,7 @@ function AboutBikes({ navigation }) {
         style={{
           position: "absolute",
           width: "100%",
-          marginTop: 660,
+          marginTop: 670,
           backgroundColor: "white",
         }}
       >

@@ -22,6 +22,7 @@ function AboutBikes({ navigation }) {
     axios
       .get("https://bycyclethesis.herokuapp.com/bicycle")
       .then((response) => {
+        console.log("adults", response.data.slice(0, 9));
         setData(response.data);
       })
       .catch((err) => {
@@ -34,11 +35,12 @@ function AboutBikes({ navigation }) {
       <ScrollView marginBottom="20">
         <View style={tailwind("items-center")}>
           <Text color="amber.500" style={tailwind("text-2xl font-bold")}>
-            Bicycles For Kids
+            Bicycles For Adults
           </Text>
         </View>
 
-        {data.slice(10, 17).map((bike, key) => {
+        {data.slice(0, 9).map((bike, key) => {
+          console.log(bike);
           return (
             <Card key={key}>
               <AspectRatio ratio={9 / 9}>
@@ -47,8 +49,8 @@ function AboutBikes({ navigation }) {
                   rounded="lg"
                   height="100%"
                   width="100%"
-                  source={{ uri: bike.photo ? bike.photo:"null" }}
-                  alt="image"
+                  source={{ uri: bike.photo ? bike.photo:"null"}}
+                  alt={"Loading..."}
                 />
               </AspectRatio>
               <Stack>
@@ -56,6 +58,32 @@ function AboutBikes({ navigation }) {
                   {bike.description}
                 </Text>
               </Stack>
+              {/* <Button
+                size="lg"
+                variant="outline"
+                colorScheme="amber"
+                width="100%"
+                height="16"
+                onPress={() => {
+                  navigation.navigate("Rent");
+                }}
+              >
+ <FontAwesome name="arrow-circle-right" size={35} color="black" /> 
+             </Button> */}
+              <Button
+                colorScheme="yellow"
+                my="2"
+                width="100%"
+                onPress={() => {
+                  navigation.navigate("Rent");
+                }}
+              >
+                <FontAwesome
+                  name="arrow-circle-right"
+                  size={35}
+                  color="black"
+                />
+              </Button>
             </Card>
           );
         })}
@@ -65,7 +93,7 @@ function AboutBikes({ navigation }) {
         style={{
           position: "absolute",
           width: "100%",
-          marginTop: 660,
+          marginTop: 670,
           backgroundColor: "white",
         }}
       >

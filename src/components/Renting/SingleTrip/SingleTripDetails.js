@@ -3,7 +3,6 @@ import {
   Box,
   AspectRatio,
   Image,
-  Center,
   Text,
   Button,
   NativeBaseProvider,
@@ -13,8 +12,8 @@ import { useNavigation } from "@react-navigation/native";
 
 function SingleTripDetails() {
   const navigation = useNavigation();
-
   return (
+        //   ----- Single Package Card Details ----- 
     <ScrollView>
       <Box >
         <Text fontSize="2xl" marginBottom="3" marginLeft="3" marginTop="5">

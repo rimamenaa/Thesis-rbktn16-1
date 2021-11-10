@@ -10,15 +10,16 @@ import {
   Stack,
   Button,
 } from "native-base";
-import commercial from "../../../assets/commercial.png";
+
 import tailwind from "tailwind-rn";
 import axios from "axios";
+import { isSignedIn } from "../services/auth";
 
 function WhyUs({ navigation }) {
   const [data, setData] = useState([]);
   const getData = () => {
     axios
-      .get("https://bycyclebackend.herokuapp.com/whybycycle")
+      .get("https://bycyclethesis.herokuapp.com/whybycycle")
       .then((response) => {
         setData(response.data);
         console.log(response.data);
@@ -28,6 +29,9 @@ function WhyUs({ navigation }) {
     getData();
   }, []);
 
+  const truth = isSignedIn;
+
+  console.log(truth);
   return (
     <SafeAreaView style={tailwind("h-full")}>
       <ScrollView>
@@ -38,7 +42,7 @@ function WhyUs({ navigation }) {
                 return (
                   <View key={key}>
                     <Box
-                      style={tailwind("mt-6")}
+                      style={tailwind("mt-4")}
                       rounded="lg"
                       overflow="hidden"
                       width="350"
@@ -46,31 +50,23 @@ function WhyUs({ navigation }) {
                       _light={{ backgroundColor: "gray.50" }}
                       _dark={{ backgroundColor: "gray.700" }}
                     >
-                      <Box>
-                        <AspectRatio style={tailwind("h-68")}>
-                          <Image source={{ uri: e.photo }} alt="image" />
+                      <Box >
+                        <AspectRatio  ratio={1.1} style={tailwind("h-66")}>
+                          <Image source={{ uri: e.photo ? e.photo: "null" }}    alt="image" />
                         </AspectRatio>
                       </Box>
                       <Stack p="4" space={3}>
                         <Stack space={2}>
-                          <Heading size="lg" ml="-1" mt="6">
+                          <Heading size="lg" ml="-1">
                             {e.title}
                           </Heading>
                         </Stack>
-                        <Text style={tailwind("mt-6 text-lg")}>
-                          {e.description}
-                        </Text>
+                        <Text  style={tailwind("text-lg")}>{e.description}</Text>
                         <HStack
                           alignItems="center"
                           space={4}
                           justifyContent="space-between"
-                        >
-                          <HStack alignItems="center" mt="16">
-                            <Text color="gray.500" fontWeight="400">
-                              35 mins ago
-                            </Text>
-                          </HStack>
-                        </HStack>
+                        ></HStack>
                       </Stack>
                     </Box>
                   </View>
@@ -83,10 +79,10 @@ function WhyUs({ navigation }) {
       <Button
         style={tailwind("bg-yellow-500 h-12 w-full")}
         onPress={() => {
-          navigation.navigate("Commercial");
+          navigation.navigate("Home");
         }}
       >
-        Next
+        Lets Get Started
       </Button>
     </SafeAreaView>
   );

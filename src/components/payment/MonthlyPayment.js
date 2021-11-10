@@ -1,9 +1,7 @@
 import React from "react"
 import {
   Slide,
-//   Button,
   Box,
-  Input,
   Heading,
   VStack,
   HStack,
@@ -14,6 +12,9 @@ import {
   View,
   NativeBaseProvider,
 } from "native-base"
+import {
+  Linking,
+} from "react-native";
 import Footer from "../Footer/Footer";
 import { useNavigation } from "@react-navigation/native";
 
@@ -22,6 +23,7 @@ export const Payment = () => {
 
   const [isOpen, setIsOpen] = React.useState(false)
   return (
+                //   ----- Payment Details ----- 
     <Box
       width={{
         base: "100%",
@@ -55,7 +57,10 @@ export const Payment = () => {
         <Button
         colorScheme="yellow"
          my="2"
-         onPress={() => setIsOpen(true)}>
+        //  onPress={() => setIsOpen(true)}
+        onPress={ ()=>{ Linking.openURL('https://api.preprod.konnect.network/RrEpDLHvL')}} 
+        >
+
           Place Order
         </Button>
         <View style={{position: 'absolute', width: "100%",marginTop:380, backgroundColor:"white"}}>
