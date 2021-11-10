@@ -32,10 +32,12 @@ import KidBikes from "./src/components/aboutBikes/KidBikes";
 import Bikes from "./src/components/Bikes/Bikes";
 import AdultsBikes from "./src/components/Bikes/AdultsBikes";
 import KidsBikes from "./src/components/Bikes/KidsBikes";
+import PaymentKonnect from "./src/components/paymentKonnect/PaymentKonnect";
 
 import { ActivityIndicator } from "react-native-paper";
 import { AuthContext } from "./src/components/context/context";
 import { View } from "native-base";
+import { isSignedIn } from "./src/components/services/auth";
 
 const theme = extendTheme({
   colors: {
@@ -45,6 +47,42 @@ const theme = extendTheme({
 const Stack = createNativeStackNavigator();
 
 function App() {
+  const [token,setToken] = useState(null)
+
+  setInterval(()=>{
+   setToken( isSignedIn())
+  },10000)
+
+  if(!token){
+    return (
+
+          <NativeBaseProvider theme={theme}>
+      <AuthContext.Provider AuthContext={AuthContext}>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen
+              name="LandingPage"
+              options={{ headerShown: false }}
+              component={LandingPage}
+            />
+            <Stack.Screen
+              name="Signup"
+              options={{ headerShown: false }}
+              component={Signup}
+            />
+             <Stack.Screen
+              name="Login"
+              options={{ headerShown: false }}
+              component={Login}
+            />
+            </Stack.Navigator>
+            </NavigationContainer>
+            </AuthContext.Provider>
+            </NativeBaseProvider>
+    )
+
+
+  }
   return (
     <NativeBaseProvider theme={theme}>
       <AuthContext.Provider AuthContext={AuthContext}>
@@ -61,7 +99,8 @@ function App() {
               component={HomePage}
             />
             <Stack.Screen name="Commercial" component={Commercial} />
-            <Stack.Screen name="WhyUs" component={WhyUs} />
+            <Stack.Screen name="WhyUs" component={WhyUs}  options={{ headerShown: false }}
+/>
             <Stack.Screen name="Rent" component={Rent} />
             <Stack.Screen name="CombinedMap" component={CombinedMap} />
             <Stack.Screen name="Rules" component={Rules} />
@@ -120,6 +159,8 @@ function App() {
             />
 
             <Stack.Screen name="Station" component={Station} />
+            <Stack.Screen name="PaymentKonnect" component={PaymentKonnect} />
+
           </Stack.Navigator>
         </NavigationContainer>
       </AuthContext.Provider>
