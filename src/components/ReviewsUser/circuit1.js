@@ -35,7 +35,6 @@ export default function Circuit1() {
       averageArray.push(Data[i].rating);
       total += averageArray[i];
       average = Math.ceil(total / averageArray.length);
-      console.log(average);
     }
   }
   const Submit = () => {
