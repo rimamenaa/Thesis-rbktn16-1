@@ -33,7 +33,7 @@ function WhyUs({ navigation }) {
 
   console.log(truth);
   return (
-    <SafeAreaView style={tailwind("h-full")}>
+    <SafeAreaView style={tailwind("h-full bg-white")}>
       <ScrollView>
         <View style={tailwind("mt-6 items-center h-full")}>
           <View>

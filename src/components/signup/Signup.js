@@ -17,6 +17,7 @@ import {
   Image,
   Slide,
   CheckIcon,
+  View,
 } from "native-base";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
@@ -83,7 +84,7 @@ export function SignUpForm({ props }) {
       <VStack
         flex="1"
         px="6"
-        py="9"
+        py="4"
         _light={{
           bg: "white",
         }}
@@ -105,23 +106,24 @@ export function SignUpForm({ props }) {
           md: "0",
         }}
       >
-        <VStack space="7">
+        <VStack >
           <Hidden till="md">
             <Text fontSize="lg" fontWeight="normal">
               Sign Up to continue!
             </Text>
           </Hidden>
           <VStack>
-            <VStack space="3">
-              <VStack
-                space={{
-                  base: "7",
-                  md: "4",
-                }}
-              ></VStack>
+            <VStack >
+            <View style={tw`items-center`}>
+        <Image
+          style={tw`w-16 h-16`}
+          source={require("../../../assets/LogoBike.png")}
+          alt="image"
+        />
+      </View>
 
               {/* Opening Link Tag navigateTo:"OTP" (react/Router) */}
-              <FormControl>
+              <FormControl style={tw`mt-12`}>
                 <FormControl.Label
                   _text={{
                     color: "coolGray.800",
@@ -179,14 +181,14 @@ export function SignUpForm({ props }) {
                   }}
                 />
                 <Checkbox
-                  style={tw`mt-2`}
+                  style={tw`mt-6`}
                   alignItems="flex-start"
                   defaultIsChecked
                   value="demo"
                   colorScheme="primary"
                   accessibilityLabel="Remember me"
                 >
-                  <HStack alignItems="center" style={tw`mt-2`}>
+                  <HStack alignItems="center" style={tw`mt-6`}>
                     <Text fontSize="sm" color="coolGray.400" pl="2">
                       I accept the{" "}
                     </Text>
@@ -234,8 +236,9 @@ export function SignUpForm({ props }) {
                 </Checkbox>
               </FormControl>
               <Button
-                mt="5"
-                size="md"
+                mt="10"
+                height={10}
+                width={363}
                 borderRadius="4"
                 _text={{
                   fontWeight: "medium",
@@ -334,7 +337,8 @@ export function SignUpForm({ props }) {
                 </HStack>
               </Box>
             </Slide>
-            <TouchableOpacity style={{alignItems:"center", backgroundColor: "#E2E2E2",width:300, height:35,marginLeft:23,borderRadius:4 }}
+            <View style={{alignItems:"center"}}>
+            <TouchableOpacity style={{alignItems:"center", backgroundColor: "#E2E2E2",width:250, height:35,borderRadius:4 }}
                        onPress={handleGoogleSignIn}>
             
                 <Image
@@ -344,6 +348,7 @@ export function SignUpForm({ props }) {
                 />
     
               </TouchableOpacity>
+              </View>
           </VStack>
         </VStack>
         <HStack

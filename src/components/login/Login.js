@@ -17,6 +17,7 @@ import {
   Image,
   CheckIcon,
   Slide,
+  View
 } from "native-base";
 import axios from "axios";
 import instance from "../../../android/app/src/helpers/axiosInstance";
@@ -31,6 +32,7 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 }); */
 import { signIn } from "../services/auth";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { alignItems } from "styled-system";
 export function SignInForm({ props }) {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -87,7 +89,7 @@ export function SignInForm({ props }) {
       <VStack
         flex="1"
         px="6"
-        py="9"
+        py="4"
         _light={{
           bg: "white",
         }}
@@ -109,22 +111,23 @@ export function SignInForm({ props }) {
           md: "0",
         }}
       >
-        <VStack space="7">
+        <VStack>
           <Hidden till="md">
             <Text fontSize="lg" fontWeight="normal">
               Sign in to continue!
             </Text>
           </Hidden>
           <VStack>
-            <VStack space="3">
-              <VStack
-                space={{
-                  base: "7",
-                  md: "4",
-                }}
-              ></VStack>
+            <VStack>
+              <View style={tw`items-center`}>
+        <Image
+          style={tw`w-16 h-16`}
+          source={require("../../../assets/LogoBike.png")}
+          alt="image"
+        />
+      </View>
               {/* Opening Link Tag navigateTo:"OTP" (react/Router) */}
-              <FormControl>
+              <FormControl style={tw`mt-12`}>
                 <FormControl.Label
                   _text={{
                     color: "coolGray.800",
@@ -171,6 +174,7 @@ export function SignInForm({ props }) {
                   Forget Password?
                 </Link>
                 <Checkbox
+                marginTop={3}
                   alignItems="flex-start"
                   defaultIsChecked
                   value="demo"
@@ -184,9 +188,11 @@ export function SignInForm({ props }) {
                   </HStack>
                 </Checkbox>
               </FormControl>
+              <View style={{alignItems:"center"}}>
               <Button
-                mt="5"
-                size="md"
+                mt="24"
+                height={10}
+                width={363}
                 borderRadius="4"
                 _text={{
                   fontWeight: "medium",
@@ -206,6 +212,7 @@ export function SignInForm({ props }) {
               >
                 SIGN IN
               </Button>
+              </View>
               {/* Closing Link Tag */}
               <HStack
                 mt="5"
@@ -309,7 +316,8 @@ export function SignInForm({ props }) {
                   alt="image"
                 />
               </Text> */}
-                       <TouchableOpacity style={{alignItems:"center", backgroundColor: "#E2E2E2",width:300, height:35,marginLeft:23,borderRadius:4 }}
+              <View style={{alignItems:"center"}}>
+                       <TouchableOpacity style={{alignItems:"center", backgroundColor: "#E2E2E2",width:250, height:35,borderRadius:4 }}
                        onPress={handleGoogleSignIn}>
             
                 <Image
@@ -319,6 +327,7 @@ export function SignInForm({ props }) {
                 />
     
               </TouchableOpacity>
+              </View>
             {/* </Button> */}
           </VStack>
         </VStack>
