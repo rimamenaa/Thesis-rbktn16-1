@@ -30,6 +30,7 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
   headers: { "x-token": "7ot el token ya wissem" },
 }); */
 import { signIn } from "../services/auth";
+import { TouchableOpacity } from "react-native-gesture-handler";
 export function SignInForm({ props }) {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -284,7 +285,7 @@ export function SignInForm({ props }) {
                 </HStack>
               </Box>
             </Slide>
-            <Button
+            {/* <Button
               mt="5"
               size="lg"
               borderRadius="4"
@@ -297,8 +298,8 @@ export function SignInForm({ props }) {
               _dark={{
                 bg: "primary.700",
               }}
-            >
-              <Text
+            > */}
+              {/* <Text
                 style={{ color: "black", fontWeight: "500" }}
                 onPress={handleGoogleSignIn}
               >
@@ -307,8 +308,18 @@ export function SignInForm({ props }) {
                   source={require("../../../assets/ggl.png")}
                   alt="image"
                 />
-              </Text>
-            </Button>
+              </Text> */}
+                       <TouchableOpacity style={{alignItems:"center", backgroundColor: "#E2E2E2",width:300, height:35,marginLeft:23,borderRadius:4 }}
+                       onPress={handleGoogleSignIn}>
+            
+                <Image
+                  style={{ height: 20, width: 60,marginTop:8}}
+                  source={require("../../../assets/ggl.png")}
+                  alt="image"
+                />
+    
+              </TouchableOpacity>
+            {/* </Button> */}
           </VStack>
         </VStack>
         <HStack

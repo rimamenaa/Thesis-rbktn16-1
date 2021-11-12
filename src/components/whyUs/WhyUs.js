@@ -51,7 +51,7 @@ function WhyUs({ navigation }) {
                       _dark={{ backgroundColor: "gray.700" }}
                     >
                       <Box >
-                        <AspectRatio  ratio={1.1} style={tailwind("h-66")}>
+                        <AspectRatio  ratio={1.1} style={tailwind("h-64")}>
                           <Image source={{ uri: e.photo ? e.photo: "null" }}    alt="image" />
                         </AspectRatio>
                       </Box>

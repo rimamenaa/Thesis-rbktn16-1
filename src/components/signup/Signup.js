@@ -18,6 +18,7 @@ import {
   Slide,
   CheckIcon,
 } from "native-base";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 import tw from "tailwind-react-native-classnames";
 import * as Google from "expo-google-app-auth";
@@ -333,31 +334,16 @@ export function SignUpForm({ props }) {
                 </HStack>
               </Box>
             </Slide>
-            <Button
-              mt="5"
-              size="md"
-              borderRadius="4"
-              _text={{
-                fontWeight: "medium",
-              }}
-              _light={{
-                bg: "gray.200",
-              }}
-              _dark={{
-                bg: "primary.700",
-              }}
-            >
-              <Text
-                style={{ color: "black", fontWeight: "500" }}
-                onPress={handleGoogleSignIn}
-              >
+            <TouchableOpacity style={{alignItems:"center", backgroundColor: "#E2E2E2",width:300, height:35,marginLeft:23,borderRadius:4 }}
+                       onPress={handleGoogleSignIn}>
+            
                 <Image
-                  style={{ height: 15, width: 45 }}
+                  style={{ height: 20, width: 60,marginTop:8}}
                   source={require("../../../assets/ggl.png")}
                   alt="image"
                 />
-              </Text>
-            </Button>
+    
+              </TouchableOpacity>
           </VStack>
         </VStack>
         <HStack
@@ -452,7 +438,7 @@ export default function Signup(props) {
             <VStack px="4" mt="4" mb="5" space="9">
               <VStack space="2">
                 <Text fontSize="3xl" fontWeight="bold" color="amber.400">
-                  Welcome back,
+                  Welcome,
                 </Text>
                 <Text
                   style={tw`text-lg`}
