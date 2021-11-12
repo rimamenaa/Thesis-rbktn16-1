@@ -189,6 +189,7 @@ export function SignInForm({ props }) {
                   </HStack>
                 </Checkbox>
               </FormControl>
+
               <View style={{ alignItems: "center" }}>
                 <Button
                   mt="24"
@@ -216,6 +217,7 @@ export function SignInForm({ props }) {
                 >
                   SIGN IN
                 </Button>
+
               </View>
               {/* Closing Link Tag */}
               <HStack
