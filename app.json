@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
 
-    "icon": "./assets/LogoBike.png",
+    "icon": "./assets/icona.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",

@@ -32,7 +32,7 @@ function Commercial({navigation}) {
   const [data, setData] = useState([]);
   const getData = () => {
     axios
-      .get("https://bycyclebackend.herokuapp.com/whybycycle")
+      .get("https://bycyclethesis.herokuapp.com/whybycycle")
       .then((response) => {
         setData(response.data);
         console.log(response.data);
@@ -209,7 +209,7 @@ function Commercial({navigation}) {
           </Box>
         </View>
       </ScrollView>
-      <View style={{position: 'absolute', width: "100%", marginTop:655, backgroundColor:"white"}}>
+      <View style={{position: 'absolute', width: "100%", marginTop:785, backgroundColor:"white"}}>
         <Footer navigation={navigation} />
       </View>
     </SafeAreaView>

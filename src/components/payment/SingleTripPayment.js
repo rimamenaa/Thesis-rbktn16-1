@@ -12,6 +12,9 @@ import {
   NativeBaseProvider,
   View
 } from "native-base"
+import {
+  Linking,
+} from "react-native";
 import Footer from "../Footer/Footer";
 import { useNavigation } from "@react-navigation/native";
 
@@ -47,13 +50,16 @@ export const Payment = () => {
         alignItems="center" 
         justifyContent="space-between">
           <Text fontWeight="medium">Total Amount</Text>
-          <Text color="amber.600">5 TND</Text>
+          <Text color="amber.600">2.5 TND</Text>
         </HStack>
         
         <Button
         colorScheme="yellow"
          my="2"
-         onPress={() => setIsOpen(true)}>
+        //  onPress={() => setIsOpen(true)}
+        onPress={ ()=>{ Linking.openURL('https://api.preprod.konnect.network/kWANK_JrW')}} 
+
+         >
           Place Order
         </Button>
         <View style={{position: 'absolute', width: "100%",marginTop:380, backgroundColor:"white"}}>
