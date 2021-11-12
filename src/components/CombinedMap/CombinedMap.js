@@ -8,21 +8,18 @@ import {
   SafeAreaView,
 } from "react-native";
 import Station from "../Map/Station";
-import Search from "../Search/Search";
+
 function CombinedMap() {
+  // let open = false;
   return (
+  
     <React.Fragment>
       <Station />
-      <Search />
     </React.Fragment>
+      
+  
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-  },
-});
 
 export default CombinedMap;

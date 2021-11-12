@@ -5,33 +5,37 @@ import {
   View,
   Text,
   ScrollView,
-  ImageBackground,
-  TouchableOpacity,
+  Linking,
+  Platform
 } from "react-native";
 
 import { Stack, Button } from "native-base";
 
 import tailwind from "tailwind-rn";
-import Footer from "../Footer/Footer";
 import { FontAwesome5 } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons'; 
 import { Entypo } from '@expo/vector-icons'; 
 
-function HomePage({ navigation }) {
+import { Feather } from "@expo/vector-icons";
+
+function Home({ navigation }) {
+  const makePhoneCall = () => {
+    if (Platform.OS === "android") {
+      Linking.openURL("tel:0021622111333");
+    } else {
+      Linking.openURL("telprompt:0021622111333");
+    }
+  };
   return (
-    // <TouchableOpacity>
-    <ImageBackground
-      style={tailwind("h-full")}
-      source={require("../../../assets/yellowbike3.png")}
-    >
       <SafeAreaView style={tailwind("max-h-full")}>
-        <ScrollView>
           <View
             style={tailwind(
-              " min-w-full bg-transparent items-center mt-32 rounded-2xl flex "
+              " min-w-full bg-transparent items-center rounded-2xl flex "
             )}
           >
+            <View  style={tailwind("flex flex-row")}>
             <Stack
+              mr="12"
               mb="2.5"
               mt="1.5"
               direction={{
@@ -46,15 +50,16 @@ function HomePage({ navigation }) {
             >
               <Button
                 size="lg"
-                variant="subtle"
-                colorScheme="amber"
-                width="81"
-                height="20"
+                variant="solid"
+                style={tailwind("bg-yellow-300")}
+                width="100"
+                height="24"
                 onPress={() => {
                   navigation.navigate("AboutBikes");
                 }}
               >
-<MaterialCommunityIcons name="bike" size={24} color="black" /> 
+              <MaterialCommunityIcons name="bike" size={35} color="black" /> 
+              <Text>Bikes</Text>
              </Button>
             </Stack>
 
@@ -73,46 +78,23 @@ function HomePage({ navigation }) {
             >
               <Button
                 size="lg"
-                variant="subtle"
-                colorScheme="amber"
-                width="210"
-                height="12"
-                onPress={() => {
-                  navigation.navigate("Rules");
-                }}
-              >
-                Rules
-              </Button>
-            </Stack>
-
-            <Stack
-              mb="2.5"
-              mt="1.5"
-              direction={{
-                base: "column",
-                md: "row",
-              }}
-              space={2}
-              mx={{
-                base: "auto",
-                md: "0",
-              }}
-            >
-              <Button
-                size="lg"
-                variant="subtle"
-                colorScheme="amber"
-                width="81"
-                height="20"
+                variant="solid"
+                style={tailwind("bg-yellow-300")}
+                width="100"
+                height="24"
                 onPress={() => {
                   navigation.navigate("SuggestedRoutes");
                 }}
               >
-                <FontAwesome5 name="route" size={24} color="black" />
+                <FontAwesome5 name="route" size={35} color="black" />
+                <Text>Routes</Text>
               </Button>
             </Stack>
+            </View>
 
+            <View  style={tailwind("flex flex-row mt-4")}>
             <Stack
+              mr="12"
               mb="2.5"
               mt="1.5"
               direction={{
@@ -127,15 +109,16 @@ function HomePage({ navigation }) {
             >
               <Button
                 size="lg"
-                variant="subtle"
-                colorScheme="amber"
-                width="81"
-                height="20"
+                variant="solid"
+                style={tailwind("bg-yellow-300")}
+                width="100"
+                height="24"
                 onPress={() => {
                   navigation.navigate("Station");
                 }}
               >
-<Entypo name="location" size={24} color="black" /> 
+              <Entypo style={tailwind("ml-2")} name="location" size={35} color="black" /> 
+              <Text>Stations</Text>
              </Button>
             </Stack>
 
@@ -154,19 +137,23 @@ function HomePage({ navigation }) {
             >
               <Button
                 size="lg"
-                variant="subtle"
-                colorScheme="amber"
-                width="81"
-                height="20"
+                variant="solid"
+                style={tailwind("bg-yellow-300")}
+                width="100"
+                height="24"
                 onPress={() => {
                   navigation.navigate("Reviews");
                 }}
               >
-<MaterialCommunityIcons name="comment-processing-outline" size={24} color="black" /> 
+              <MaterialCommunityIcons style={tailwind("ml-2")} name="comment-processing-outline" size={35} color="black" /> 
+              <Text>Reviews</Text>
              </Button>
             </Stack>
+            </View>
 
+            <View  style={tailwind("flex flex-row mt-4")}>
             <Stack
+              mr="12"
               mb="2.5"
               mt="1.5"
               direction={{
@@ -181,18 +168,21 @@ function HomePage({ navigation }) {
             >
               <Button
                 size="lg"
-                variant="subtle"
-                colorScheme="amber"
-                width="210"
-                height="12"
+                variant="solid"
+                style={tailwind("bg-yellow-300")}
+                width="100"
+                height="24"
                 onPress={() => {
-                  navigation.navigate("ContactUs");
+                  navigation.navigate("Rules");
                 }}
               >
-                Contact Us
+               <MaterialIcons name="rule-folder" size={35} color="black" />
+               <Text>Rules</Text>
               </Button>
             </Stack>
 
+
+
             <Stack
               mb="2.5"
               mt="1.5"
@@ -208,27 +198,77 @@ function HomePage({ navigation }) {
             >
               <Button
                 size="lg"
-                variant="subtle"
-                colorScheme="amber"
-                width="81"
-                height="20"
+                variant="solid"
+                style={tailwind("bg-yellow-300")}
+                width="100"
+                height="24"
                 onPress={() => {
                   navigation.navigate("Rent");
                 }}
               >
                 <FontAwesome5 name="money-check" size={24} color="black" />
+                <Text>Rent</Text>
               </Button>
             </Stack>
+                </View>
 
-            <View style={tailwind("w-full mt-32")}>
-              <Footer navigation={navigation} />
-            </View>
+               
           </View>
-        </ScrollView>
+
+          <View  style={tailwind("flex flex-row mt-24 items-center")}>
+            <Stack
+              mr="2"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
+              }}
+            >
+              <Button
+                size="lg"
+                variant="subtle"
+                width="160"
+                height="12"
+                colorScheme="indigo"
+                onPress={() => {
+                  Linking.openURL("mailto:bycycletn@gmail.com");
+                }}
+              >
+                <MaterialCommunityIcons name="gmail" size={30} color="black" />
+              </Button>  
+            </Stack>
+
+            <Stack
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
+              }}
+            >
+              <Button
+                size="lg"
+                variant="subtle"
+                colorScheme="green"
+                width="160"
+                height="12"
+                onPress={() => makePhoneCall()}
+              >
+                <Feather name="phone-call" size={24} color="black" />
+              </Button>
+            </Stack>
+            </View>
       </SafeAreaView>
-    </ImageBackground>
-    // </TouchableOpacity>
   );
 }
 
-export default HomePage;
+export default Home;

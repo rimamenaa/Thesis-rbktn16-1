@@ -1,9 +1,7 @@
 import React from "react"
 import {
   Slide,
-//   Button,
   Box,
-  Input,
   Heading,
   VStack,
   HStack,
@@ -11,14 +9,24 @@ import {
   CheckIcon,
   Center,
   Button,
+  View,
   NativeBaseProvider,
 } from "native-base"
+import {
+  Linking,
+} from "react-native";
+import Footer from "../Footer/Footer";
+import { useNavigation  } from "@react-navigation/native";
+
 export const Payment = () => {
+  const navigation = useNavigation();
+
   const [isOpen, setIsOpen] = React.useState(false)
   return (
+                    //   ----- Payment Details ----- 
     <Box
       width={{
-        base: "75%",
+        base: "100%",
         md: "50%",
       }}
       h="100%" // alignItems="flex-start"
@@ -47,10 +55,15 @@ export const Payment = () => {
         <Button
         colorScheme="yellow"
          my="2"
-         onPress={() => setIsOpen(true)}>
+        //  onPress={() => setIsOpen(true)}
+        onPress={ ()=>{ Linking.openURL('https://api.preprod.konnect.network/ZvtxwY59Y')}} 
+
+        >
           Place Order
         </Button>
-
+        <View style={{position: 'absolute', width: "100%",marginTop:380, backgroundColor:"white"}}>
+        <Footer navigation={navigation} />
+      </View>
       </VStack>
 
       <Slide in={isOpen} placement="bottom">
@@ -58,23 +71,23 @@ export const Payment = () => {
         <Box
           w="100%"
           position="absolute"
-          bottom="16"
+          bottom="24"
           p="2"
           borderRadius="xs"
-          bg="amber.100"
+          bg="green.300"
           alignItems="center"
           justifyContent="center"
           _dark={{
-            bg: "amber.200",
+            bg: "green.200",
           }}
         >
           <HStack space={2}>
             <CheckIcon
               size="4"
-              color="amber.600"
+              color="green.800"
               mt="1"
               _dark={{
-                color: "amber.700",
+                color: "green.700",
               }}
             />
             <Text

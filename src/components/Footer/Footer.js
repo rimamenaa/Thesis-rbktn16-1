@@ -8,53 +8,50 @@ import {
   Center,
   Pressable,
 } from "native-base";
-import { MaterialCommunityIcons, Entypo, Ionicons } from "@expo/vector-icons";
-import Commercial from "../commercial/Commercial";
-import Profile from "../Profile/Profile";
-import LandingPage from "../LandingPage/LandingPage";
-
+import {
+  MaterialCommunityIcons,
+  Entypo,
+  Ionicons,
+  AntDesign,
+} from "@expo/vector-icons";
+import tw from "tailwind-react-native-classnames";
+import { signOut } from "../services/auth";
 export default function Footer({ navigation }) {
-  const [selected, setSelected] = React.useState(1);
+  const [selected] = React.useState(1);
+
+  
   return (
     <NativeBaseProvider>
-      <Box flex={1} safeAreaTop>
+      <Box flex={1} safeAreaTop style={tw`w-full`}>
         <Center flex={1}></Center>
-        <HStack bg="gray.700" alignItems="center" safeAreaBottom shadow={6}>
+        <HStack alignItems="center" safeAreaBottom>
           <Pressable
-            // cursor="pointer"
             opacity={selected === 2 ? 1 : 0.6}
+            color="#000000"
             py="2"
             flex={1}
             onPress={() => {
-              navigation.navigate(Profile);
+              navigation.navigate("Commercial");
             }}
           >
             <Center>
               <Icon
                 mb={1}
-                as={
-                  <Ionicons
-                    name="ios-person-circle-outline"
-                    size={24}
-                    color="black"
-                  />
-                }
-                color="#FFFFFF"
+                as={<AntDesign name="staro" size={10} color="#000000" />}
+                color="#000000"
                 size="lg"
               />
-              <Text color="#FFFFFF" fontSize={12}>
-                Profile
+              <Text color="#000000" fontSize={12}>
+                About Us
               </Text>
             </Center>
           </Pressable>
 
           <Pressable
-            // cursor="pointer"
-            opacity={selected === 0 ? 1 : 0.5}
             py="3"
             flex={1}
             onPress={() => {
-              navigation.navigate(Commercial);
+              navigation.navigate("Home");
             }}
           >
             <Center>
@@ -65,32 +62,32 @@ export default function Footer({ navigation }) {
                     name={selected === 0 ? "home" : "home-outline"}
                   />
                 }
-                color="#FFFFFF"
+                color="#000000"
                 size="lg"
               />
-              <Text color="#FFFFFF" fontSize="12">
+              <Text color="#000000" fontSize="12">
                 Home
               </Text>
             </Center>
           </Pressable>
 
           <Pressable
-            // cursor="pointer"
-            opacity={selected === 3 ? 1 : 0.5}
             py="2"
             flex={1}
-            onPress={() => {
-              navigation.navigate(LandingPage);
+
+            onPress={async() => {
+              await signOut() ;
+              navigation.navigate("LandingPage");
             }}
           >
             <Center>
               <Icon
                 mb={1}
                 as={<Entypo name="log-out" size={24} color="black" />}
-                color="#FFFFFF"
+                color="#000000"
                 size="md"
               />
-              <Text color="#FFFFFF" fontSize="12">
+              <Text color="#000000" fontSize="12">
                 Log Out
               </Text>
             </Center>

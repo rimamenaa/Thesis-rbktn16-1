@@ -2,17 +2,20 @@ import React, { useState, useEffect } from "react";
 import { View, SafeAreaView, ScrollView } from "react-native";
 import { Text, Box, Heading, AspectRatio, Image, Stack } from "native-base";
 import tailwind from "tailwind-rn";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { FontAwesome5 } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
+import {
+  MaterialCommunityIcons,
+  FontAwesome5,
+  Entypo,
+} from "@expo/vector-icons";
 import axios from "axios";
+import Footer from "../Footer/Footer";
 
-function SuggestionRoads() {
+function SuggestionRoads({ navigation }) {
   const [data, setData] = useState([]);
-
+  // fetching data from database
   const getData = () => {
     axios
-      .get("https://bycyclebackend.herokuapp.com/suggestion")
+      .get("https://bycyclethesis.herokuapp.com/suggestion")
       .then((response) => {
         setData(response.data);
         console.log(response.data);
@@ -25,7 +28,8 @@ function SuggestionRoads() {
 
   return (
     <SafeAreaView style={tailwind("h-full")}>
-      <ScrollView>
+      <ScrollView style={tailwind("mb-16")}>
+
         <View style={tailwind("items-center mt-8")}>
           <Box
             style={tailwind("mb-8 items-center")}
@@ -50,33 +54,33 @@ function SuggestionRoads() {
             return (
               <View key={key}>
                 <Box
-                  style={tailwind("w-full items-center mb-8")}
+                  style={tailwind("mb-8")}
                   rounded="lg"
                   overflow="hidden"
-                  width="80"
+                  width="95%"
                   shadow={1}
                   _light={{ backgroundColor: "gray.50" }}
                   _dark={{ backgroundColor: "gray.700" }}
                 >
-                  <Box>
+                  <Box style={tailwind("items-center")}>
                     <AspectRatio ratio={0.79} height={200}>
-                      <Image source={{ uri: e.photo }} alt="image" />
+                      <Image source={{ uri: e.photo ? e.photo: "null" }} alt="image" />
                     </AspectRatio>
                   </Box>
 
                   <Stack p="4" space={3}>
                     <Stack space={2}>
-                      <Heading size="md" ml="-1">
+                      <Heading size="md" ml="2">
                         <Entypo name="location-pin" size={24} color="black" />{" "}
                         {e.location}
                       </Heading>
                     </Stack>
-                    <Text fontWeight="400">
-                      <FontAwesome5 name="clock" size={24} color="black" />{" "}
+                    <Text fontWeight="400" ml="2">
+                      <FontAwesome5 name="clock" size={20} color="black" />{" "}
                       Duration: {e.duration}{" "}
                       <MaterialCommunityIcons
                         name="map-marker-distance"
-                        size={24}
+                        size={20}
                         color="black"
                       />
                       Distance: {e.distance}
@@ -95,6 +99,16 @@ function SuggestionRoads() {
           })}
         </View>
       </ScrollView>
+      <View
+        style={{
+          position: "absolute",
+          width: "100%",
+          marginTop: 655,
+          backgroundColor: "white",
+        }}
+      >
+        <Footer navigation={navigation} />
+      </View>
     </SafeAreaView>
   );
 }

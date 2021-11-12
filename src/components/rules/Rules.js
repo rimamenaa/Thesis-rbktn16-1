@@ -11,20 +11,22 @@ import {
   AspectRatio,
   Image,
   Stack,
+  Button
 } from "native-base";
 import tailwind from "tailwind-rn";
+import Footer from "../Footer/Footer";
 
-function Rules() {
+function Rules({navigation}) {
   return (
     <SafeAreaView style={tailwind("h-full ")}>
-      <ScrollView>
+      <ScrollView style={tailwind("mb-16")}>
         <View style={tailwind(" items-center ")}>
       
 <Box 
-               style={tailwind("w-full items-center mb-8")}
+               style={tailwind("items-center mb-8")}
                rounded="lg"
               overflow="hidden"
-              width="72"
+              width="95%"
               shadow={1}
               _light={{ backgroundColor: "gray.50" }}
               _dark={{ backgroundColor: "gray.700" }}
@@ -39,7 +41,7 @@ function Rules() {
               </Box>
               <Stack p="4" space={3}>
                 <Stack space={2}>
-                  <Heading size="md" ml="-1" color="yellow.500">
+                  <Heading size="lg" ml="-1" color="gray.700">
                   Ride With Traffic
                   </Heading>
                 </Stack>
@@ -54,10 +56,10 @@ function Rules() {
             </Box>
 
 <Box 
-               style={tailwind("w-full items-center mb-8")}
+               style={tailwind("items-center mb-8")}
                rounded="lg"
               overflow="hidden"
-              width="72"
+              width="95%"
               shadow={1}
               _light={{ backgroundColor: "gray.50" }}
               _dark={{ backgroundColor: "gray.700" }}
@@ -71,7 +73,7 @@ function Rules() {
               </Box>
               <Stack p="4" space={3}>
                 <Stack space={2}>
-                  <Heading size="md" ml="-1" color="yellow.500">
+                  <Heading size="lg" ml="-1" color="gray.700">
                   Obey Traffic Signals
                   </Heading>
                 </Stack>
@@ -87,10 +89,10 @@ function Rules() {
 
                   
 <Box 
-               style={tailwind("w-full items-center mb-8")}
+               style={tailwind("items-center mb-8")}
                rounded="lg"
               overflow="hidden"
-              width="72"
+              width="95%"
               shadow={1}
               _light={{ backgroundColor: "gray.50" }}
               _dark={{ backgroundColor: "gray.700" }}
@@ -105,7 +107,7 @@ function Rules() {
               </Box>
               <Stack p="4" space={3}>
                 <Stack space={2}>
-                  <Heading size="md" ml="-1" color="yellow.500">
+                  <Heading size="lg" ml="-1" color="gray.700">
                   Yield To Pedestrians
                   </Heading>
                 </Stack>
@@ -119,10 +121,10 @@ function Rules() {
             </Box>
 
           <Box
-               style={tailwind("w-full items-center mb-8")}
+               style={tailwind("items-center mb-8")}
                rounded="lg"
               overflow="hidden"
-              width="72"
+              width="95%"
               shadow={1}
               _light={{ backgroundColor: "gray.50" }}
               _dark={{ backgroundColor: "gray.700" }}
@@ -137,7 +139,7 @@ function Rules() {
               </Box>
               <Stack p="4" space={3}>
                 <Stack space={2}>
-                  <Heading size="md" ml="-1" color="yellow.500">
+                  <Heading size="lg" ml="-1" color="gray.700">
                   Don't Ride Distracted
                   </Heading>
                 </Stack>
@@ -151,6 +153,9 @@ function Rules() {
             </Box>
         </View>
       </ScrollView>
+      <View style={{position: 'absolute', width: "100%", marginTop:680, backgroundColor:"white"}}>
+        <Footer navigation={navigation} />
+      </View>
     </SafeAreaView>
   );
 }

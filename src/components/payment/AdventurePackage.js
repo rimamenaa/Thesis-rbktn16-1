@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState }  from "react";
 import {
   Input,
   Box,
@@ -7,23 +7,51 @@ import {
   Stack,
   VStack,
   HStack,
-  Slide,
   NativeBaseProvider,
   Button,
 } from "native-base";
-import { View } from "react-native";
+import axios from "axios";
+import {Alert} from "react-native"
+
 import { useNavigation } from "@react-navigation/native";
 
 export const Info = () => {
   const navigation = useNavigation();
+  const [id, setId] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
+  const onChangeIdHandler = (id) => {
+    setId(id);
+  };
+  const onChangePhoneNumberHandler = (phoneNumber) => {
+    setPhoneNumber(phoneNumber);
+  };
+
+  const onSubmit = () => {
+    axios
+      .post('http://localhost:3000/pi', {
+        id,
+        phoneNumber
+      })
+      .then(function (response) {
+        // handle success
+        console.log('then', JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        // handle error
+        console.log('error catch', error.message);
+        console.log('info', id, phoneNumber);
+      });
+  };
+  
   return (
+                    //   ----- Personal Information ----- 
     <Box
       width={{
-        base: "75%",
+        base: "100%",
         md: "50%",
       }}
-      h="100%" // alignItems="flex-start"
+      h="100%" 
       justifyContent="center"
     >
       <VStack space={3} w="100%">
@@ -37,11 +65,15 @@ export const Info = () => {
           w="100%" 
           variant="outline" 
           placeholder="ID" 
+          onChangeText={onChangeIdHandler}
+
           />
           <Input  
           w="100%" 
           variant="outline" 
           placeholder="Phone Number" 
+          onChangeText={onChangePhoneNumberHandler}
+
           />
         </Stack>
 
@@ -49,7 +81,11 @@ export const Info = () => {
           colorScheme="yellow"
           my="2"
           onPress={() => {
-            navigation.navigate("AdventurePayment");
+            if ( id.length < 8 || phoneNumber.length < 8) {
+              alert("Please type valid inputs!");
+            } else {
+              onSubmit();  navigation.navigate("AdventurePayment");
+            }
           }}
         >
           Next

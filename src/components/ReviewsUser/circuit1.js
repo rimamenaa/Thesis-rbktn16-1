@@ -4,7 +4,6 @@ import {
   HStack,
   Text,
   VStack,
-  Avatar,
   Image,
   ScrollView,
   Pressable,
@@ -18,7 +17,6 @@ import {
   View,
 } from "native-base";
 import { AirbnbRating } from "react-native-ratings";
-import tw from "tailwind-react-native-classnames";
 import axios from "axios";
 import moment from "moment";
 
@@ -32,8 +30,6 @@ export default function Circuit1() {
   var total = 0;
   var average;
 
-  console.log("hhhh", Data);
-
   if (Data) {
     for (var i = 0; i < Data.length; i++) {
       averageArray.push(Data[i].rating);
@@ -43,12 +39,11 @@ export default function Circuit1() {
   }
   const Submit = () => {
     axios
-      .post(`http://localhost:3000/reviews`, {
+      .post(`https://bycyclethesis.herokuapp.com/reviews`, {
         review,
         rating,
       })
       .then(() => {
-        console.log("review added");
         // setData((data) => [res.data, ...data]);
         // setData(res.data);
         setInput("");
@@ -59,9 +54,8 @@ export default function Circuit1() {
   };
   const getReview = () => {
     axios
-      .get(`https://bycyclebackend.herokuapp.com/reviews`)
+      .get(`https://bycyclethesis.herokuapp.com/reviews`)
       .then((response) => {
-        console.log(response.data);
         setData(response.data);
       })
       .catch((err) => {
@@ -90,7 +84,6 @@ export default function Circuit1() {
       >
         <ScrollView>
           <Box
-            style={tw`mt-4`}
             flex={1}
             flexDirection={{
               base: "column",
@@ -347,11 +340,11 @@ export default function Circuit1() {
                                         flex={1}
                                         justifyContent="space-between"
                                       >
-                                        <Avatar
+                                        {/* <Avatar
                                           source={require("../../../assets/goGreen.jpg")}
                                           height="9"
                                           width="9"
-                                        />
+                                        /> */}
                                         <Text
                                           fontSize="lg"
                                           _light={{
