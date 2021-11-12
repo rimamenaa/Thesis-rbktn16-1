@@ -17,7 +17,6 @@ import {
   View,
 } from "native-base";
 import { AirbnbRating } from "react-native-ratings";
-import tw from "tailwind-react-native-classnames";
 import axios from "axios";
 import moment from "moment";
 
@@ -40,7 +39,7 @@ export default function Circuit1() {
   }
   const Submit = () => {
     axios
-      .post(`https://bycyclebackend.herokuapp.com/reviews`, {
+      .post(`https://bycyclethesis.herokuapp.com/reviews`, {
         review,
         rating,
       })
