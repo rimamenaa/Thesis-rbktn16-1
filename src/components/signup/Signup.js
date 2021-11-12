@@ -133,6 +133,7 @@ export function SignUpForm({ props }) {
                 <Input
                   type="text"
                   name="fullname"
+                  autoCapitalize="none"
                   placeholder="Full Name"
                   onChangeText={(value) => {
                     setFullName(value);
@@ -153,6 +154,7 @@ export function SignUpForm({ props }) {
                 <Input
                   type="email"
                   name="email"
+                  autoCapitalize="none"
                   placeholder="Email"
                   onChangeText={(value) => {
                     setEmail(value);
@@ -173,6 +175,7 @@ export function SignUpForm({ props }) {
                   type="password"
                   name="password"
                   placeholder="Password"
+                  autoCapitalize="none"
                   onChangeText={(value) => {
                     setPassword(value);
                   }}
@@ -248,7 +251,7 @@ export function SignUpForm({ props }) {
                 onPress={() => {
                   signUp({ fullname, email, password }).then(() => {
                     setIsOpen(true);
-                    setTimeout(() => props.navigation.navigate("Login"), 2500);
+                    setTimeout(() => props.navigation.navigate("Login"), 2000);
                   });
                 }}
               >

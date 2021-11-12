@@ -45,7 +45,7 @@ function SingleTrip() {
             ml="-0.5"
             mt="-1"
           >
-            5 TND per Hour
+            2.5 TND per Hour
           </Text>
           </View>
         </Stack>

@@ -136,6 +136,8 @@ export function SignInForm({ props }) {
                 <Input
                   type="email"
                   name="email"
+                  autoCapitalize="none"
+                  placeholder="Email"
                   onChangeText={(value) => setEmail(value)}
                 />
               </FormControl>
@@ -152,6 +154,9 @@ export function SignInForm({ props }) {
                 <Input
                   type="password"
                   name="password"
+                  autoCapitalize="none"
+                  placeholder="Password"
+
                   onChangeText={(value) => setPassword(value)}
                 />
                 <Link
@@ -196,7 +201,7 @@ export function SignInForm({ props }) {
                 onPress={() => {
                   signIn({ email, password }).then(() => {
                     setIsOpen(true);
-                    setTimeout(() => props.navigation.navigate("WhyUs"), 2500);
+                    setTimeout(() => props.navigation.navigate("WhyUs"), 2000);
                   });
                 }}
               >
