@@ -15,7 +15,13 @@ function MonthlySubDetails() {
   return (
             //   ----- Monthly Package Card Details ----- 
     <ScrollView>
-      <Box>
+      <Box
+       shadow={1}
+       width="360"
+       marginLeft={4}
+       borderRadius={5}
+       _light={{ backgroundColor: "gray.50" }}
+       _dark={{ backgroundColor: "gray.700" }}>
         <Text fontSize="2xl" marginBottom="3" marginLeft="3" marginTop="5">
           Monthly Membership
         </Text>
@@ -26,7 +32,7 @@ function MonthlySubDetails() {
         <AspectRatio ratio={16 / 9}>
           <Image
             marginTop="5"
-            rounded="lg"
+            rounded="xs"
             height="100%"
             width="100%"
             source={require("../../../../assets/saveMoney.jpg")}
