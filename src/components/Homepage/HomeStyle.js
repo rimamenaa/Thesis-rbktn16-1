@@ -234,7 +234,7 @@ function Home({ navigation }) {
                 variant="subtle"
                 width="160"
                 height="12"
-                colorScheme="indigo"
+                colorScheme="red"
                 onPress={() => {
                   Linking.openURL("mailto:bycycletn@gmail.com");
                 }}
