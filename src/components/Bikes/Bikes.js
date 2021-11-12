@@ -57,16 +57,19 @@ function AboutBikes() {
             source={require("../../../assets/adult.jpg")}
             alt="Adult"
           />
-            <BlurView
-          style={tw`w-full h-12 rounded items-center mt-7 absolute`}
-          intensity={70}
-          tint="dark"
-          color="grey"
-        >
-          <Text color="amber.500" style={tailwind("text-2xl mt-2 font-bold absolute")} >
-          ADULTS
-        </Text>
-        </BlurView>
+          <BlurView
+            style={tw`w-full h-12 rounded items-center mt-7 absolute`}
+            intensity={70}
+            tint="dark"
+            color="grey"
+          >
+            <Text
+              color="amber.500"
+              style={tailwind("text-2xl mt-2 font-bold absolute")}
+            >
+              ADULTS
+            </Text>
+          </BlurView>
         </VStack>
       </Pressable>
 
@@ -84,18 +87,20 @@ function AboutBikes() {
             source={require("../../../assets/kid.jpg")}
             alt="kid"
           />
-             <BlurView
-          style={tw`w-full h-12 rounded items-center mt-12 absolute`}
-          intensity={70}
-          tint="dark"
-          color="grey"
-        >
-          <Text color="amber.500" style={tailwind("text-2xl mt-2 font-bold absolute")} >
-          KIDS
-        </Text>
-        </BlurView>
+          <BlurView
+            style={tw`w-full h-12 rounded items-center mt-12 absolute`}
+            intensity={70}
+            tint="dark"
+            color="grey"
+          >
+            <Text
+              color="amber.500"
+              style={tailwind("text-2xl mt-2 font-bold absolute")}
+            >
+              KIDS
+            </Text>
+          </BlurView>
         </VStack>
-
       </Pressable>
     </View>
   );
