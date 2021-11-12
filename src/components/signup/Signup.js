@@ -238,7 +238,7 @@ export function SignUpForm({ props }) {
               <Button
                 mt="10"
                 height={10}
-                width={363}
+                width={350}
                 borderRadius="4"
                 _text={{
                   fontWeight: "medium",
