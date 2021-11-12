@@ -47,9 +47,6 @@ export default function Circuit1() {
         rating,
       })
       .then(() => {
-        console.log("review added");
-        // setData((data) => [res.data, ...data]);
-        // setData(res.data);
         setInput("");
       })
       .catch((err) => {
@@ -60,7 +57,6 @@ export default function Circuit1() {
     axios
       .get(`https://bycyclethesis.herokuapp.com/reviews`)
       .then((response) => {
-        console.log(response.data);
         setData(response.data);
       })
       .catch((err) => {
