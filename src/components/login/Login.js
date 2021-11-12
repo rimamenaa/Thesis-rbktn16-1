@@ -201,7 +201,7 @@ export function SignInForm({ props }) {
                 onPress={() => {
                   signIn({ email, password }).then(() => {
                     setIsOpen(true);
-                    setTimeout(() => props.navigation.navigate("WhyUs"), 2000);
+                    setTimeout(() => props.navigation.navigate("WhyUs"), 1300);
                   });
                 }}
               >
