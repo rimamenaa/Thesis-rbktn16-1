@@ -221,33 +221,33 @@ function Home({ navigation }) {
         </View>
       </View>
 
-      <View style={tailwind("flex flex-row mt-24 items-center")}>
-        <Stack
-          mr="2"
-          mt="1.5"
-          direction={{
-            base: "column",
-            md: "row",
-          }}
-          space={2}
-          mx={{
-            base: "auto",
-            md: "0",
-          }}
-        >
-          <Button
-            size="lg"
-            variant="subtle"
-            width="160"
-            height="12"
-            colorScheme="indigo"
-            onPress={() => {
-              Linking.openURL("mailto:bycycletn@gmail.com");
-            }}
-          >
-            <MaterialCommunityIcons name="gmail" size={30} color="black" />
-          </Button>
-        </Stack>
+          <View  style={tailwind("flex flex-row mt-24 items-center")}>
+            <Stack
+              mr="2"
+              mt="1.5"
+              direction={{
+                base: "column",
+                md: "row",
+              }}
+              space={2}
+              mx={{
+                base: "auto",
+                md: "0",
+              }}
+            >
+              <Button
+                size="lg"
+                variant="subtle"
+                width="160"
+                height="12"
+                colorScheme="red"
+                onPress={() => {
+                  Linking.openURL("mailto:bycycletn@gmail.com");
+                }}
+              >
+                <MaterialCommunityIcons name="gmail" size={30} color="black" />
+              </Button>  
+            </Stack>
 
         <Stack
           mt="1.5"
