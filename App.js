@@ -37,7 +37,8 @@ import { ActivityIndicator } from "react-native-paper";
 import { AuthContext } from "./src/components/context/context";
 import { View } from "native-base";
 import { isSignedIn } from "./src/components/services/auth";
-
+console.disableYellowBox = true;
+console.disableYellowBox = true;
 const theme = extendTheme({
   colors: {
     primary: nbTheme.colors.gray,
