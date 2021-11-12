@@ -33,14 +33,7 @@ function AboutBikes({ navigation }) {
   return (
     <View>
       <ScrollView marginBottom="20">
-        <View style={tailwind("items-center")}>
-          <Text color="amber.500" style={tailwind("text-2xl font-bold")}>
-            Bicycles For Adults
-          </Text>
-        </View>
-
         {data.slice(0, 9).map((bike, key) => {
-          console.log(bike);
           return (
             <Card key={key}>
               <AspectRatio ratio={9 / 9}>
@@ -58,18 +51,6 @@ function AboutBikes({ navigation }) {
                   {bike.description}
                 </Text>
               </Stack>
-              {/* <Button
-                size="lg"
-                variant="outline"
-                colorScheme="amber"
-                width="100%"
-                height="16"
-                onPress={() => {
-                  navigation.navigate("Rent");
-                }}
-              >
- <FontAwesome name="arrow-circle-right" size={35} color="black" /> 
-             </Button> */}
               <Button
                 colorScheme="yellow"
                 my="2"

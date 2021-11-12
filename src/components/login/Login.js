@@ -17,6 +17,7 @@ import {
   Image,
   CheckIcon,
   Slide,
+  View
 } from "native-base";
 import axios from "axios";
 import instance from "../../../android/app/src/helpers/axiosInstance";
@@ -30,6 +31,8 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
   headers: { "x-token": "7ot el token ya wissem" },
 }); */
 import { signIn } from "../services/auth";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { alignItems } from "styled-system";
 export function SignInForm({ props }) {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -86,7 +89,7 @@ export function SignInForm({ props }) {
       <VStack
         flex="1"
         px="6"
-        py="9"
+        py="4"
         _light={{
           bg: "white",
         }}
@@ -108,22 +111,23 @@ export function SignInForm({ props }) {
           md: "0",
         }}
       >
-        <VStack space="7">
+        <VStack>
           <Hidden till="md">
             <Text fontSize="lg" fontWeight="normal">
               Sign in to continue!
             </Text>
           </Hidden>
           <VStack>
-            <VStack space="3">
-              <VStack
-                space={{
-                  base: "7",
-                  md: "4",
-                }}
-              ></VStack>
+            <VStack>
+              <View style={tw`items-center`}>
+        <Image
+          style={tw`w-16 h-16`}
+          source={require("../../../assets/LogoBike.png")}
+          alt="image"
+        />
+      </View>
               {/* Opening Link Tag navigateTo:"OTP" (react/Router) */}
-              <FormControl>
+              <FormControl style={tw`mt-12`}>
                 <FormControl.Label
                   _text={{
                     color: "coolGray.800",
@@ -172,6 +176,7 @@ export function SignInForm({ props }) {
                   Forget Password?
                 </Link>
                 <Checkbox
+                marginTop={3}
                   alignItems="flex-start"
                   defaultIsChecked
                   value="demo"
@@ -185,9 +190,11 @@ export function SignInForm({ props }) {
                   </HStack>
                 </Checkbox>
               </FormControl>
+              <View style={{alignItems:"center"}}>
               <Button
-                mt="5"
-                size="md"
+                mt="24"
+                height={10}
+                width={363}
                 borderRadius="4"
                 _text={{
                   fontWeight: "medium",
@@ -201,12 +208,15 @@ export function SignInForm({ props }) {
                 onPress={() => {
                   signIn({ email, password }).then(() => {
                     setIsOpen(true);
-                    setTimeout(() => props.navigation.navigate("WhyUs"), 2000);
+
+                    setTimeout(() => props.navigation.navigate("WhyUs"), 1300);
+
                   });
                 }}
               >
                 SIGN IN
               </Button>
+              </View>
               {/* Closing Link Tag */}
               <HStack
                 mt="5"
@@ -286,7 +296,7 @@ export function SignInForm({ props }) {
                 </HStack>
               </Box>
             </Slide>
-            <Button
+            {/* <Button
               mt="5"
               size="lg"
               borderRadius="4"
@@ -299,8 +309,8 @@ export function SignInForm({ props }) {
               _dark={{
                 bg: "primary.700",
               }}
-            >
-              <Text
+            > */}
+              {/* <Text
                 style={{ color: "black", fontWeight: "500" }}
                 onPress={handleGoogleSignIn}
               >
@@ -309,8 +319,20 @@ export function SignInForm({ props }) {
                   source={require("../../../assets/ggl.png")}
                   alt="image"
                 />
-              </Text>
-            </Button>
+              </Text> */}
+              <View style={{alignItems:"center"}}>
+                       <TouchableOpacity style={{alignItems:"center", backgroundColor: "#E2E2E2",width:250, height:35,borderRadius:4 }}
+                       onPress={handleGoogleSignIn}>
+            
+                <Image
+                  style={{ height: 20, width: 60,marginTop:8}}
+                  source={require("../../../assets/ggl.png")}
+                  alt="image"
+                />
+    
+              </TouchableOpacity>
+              </View>
+            {/* </Button> */}
           </VStack>
         </VStack>
         <HStack

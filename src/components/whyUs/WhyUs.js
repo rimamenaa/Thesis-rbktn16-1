@@ -22,7 +22,6 @@ function WhyUs({ navigation }) {
       .get("https://bycyclethesis.herokuapp.com/whybycycle")
       .then((response) => {
         setData(response.data);
-        console.log(response.data);
       });
   };
   useEffect(async () => {
@@ -31,9 +30,8 @@ function WhyUs({ navigation }) {
 
   const truth = isSignedIn;
 
-  console.log(truth);
   return (
-    <SafeAreaView style={tailwind("h-full")}>
+    <SafeAreaView style={tailwind("h-full bg-white")}>
       <ScrollView>
         <View style={tailwind("mt-6 items-center h-full")}>
           <View>
@@ -51,7 +49,7 @@ function WhyUs({ navigation }) {
                       _dark={{ backgroundColor: "gray.700" }}
                     >
                       <Box >
-                        <AspectRatio  ratio={1.1} style={tailwind("h-66")}>
+                        <AspectRatio ratio={1.0}  style={tailwind("h-96")}>
                           <Image source={{ uri: e.photo ? e.photo: "null" }}    alt="image" />
                         </AspectRatio>
                       </Box>
@@ -61,7 +59,7 @@ function WhyUs({ navigation }) {
                             {e.title}
                           </Heading>
                         </Stack>
-                        <Text  style={tailwind("text-lg")}>{e.description}</Text>
+                        <Text style={tailwind("text-lg")}>{e.description}</Text>
                         <HStack
                           alignItems="center"
                           space={4}

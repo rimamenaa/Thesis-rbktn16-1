@@ -44,8 +44,6 @@ export default function Circuit1() {
         rating,
       })
       .then(() => {
-        // setData((data) => [res.data, ...data]);
-        // setData(res.data);
         setInput("");
       })
       .catch((err) => {
