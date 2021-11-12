@@ -20,7 +20,7 @@ import AdventurePassDetails from "./src/components/Renting/AdventurePass/Adventu
 import SuggestedRoutes from "./src/components/suggestionroads/SuggestedRoutes";
 import Station from "./src/components/Map/Station";
 import AboutBikes from "./src/components/aboutBikes/AboutBikes";
-import WhyUs from "./src/components/WhyUs/WhyUs";
+import WhyUs from "./src/components/whyUs/WhyUs";
 import SingleTripPayment from "./src/components/payment/SingleTripPayment";
 import SingleTripPackage from "./src/components/payment/SingleTripPackage";
 import MonthlyPayment from "./src/components/payment/MonthlyPayment";
@@ -37,7 +37,8 @@ import { ActivityIndicator } from "react-native-paper";
 import { AuthContext } from "./src/components/context/context";
 import { View } from "native-base";
 import { isSignedIn } from "./src/components/services/auth";
-
+console.disableYellowBox = true;
+console.disableYellowBox = true;
 const theme = extendTheme({
   colors: {
     primary: nbTheme.colors.gray,
@@ -106,8 +107,16 @@ function App() {
               options={{ headerShown: false }}
             />
             <Stack.Screen name="CombinedMap" component={CombinedMap} />
-            <Stack.Screen name="Rules" component={Rules} />
-            <Stack.Screen name="Reviews" component={Reviews} />
+            <Stack.Screen
+              name="Rules"
+              component={Rules}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Reviews"
+              component={Reviews}
+              options={{ headerShown: false }}
+            />
             <Stack.Screen
               name="Login"
               options={{ headerShown: false }}
@@ -118,30 +127,69 @@ function App() {
               options={{ headerShown: false }}
               component={Signup}
             />
-            <Stack.Screen name="SingleTrip" component={SingleTrip} />
-            <Stack.Screen name="AboutBikes" component={AboutBikes} />
-            <Stack.Screen name="Bikes" component={Bikes} />
+            <Stack.Screen
+              name="SingleTrip"
+              component={SingleTrip}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="AboutBikes"
+              component={AboutBikes}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Bikes"
+              component={Bikes}
+              options={{ headerShown: false }}
+            />
 
-            <Stack.Screen name="AdultBikes" component={AdultBikes} />
-            <Stack.Screen name="KidBikes" component={KidBikes} />
-            <Stack.Screen name="AdultsBikes" component={AdultsBikes} />
-            <Stack.Screen name="KidsBikes" component={KidsBikes} />
+            <Stack.Screen
+              name="AdultBikes"
+              component={AdultBikes}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="KidBikes"
+              component={KidBikes}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="AdultsBikes"
+              component={AdultsBikes}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="KidsBikes"
+              component={KidsBikes}
+              options={{ headerShown: false }}
+            />
 
             <Stack.Screen
               name="SingleTripDetails"
               component={SingleTripDetails}
+              options={{ headerShown: false }}
             />
             <Stack.Screen name="MonthlySub" component={MonthlySub} />
             <Stack.Screen
               name="MonthlySubDetails"
               component={MonthlySubDetails}
+              options={{ headerShown: false }}
             />
-            <Stack.Screen name="AdventurePass" component={AdventurePass} />
+            <Stack.Screen
+              name="AdventurePass"
+              component={AdventurePass}
+              options={{ headerShown: false }}
+            />
             <Stack.Screen
               name="AdventurePassDetails"
               component={AdventurePassDetails}
+              options={{ headerShown: false }}
             />
-            <Stack.Screen name="SuggestedRoutes" component={SuggestedRoutes} />
+            <Stack.Screen
+              name="SuggestedRoutes"
+              component={SuggestedRoutes}
+              options={{ headerShown: false }}
+            />
             <Stack.Screen
               name="SingleTripPayment"
               component={SingleTripPayment}
@@ -161,7 +209,11 @@ function App() {
               component={AdventurePackage}
             />
 
-            <Stack.Screen name="Station" component={Station} />
+            <Stack.Screen
+              name="Station"
+              component={Station}
+              options={{ headerShown: false }}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       </AuthContext.Provider>
