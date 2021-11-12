@@ -137,6 +137,7 @@ export function SignInForm({ props }) {
                   type="email"
                   name="email"
                   autoCapitalize="none"
+                  placeholder="Email"
                   onChangeText={(value) => setEmail(value)}
                 />
               </FormControl>
@@ -154,6 +155,8 @@ export function SignInForm({ props }) {
                   type="password"
                   name="password"
                   autoCapitalize="none"
+                  placeholder="Password"
+
                   onChangeText={(value) => setPassword(value)}
                 />
                 <Link

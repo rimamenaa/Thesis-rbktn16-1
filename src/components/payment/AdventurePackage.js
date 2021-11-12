@@ -11,6 +11,7 @@ import {
   Button,
 } from "native-base";
 import axios from "axios";
+import {Alert} from "react-native"
 
 import { useNavigation } from "@react-navigation/native";
 
@@ -80,7 +81,11 @@ export const Info = () => {
           colorScheme="yellow"
           my="2"
           onPress={() => {
-            navigation.navigate("AdventurePayment"); onSubmit()
+            if ( id.length < 8 || phoneNumber.length < 8) {
+              alert("Please type valid inputs!");
+            } else {
+              onSubmit();  navigation.navigate("AdventurePayment");
+            }
           }}
         >
           Next
