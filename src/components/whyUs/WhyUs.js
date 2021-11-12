@@ -22,7 +22,6 @@ function WhyUs({ navigation }) {
       .get("https://bycyclethesis.herokuapp.com/whybycycle")
       .then((response) => {
         setData(response.data);
-        console.log(response.data);
       });
   };
   useEffect(async () => {
@@ -31,7 +30,6 @@ function WhyUs({ navigation }) {
 
   const truth = isSignedIn;
 
-  console.log(truth);
   return (
     <SafeAreaView style={tailwind("h-full")}>
       <ScrollView>
