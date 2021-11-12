@@ -40,7 +40,6 @@ function AboutBikes({ navigation }) {
         </View>
 
         {data.slice(0, 9).map((bike, key) => {
-          console.log(bike);
           return (
             <Card key={key}>
               <AspectRatio ratio={9 / 9}>
