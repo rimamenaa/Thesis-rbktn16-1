@@ -33,12 +33,6 @@ function AboutBikes({ navigation }) {
   return (
     <View>
       <ScrollView marginBottom="20">
-        <View style={tailwind("items-center")}>
-          <Text color="amber.500" style={tailwind("text-2xl font-bold")}>
-            Bicycles For Kids
-          </Text>
-        </View>
-
         {data.slice(10, 17).map((bike, key) => {
           return (
             <Card key={key}>

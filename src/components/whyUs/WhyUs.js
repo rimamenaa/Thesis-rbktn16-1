@@ -31,7 +31,7 @@ function WhyUs({ navigation }) {
   const truth = isSignedIn;
 
   return (
-    <SafeAreaView style={tailwind("h-full")}>
+    <SafeAreaView style={tailwind("h-full bg-white")}>
       <ScrollView>
         <View style={tailwind("mt-6 items-center h-full")}>
           <View>
@@ -48,12 +48,9 @@ function WhyUs({ navigation }) {
                       _light={{ backgroundColor: "gray.50" }}
                       _dark={{ backgroundColor: "gray.700" }}
                     >
-                      <Box>
-                        <AspectRatio ratio={1.1} style={tailwind("h-64 ml-8")}>
-                          <Image
-                            source={{ uri: e.photo ? e.photo : "null" }}
-                            alt="image"
-                          />
+                      <Box >
+                        <AspectRatio ratio={1.0}  style={tailwind("h-96")}>
+                          <Image source={{ uri: e.photo ? e.photo: "null" }}    alt="image" />
                         </AspectRatio>
                       </Box>
                       <Stack p="4" space={3}>
