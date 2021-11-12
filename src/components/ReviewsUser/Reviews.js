@@ -19,7 +19,7 @@ export default function Reviews({ navigation }) {
           backgroundColor: "white",
         }}
       >
-        <Footer navigation={navigation} />
+        {/* <Footer navigation={navigation} /> */}
       </View>
     </View>
   );

@@ -31,8 +31,6 @@ export default function Circuit1() {
   var total = 0;
   var average;
 
-  console.log("hhhh", Data);
-
   if (Data) {
     for (var i = 0; i < Data.length; i++) {
       averageArray.push(Data[i].rating);
