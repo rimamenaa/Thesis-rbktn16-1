@@ -17,7 +17,6 @@ import {
   View,
 } from "native-base";
 import { AirbnbRating } from "react-native-ratings";
-import tw from "tailwind-react-native-classnames";
 import axios from "axios";
 import moment from "moment";
 
@@ -31,8 +30,6 @@ export default function Circuit1() {
   var total = 0;
   var average;
 
-  console.log("hhhh", Data);
-
   if (Data) {
     for (var i = 0; i < Data.length; i++) {
       averageArray.push(Data[i].rating);
@@ -42,12 +39,11 @@ export default function Circuit1() {
   }
   const Submit = () => {
     axios
-      .post(`https://bycyclebackend.herokuapp.com/reviews`, {
+      .post(`https://bycyclethesis.herokuapp.com/reviews`, {
         review,
         rating,
       })
       .then(() => {
-        console.log("review added");
         // setData((data) => [res.data, ...data]);
         // setData(res.data);
         setInput("");
@@ -60,7 +56,6 @@ export default function Circuit1() {
     axios
       .get(`https://bycyclethesis.herokuapp.com/reviews`)
       .then((response) => {
-        console.log(response.data);
         setData(response.data);
       })
       .catch((err) => {
