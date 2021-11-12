@@ -29,44 +29,6 @@ function SuggestionRoads({ navigation }) {
   return (
     <SafeAreaView style={tailwind("h-full")}>
       <ScrollView style={tailwind("mb-16")}>
-        <View style={tailwind("items-center")}>
-          <View style={tailwind("flex flex-row mb-6")}>
-            <Text style={tailwind("font-bold text-xl")}>Stations</Text>
-            <Text style={tailwind("ml-16 font-bold text-xl")}>
-              Availability
-            </Text>
-          </View>
-        </View>
-
-        <View style={tailwind(" rounded-md flex flex-row ")}>
-          <Text style={tailwind("font-bold ml-12")}>
-            <Entypo name="location-pin" size={20} color="red" /> La Marsa
-          </Text>
-
-          <Text style={tailwind("ml-20")}>13 bikes</Text>
-        </View>
-        <View style={tailwind(" rounded-md flex flex-row ")}>
-          <Text style={tailwind("ml-12 font-bold")}>
-            <Entypo name="location-pin" size={20} color="red" /> Lac 3
-          </Text>
-
-          <Text style={tailwind("ml-28")}>26 bikes</Text>
-        </View>
-        <View style={tailwind(" rounded-md flex flex-row ")}>
-          <Text style={tailwind("ml-12 font-bold")}>
-            <Entypo name="location-pin" size={20} color="red" /> Sidi Boussaid
-          </Text>
-
-          <Text style={tailwind("ml-14")}>18 bikes</Text>
-        </View>
-
-        <View style={tailwind(" rounded-md flex flex-row ")}>
-          <Text style={tailwind("ml-12 font-bold")}>
-            <Entypo name="location-pin" size={20} color="red" /> La Goulette
-          </Text>
-
-          <Text style={tailwind("ml-16")}>22 bikes</Text>
-        </View>
 
         <View style={tailwind("items-center mt-8")}>
           <Box
