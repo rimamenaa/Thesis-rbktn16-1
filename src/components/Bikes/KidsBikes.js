@@ -49,7 +49,7 @@ function AboutBikes({ navigation }) {
                   rounded="lg"
                   height="100%"
                   width="100%"
-                  source={{ uri: bike.photo ? bike.photo:"null" }}
+                  source={{ uri: bike.photo ? bike.photo : "null" }}
                   alt="image"
                 />
               </AspectRatio>
