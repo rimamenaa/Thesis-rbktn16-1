@@ -8,6 +8,7 @@ import {
   NativeBaseProvider,
   ScrollView,
   Button,
+  View
 } from "native-base";
 import tw from "tailwind-react-native-classnames";
 import { useNavigation } from "@react-navigation/native";
@@ -19,10 +20,18 @@ function AdventurePassDetails() {
             //   ----- Adventure Package Card Details ----- 
 
     <ScrollView>
+       <View style={tw`items-center mt-12`}>
+        <Image
+          style={tw`w-16 h-16`}
+          source={require("../../../../assets/LogoBike.png")}
+          alt="image"
+        />
+        </View>
       <Box
        shadow={1}
        width="360"
        marginLeft={4}
+       marginTop={10}
        borderRadius={5}
        _light={{ backgroundColor: "gray.50" }}
        _dark={{ backgroundColor: "gray.700" }}>

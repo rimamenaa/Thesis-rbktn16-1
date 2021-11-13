@@ -9,9 +9,12 @@ import {
   HStack,
   NativeBaseProvider,
   Button,
+  Image,
+  View
 } from "native-base";
 import axios from "axios";
 import {Alert} from "react-native"
+import tw from "tailwind-react-native-classnames";
 
 import { useNavigation } from "@react-navigation/native";
 
@@ -54,6 +57,7 @@ export const Info = () => {
       h="100%" 
       justifyContent="center"
     >
+     
       <VStack space={3} w="100%">
 
         <HStack alignItems="center">

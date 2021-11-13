@@ -31,7 +31,7 @@ function AboutBikes({ navigation }) {
 
   return (
     <View>
-      <ScrollView marginBottom="20">
+      <ScrollView marginBottom="24">
         {data.slice(10, 17).map((bike, key) => {
           return (
             <Card key={key}>
@@ -59,7 +59,7 @@ function AboutBikes({ navigation }) {
         style={{
           position: "absolute",
           width: "100%",
-          marginTop: 660,
+          marginTop: 740,
           backgroundColor: "white",
         }}
       >

@@ -32,7 +32,7 @@ function AboutBikes({ navigation }) {
 
   return (
     <View>
-      <ScrollView marginBottom="20">
+      <ScrollView marginBottom="24">
         {data.slice(0, 9).map((bike, key) => {
          
           return (
@@ -61,7 +61,7 @@ function AboutBikes({ navigation }) {
         style={{
           position: "absolute",
           width: "100%",
-          marginTop: 660,
+          marginTop: 740,
           backgroundColor: "white",
         }}
       >

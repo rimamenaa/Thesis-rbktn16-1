@@ -51,7 +51,7 @@ const Station = ({ navigation }) => {
 
   return (
     <SafeAreaView
-      style={{ flex: 1, backgroundColor: "#E6E5E5", borderTopLeftRadius: 100 }}
+      style={{ flex: 1, backgroundColor: "white", borderTopLeftRadius: 100 }}
     >
       <MapView
         style={{ flex: 1 }}
