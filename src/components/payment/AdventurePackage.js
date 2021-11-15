@@ -108,6 +108,5 @@ export default () => {
         <Info />
       </Center>
     </NativeBaseProvider>
-  
   );
 };
