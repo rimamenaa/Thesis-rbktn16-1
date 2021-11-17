@@ -57,9 +57,16 @@ export const Info = () => {
       }}
       h="100%" 
       justifyContent="center"
+      alignItems="center"
     >
      
-      <VStack space={3} w="100%">
+        <Image
+          style={tw`w-24 h-24 mb-52`}
+          source={require("../../../assets/LogoBike.png")}
+          alt="image"
+        />
+      
+      <VStack space={3} w="100%" marginBottom={150}>
 
         <HStack alignItems="center">
           <Heading>Personal Information</Heading>
