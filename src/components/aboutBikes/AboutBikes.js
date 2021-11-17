@@ -24,6 +24,7 @@ import { BlurView } from "expo-blur";
 import Footer from "../Footer/Footer";
 import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import { marginTop } from "styled-system";
 
 function AboutBikes() {
   const navigation = useNavigation();
@@ -42,8 +43,7 @@ function AboutBikes() {
   }, []);
 
   return (
-    <View alignItems="center">
-  {/* navigate to the adultbikes */}
+    <View style={tw `items-center mt-16`}>
       <Pressable
         onPress={() => {
           navigation.navigate("AdultBikes");

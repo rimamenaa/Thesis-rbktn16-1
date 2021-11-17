@@ -114,7 +114,7 @@ export default () => {
   return (
 
     <NativeBaseProvider>
-      <Center flex={1} px="3">
+      <Center flex={1} px="3" backgroundColor="white">
         <Payment />
       </Center>
     </NativeBaseProvider>

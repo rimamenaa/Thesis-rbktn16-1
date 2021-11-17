@@ -42,7 +42,7 @@ function AboutBikes() {
   }, []);
 
   return (
-    <View alignItems="center">
+    <View style={tw `items-center mt-16`}>
       <Pressable
         onPress={() => {
           navigation.navigate("AdultsBikes");
