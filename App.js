@@ -20,7 +20,7 @@ import AdventurePassDetails from "./src/components/Renting/AdventurePass/Adventu
 import SuggestedRoutes from "./src/components/suggestionroads/SuggestedRoutes";
 import Station from "./src/components/Map/Station";
 import AboutBikes from "./src/components/aboutBikes/AboutBikes";
-import WhyUs from "./src/components/whyUs/WhyUs";
+import WhyUs from "./src/components/WhyUs/WhyUs";
 import SingleTripPayment from "./src/components/payment/SingleTripPayment";
 import SingleTripPackage from "./src/components/payment/SingleTripPackage";
 import MonthlyPayment from "./src/components/payment/MonthlyPayment";
@@ -193,6 +193,7 @@ function App() {
             <Stack.Screen
               name="SingleTripPayment"
               component={SingleTripPayment}
+              options={{ headerShown: false }}
             />
             <Stack.Screen
               name="SingleTripPackage"

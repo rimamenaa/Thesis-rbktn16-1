@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Platform, Text, Button, SafeAreaView, View } from "react-native";
+import { Platform, Text, Button, SafeAreaView, View, TouchableOpacity } from "react-native";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import { FontAwesome } from "@expo/vector-icons";
 import * as Location from "expo-location";
@@ -51,7 +51,7 @@ const Station = ({ navigation }) => {
 
   return (
     <SafeAreaView
-      style={{ flex: 1, backgroundColor: "#E6E5E5", borderTopLeftRadius: 100 }}
+      style={{ flex: 1, backgroundColor: "white", borderTopLeftRadius: 100 }}
     >
       <MapView
         style={{ flex: 1 }}
@@ -139,18 +139,19 @@ const Station = ({ navigation }) => {
         </View>
       </View>
 
-      <View
-        style={tw`w-11/12 h-12 my-6 rounded bg-yellow-500 items-center ml-4`}
+      <TouchableOpacity
+        style={tw`w-11/12 h-12 my-6 rounded bg-yellow-400 items-center ml-4`}
+        onPress={() => {
+          navigation.navigate("Bikes");
+        }}
       >
         <Text
-          onPress={() => {
-            navigation.navigate("Bikes");
-          }}
+         
           style={tw`text-black pt-2 font-bold text-xl`}
         >
           Order
         </Text>
-      </View>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };

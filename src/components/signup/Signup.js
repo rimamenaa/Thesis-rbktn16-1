@@ -239,7 +239,7 @@ export function SignUpForm({ props }) {
                 </Checkbox>
               </FormControl>
               <Button
-                mt="10"
+                mt="24"
                 height={10}
                 width={350}
                 borderRadius="4"
@@ -306,11 +306,11 @@ export function SignUpForm({ props }) {
                 ></Divider>
               </HStack>
             </VStack>
-            <Slide in={isOpen} placement="bottom">
+            <Slide in={isOpen} placement="bottom" >
               <Box
                 w="100%"
                 position="absolute"
-                bottom="24"
+                bottom="40"
                 p="2"
                 borderRadius="xs"
                 bg="green.300"

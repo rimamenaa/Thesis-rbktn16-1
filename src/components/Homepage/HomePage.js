@@ -9,7 +9,8 @@ import {
   Box,
   Image,
   View,
- 
+  Text,
+  ImageBackground
 } from "native-base";
 import tw from "tailwind-react-native-classnames";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
@@ -26,7 +27,7 @@ function HomePage({ navigation }) {
         flex: 1,
       }}
     >
-      
+         
       <VStack
         flex="1"
         px="6"
@@ -52,27 +53,14 @@ function HomePage({ navigation }) {
           md: "0",
         }}
       >
-       
+     
         <VStack space="7">
         <Home navigation={navigation}/>
-        </VStack>
-        <HStack
-          mb="4"
-          space="1"
-          safeAreaBottom
-          alignItems="center"
-          justifyContent="center"
-          mt={{
-            base: "auto",
-            md: "8",
-          }}
-        >
-        </HStack>
-        
-        <View style={{position: 'absolute', width: "95%",marginLeft:30, marginTop:590, backgroundColor:"white"}}>
+        </VStack>     
+      </VStack>
+      <View style={{position: 'absolute', width: "100%", marginTop:590, backgroundColor:"white"}}>
         <Footer navigation={navigation} />
       </View>
-      </VStack>
     </KeyboardAwareScrollView>
   );
 }

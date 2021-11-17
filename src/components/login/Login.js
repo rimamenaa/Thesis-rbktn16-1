@@ -189,7 +189,43 @@ export function SignInForm({ props }) {
                   </HStack>
                 </Checkbox>
               </FormControl>
-
+              
+              <Slide in={isOpen} placement="bottom" marginBottom={6}>
+              <Box
+                w="100%"
+                position="absolute"
+                bottom="32"
+                p="3"
+                borderRadius="xs"
+                bg="green.300"
+                alignItems="center"
+                justifyContent="center"
+                _dark={{
+                  bg: "amber.200",
+                }}
+              >
+                <HStack space={2} >
+                  <CheckIcon
+                    size="4"
+                    color="green.800"
+                    mt="1"
+                    _dark={{
+                      color: "amber.700",
+                    }}
+                  />
+                  <Text
+                    color="gray.600"
+                    textAlign="center"
+                    _dark={{
+                      color: "gray.700",
+                    }}
+                    fontWeight="medium"
+                  >
+                    Welcome Back!
+                  </Text>
+                </HStack>
+              </Box>
+            </Slide>
               <View style={{ alignItems: "center" }}>
                 <Button
                   mt="24"
@@ -262,42 +298,7 @@ export function SignInForm({ props }) {
               </HStack>
             </VStack>
 
-            <Slide in={isOpen} placement="bottom">
-              <Box
-                w="100%"
-                position="absolute"
-                bottom="24"
-                p="2"
-                borderRadius="xs"
-                bg="green.300"
-                alignItems="center"
-                justifyContent="center"
-                _dark={{
-                  bg: "amber.200",
-                }}
-              >
-                <HStack space={2}>
-                  <CheckIcon
-                    size="4"
-                    color="green.800"
-                    mt="1"
-                    _dark={{
-                      color: "amber.700",
-                    }}
-                  />
-                  <Text
-                    color="gray.600"
-                    textAlign="center"
-                    _dark={{
-                      color: "gray.700",
-                    }}
-                    fontWeight="medium"
-                  >
-                    Welcome Back!
-                  </Text>
-                </HStack>
-              </Box>
-            </Slide>
+           
             {/* <Button
               mt="5"
               size="lg"

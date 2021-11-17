@@ -61,7 +61,7 @@ export const Payment = () => {
         >
           Place Order
         </Button>
-        <View style={{position: 'absolute', width: "100%",marginTop:380, backgroundColor:"white"}}>
+        <View style={{position: 'absolute', width:"100%",marginTop:380, backgroundColor:"white"}}>
         <Footer navigation={navigation} />
       </View>
       </VStack>
@@ -112,7 +112,7 @@ export default () => {
   return (
 
     <NativeBaseProvider>
-      <Center flex={1} px="3">
+      <Center flex={1} px="3" backgroundColor="white">
         <Payment />
       </Center>
     </NativeBaseProvider>
