@@ -43,14 +43,13 @@ function AboutBikes() {
   }, []);
 
   return (
-    <View style={tw`items-center mt-16`}>
-      {/* navigate to adultbikes component */}
+    <View style={tw `items-center bg-white h-full`}>
       <Pressable
         onPress={() => {
           navigation.navigate("AdultBikes");
         }}
       >
-        <VStack space={2} alignItems="center" safeAreaTop my={6}>
+        <VStack space={2} alignItems="center" safeAreaTop my={20}>
           <Image
             size="2xl"
             resizeMode="cover"
