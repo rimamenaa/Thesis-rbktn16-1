@@ -19,20 +19,13 @@ import {
   Slide,
   View,
 } from "native-base";
-import axios from "axios";
-import instance from "../../../android/app/src/helpers/axiosInstance";
+
 import tw from "tailwind-react-native-classnames";
 import * as Google from "expo-google-app-auth";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
-/* const instance = axios.create({
-  baseURL: "http://localhost:3000/",
-  timeout: 1000,
-  headers: { "x-token": "7ot el token ya wissem" },
-}); */
 import { signIn } from "../services/auth";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { alignItems } from "styled-system";
 export function SignInForm({ props }) {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -43,6 +36,7 @@ export function SignInForm({ props }) {
     setMessage(message);
     setMessageType(type);
   };
+  //function for sign in with google button
   const handleGoogleSignIn = () => {
     setGoogleSubmitting(true);
     const config = {
@@ -58,6 +52,7 @@ export function SignInForm({ props }) {
         if (type === "success") {
           const { email, name, photoUrl } = user;
           handleMessage("Google sign in successful", "success");
+          //if succeed then navigate to whyus component
           setTimeout(
             () => props.navigation.navigate("WhyUs", { email, name, photoUrl }),
             100
@@ -189,43 +184,43 @@ export function SignInForm({ props }) {
                   </HStack>
                 </Checkbox>
               </FormControl>
-              
+
               <Slide in={isOpen} placement="bottom" marginBottom={6}>
-              <Box
-                w="100%"
-                position="absolute"
-                bottom="32"
-                p="3"
-                borderRadius="xs"
-                bg="green.300"
-                alignItems="center"
-                justifyContent="center"
-                _dark={{
-                  bg: "amber.200",
-                }}
-              >
-                <HStack space={2} >
-                  <CheckIcon
-                    size="4"
-                    color="green.800"
-                    mt="1"
-                    _dark={{
-                      color: "amber.700",
-                    }}
-                  />
-                  <Text
-                    color="gray.600"
-                    textAlign="center"
-                    _dark={{
-                      color: "gray.700",
-                    }}
-                    fontWeight="medium"
-                  >
-                    Welcome Back!
-                  </Text>
-                </HStack>
-              </Box>
-            </Slide>
+                <Box
+                  w="100%"
+                  position="absolute"
+                  bottom="32"
+                  p="3"
+                  borderRadius="xs"
+                  bg="green.300"
+                  alignItems="center"
+                  justifyContent="center"
+                  _dark={{
+                    bg: "amber.200",
+                  }}
+                >
+                  <HStack space={2}>
+                    <CheckIcon
+                      size="4"
+                      color="green.800"
+                      mt="1"
+                      _dark={{
+                        color: "amber.700",
+                      }}
+                    />
+                    <Text
+                      color="gray.600"
+                      textAlign="center"
+                      _dark={{
+                        color: "gray.700",
+                      }}
+                      fontWeight="medium"
+                    >
+                      Welcome Back!
+                    </Text>
+                  </HStack>
+                </Box>
+              </Slide>
               <View style={{ alignItems: "center" }}>
                 <Button
                   mt="24"
@@ -297,7 +292,6 @@ export function SignInForm({ props }) {
               </HStack>
             </VStack>
 
-           
             {/* <Button
               mt="5"
               size="lg"

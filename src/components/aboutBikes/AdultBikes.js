@@ -8,21 +8,18 @@ import {
   Text,
   Card,
   ScrollView,
-  Button,
 } from "native-base";
-import tailwind from "tailwind-rn";
 
 import Footer from "../Footer/Footer";
-import { FontAwesome } from "@expo/vector-icons";
 
 function AboutBikes({ navigation }) {
+  // set the data into an array
   const [data, setData] = useState([]);
-
+  //useEffect hooks to get the data from the link of deployment where data is stored
   useEffect(async () => {
     axios
       .get("https://bycyclethesis.herokuapp.com/bicycle")
       .then((response) => {
-        
         setData(response.data);
       })
       .catch((err) => {
@@ -33,8 +30,8 @@ function AboutBikes({ navigation }) {
   return (
     <View>
       <ScrollView marginBottom="20">
+        {/* slice the array where data stored to show just 9 bikes */}
         {data.slice(0, 9).map((bike, key) => {
-         
           return (
             <Card key={key}>
               <AspectRatio ratio={9 / 9}>
@@ -43,7 +40,7 @@ function AboutBikes({ navigation }) {
                   rounded="lg"
                   height="100%"
                   width="100%"
-                  source={{ uri: bike.photo ? bike.photo:"null" }}
+                  source={{ uri: bike.photo ? bike.photo : "null" }}
                   alt="image"
                 />
               </AspectRatio>

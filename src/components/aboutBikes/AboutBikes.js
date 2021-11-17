@@ -28,9 +28,9 @@ import { marginTop } from "styled-system";
 
 function AboutBikes() {
   const navigation = useNavigation();
-//get the data and store it into an array
+  //get the data and store it into an array
   const [data, setData] = useState([]);
-// useEffect to get the data
+  // useEffect to get the data
   useEffect(async () => {
     axios
       .get("https://bycyclethesis.herokuapp.com/bicycle")
@@ -43,7 +43,8 @@ function AboutBikes() {
   }, []);
 
   return (
-    <View style={tw `items-center mt-16`}>
+    <View style={tw`items-center mt-16`}>
+      {/* navigate to adultbikes component */}
       <Pressable
         onPress={() => {
           navigation.navigate("AdultBikes");
@@ -69,7 +70,7 @@ function AboutBikes() {
           </BlurView>
         </VStack>
       </Pressable>
-
+      {/* navigate to kidsbikes components */}
       <Pressable
         onPress={() => {
           navigation.navigate("KidBikes");
