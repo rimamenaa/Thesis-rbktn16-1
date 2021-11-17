@@ -217,7 +217,6 @@ export function SignInForm({ props }) {
                 >
                   SIGN IN
                 </Button>
-
               </View>
               {/* Closing Link Tag */}
               <HStack
