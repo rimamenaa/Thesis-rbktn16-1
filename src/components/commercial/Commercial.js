@@ -28,8 +28,9 @@ import tailwind from "tailwind-rn";
 import Footer from "../Footer/Footer";
 import axios from "axios";
 
-function Commercial({navigation}) {
+function Commercial({ navigation }) {
   const [data, setData] = useState([]);
+  // create function to get the data from the deploy link using the endpoint whybycycle which createtd in the backend
   const getData = () => {
     axios
       .get("https://bycyclethesis.herokuapp.com/whybycycle")
@@ -38,6 +39,7 @@ function Commercial({navigation}) {
         console.log(response.data);
       });
   };
+  // called the function get data inside the useEffect so get the data dynamically without refreshing the page
   useEffect(async () => {
     getData();
   }, []);
@@ -46,7 +48,6 @@ function Commercial({navigation}) {
     <SafeAreaView style={tailwind("h-full")}>
       <ScrollView style={tailwind("mb-20")}>
         <View style={tailwind(" items-center ")}>
-          
           <Box
             style={tailwind("items-center")}
             rounded="lg"
@@ -57,12 +58,12 @@ function Commercial({navigation}) {
             _dark={{ backgroundColor: "gray.700" }}
           >
             <Box style={tailwind("items-center mt-4")}>
-                <Image
-                  height={180}
-                  width={350}
-                  source={require("../../../assets/card.png")}
-                  alt="image"
-                />
+              <Image
+                height={180}
+                width={350}
+                source={require("../../../assets/card.png")}
+                alt="image"
+              />
             </Box>
             <Stack p="4" space={3}>
               <Stack space={2}>
@@ -209,7 +210,14 @@ function Commercial({navigation}) {
           </Box>
         </View>
       </ScrollView>
-      <View style={{position: 'absolute', width: "100%", marginTop:785, backgroundColor:"white"}}>
+      <View
+        style={{
+          position: "absolute",
+          width: "100%",
+          marginTop: 785,
+          backgroundColor: "white",
+        }}
+      >
         <Footer navigation={navigation} />
       </View>
     </SafeAreaView>

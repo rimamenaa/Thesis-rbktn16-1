@@ -28,14 +28,13 @@ import { marginTop } from "styled-system";
 
 function AboutBikes() {
   const navigation = useNavigation();
-
+  //get the data and store it into an array
   const [data, setData] = useState([]);
-
+  // useEffect to get the data
   useEffect(async () => {
     axios
       .get("https://bycyclethesis.herokuapp.com/bicycle")
       .then((response) => {
-        console.log("dataaaa", response.data.slice(7, 14));
         setData(response.data);
       })
       .catch((err) => {
@@ -44,13 +43,13 @@ function AboutBikes() {
   }, []);
 
   return (
-    <View style={tw `items-center mt-16`}>
+    <View style={tw `items-center bg-white h-full`}>
       <Pressable
         onPress={() => {
           navigation.navigate("AdultBikes");
         }}
       >
-        <VStack space={2} alignItems="center" safeAreaTop my={6}>
+        <VStack space={2} alignItems="center" safeAreaTop my={20}>
           <Image
             size="2xl"
             resizeMode="cover"
@@ -59,18 +58,18 @@ function AboutBikes() {
             alt="Adult"
           />
           <BlurView
-          style={tw`w-full h-12 rounded items-center mt-7 absolute`}
-          intensity={70}
-          tint="dark"
-          color="grey"
-        >
-        <Text color="amber.500" style={tw `text-2xl font-bold`} >
-          ADULTS
-        </Text>
-        </BlurView>
+            style={tw`w-full h-12 rounded items-center mt-7 absolute`}
+            intensity={70}
+            tint="dark"
+            color="grey"
+          >
+            <Text color="amber.500" style={tw`text-2xl font-bold`}>
+              ADULTS
+            </Text>
+          </BlurView>
         </VStack>
       </Pressable>
-
+      {/* navigate to kidsbikes components */}
       <Pressable
         onPress={() => {
           navigation.navigate("KidBikes");
@@ -85,16 +84,19 @@ function AboutBikes() {
             source={require("../../../assets/kid.jpg")}
             alt="image"
           />
-           <BlurView
-          style={tw`w-full h-12 rounded items-center mt-12 absolute`}
-          intensity={70}
-          tint="dark"
-          color="grey"
-        >
-          <Text color="amber.500" style={tw `text-2xl mt-2 font-bold absolute`} >
-          KIDS
-        </Text>
-        </BlurView>
+          <BlurView
+            style={tw`w-full h-12 rounded items-center mt-12 absolute`}
+            intensity={70}
+            tint="dark"
+            color="grey"
+          >
+            <Text
+              color="amber.500"
+              style={tw`text-2xl mt-2 font-bold absolute`}
+            >
+              KIDS
+            </Text>
+          </BlurView>
         </VStack>
       </Pressable>
     </View>
