@@ -32,7 +32,7 @@ function AboutBikes({ navigation }) {
 
   return (
     <View>
-      <ScrollView marginBottom="24">
+      <ScrollView marginBottom="20">
         {data.slice(10, 17).map((bike, key) => {
           return (
             <Card key={key}>

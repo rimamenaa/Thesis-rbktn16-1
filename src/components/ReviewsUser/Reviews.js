@@ -15,7 +15,7 @@ export default function Reviews({ navigation }) {
         style={{
           position: "absolute",
           width: "100%",
-          marginTop: 665,
+          marginTop: 740,
           backgroundColor: "white",
         }}
       >

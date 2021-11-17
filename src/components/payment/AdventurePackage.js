@@ -50,6 +50,7 @@ export const Info = () => {
   return (
                     //   ----- Personal Information ----- 
     <Box
+    
       width={{
         base: "100%",
         md: "50%",
@@ -103,8 +104,8 @@ export const Info = () => {
 export default () => {
   return (
 
-    <NativeBaseProvider>
-      <Center flex={1} px="3">
+    <NativeBaseProvider >
+      <Center flex={1} px="3" backgroundColor={"white"}>
         <Info />
       </Center>
     </NativeBaseProvider>

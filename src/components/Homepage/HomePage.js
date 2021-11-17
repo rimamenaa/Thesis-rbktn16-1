@@ -56,12 +56,11 @@ function HomePage({ navigation }) {
      
         <VStack space="7">
         <Home navigation={navigation}/>
-        </VStack>
-             
-        <View style={{position: 'absolute', width: "95%",marginLeft:30, marginTop:590, backgroundColor:"white"}}>
+        </VStack>     
+      </VStack>
+      <View style={{position: 'absolute', width: "100%", marginTop:590, backgroundColor:"white"}}>
         <Footer navigation={navigation} />
       </View>
-      </VStack>
     </KeyboardAwareScrollView>
   );
 }
