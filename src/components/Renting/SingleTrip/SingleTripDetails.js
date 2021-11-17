@@ -7,17 +7,27 @@ import {
   Button,
   NativeBaseProvider,
   ScrollView,
+  View
 } from "native-base";
 import { useNavigation } from "@react-navigation/native";
+import tw from "tailwind-react-native-classnames";
 
 function SingleTripDetails() {
   const navigation = useNavigation();
   return (
         //   ----- Single Package Card Details ----- 
     <ScrollView>
+           <View style={tw`items-center mt-12`}>
+        <Image
+          style={tw`w-16 h-16`}
+          source={require("../../../../assets/LogoBike.png")}
+          alt="image"
+        />
+      </View>
       <Box  shadow={1}
       width="360"
       marginLeft={4}
+      marginTop={16}
       borderRadius={5}
       _light={{ backgroundColor: "gray.50" }}
       _dark={{ backgroundColor: "gray.700" }}

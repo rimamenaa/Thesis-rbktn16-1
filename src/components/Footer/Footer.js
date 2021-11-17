@@ -13,6 +13,7 @@ import {
   Entypo,
   Ionicons,
   AntDesign,
+  FontAwesome
 } from "@expo/vector-icons";
 import tw from "tailwind-react-native-classnames";
 import { signOut } from "../services/auth";
@@ -27,7 +28,7 @@ export default function Footer({ navigation }) {
         <HStack alignItems="center" safeAreaBottom>
           <Pressable
             opacity={selected === 2 ? 1 : 0.6}
-            color="#000000"
+            color="black"
             py="2"
             flex={1}
             onPress={() => {
@@ -35,13 +36,8 @@ export default function Footer({ navigation }) {
             }}
           >
             <Center>
-              <Icon
-                mb={1}
-                as={<AntDesign name="staro" size={10} color="#000000" />}
-                color="#000000"
-                size="lg"
-              />
-              <Text color="#000000" fontSize={12}>
+            <FontAwesome name="star-o" size={35} color="black" />
+              <Text color="black" fontSize={12}>
                 About Us
               </Text>
             </Center>
@@ -62,10 +58,10 @@ export default function Footer({ navigation }) {
                     name={selected === 0 ? "home" : "home-outline"}
                   />
                 }
-                color="#000000"
+                color="black"
                 size="lg"
               />
-              <Text color="#000000" fontSize="12">
+              <Text color="black" fontSize="12">
                 Home
               </Text>
             </Center>
@@ -84,10 +80,10 @@ export default function Footer({ navigation }) {
               <Icon
                 mb={1}
                 as={<Entypo name="log-out" size={24} color="black" />}
-                color="#000000"
+                color="black"
                 size="md"
               />
-              <Text color="#000000" fontSize="12">
+              <Text color="black" fontSize="12">
                 Log Out
               </Text>
             </Center>

@@ -101,8 +101,8 @@ export const SingleTripPackage = () => {
 export default () => {
   return (
 
-    <NativeBaseProvider>
-      <Center flex={1} px="3">
+    <NativeBaseProvider >
+      <Center flex={1} px="3" backgroundColor={"white"}>
         <SingleTripPackage />
       </Center>
     </NativeBaseProvider>

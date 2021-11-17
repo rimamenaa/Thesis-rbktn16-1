@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Platform, Text, Button, SafeAreaView, View } from "react-native";
+import {
+  Platform,
+  Text,
+  Button,
+  SafeAreaView,
+  View,
+  TouchableOpacity,
+} from "react-native";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
-import { FontAwesome } from "@expo/vector-icons";
 import * as Location from "expo-location";
-import { BlurView } from "expo-blur";
 import tw from "tailwind-react-native-classnames";
 import { Entypo } from "@expo/vector-icons";
 
@@ -14,7 +19,6 @@ const Station = ({ navigation }) => {
   });
 
   useEffect(() => {
-    // console.log(location);
     (async () => {
       let { status } = await Location.requestBackgroundPermissionsAsync();
       if (status !== "granted") {
@@ -26,7 +30,6 @@ const Station = ({ navigation }) => {
     })();
   }, []);
   const getLoc = () => {
-    // console.log("press", location.coords);
     let latitude = location.coords.latitude;
     let longitude = location.coords.longitude;
     setRegion({
@@ -40,18 +43,12 @@ const Station = ({ navigation }) => {
   const sendLoc = () => {
     let latitude = location.coords.latitude;
     let longitude = location.coords.longitude;
-    // console.log(
-    //   "Use these variables to send current location(",
-    //   latitude,
-    //   ",",
-    //   longitude,
-    //   ")"
-    // );
+   
   };
 
   return (
     <SafeAreaView
-      style={{ flex: 1, backgroundColor: "#E6E5E5", borderTopLeftRadius: 100 }}
+      style={{ flex: 1, backgroundColor: "white", borderTopLeftRadius: 100 }}
     >
       <MapView
         style={{ flex: 1 }}
@@ -139,18 +136,14 @@ const Station = ({ navigation }) => {
         </View>
       </View>
 
-      <View
-        style={tw`w-11/12 h-12 my-6 rounded bg-yellow-500 items-center ml-4`}
+      <TouchableOpacity
+        style={tw`w-11/12 h-12 my-6 rounded bg-yellow-400 items-center ml-4`}
+        onPress={() => {
+          navigation.navigate("Bikes");
+        }}
       >
-        <Text
-          onPress={() => {
-            navigation.navigate("Bikes");
-          }}
-          style={tw`text-black pt-2 font-bold text-xl`}
-        >
-          Order
-        </Text>
-      </View>
+        <Text style={tw`text-black pt-2 font-bold text-xl`}>Order</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
