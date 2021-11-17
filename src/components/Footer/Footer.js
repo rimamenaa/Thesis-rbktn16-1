@@ -23,7 +23,7 @@ export default function Footer({ navigation }) {
   
   return (
     <NativeBaseProvider>
-      <Box flex={1} safeAreaTop style={tw`w-full border-2 border-gray-300 rounded`}>
+      <Box flex={1} safeAreaTop style={tw`w-full`}>
         <Center flex={1}></Center>
         <HStack alignItems="center" safeAreaBottom>
           <Pressable
@@ -36,8 +36,8 @@ export default function Footer({ navigation }) {
             }}
           >
             <Center>
-            <FontAwesome name="star-o" size={35} color="#403F3F" />
-              <Text color="#403F3F" fontSize={12}>
+            <FontAwesome name="star-o" size={35} color="black" />
+              <Text color="black" fontSize={12}>
                 About Us
               </Text>
             </Center>
@@ -58,10 +58,10 @@ export default function Footer({ navigation }) {
                     name={selected === 0 ? "home" : "home-outline"}
                   />
                 }
-                color="#9A9494"
+                color="black"
                 size="lg"
               />
-              <Text color="#9A9494" fontSize="12">
+              <Text color="black" fontSize="12">
                 Home
               </Text>
             </Center>
@@ -79,11 +79,11 @@ export default function Footer({ navigation }) {
             <Center>
               <Icon
                 mb={1}
-                as={<Entypo name="log-out" size={24} color="#9A9494" />}
-                color="#9A9494"
+                as={<Entypo name="log-out" size={24} color="black" />}
+                color="black"
                 size="md"
               />
-              <Text color="#9A9494" fontSize="12">
+              <Text color="black" fontSize="12">
                 Log Out
               </Text>
             </Center>

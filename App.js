@@ -193,6 +193,7 @@ function App() {
             <Stack.Screen
               name="SingleTripPayment"
               component={SingleTripPayment}
+              options={{ headerShown: false }}
             />
             <Stack.Screen
               name="SingleTripPackage"
