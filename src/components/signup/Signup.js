@@ -136,6 +136,7 @@ export function SignUpForm({ props }) {
                 <Input
                   type="text"
                   name="fullname"
+                  autoCapitalize="none"
                   placeholder="Full Name"
                   onChangeText={(value) => {
                     setFullName(value);
@@ -156,6 +157,7 @@ export function SignUpForm({ props }) {
                 <Input
                   type="email"
                   name="email"
+                  autoCapitalize="none"
                   placeholder="Email"
                   onChangeText={(value) => {
                     setEmail(value);
@@ -176,6 +178,7 @@ export function SignUpForm({ props }) {
                   type="password"
                   name="password"
                   placeholder="Password"
+                  autoCapitalize="none"
                   onChangeText={(value) => {
                     setPassword(value);
                   }}
@@ -236,7 +239,7 @@ export function SignUpForm({ props }) {
                 </Checkbox>
               </FormControl>
               <Button
-                mt="10"
+                mt="24"
                 height={10}
                 width={350}
                 borderRadius="4"
@@ -252,7 +255,9 @@ export function SignUpForm({ props }) {
                 onPress={() => {
                   signUp({ fullname, email, password }).then(() => {
                     setIsOpen(true);
-                    setTimeout(() => props.navigation.navigate("Login"), 2500);
+
+                    setTimeout(() => props.navigation.navigate("Login"), 1300);
+
                   });
                 }}
               >
@@ -301,11 +306,11 @@ export function SignUpForm({ props }) {
                 ></Divider>
               </HStack>
             </VStack>
-            <Slide in={isOpen} placement="bottom">
+            <Slide in={isOpen} placement="bottom" >
               <Box
                 w="100%"
                 position="absolute"
-                bottom="24"
+                bottom="40"
                 p="2"
                 borderRadius="xs"
                 bg="green.300"

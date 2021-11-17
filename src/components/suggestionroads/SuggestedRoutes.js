@@ -29,7 +29,6 @@ function SuggestionRoads({ navigation }) {
   return (
     <SafeAreaView style={tailwind("h-full")}>
       <ScrollView style={tailwind("mb-16")}>
-
         <View style={tailwind("items-center mt-8")}>
           <Box
             style={tailwind("mb-8 items-center")}
@@ -64,7 +63,10 @@ function SuggestionRoads({ navigation }) {
                 >
                   <Box style={tailwind("items-center")}>
                     <AspectRatio ratio={0.72} width={200} height={450}>
-                      <Image source={{ uri: e.photo ? e.photo: "null" }} alt="image" />
+                      <Image
+                        source={{ uri: e.photo ? e.photo : "null" }}
+                        alt="image"
+                      />
                     </AspectRatio>
                   </Box>
 
@@ -103,7 +105,7 @@ function SuggestionRoads({ navigation }) {
         style={{
           position: "absolute",
           width: "100%",
-          marginTop: 655,
+          marginTop: 740,
           backgroundColor: "white",
         }}
       >

@@ -44,8 +44,6 @@ export default function Circuit1() {
         rating,
       })
       .then(() => {
-        // setData((data) => [res.data, ...data]);
-        // setData(res.data);
         setInput("");
       })
       .catch((err) => {
@@ -103,7 +101,7 @@ export default function Circuit1() {
                 flex: 1,
               }}
             >
-              <VStack maxW="1016px" flex={1} width="100%">
+              <VStack maxW="1016px" flex={1} width="100%" alignItems="center">
                 <Stack
                   flex={1}
                   p={{
@@ -122,13 +120,10 @@ export default function Circuit1() {
                   space="6"
                 >
                   {/* to be replaced by my styled box  */}
-
-                  <Card>
-                    <Text fontSize="2xl" marginBottom="3">
-                      City name
-                    </Text>
-                    <Text fontWeight="500">
-                      Here to describe the place trips.
+                  <ScrollView horizontal={true} marginBottom="3">
+                  <Card width={380} marginBottom={3}>
+                    <Text fontSize="2xl">
+                      Lac 3
                     </Text>
                     <AspectRatio ratio={16 / 9}>
                       <Image
@@ -152,7 +147,42 @@ export default function Circuit1() {
                             color: "coolGray.800",
                           }}
                         >
-                          lac01 is a town in northern Tunisia located about 20
+                          Lac 3 is a natural lagoon located between the Tunisian capital city of Tunis and the Gulf of Tunis (Mediterranean Sea). 
+                          Recently, the Tunisian government and Sama Dubai of the UAE (led by Dubai Governor Mohammed bin Rashid Al Maktoum) have 
+                          joint-ventured an investment agreement to develop the southern shore of the lake into a new commercial, residential and 
+                          touristic center in Tunisia and the Mediterranean. 
+                        </Text>
+                      </Box>
+                    </Stack>
+                  </Card>
+
+                  <Card width={380} marginBottom={3}>
+                    <Text fontSize="2xl">
+                      Sidi Bousaïd
+                    </Text>
+                    <AspectRatio ratio={16 / 9}>
+                      <Image
+                        marginTop="1"
+                        rounded="lg"
+                        height="100%"
+                        width="100%"
+                        source={require("../../../assets/sidibou.png")}
+                        alt={"Loading..."}
+                      />
+                    </AspectRatio>
+                    <Stack p="4" space={4}>
+                      <Box>
+                        <Text
+                          mt="3"
+                          fontSize="sm"
+                          lineHeight="lg"
+                          fontWeight="medium"
+                          letterSpacing="0.3"
+                          _light={{
+                            color: "coolGray.800",
+                          }}
+                        >
+                          Sidi Bou Said is a town in northern Tunisia located about 20
                           km from the capital, Tunis. Cafe de delice and coast
                           view Named for a religious figure who lived there, Abu
                           Said al-Baji, it was previously called Jabal el-Menar.
@@ -165,6 +195,76 @@ export default function Circuit1() {
                     </Stack>
                   </Card>
 
+                  <Card width={380} marginBottom={3}>
+                    <Text fontSize="2xl">
+                      Tunis
+                    </Text>
+                    <AspectRatio ratio={16 / 9}>
+                      <Image
+                        marginTop="1"
+                        rounded="lg"
+                        height="100%"
+                        width="100%"
+                        source={require("../../../assets/tunis.png")}
+                        alt={"Loading..."}
+                      />
+                    </AspectRatio>
+                    <Stack p="4" space={4}>
+                      <Box>
+                        <Text
+                          mt="3"
+                          fontSize="sm"
+                          lineHeight="lg"
+                          fontWeight="medium"
+                          letterSpacing="0.3"
+                          _light={{
+                            color: "coolGray.800",
+                          }}
+                        >
+                          Tunis is the capital and largest city of Tunisia. The greater metropolitan area of Tunis, 
+                          often referred to as "Grand Tunis", has about 2,700,000 inhabitants. As of 2020, it is the 
+                          fourth-largest city in the Maghreb region (after Casablanca, Algiers and Tripoli) and the 
+                          sixteenth-largest in the Arab world.
+                        </Text>
+                      </Box>
+                    </Stack>
+                  </Card>
+                  
+                  <Card width={380} marginBottom={3}>
+                    <Text fontSize="2xl">
+                      Lac of tunis
+                    </Text>
+                    <AspectRatio ratio={16 / 9}>
+                      <Image
+                        marginTop="1"
+                        rounded="lg"
+                        height="100%"
+                        width="100%"
+                        source={require("../../../assets/lac.png")}
+                        alt={"Loading..."}
+                      />
+                    </AspectRatio>
+                    <Stack p="4" space={4}>
+                      <Box>
+                        <Text
+                          mt="3"
+                          fontSize="sm"
+                          lineHeight="lg"
+                          fontWeight="medium"
+                          letterSpacing="0.3"
+                          _light={{
+                            color: "coolGray.800",
+                          }}
+                        >
+                          The Lake of Tunis is a natural lagoon located between the Tunisian capital city of Tunis and 
+                          the Gulf of Tunis (Mediterranean Sea). The lake covers a total of 37 square kilometres, 
+                          in contrast to its size its depth is very shallow. It was once the natural harbour of Tunis.
+                        </Text>
+                      </Box>
+                    </Stack>
+                  </Card>
+
+                  </ScrollView>
                   <ScrollView showsVerticalScrollIndicator={false}>
                     <Box>
                       <VStack padding="8" flex={2} space={4}>

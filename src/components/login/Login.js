@@ -17,7 +17,7 @@ import {
   Image,
   CheckIcon,
   Slide,
-  View
+  View,
 } from "native-base";
 import axios from "axios";
 import instance from "../../../android/app/src/helpers/axiosInstance";
@@ -48,7 +48,7 @@ export function SignInForm({ props }) {
     const config = {
       iosClientId: `215341427022-haijkikj7ejpthac9sld1ihejeouoj06.apps.googleusercontent.com`,
       androidClientId: `215341427022-eosmagesimfkte0p4b84ci77t6b7m6o2.apps.googleusercontent.com`,
-      androidStandaloneAppClientId: `759598068494-hg5cakbf3gpfntdoaasqi0a8dqd6r9j9.apps.googleusercontent.com`,
+      androidStandaloneAppClientId: `215341427022-ktifsf6rj56ubln7ddtac012o0s4rlb5.apps.googleusercontent.com`,
 
       scopes: ["profile", "email"],
     };
@@ -120,12 +120,12 @@ export function SignInForm({ props }) {
           <VStack>
             <VStack>
               <View style={tw`items-center`}>
-        <Image
-          style={tw`w-16 h-16`}
-          source={require("../../../assets/LogoBike.png")}
-          alt="image"
-        />
-      </View>
+                <Image
+                  style={tw`w-16 h-16`}
+                  source={require("../../../assets/LogoBike.png")}
+                  alt="image"
+                />
+              </View>
               {/* Opening Link Tag navigateTo:"OTP" (react/Router) */}
               <FormControl style={tw`mt-12`}>
                 <FormControl.Label
@@ -140,6 +140,7 @@ export function SignInForm({ props }) {
                 <Input
                   type="email"
                   name="email"
+                  autoCapitalize="none"
                   placeholder="Email"
                   onChangeText={(value) => setEmail(value)}
                 />
@@ -157,8 +158,8 @@ export function SignInForm({ props }) {
                 <Input
                   type="password"
                   name="password"
+                  autoCapitalize="none"
                   placeholder="Password"
-
                   onChangeText={(value) => setPassword(value)}
                 />
                 <Link
@@ -174,7 +175,7 @@ export function SignInForm({ props }) {
                   Forget Password?
                 </Link>
                 <Checkbox
-                marginTop={3}
+                  marginTop={3}
                   alignItems="flex-start"
                   defaultIsChecked
                   value="demo"
@@ -188,30 +189,71 @@ export function SignInForm({ props }) {
                   </HStack>
                 </Checkbox>
               </FormControl>
-              <View style={{alignItems:"center"}}>
-              <Button
-                mt="24"
-                height={10}
-                width={363}
-                borderRadius="4"
-                _text={{
-                  fontWeight: "medium",
-                }}
-                _light={{
-                  bg: "primary.700",
-                }}
+              
+              <Slide in={isOpen} placement="bottom" marginBottom={6}>
+              <Box
+                w="100%"
+                position="absolute"
+                bottom="32"
+                p="3"
+                borderRadius="xs"
+                bg="green.300"
+                alignItems="center"
+                justifyContent="center"
                 _dark={{
-                  bg: "primary.700",
-                }}
-                onPress={() => {
-                  signIn({ email, password }).then(() => {
-                    setIsOpen(true);
-                    setTimeout(() => props.navigation.navigate("WhyUs"), 2500);
-                  });
+                  bg: "amber.200",
                 }}
               >
-                SIGN IN
-              </Button>
+                <HStack space={2} >
+                  <CheckIcon
+                    size="4"
+                    color="green.800"
+                    mt="1"
+                    _dark={{
+                      color: "amber.700",
+                    }}
+                  />
+                  <Text
+                    color="gray.600"
+                    textAlign="center"
+                    _dark={{
+                      color: "gray.700",
+                    }}
+                    fontWeight="medium"
+                  >
+                    Welcome Back!
+                  </Text>
+                </HStack>
+              </Box>
+            </Slide>
+              <View style={{ alignItems: "center" }}>
+                <Button
+                  mt="24"
+                  height={10}
+                  width={363}
+                  borderRadius="4"
+                  _text={{
+                    fontWeight: "medium",
+                  }}
+                  _light={{
+                    bg: "primary.700",
+                  }}
+                  _dark={{
+                    bg: "primary.700",
+                  }}
+                  onPress={() => {
+                    signIn({ email, password }).then(() => {
+                      setIsOpen(true);
+                      setTimeout(
+                        () => props.navigation.navigate("WhyUs"),
+                        1300
+                      );
+                    });
+                  }}
+                >
+                  SIGN IN
+                </Button>
+
               </View>
               {/* Closing Link Tag */}
               <HStack
@@ -256,42 +298,7 @@ export function SignInForm({ props }) {
               </HStack>
             </VStack>
 
-            <Slide in={isOpen} placement="bottom">
-              <Box
-                w="100%"
-                position="absolute"
-                bottom="24"
-                p="2"
-                borderRadius="xs"
-                bg="green.300"
-                alignItems="center"
-                justifyContent="center"
-                _dark={{
-                  bg: "amber.200",
-                }}
-              >
-                <HStack space={2}>
-                  <CheckIcon
-                    size="4"
-                    color="green.800"
-                    mt="1"
-                    _dark={{
-                      color: "amber.700",
-                    }}
-                  />
-                  <Text
-                    color="gray.600"
-                    textAlign="center"
-                    _dark={{
-                      color: "gray.700",
-                    }}
-                    fontWeight="medium"
-                  >
-                    Welcome Back!
-                  </Text>
-                </HStack>
-              </Box>
-            </Slide>
+           
             {/* <Button
               mt="5"
               size="lg"
@@ -306,7 +313,7 @@ export function SignInForm({ props }) {
                 bg: "primary.700",
               }}
             > */}
-              {/* <Text
+            {/* <Text
                 style={{ color: "black", fontWeight: "500" }}
                 onPress={handleGoogleSignIn}
               >
@@ -316,18 +323,24 @@ export function SignInForm({ props }) {
                   alt="image"
                 />
               </Text> */}
-              <View style={{alignItems:"center"}}>
-                       <TouchableOpacity style={{alignItems:"center", backgroundColor: "#E2E2E2",width:250, height:35,borderRadius:4 }}
-                       onPress={handleGoogleSignIn}>
-            
+            <View style={{ alignItems: "center" }}>
+              <TouchableOpacity
+                style={{
+                  alignItems: "center",
+                  backgroundColor: "#E2E2E2",
+                  width: 250,
+                  height: 35,
+                  borderRadius: 4,
+                }}
+                onPress={handleGoogleSignIn}
+              >
                 <Image
-                  style={{ height: 20, width: 60,marginTop:8}}
+                  style={{ height: 20, width: 60, marginTop: 8 }}
                   source={require("../../../assets/ggl.png")}
                   alt="image"
                 />
-    
               </TouchableOpacity>
-              </View>
+            </View>
             {/* </Button> */}
           </VStack>
         </VStack>

@@ -34,7 +34,6 @@ function AboutBikes() {
     axios
       .get("https://bycyclethesis.herokuapp.com/bicycle")
       .then((response) => {
-        console.log("dataaaa", response.data.slice(7, 14));
         setData(response.data);
       })
       .catch((err) => {
@@ -43,7 +42,7 @@ function AboutBikes() {
   }, []);
 
   return (
-    <View alignItems="center">
+    <View style={tw `items-center mt-16`}>
       <Pressable
         onPress={() => {
           navigation.navigate("AdultsBikes");

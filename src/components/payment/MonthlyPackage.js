@@ -99,8 +99,8 @@ export const Info = () => {
 export default () => {
   return (
 
-    <NativeBaseProvider>
-      <Center flex={1} px="3">
+    <NativeBaseProvider >
+      <Center flex={1} px="3" backgroundColor={"white"}>
         <Info />
       </Center>
     </NativeBaseProvider>

@@ -34,7 +34,6 @@ function AboutBikes({ navigation }) {
     <View>
       <ScrollView marginBottom="20">
         {data.slice(0, 9).map((bike, key) => {
-          console.log(bike);
           return (
             <Card key={key}>
               <AspectRatio ratio={9 / 9}>
@@ -75,7 +74,7 @@ function AboutBikes({ navigation }) {
         style={{
           position: "absolute",
           width: "100%",
-          marginTop: 670,
+          marginTop: 740,
           backgroundColor: "white",
         }}
       >
