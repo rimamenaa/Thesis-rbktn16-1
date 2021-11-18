@@ -65,39 +65,39 @@ const Station = ({ navigation }) => {
         }}
       >
         <MapView.Marker
-          coordinate={{ latitude: 36.78825, longitude: 10 }}
-          title={"title"}
-          description={"description"}
+          coordinate={{ latitude: 36.888082, longitude: 10.182544 }}
+          title={"Civil Protection"}
+          description={"Station-1"}
         />
         <MapView.Marker
-          coordinate={{ latitude: 34.70075, longitude: 9.1 }}
-          title={"title"}
-          description={"description"}
+          coordinate={{ latitude: 36.893051, longitude: 10.187858 }}
+          title={"Technopole Ghazela"}
+          description={"Station-2"}
         />
         <MapView.Marker
-          coordinate={{ latitude: 36.78825, longitude: 10.2324 }}
-          title={"title"}
-          description={"description"}
+          coordinate={{ latitude: 36.876388, longitude: 10.185943 }}
+          title={"Fathi Zouhir Avenue"}
+          description={"Station-3"}
         />
         <MapView.Marker
-          coordinate={{ latitude: 36.77725, longitude: 10.2324 }}
-          title={"title"}
-          description={"description"}
+          coordinate={{ latitude: 36.900609, longitude: 10.183929 }}
+          title={"Ariana Soghra"}
+          description={"Station-4"}
         />
         <MapView.Marker
-          coordinate={{ latitude: 36.64725, longitude: 10.2324 }}
-          title={"title"}
-          description={"description"}
+          coordinate={{ latitude: 36.889589, longitude: 10.171335 }}
+          title={"Ghazela City"}
+          description={"Station-5"}
         />
         <MapView.Marker
-          coordinate={{ latitude: 36.86625, longitude: 10.2324 }}
-          title={"title"}
-          description={"description"}
+          coordinate={{ latitude: 36.910111, longitude: 10.187838 }}
+          title={"Nour Jaafer"}
+          description={"Station-6"}
         />
         <MapView.Marker
-          coordinate={{ latitude: 36.06555, longitude: 10.2324 }}
-          title={"title"}
-          description={"description"}
+          coordinate={{ latitude: 36.884352, longitude: 10.194418 }}
+          title={"Professors City"}
+          description={"Station-7"}
         />
       </MapView>
 
