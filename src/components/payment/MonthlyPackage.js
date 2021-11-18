@@ -72,7 +72,7 @@ export const Info = () => {
           <Input  
           w="100%" 
           variant="outline" 
-          placeholder="ID" 
+          placeholder="ID Card" 
           onChangeText={onChangeIdHandler}
 
           />
