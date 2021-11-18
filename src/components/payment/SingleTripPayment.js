@@ -62,7 +62,7 @@ export const Payment = () => {
          >
           Place Order
         </Button>
-        <View style={{position: 'absolute', width: 230,marginTop:380, backgroundColor:"white"}}>
+        <View style={{position: 'absolute', width: "100%",marginTop:420, backgroundColor:"white"}}>
         <Footer navigation={navigation} />
       </View>
       </VStack>
