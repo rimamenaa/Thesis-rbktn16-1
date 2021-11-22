@@ -105,7 +105,7 @@ function SuggestionRoads({ navigation }) {
         style={{
           position: "absolute",
           width: "100%",
-          marginTop: 655,
+          marginTop: 740,
           backgroundColor: "white",
         }}
       >

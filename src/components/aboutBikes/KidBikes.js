@@ -17,7 +17,7 @@ import { FontAwesome } from "@expo/vector-icons";
 
 function AboutBikes({ navigation }) {
   const [data, setData] = useState([]);
-
+  // store data into an array and use effect to get the data from the link of deploy where database is stored
   useEffect(async () => {
     axios
       .get("https://bycyclethesis.herokuapp.com/bicycle")
@@ -41,7 +41,7 @@ function AboutBikes({ navigation }) {
                   rounded="lg"
                   height="100%"
                   width="100%"
-                  source={{ uri: bike.photo ? bike.photo:"null" }}
+                  source={{ uri: bike.photo ? bike.photo : "null" }}
                   alt="image"
                 />
               </AspectRatio>
@@ -59,7 +59,7 @@ function AboutBikes({ navigation }) {
         style={{
           position: "absolute",
           width: "100%",
-          marginTop: 660,
+          marginTop: 740,
           backgroundColor: "white",
         }}
       >

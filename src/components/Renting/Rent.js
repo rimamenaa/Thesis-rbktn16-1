@@ -33,7 +33,7 @@ function Rent({navigation}) {
         </ScrollView>
       </VStack>
 
-    <View style={{position: 'absolute', width: "100%",marginTop:655, backgroundColor:"white"}}>
+    <View style={{position: 'absolute', width: "100%",marginTop:645, backgroundColor:"white"}}>
         <Footer navigation={navigation} />
       </View>
     </View>

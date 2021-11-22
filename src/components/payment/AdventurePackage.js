@@ -9,9 +9,12 @@ import {
   HStack,
   NativeBaseProvider,
   Button,
+  Image,
+  View
 } from "native-base";
 import axios from "axios";
 import {Alert} from "react-native"
+import tw from "tailwind-react-native-classnames";
 
 import { useNavigation } from "@react-navigation/native";
 
@@ -47,14 +50,23 @@ export const Info = () => {
   return (
                     //   ----- Personal Information ----- 
     <Box
+    
       width={{
         base: "100%",
         md: "50%",
       }}
       h="100%" 
       justifyContent="center"
+      alignItems="center"
     >
-      <VStack space={3} w="100%">
+     
+        <Image
+          style={tw`w-24 h-24 mb-52`}
+          source={require("../../../assets/LogoBike.png")}
+          alt="image"
+        />
+      
+      <VStack space={3} w="100%" marginBottom={150}>
 
         <HStack alignItems="center">
           <Heading>Personal Information</Heading>
@@ -64,7 +76,7 @@ export const Info = () => {
           <Input  
           w="100%" 
           variant="outline" 
-          placeholder="ID" 
+          placeholder="ID Card" 
           onChangeText={onChangeIdHandler}
 
           />
@@ -99,11 +111,10 @@ export const Info = () => {
 export default () => {
   return (
 
-    <NativeBaseProvider>
-      <Center flex={1} px="3">
+    <NativeBaseProvider >
+      <Center flex={1} px="3" backgroundColor={"white"}>
         <Info />
       </Center>
     </NativeBaseProvider>
-  
   );
 };
